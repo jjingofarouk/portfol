@@ -16,12 +16,18 @@ import {
   FaReact,
   FaVuejs,
   FaYarn,
+  FaChess,
+  FaFutbol,
+  FaCode,
+  FaUserMd,
+  FaFilm,
 } from "react-icons/fa6";
 import {
   RiFirebaseFill,
   RiJavascriptFill,
   RiNextjsFill,
   RiTailwindCssFill,
+  RiBrainFill,
 } from "react-icons/ri";
 import {
   SiExpress,
@@ -34,197 +40,243 @@ import {
   SiVisualstudiocode,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
+import { TbTerminal2 } from "react-icons/tb";
 
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import { TbTerminal2 } from "react-icons/tb";
 
 const CONTACT_LINKS = [
   {
     name: "Email",
-    content: "jjingofaroukk@gmail",
+    content: "jjingofaroukk@gmail.com",
     href: "mailto:jjingofaroukk@gmail.com",
-    icon: <FaEnvelope height={"50px"} />,
+    icon: <FaEnvelope />,
   },
   {
     name: "Phone",
-    content: "1234567890",
-    href: "tel:1234567890",
-    icon: <FaPhone height={"50px"} />,
+    content: "+256777421601",
+    href: "tel:+256777421601",
+    icon: <FaPhone />,
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/jjingofarouk/",
+    href: "https://www.linkedin.com/in/jjingo-farouk-0341b01a5/",
     content: "/jjingofarouk",
-    icon: <FaLinkedin height={"50px"} />,
+    icon: <FaLinkedin />,
   },
   {
     name: "GitHub",
     href: "https://github.com/jjingofarouk",
     content: "/jjingofarouk",
-    icon: <FaGithub height={"50px"} />,
+    icon: <FaGithub />,
   },
+];
+
+const SKILLS_CATEGORIES = [
+  {
+    name: "Frontend",
+    skills: ["JavaScript", "TypeScript", "React.js", "Vue.js", "HTML", "CSS", "Tailwind CSS"]
+  },
+  {
+    name: "Backend",
+    skills: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Firebase"]
+  },
+  {
+    name: "DevOps",
+    skills: ["Docker", "AWS", "NginX", "Linux", "Kubuntu", "Git"]
+  },
+  {
+    name: "Tools",
+    skills: ["VS Code", "VIM", "Terminal", "Prettier", "NPM", "Yarn", "Vercel"]
+  }
 ];
 
 const TOOLS = [
   {
     name: "JavaScript",
-    content: "JavaScript is a high-level, interpreted programming language",
+    content: "Core language for modern web development",
     icon: <SiJavascript size={"50px"} color={"#f0db4f"} />,
     color: "#f0db4f",
   },
   {
     name: "TypeScript",
-    content: "TypeScript is a superset of JavaScript that compiles to plain JS",
+    content: "Type-safe JavaScript for scalable applications",
     icon: <SiTypescript size={"50px"} color={"#007acc"} />,
     color: "#007acc",
   },
   {
     name: "HTML",
-    content: "Next.js is a React framework for production",
+    content: "Semantic markup for accessible web experiences",
     icon: <FaHtml5 size={"50px"} color="#e34c26" />,
     color: "#e34c26",
   },
   {
     name: "CSS",
-    content: "Next.js is a React framework for production",
+    content: "Creating responsive and beautiful interfaces",
     icon: <FaCss3 size={"50px"} color="#563d7c" />,
     color: "#563d7c",
   },
   {
     name: "Nodejs",
-    content: "Next.js is a React framework for production",
+    content: "Server-side JavaScript for scalable applications",
     icon: <FaNodeJs size={"50px"} color="#6cc24a" />,
     color: "#6cc24a",
   },
   {
     name: "React.js",
-    content: "Next.js is a React framework for production",
+    content: "Component-based UI library for dynamic applications",
     icon: <FaReact size={"50px"} color="#61dafb" />,
     color: "#61dafb",
   },
   {
     name: "Docker",
-    content: "Next.js is a React framework for production",
+    content: "Containerization for consistent deployment",
     icon: <FaDocker size={"50px"} color="#2496ed" />,
     color: "#2496ed",
   },
   {
     name: "NginX",
-    content: "Next.js is a React framework for production",
+    content: "High-performance web server and reverse proxy",
     icon: <DiNginx size={"50px"} color="#008000" />,
     color: "#008000",
   },
   {
     name: "Vue.js",
-    content: "Next.js is a React framework for production",
+    content: "Progressive framework for building user interfaces",
     icon: <FaVuejs size={"50px"} color="#41b883" />,
     color: "#41b883",
   },
   {
     name: "Express.js",
-    content: "Next.js is a React framework for production",
+    content: "Minimal Node.js framework for web applications",
     icon: <SiExpress size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "PostgreSQL",
-    content: "Next.js is a React framework for production",
+    content: "Powerful open-source relational database",
     icon: <DiPostgresql size={"50px"} color="#336791" />,
     color: "#336791",
   },
   {
     name: "MongoDB",
-    content: "Next.js is a React framework for production",
+    content: "NoSQL database for modern applications",
     icon: <DiMongodb size={"50px"} color="#4db33d" />,
     color: "#4db33d",
   },
   {
     name: "Tailwind CSS",
-    content: "Next.js is a React framework for production",
+    content: "Utility-first CSS for rapid development",
     icon: <RiTailwindCssFill size={"50px"} color="#06b6d4" />,
     color: "#06b6d4",
   },
   {
     name: "Firebase",
-    content: "Next.js is a React framework for production",
+    content: "Google's platform for app development",
     icon: <RiFirebaseFill size={"50px"} color="#FFCA28" />,
     color: "#FFCA28",
   },
   {
     name: "Git",
-    content: "Next.js is a React framework for production",
+    content: "Version control for collaborative development",
     icon: <FaGit size={"50px"} color="#f05032" />,
     color: "#f05032",
   },
   {
     name: "GitHub",
-    content: "Next.js is a React framework for production",
+    content: "Platform for code hosting and collaboration",
     icon: <FaGithub size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "VS Code",
-    content: "Next.js is a React framework for production",
+    content: "Powerful code editor with rich ecosystem",
     icon: <SiVisualstudiocode size={"50px"} color="#007acc" />,
     color: "#007acc",
   },
   {
     name: "VIM",
-    content: "Next.js is a React framework for production",
+    content: "Efficient text editor for rapid development",
     icon: <DiVim size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "Prettier",
-    content: "Next.js is a React framework for production",
+    content: "Code formatter for consistent code style",
     icon: <SiPrettier size={"50px"} color="#f7b93c" />,
     color: "#f7b93c",
   },
   {
     name: "NPM",
-    content: "Next.js is a React framework for production",
+    content: "Package manager for JavaScript",
     icon: <DiNpm size={"50px"} color="#CB3837" />,
     color: "#CB3837",
   },
   {
     name: "Yarn",
-    content: "Next.js is a React framework for production",
+    content: "Fast, reliable dependency management",
     icon: <FaYarn size={"50px"} color="#2C8EBB" />,
     color: "#2C8EBB",
   },
   {
     name: "Vercel",
-    content: "Next.js is a React framework for production",
+    content: "Platform for frontend frameworks and static sites",
     icon: <SiVercel size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "Linux",
-    content: "Next.js is a React framework for production",
+    content: "Open-source operating system for development",
     icon: <FaLinux size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "Kubuntu",
-    content: "Next.js is a React framework for production",
-    // give me correct color for  kubuntu
+    content: "KDE-based Linux distribution",
     icon: <SiKubuntu size={"50px"} color="#0077C4" />,
-    color: "#000000",
+    color: "#0077C4",
   },
   {
     name: "Terminal",
-    content: "Next.js is a React framework for production",
+    content: "Command line interface for efficient workflows",
     icon: <TbTerminal2 size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "AWS",
-    content: "Next.js is a React framework for production",
-    icon: <FaAws size={"50px"} color="#3f51b5" />,
-    color: "#000000",
+    content: "Cloud computing services for scalable infrastructure",
+    icon: <FaAws size={"50px"} color="#FF9900" />,
+    color: "#FF9900",
   },
+];
+
+const INTERESTS = [
+  {
+    name: "Medicine",
+    icon: <FaUserMd size={"24px"} />,
+    description: "Medical Doctor with expertise in clinical diagnostics"
+  },
+  {
+    name: "Chess",
+    icon: <FaChess size={"24px"} />,
+    description: "Strategic thinker and chess enthusiast"
+  },
+  {
+    name: "Football",
+    icon: <FaFutbol size={"24px"} />,
+    description: "Man United and Real Madrid supporter"
+  },
+  {
+    name: "Problem Solving",
+    icon: <RiBrainFill size={"24px"} />,
+    description: "Applying analytical thinking across disciplines"
+  },
+  {
+    name: "Film",
+    icon: <FaFilm size={"24px"} />,
+    description: "Cinema enthusiast with an appreciation for storytelling"
+  }
 ];
 
 function Page() {
@@ -232,6 +284,7 @@ function Page() {
   useEffect(() => {
     setToolsLoaded(true);
   }, []);
+  
   return (
     <div className="container mx-auto px-4 md:px-[50px] xl:px-[200px] text-zinc-300 pt-20 pb-20">
       <div className="flex flex-col lg:flex-row gap-5">
@@ -245,15 +298,20 @@ function Page() {
             <div className="flex flex-row lg:flex-col items-center">
               <div className="flex justify-center items-center lg:w-full lg:aspect-square bg-zinc-800 rounded-xl lg:mb-5">
                 <img
-                  className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px] lg:w-[200px] aspect-square  bg-zinc-800"
-                  alt="me"
+                  className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px] lg:w-[200px] aspect-square bg-zinc-800"
+                  alt="Farouk Jjingo"
                   src="/assets/me.jpg"
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl">Farouk Jjingo</p>
-                <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
-                  Web Developer
+                <p className="text-center text-xl font-semibold">Farouk Jjingo</p>
+                <div className="flex gap-2">
+                  <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
+                    Full Stack Engineer
+                  </div>
+                  <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
+                    MD
+                  </div>
                 </div>
               </div>
             </div>
@@ -263,8 +321,10 @@ function Page() {
                 {CONTACT_LINKS.map((link) => (
                   <li key={link.name}>
                     <a
-                      className="flex items-center px-3 gap-3 w-full h-12 border-zinc-700 bg-zinc-800 hover:border-zinc-600 border-[.5px] rounded-md "
+                      className="flex items-center px-3 gap-3 w-full h-12 border-zinc-700 bg-zinc-800 hover:border-zinc-600 border-[.5px] rounded-md transition-colors duration-300"
                       href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <div className="w-8">{link.icon}</div>
                       <div className="flex flex-col">
@@ -280,28 +340,60 @@ function Page() {
             </div>
           </div>
         </aside>
-        <main className="basis-3/4 w-[500px]">
+        <main className="basis-3/4">
           <div
             className="p-10 border-[.5px] rounded-md border-zinc-600"
             style={{ backdropFilter: "blur(2px)" }}
           >
-            <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
-            <p className="mb-10 text-roboto">
-              Hey there! I&apos;m Farouk, a Fullstack developer passionate about
-              creating meaningful digital experiences. With great in Web
-              development, I thrive on turning ideas into reality through coding
-              and design. My journey began with a fascination for technology and
-              a drive to make a positive impact.
+            <h1 className="text-3xl font-bold mb-6 lg:mb-10">About me</h1>
+            <p className="mb-6 text-lg leading-relaxed">
+              I'm Farouk, a Full Stack Engineer with a unique background in medicine who bridges healthcare and technology. 
+              Specializing in building high-performance applications, I'm passionate about creating elegant solutions to complex problems.
             </p>
-            <p className="mb-10">
-              When I&apos;m not coding, you can find me [Your
-              Interests/Hobbies], exploring new technologies, or sipping coffee
-              while brainstorming my next project.
+            
+            <p className="mb-10 text-lg leading-relaxed">
+              My dual expertise as both a medical doctor and software engineer gives me a distinctive advantage in understanding 
+              complex systems, analytical thinking, and delivering solutions that truly make an impact. I excel in creating clean
+              maintainable code with a focus on performance and user experience.
             </p>
-            <h1 className="text-3xl mb-10 lg:md-20">Stuff I use</h1>
-            <div className="mb-5">
+            
+            <div className="mb-10">
+              <h2 className="text-2xl font-semibold mb-4">Beyond Code</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                {INTERESTS.map((interest) => (
+                  <div key={interest.name} className="flex items-start gap-3 p-4 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700">
+                    <div className="mt-1 text-zinc-300">{interest.icon}</div>
+                    <div>
+                      <h3 className="font-medium text-zinc-200">{interest.name}</h3>
+                      <p className="text-sm text-zinc-400">{interest.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <h2 className="text-2xl font-semibold mb-6">Technical Expertise</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+              {SKILLS_CATEGORIES.map((category) => (
+                <div key={category.name} className="p-4 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700">
+                  <h3 className="text-lg font-medium mb-3">{category.name}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <span key={skill} className="px-3 py-1 bg-zinc-700 rounded-full text-sm">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <h2 className="text-2xl font-semibold mb-4">Technology Stack</h2>
+            <div className="mb-10">
               {!toolsLoaded ? (
-                <p className="h-[100px]"></p>
+                <div className="h-[100px] flex items-center justify-center">
+                  <p>Loading tools...</p>
+                </div>
               ) : (
                 <Splide
                   options={{
@@ -315,14 +407,22 @@ function Page() {
                     rewind: true,
                     easing: "cubic-bezier(0.25, 1, 0.5, 1)",
                     arrows: false,
+                    breakpoints: {
+                      640: {
+                        perPage: 3,
+                      },
+                      768: {
+                        perPage: 4,
+                      },
+                    },
                   }}
-                  aria-label="My Favorite Images"
+                  aria-label="Technology Stack"
                 >
-                  {TOOLS.reverse().map((tool) => (
+                  {TOOLS.map((tool) => (
                     <SplideSlide key={tool.name}>
                       <div
-                        key={tool.name}
-                        className="w-fit p-2 border-[.5px] border-zinc-600 rounded-md"
+                        className="w-fit p-3 border-[.5px] border-zinc-600 rounded-md hover:border-zinc-400 transition-colors duration-300 mx-auto"
+                        title={`${tool.name} - ${tool.content}`}
                       >
                         {tool.icon}
                       </div>
@@ -331,34 +431,17 @@ function Page() {
                 </Splide>
               )}
             </div>
-            {/* <div className="">
-              <Splide
-                options={{
-                  type: "loop",
-                  interval: 2000,
-                  autoplay: true,
-                  pagination: false,
-                  speed: 3000,
-                  perPage: 5,
-                  perMove: 1,
-                  rewind: true,
-                  easing: "cubic-bezier(0.25, 1, 0.5, 1)",
-                  arrows: false,
-                }}
-                aria-label="My Favorite Images"
-              >
-                {TOOLS.map((tool) => (
-                  <SplideSlide key={tool.name}>
-                    <div
-                      key={tool.name}
-                      className="w-fit p-2 border-[.5px] border-zinc-600 rounded-md"
-                    >
-                      {tool.icon}
-                    </div>
-                  </SplideSlide>
-                ))}
-              </Splide>
-            </div> */}
+            
+            <div className="p-6 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700">
+              <h2 className="text-xl font-semibold mb-3">Let's Build Something Amazing</h2>
+              <p className="mb-4">
+                I'm always open to discussing new projects, innovative ideas, or opportunities to be part of your team.
+              </p>
+              <a href="mailto:jjingofaroukk@gmail.com" className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-700 hover:bg-zinc-600 rounded-md transition-colors duration-300">
+                <FaEnvelope />
+                <span>Get in touch</span>
+              </a>
+            </div>
           </div>
         </main>
       </div>
