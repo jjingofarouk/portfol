@@ -19,7 +19,7 @@ import {
   FaChess,
   FaFutbol,
   FaCode,
-  FaUserMd,
+  FaUser,
   FaFilm,
 } from "react-icons/fa6";
 import {
@@ -76,20 +76,28 @@ const CONTACT_LINKS = [
 const SKILLS_CATEGORIES = [
   {
     name: "Frontend",
-    skills: ["JavaScript", "TypeScript", "React.js", "Vue.js", "HTML", "CSS", "Tailwind CSS"]
+    skills: [
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Vue.js",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+    ],
   },
   {
     name: "Backend",
-    skills: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Firebase"]
+    skills: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Firebase"],
   },
   {
     name: "DevOps",
-    skills: ["Docker", "AWS", "NginX", "Linux", "Kubuntu", "Git"]
+    skills: ["Docker", "AWS", "NginX", "Linux", "Kubuntu", "Git"],
   },
   {
     name: "Tools",
-    skills: ["VS Code", "VIM", "Terminal", "Prettier", "NPM", "Yarn", "Vercel"]
-  }
+    skills: ["VS Code", "VIM", "Terminal", "Prettier", "NPM", "Yarn", "Vercel"],
+  },
 ];
 
 const TOOLS = [
@@ -254,29 +262,29 @@ const TOOLS = [
 const INTERESTS = [
   {
     name: "Medicine",
-    icon: <FaUserMd size={"24px"} />,
-    description: "Medical Doctor with expertise in clinical diagnostics"
+    icon: <FaUser size={"24px"} />,
+    description: "Medical Doctor with expertise in clinical diagnostics",
   },
   {
     name: "Chess",
     icon: <FaChess size={"24px"} />,
-    description: "Strategic thinker and chess enthusiast"
+    description: "Strategic thinker and chess enthusiast",
   },
   {
     name: "Football",
     icon: <FaFutbol size={"24px"} />,
-    description: "Man United and Real Madrid supporter"
+    description: "Man United and Real Madrid supporter",
   },
   {
     name: "Problem Solving",
     icon: <RiBrainFill size={"24px"} />,
-    description: "Applying analytical thinking across disciplines"
+    description: "Applying analytical thinking across disciplines",
   },
   {
     name: "Film",
     icon: <FaFilm size={"24px"} />,
-    description: "Cinema enthusiast with an appreciation for storytelling"
-  }
+    description: "Cinema enthusiast with an appreciation for storytelling",
+  },
 ];
 
 function Page() {
@@ -284,7 +292,7 @@ function Page() {
   useEffect(() => {
     setToolsLoaded(true);
   }, []);
-  
+
   return (
     <div className="container mx-auto px-4 md:px-[50px] xl:px-[200px] text-zinc-300 pt-20 pb-20">
       <div className="flex flex-col lg:flex-row gap-5">
@@ -304,7 +312,9 @@ function Page() {
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl font-semibold">Farouk Jjingo</p>
+                <p className="text-center text-xl font-semibold">
+                  Farouk Jjingo
+                </p>
                 <div className="flex gap-2">
                   <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
                     Full Stack Engineer
@@ -347,39 +357,56 @@ function Page() {
           >
             <h1 className="text-3xl font-bold mb-6 lg:mb-10">About me</h1>
             <p className="mb-6 text-lg leading-relaxed">
-              I'm Farouk, a Full Stack Engineer with a unique background in medicine who bridges healthcare and technology. 
-              Specializing in building high-performance applications, I'm passionate about creating elegant solutions to complex problems.
+              I'm Farouk, a Full Stack Engineer with a unique background in
+              medicine who bridges healthcare and technology. Specializing in
+              building high-performance applications, I'm passionate about
+              creating elegant solutions to complex problems.
             </p>
-            
+
             <p className="mb-10 text-lg leading-relaxed">
-              My dual expertise as both a medical doctor and software engineer gives me a distinctive advantage in understanding 
-              complex systems, analytical thinking, and delivering solutions that truly make an impact. I excel in creating clean
-              maintainable code with a focus on performance and user experience.
+              My dual expertise as both a medical doctor and software engineer
+              gives me a distinctive advantage in understanding complex systems,
+              analytical thinking, and delivering solutions that truly make an
+              impact. I excel in creating clean maintainable code with a focus
+              on performance and user experience.
             </p>
-            
+
             <div className="mb-10">
               <h2 className="text-2xl font-semibold mb-4">Beyond Code</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                 {INTERESTS.map((interest) => (
-                  <div key={interest.name} className="flex items-start gap-3 p-4 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700">
+                  <div
+                    key={interest.name}
+                    className="flex items-start gap-3 p-4 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700"
+                  >
                     <div className="mt-1 text-zinc-300">{interest.icon}</div>
                     <div>
-                      <h3 className="font-medium text-zinc-200">{interest.name}</h3>
-                      <p className="text-sm text-zinc-400">{interest.description}</p>
+                      <h3 className="font-medium text-zinc-200">
+                        {interest.name}
+                      </h3>
+                      <p className="text-sm text-zinc-400">
+                        {interest.description}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            
+
             <h2 className="text-2xl font-semibold mb-6">Technical Expertise</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
               {SKILLS_CATEGORIES.map((category) => (
-                <div key={category.name} className="p-4 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700">
+                <div
+                  key={category.name}
+                  className="p-4 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700"
+                >
                   <h3 className="text-lg font-medium mb-3">{category.name}</h3>
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill) => (
-                      <span key={skill} className="px-3 py-1 bg-zinc-700 rounded-full text-sm">
+                      <span
+                        key={skill}
+                        className="px-3 py-1 bg-zinc-700 rounded-full text-sm"
+                      >
                         {skill}
                       </span>
                     ))}
@@ -387,7 +414,7 @@ function Page() {
                 </div>
               ))}
             </div>
-            
+
             <h2 className="text-2xl font-semibold mb-4">Technology Stack</h2>
             <div className="mb-10">
               {!toolsLoaded ? (
@@ -431,13 +458,19 @@ function Page() {
                 </Splide>
               )}
             </div>
-            
+
             <div className="p-6 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700">
-              <h2 className="text-xl font-semibold mb-3">Let's Build Something Amazing</h2>
+              <h2 className="text-xl font-semibold mb-3">
+                Let's Build Something Amazing
+              </h2>
               <p className="mb-4">
-                I'm always open to discussing new projects, innovative ideas, or opportunities to be part of your team.
+                I'm always open to discussing new projects, innovative ideas, or
+                opportunities to be part of your team.
               </p>
-              <a href="mailto:jjingofaroukk@gmail.com" className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-700 hover:bg-zinc-600 rounded-md transition-colors duration-300">
+              <a
+                href="mailto:jjingofaroukk@gmail.com"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-700 hover:bg-zinc-600 rounded-md transition-colors duration-300"
+              >
                 <FaEnvelope />
                 <span>Get in touch</span>
               </a>
