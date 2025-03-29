@@ -259,7 +259,7 @@ const projects: Project[] = [
       ],
     },
     live: "https://www.codingducks.xyz/",
-    github: "https://github.com/Naresh-Khatri/Coding-Ducks",
+    github: "https://github.com/Farouk-Jjingo/Coding-Ducks",
     get content() {
       return (
         <div>
@@ -407,13 +407,13 @@ const projects: Project[] = [
             ]}
           />
           <p className="font-mono mb-2 mt-5">
-            Plus, I&apos;ve sprinkled in some extra magic like personalized
-            deal recommendations, user-friendly search features, and a sleek,
+            Plus, I&apos;ve sprinkled in some extra magic like personalized deal
+            recommendations, user-friendly search features, and a sleek,
             responsive design that works like a charm on any device.
           </p>
           <p className="font-mono mb-2">
-            CouponLuxury isn&apos;t just a website; it&apos;s your personal deal-hunting
-            assistant, ensuring you never miss out on a bargain!
+            CouponLuxury isn&apos;t just a website; it&apos;s your personal
+            deal-hunting assistant, ensuring you never miss out on a bargain!
           </p>
           {/* <TypographyP className="my-4 mt-8">
           <strong>Misc:</strong>
@@ -462,8 +462,8 @@ const projects: Project[] = [
           <TypographyH3 className="my-4 mt-8">Blogs</TypographyH3>
           <p className="font-mono mb-2">
             Dive into the curated articles written by travel experts. Whether
-            you&apos;re looking for hidden gems or travel hacks, our blog section has
-            you covered.
+            you&apos;re looking for hidden gems or travel hacks, our blog
+            section has you covered.
           </p>
           <SlideShow
             images={[
@@ -474,8 +474,8 @@ const projects: Project[] = [
           <TypographyH3 className="my-4 mt-8">Sanity CMS</TypographyH3>
 
           <p className="font-mono mb-2">
-            Keeping everything fresh and up-to-date, I&apos;ve integrated Sanity CMS
-            to manage all the content with ease, ensuring you always get the
+            Keeping everything fresh and up-to-date, I&apos;ve integrated Sanity
+            CMS to manage all the content with ease, ensuring you always get the
             latest and greatest information.
           </p>
           <SlideShow
@@ -485,10 +485,11 @@ const projects: Project[] = [
             ]}
           />
           <p className="font-mono mb-2 my-8">
-            With a stunning 100% score on Lighthouse, The Booking Desk isn&apos;t
-            just beautiful—it&apos;s built to perform. Whether you&apos;re planning your
-            next adventure or just daydreaming, our site delivers a top-notch
-            experience that&apos;s both informative and enjoyable.
+            With a stunning 100% score on Lighthouse, The Booking Desk
+            isn&apos;t just beautiful—it&apos;s built to perform. Whether
+            you&apos;re planning your next adventure or just daydreaming, our
+            site delivers a top-notch experience that&apos;s both informative
+            and enjoyable.
           </p>
         </div>
       );
@@ -500,8 +501,8 @@ const projects: Project[] = [
     title: "My Portfolio",
     src: "/assets/projects-screenshots/portfolio/landing.png",
     screenshots: ["1.png"],
-    live: "http://nareshkhatri.vercel.app",
-    github:"https://github.com/Naresh-Khatri/Portfolio",
+    live: "https://www.jjingofarouk.xyz",
+    github: "https://github.com/jjingofarouk/Portfolio",
     skills: {
       frontend: [
         PROJECT_SKILLS.ts,
@@ -567,7 +568,7 @@ const projects: Project[] = [
     src: "/assets/projects-screenshots/ghostchat/1.png",
     screenshots: ["1.png", "2.png", "3.png", "4.png"],
     live: "https://ghostchat.vercel.app",
-    github:"https://github.com/Naresh-Khatri/GhostChat",
+    github: "https://github.com/jjingofarouk/GhostChat",
     skills: {
       frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.chakra],
       backend: [PROJECT_SKILLS.supabase],
@@ -577,11 +578,11 @@ const projects: Project[] = [
         <div>
           <TypographyP className="font-mono ">
             Ghostchat is your go-to spot for sending anonymous messages without
-            leaving a trace. Powered by Supabase, it&apos;s all about keeping things
-            low-key and secure. Whether you&apos;re sharing secrets, giving feedback,
-            or just having some fun, Ghostchat ensures your identity stays
-            hidden, while your voice is heard. Say what you want, without the
-            worry.
+            leaving a trace. Powered by Supabase, it&apos;s all about keeping
+            things low-key and secure. Whether you&apos;re sharing secrets,
+            giving feedback, or just having some fun, Ghostchat ensures your
+            identity stays hidden, while your voice is heard. Say what you want,
+            without the worry.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <SlideShow
@@ -602,7 +603,7 @@ const projects: Project[] = [
     title: "JNTUA Results Analyzer",
     src: "/assets/projects-screenshots/jra/1.png",
     screenshots: ["1.png"],
-    live: "https://naresh-khatri.github.io/JNTUA-result-analyser-spa/#/",
+    live: "https://jjingofarouk.github.io/JNTUA-result-analyser-spa/#/",
     skills: {
       frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.vue],
       backend: [
