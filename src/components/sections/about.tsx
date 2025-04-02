@@ -197,24 +197,6 @@ function AboutSection() {
                   ))}
                 </div>
               </div>
-
-              <motion.div
-                className="p-6 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-xl text-center border border-zinc-700"
-                whileHover={{ scale: 1.02 }}
-              >
-                <h2 className="text-xl font-semibold text-zinc-100 mb-3">
-                  Let’s Create the Future
-                </h2>
-                <motion.a
-                  href="mailto:jjingofaroukk@gmail.com"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-medium transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaEnvelope />
-                  Contact Me
-                </motion.a>
-              </motion.div>
             </div>
           </motion.main>
         </div>
