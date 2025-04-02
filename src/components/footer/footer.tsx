@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion"; // For animations
@@ -6,7 +7,7 @@ import { footer } from "./config";
 import { Button } from "../ui/button";
 import SocialMediaButtons from "../social/social-media-icons";
 import { config } from "@/data/config";
-import { cn } from "@/lib/utils"; // Assuming you have a utility for classNames
+import { cn } from "@/lib/utils"; // Utility for classNames
 
 function Footer() {
   const year = new Date().getFullYear();
