@@ -236,10 +236,10 @@ export type Project = {
 };
 const projects: Project[] = [
   {
-    id: "codingducks",
-    category: "Coding platform",
-    title: "Coding Ducks",
-    src: "/assets/projects-screenshots/codingducks/landing.png",
+    id: "carewave",
+    category: "telemedicine platform",
+    title: "CareWave",
+    src: "/assets/projects-screenshots/carewave/landing.png",
     screenshots: ["landing.png"],
     skills: {
       frontend: [
@@ -258,13 +258,13 @@ const projects: Project[] = [
         PROJECT_SKILLS.sockerio,
       ],
     },
-    live: "https://www.codingducks.xyz/",
-    github: "https://github.com/Farouk-Jjingo/Coding-Ducks",
+    live: "https://www.carewave.vercel.app/",
+    github: "https://github.com/jjingofarouk/CareWave",
     get content() {
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            Coding ducks = LeetCode + CodePen + CSS Battles
+            Coding Ducks = LeetCode + CodePen + CSS Battles
           </TypographyP>
           <TypographyP className="font-mono ">
             Coding Ducks is your coding dojo — where you level up your skills,
@@ -280,8 +280,8 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/codingducks/problems.png`,
-              `${BASE_PATH}/codingducks/problem.png`,
+              `${BASE_PATH}/carewave/problems.png`,
+              `${BASE_PATH}/carewave/problem.png`,
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Ducklets</TypographyH3>
@@ -291,9 +291,9 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/codingducks/ducklets.png`,
-              `${BASE_PATH}/codingducks/ducklet1.png`,
-              `${BASE_PATH}/codingducks/ducklet2.png`,
+              `${BASE_PATH}/carewave/ducklets.png`,
+              `${BASE_PATH}/carewave/ducklet1.png`,
+              `${BASE_PATH}/carewave/ducklet2.png`,
             ]}
           />
           <TypographyH3 className="my-4 mt-8">UI Battles </TypographyH3>
@@ -304,9 +304,9 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/codingducks/css-battles.png`,
-              `${BASE_PATH}/codingducks/css-battle.png`,
-              `${BASE_PATH}/codingducks/css-battle2.png`,
+              `${BASE_PATH}/carewave/css-battles.png`,
+              `${BASE_PATH}/carewave/css-battle.png`,
+              `${BASE_PATH}/carewave/css-battle2.png`,
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Contests </TypographyH3>
@@ -314,13 +314,13 @@ const projects: Project[] = [
             Organize or participate in coding competitions. Successfully used to
             host three contests during college.
           </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/contests.png`]} />
+          <SlideShow images={[`${BASE_PATH}/carewave/contests.png`]} />
           <TypographyH3 className="my-4 mt-8">Playground </TypographyH3>
           <p className="font-mono mb-2">
             Test and execute your code instantly in my versatile online code
             runner.
           </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/playground.png`]} />
+          <SlideShow images={[`${BASE_PATH}/carewave/playground.png`]} />
           <TypographyH3 className="my-4 mt-8">Users</TypographyH3>
 
           <p className="font-mono mb-2">
@@ -329,8 +329,8 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/codingducks/users.png`,
-              `${BASE_PATH}/codingducks/user.png`,
+              `${BASE_PATH}/carewave/users.png`,
+              `${BASE_PATH}/carewave/user.png`,
             ]}
           />
         </div>
@@ -434,7 +434,7 @@ const projects: Project[] = [
     title: "The Booking Desk",
     src: "/assets/projects-screenshots/the-booking-desk/landing.png",
     screenshots: ["1.png"],
-    live: "https://thebookingdesk.com/",
+    live: "https://thebookingdesk.vercel.app/",
     skills: {
       frontend: [
         PROJECT_SKILLS.ts,
