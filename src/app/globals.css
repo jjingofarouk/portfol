@@ -8,59 +8,101 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Base colors - soft white background with deep teal-gray text */
+    --background: 40 30% 98%;
+    --foreground: 196 35% 25%;
+    
+    /* Card styles - slightly warmer than background */
+    --card: 40 25% 97%;
+    --card-foreground: 196 35% 25%;
+    
+    /* Popover styles - matching cards */
+    --popover: 40 25% 97%;
+    --popover-foreground: 196 35% 25%;
+    
+    /* Primary action color - rich teal */
+    --primary: 174 45% 37%;
+    --primary-foreground: 40 30% 98%;
+    
+    /* Secondary action color - warm beige */
+    --secondary: 36 30% 85%;
+    --secondary-foreground: 196 35% 25%;
+    
+    /* Muted elements - subtle warm gray */
+    --muted: 30 10% 92%;
+    --muted-foreground: 196 20% 45%;
+    
+    /* Accent color - soft gold */
+    --accent: 35 40% 85%;
+    --accent-foreground: 196 40% 22%;
+    
+    /* Destructive action color - muted burgundy */
+    --destructive: 354 55% 45%;
+    --destructive-foreground: 40 30% 98%;
+    
+    /* Borders and inputs - elegant gray with teal undertone */
+    --border: 200 15% 85%;
+    --input: 200 15% 85%;
+    --ring: 174 45% 37%;
+    
+    /* Border radius */
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --brand: hsl(20, 100%, 70%);
+    
+    /* Chart colors - elegant complementary palette */
+    --chart-1: 174 45% 37%; /* Teal */
+    --chart-2: 196 35% 55%; /* Blue-teal */
+    --chart-3: 36 30% 75%;  /* Beige */
+    --chart-4: 200 25% 65%; /* Soft blue-gray */
+    --chart-5: 24 35% 65%;  /* Warm taupe */
+    
+    /* Brand color - refined teal */
+    --brand: hsl(174, 45%, 37%);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    /* Base colors - deep charcoal with soft teal undertones */
+    --background: 200 15% 15%;
+    --foreground: 40 15% 90%;
+    
+    /* Card styles - slightly lighter than background */
+    --card: 200 12% 18%;
+    --card-foreground: 40 15% 90%;
+    
+    /* Popover styles - matching cards */
+    --popover: 200 12% 18%; 
+    --popover-foreground: 40 15% 90%;
+    
+    /* Primary action color - vibrant teal */
+    --primary: 174 40% 60%;
+    --primary-foreground: 200 15% 15%;
+    
+    /* Secondary action color - muted gold */
+    --secondary: 36 25% 25%;
+    --secondary-foreground: 36 30% 80%;
+    
+    /* Muted elements - deep gray */
+    --muted: 200 10% 25%;
+    --muted-foreground: 40 15% 70%;
+    
+    /* Accent color - warm beige */
+    --accent: 36 25% 30%;
+    --accent-foreground: 36 30% 80%;
+    
+    /* Destructive action color - deep burgundy */
+    --destructive: 354 50% 35%;
+    --destructive-foreground: 40 15% 90%;
+    
+    /* Borders and inputs - subtle dark gray */
+    --border: 200 15% 25%;
+    --input: 200 15% 25%;
+    --ring: 174 40% 60%;
+    
+    /* Chart colors - elegant darker palette */
+    --chart-1: 174 40% 60%; /* Teal */
+    --chart-2: 196 35% 45%; /* Blue-teal */
+    --chart-3: 36 25% 55%;  /* Warm gold */
+    --chart-4: 200 20% 40%; /* Deep blue-gray */
+    --chart-5: 24 25% 45%;  /* Rich taupe */
   }
 }
 
