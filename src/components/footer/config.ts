@@ -16,4 +16,3 @@ export const footer: { title: string; href: string; description?: string }[] = [
   },
 ];
 
-export { footer };
