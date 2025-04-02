@@ -11,8 +11,10 @@ const CONTACT_LINKS = [
 
 const INTERESTS = [
   { name: "Medicine & Tech", icon: FaUser, gradient: "from-indigo-600 to-cyan-600" },  
+  { name: "Spot Diagnosis", icon: FaStethoscope, gradient: "from-red-700 to-gray-800" },  
   { name: "Chess", icon: FaChess, gradient: "from-gray-700 to-gray-900" },  
   { name: "Problem Solving", icon: FaBrain, gradient: "from-green-700 to-teal-700" },  
+  { name: "Open Source", icon: FaCodeBranch, gradient: "from-gold-500 to-amber-600" },  
   { name: "Hackathons", icon: FaLaptopCode, gradient: "from-rose-600 to-red-700" },  
   { name: "Automation", icon: FaRobot, gradient: "from-blue-700 to-gray-700" },  
   { name: "Technical Writing", icon: FaPencilAlt, gradient: "from-stone-600 to-slate-700" },  
@@ -22,6 +24,7 @@ const INTERESTS = [
   { name: "Low-Code/No-Code", icon: FaCogs, gradient: "from-steel-600 to-gray-700" },  
   { name: "Football", icon: FaFutbol, gradient: "from-green-800 to-lime-600" },  
   { name: "Basketball", icon: FaBasketballBall, gradient: "from-orange-600 to-red-600" },  
+  { name: "Cats", icon: FaCat, gradient: "from-amber-600 to-yellow-500" },  
 ];
 
 function AboutSection() {
@@ -73,21 +76,7 @@ function AboutSection() {
               <h2 className="text-2xl font-bold text-center text-zinc-100">Farouk Jjingo</h2>
               <p className="text-sm text-center text-zinc-400 mb-6">Full Stack Engineer | MD</p>
               
-              <div className="space-y-3">
-                {CONTACT_LINKS.map((link) => (
-                  <motion.a
-                    key={link.name}
-                    href={link.href}
-                    className={`flex items-center gap-3 p-3 rounded-lg ${link.color} hover:bg-zinc-800/50 transition-all`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ x: 10 }}
-                  >
-                    <link.icon className="text-xl" />
-                    <span className="text-zinc-200">{link.name}</span>
-                  </motion.a>
-                ))}
-              </div>
+          
             </div>
           </motion.aside>
 
