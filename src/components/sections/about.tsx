@@ -10,9 +10,18 @@ const CONTACT_LINKS = [
 ];
 
 const INTERESTS = [
-  { name: "Medicine", icon: FaUser, gradient: "from-blue-500 to-cyan-500" },
-  { name: "Chess", icon: FaChess, gradient: "from-purple-500 to-pink-500" },
-  { name: "Problem Solving", icon: FaBrain, gradient: "from-green-500 to-teal-500" },
+  { name: "Medicine & Tech", icon: FaUser, gradient: "from-indigo-600 to-cyan-600" },  
+  { name: "Chess", icon: FaChess, gradient: "from-gray-700 to-gray-900" },  
+  { name: "Problem Solving", icon: FaBrain, gradient: "from-green-700 to-teal-700" },  
+  { name: "Hackathons", icon: FaLaptopCode, gradient: "from-rose-600 to-red-700" },  
+  { name: "Automation", icon: FaRobot, gradient: "from-blue-700 to-gray-700" },  
+  { name: "Technical Writing", icon: FaPencilAlt, gradient: "from-stone-600 to-slate-700" },  
+  { name: "Teaching & Mentorship", icon: FaUsers, gradient: "from-emerald-700 to-green-800" },  
+  { name: "Game Development", icon: FaGamepad, gradient: "from-purple-700 to-indigo-800" },  
+  { name: "AR/VR & Mixed Reality", icon: FaGlasses, gradient: "from-sapphire-600 to-violet-700" },  
+  { name: "Low-Code/No-Code", icon: FaCogs, gradient: "from-steel-600 to-gray-700" },  
+  { name: "Football", icon: FaFutbol, gradient: "from-green-800 to-lime-600" },  
+  { name: "Basketball", icon: FaBasketballBall, gradient: "from-orange-600 to-red-600" },  
 ];
 
 function AboutSection() {
