@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-export const useMousePosition = () => {
+export const useMousePosition = (smoothFactor: number = 1) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0, velocity: 0 });
   const [lastPosition, setLastPosition] = useState({ x: 0, y: 0 });
   const [lastTime, setLastTime] = useState(performance.now());
@@ -17,7 +17,12 @@ export const useMousePosition = () => {
 
       const velocity = timeDiff > 0 ? distance / timeDiff : 0;
 
-      setMousePosition({ x: event.clientX, y: event.clientY, velocity });
+      setMousePosition((prev) => ({
+        x: prev.x + (event.clientX - prev.x) * smoothFactor,
+        y: prev.y + (event.clientY - prev.y) * smoothFactor,
+        velocity,
+      }));
+
       setLastPosition({ x: event.clientX, y: event.clientY });
       setLastTime(currentTime);
     };
@@ -26,7 +31,7 @@ export const useMousePosition = () => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [lastPosition, lastTime]);
+  }, [lastPosition, lastTime, smoothFactor]);
 
   return mousePosition;
 };
