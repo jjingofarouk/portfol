@@ -148,7 +148,7 @@ function AboutSection() {
           >
             <div className="p-6 rounded-2xl bg-zinc-900/80 border border-zinc-800 shadow-2xl transform-gpu">
               <motion.img
-                src="/assets/me.jpg"
+                src="/assets/me.png"
                 alt="Farouk Jjingo"
                 className="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-zinc-700 shadow-inner"
                 whileHover={{ scale: 1.05, rotate: 5 }}
