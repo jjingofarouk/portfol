@@ -358,16 +358,15 @@ function AboutSection() {
             <h1 className="text-3xl font-bold mb-6 lg:mb-10">About me</h1>
             <p className="mb-6 text-lg leading-relaxed">
               I'm Farouk, a Full Stack Engineer with a unique background in
-              medicine who bridges healthcare and technology. Specializing in
-              building high-performance applications, I'm passionate about
-              creating elegant solutions to complex problems.
+              medicine, which I'm using to bridge healthcare and technology. I specialize in
+              building high-performance applications, and I love creating
+              creating straightforward elegant solutions to complex problems.
             </p>
 
             <p className="mb-10 text-lg leading-relaxed">
               My dual expertise as both a medical doctor and software engineer
-              gives me a distinctive advantage in understanding complex systems,
-              analytical thinking, and delivering solutions that truly make an
-              impact. I excel in creating clean maintainable code with a focus
+              gives me a distinctive advantage. I apply analytical thinking to to handle complex problems,
+              and deliver truly impactful solutions. I excel in creating clean maintainable code with a focus
               on performance and user experience.
             </p>
 
@@ -464,7 +463,7 @@ function AboutSection() {
                 Let's Build Something Amazing
               </h2>
               <p className="mb-4">
-                I'm always open to discussing new projects, innovative ideas, or
+                I'm always open to discussing new projects, ideas, or
                 opportunities to be part of your team.
               </p>
               <a
