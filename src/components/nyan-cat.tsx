@@ -102,12 +102,12 @@ const NyanEntity = ({
 
   // Pause/resume on click
   const togglePause = () => {
-    setIsPaused((prev) => {
-      if (prev) controls.resume();
-      else controls.stop();
-      return !prev;
-    });
-  };
+  setIsPaused((prev) => {
+    if (prev) controls.start(); // Start the animation again
+    else controls.stop(); // Stop the animation
+    return !prev;
+  });
+};
 
   return (
     <motion.div
