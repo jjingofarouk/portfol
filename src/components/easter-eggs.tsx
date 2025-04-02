@@ -1,67 +1,77 @@
 "use client";
-import { useDevToolsOpen } from "@/hooks/use-devtools-open";
-import React, { useEffect, useState } from "react";
-import NyanCat from "./nyan-cat";
+import React, { useEffect, useCallback } from "react";
 import { AnimatePresence } from "framer-motion";
+import { useDevToolsOpen } from "@/hooks/use-devtools-open";
+import NyanCat from "./nyan-cat";
+
+// Utility to type console messages with delay
+const typeConsoleMessage = (
+  message: string,
+  style: string,
+  delayMs: number = 50
+) => {
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i <= message.length) {
+      console.clear();
+      console.log(`%c${message.slice(0, i)}`, style);
+      i++;
+    } else {
+      clearInterval(interval);
+    }
+  }, delayMs);
+};
 
 const EasterEggs = () => {
   const { isDevToolsOpen } = useDevToolsOpen();
+
+  // Handle console Easter egg logic
+  const triggerEasterEgg = useCallback(() => {
+    if (typeof console === "undefined") return;
+
+    console.clear();
+    const introMessage =
+      "Whoa, look at you! 🕵️‍♂️\n" +
+      "You’ve unlocked the secret console! 🔍\n" +
+      "Type my first name ('Farouk') for some magic! ✨\n" +
+      "Or press 'n' in the viewport for a surprise! 🐱";
+    typeConsoleMessage(
+      introMessage,
+      "color: #00FFCC; font-size: 16px; font-family: 'Courier New', monospace; background: linear-gradient(90deg, #1a1a1a, #2a2a2a); padding: 15px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);",
+      30
+    );
+
+    // Define Easter egg for typing "Farouk"
+    ["farouk", "Farouk", "FAROUK"].forEach((name) => {
+      if (Object.hasOwn(window, name)) return;
+      Object.defineProperty(window, name, {
+        get() {
+          console.clear();
+          const magicMessage =
+            "✨ Quantum Code Activated! ✨\n" +
+            "You’ve summoned Farouk’s magic! 🧙‍♂️\n" +
+            "Portfolio power level: OVER 9000! 💻⚡\n" +
+            "Check the viewport for a feline surprise... 😺";
+          typeConsoleMessage(
+            magicMessage,
+            "color: #FF007A; font-size: 18px; font-family: 'Courier New', monospace; background: linear-gradient(90deg, #1a1a1a, #2a2a2a); padding: 15px; border-radius: 8px; box-shadow: 0 0 15px rgba(255, 0, 122, 0.7);",
+            25
+          );
+          return "";
+        },
+      });
+    });
+  }, []);
+
   useEffect(() => {
     if (!isDevToolsOpen) return;
-    // console.log(
-    //   "%cWhoa, look at you! 🕵️‍♂️\n\n" +
-    //     "Peeking under the hood, eh? Just be careful, " +
-    //     "you might find some 🐛 bugs that even I didn't know about! 😅\n\n" +
-    //     "By the way, did you know the console is a portal to another dimension? 🌌 " +
-    //     "Just kidding... or am I? 👽\n\n" +
-    //     "Keep exploring, brave soul! 🛠️",
-    //   "color: #00FF00; font-size: 16px; font-weight: bold; background-color: black; padding: 10px; border-radius: 10px;"
-    // );
-    if (typeof console !== "undefined") {
-      console.clear();
-      console.log(
-        "%cWhoa, look at you! 🕵️‍♂️\n" +
-          "You seem to have discovered the secret console! 🔍\n" +
-          "Want to see some magic? ✨\n" +
-          "Just type %cmy first name%c and hit enter! 🎩🐇",
-        //   "Just press the %c'n'%c key and watch the magic happen! 🪄",
-        "color: #FFD700; font-size: 16px; font-weight: bold; background-color: black; padding: 10px; border-radius: 10px; margin-top:20px",
-        "color: #00FF00; font-size: 16px; font-weight: bold; background-color: black; padding: 10px; border-radius: 10px; margin-top:20px",
-        "color: #FFD700; font-size: 16px; font-weight: bold; background-color: black; padding: 10px; border-radius: 10px;"
-      );
-
-      ["farouk", "Farouk", "FAROUK"].forEach((name) => {
-        // @ts-ignore
-        if (Object.hasOwn(window, name)) return;
-        Object.defineProperty(window, name, {
-          get() {
-            console.log(
-              "%c✨ Abra Kadabra! ✨\n\n" +
-                "You just summoned the magic of Farouk! 🧙‍♂️\n" +
-                "What??? youre not impressed? Fine, but remember: With great power comes great responsibility! 💻⚡",
-
-              "color: #FF4500; font-size: 18px; font-weight: bold; background-color: black; padding: 10px; border-radius: 10px; margin-top:10px"
-            );
-
-            const timer = setTimeout(() => {
-              console.log(
-                "%cPssttt! 🤫\n\n" +
-                  "Do you like cats?? 😺 If yes, then press 'n' on viewport and see what happens! 🐱✨",
-                "color: #FF69B4; font-size: 16px; font-weight: bold; background-color: black; padding: 10px; border-radius: 10px;"
-              );
-              clearTimeout(timer);
-            }, 7000);
-            return "";
-          },
-        });
-      });
-    }
-  }, [isDevToolsOpen]);
+    triggerEasterEgg();
+  }, [isDevToolsOpen, triggerEasterEgg]);
 
   return (
-    <>
+    <AnimatePresence>
       <NyanCat />
-    </>
+    </AnimatePresence>
   );
 };
 
