@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaLinkedin, FaGithub, FaUser, FaChess, FaBrain } from "react-icons/fa";
+import { FaStethoscope, FaUser, FaChess, FaBrain, FaCodeBranch, FaLaptopCode, FaRobot, FaShieldAlt, FaServer, FaPencilAlt, FaUsers, FaGamepad, FaGlasses, FaCogs, FaFutbol, FaBasketballBall, FaCat } from "react-icons/fa";
 
 const CONTACT_LINKS = [
   { name: "Email", href: "mailto:jjingofaroukk@gmail.com", icon: FaEnvelope, color: "text-blue-400" },
