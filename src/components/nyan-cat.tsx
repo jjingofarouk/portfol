@@ -18,7 +18,7 @@ interface NyanEntity {
 
 const NyanCat = () => {
   const [entities, setEntities] = useState<NyanEntity[]>([]);
-  const mousePosition = useMousePosition({ smoothFactor: 0.1 }); // From your fancy hook
+  const mousePosition = useMousePosition(); // No arguments
 
   // Generate a new Nyan entity
   const spawnEntity = useCallback(() => {
@@ -49,7 +49,6 @@ const NyanCat = () => {
 
   return (
     <div className="fixed inset-0 w-screen h-screen overflow-hidden z-[-1] pointer-events-none">
-      {/* HUD-like counter */}
       <motion.div
         className="fixed top-4 left-4 text-xs font-mono text-white bg-black/50 px-2 py-1 rounded-full"
         initial={{ opacity: 0 }}
