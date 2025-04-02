@@ -235,266 +235,343 @@ export type Project = {
   live: string;
 };
 const projects: Project[] = [
-  {
-    id: "carewave",
+{
+  id: "carewave-doctor",
+  category: "telemedicine platform",
+  title: "CareWaveDoctor",
+  src: "/assets/projects-screenshots/carewave-doctor/landing.png",
+  screenshots: ["landing.png"],
+  skills: {
+    frontend: [
+      PROJECT_SKILLS.react,
+      PROJECT_SKILLS.js,
+      PROJECT_SKILLS.materialUI,
+      PROJECT_SKILLS.redux,
+      PROJECT_SKILLS.firebase,
+    ],
+    backend: [
+      PROJECT_SKILLS.node,
+      PROJECT_SKILLS.express,
+      PROJECT_SKILLS.mongodb,
+      PROJECT_SKILLS.socketio,
+    ],
+  },
+  live: "https://carewave-doctor.vercel.app/",
+  github: "https://github.com/jjingofarouk/CareWave_Doctors",
+  get content() {
+    return (
+      <div>
+        <TypographyP className="font-mono text-2xl text-center">
+          CareWaveDoctor: Empowering Physicians in Telemedicine
+        </TypographyP>
+        <TypographyP className="font-mono">
+          CareWaveDoctor is a comprehensive telemedicine platform that enables doctors to conduct virtual consultations, manage patient records, and schedule appointments seamlessly. Designed with a user-friendly interface, it ensures efficient and effective patient care delivery in a digital environment.
+        </TypographyP>
+        <ProjectsLinks live={this.live} repo={this.github} />
+        <TypographyH3 className="my-4 mt-8">Dashboard</TypographyH3>
+        <p className="font-mono mb-2">
+          A centralized dashboard providing an overview of upcoming appointments, patient messages, and quick access to essential features.
+        </p>
+        <SlideShow
+          images={[
+            `${BASE_PATH}/carewave-doctor/dashboard.png`,
+            `${BASE_PATH}/carewave-doctor/appointments.png`,
+          ]}
+        />
+        <TypographyH3 className="my-4 mt-8">Patient Management</TypographyH3>
+        <p className="font-mono mb-2">
+          Access and manage detailed patient profiles, including medical history, ongoing treatments, and previous consultation notes.
+        </p>
+        <SlideShow
+          images={[
+            `${BASE_PATH}/carewave-doctor/patient-list.png`,
+            `${BASE_PATH}/carewave-doctor/patient-profile.png`,
+          ]}
+        />
+        <TypographyH3 className="my-4 mt-8">Telemedicine Sessions</TypographyH3>
+        <p className="font-mono mb-2">
+          Conduct secure video consultations with patients, featuring real-time chat and file sharing capabilities.
+        </p>
+        <SlideShow
+          images={[
+            `${BASE_PATH}/carewave-doctor/video-call.png`,
+            `${BASE_PATH}/carewave-doctor/chat.png`,
+          ]}
+        />
+        <TypographyH3 className="my-4 mt-8">Appointment Scheduling</TypographyH3>
+        <p className="font-mono mb-2">
+          Manage your availability and allow patients to book appointments based on your schedule, with automated reminders and notifications.
+        </p>
+        <SlideShow
+          images={[
+            `${BASE_PATH}/carewave-doctor/schedule.png`,
+            `${BASE_PATH}/carewave-doctor/appointment-details.png`,
+          ]}
+        />
+      </div>
+    );
+  },
+},
+{
+    id: "carewave-patients",
     category: "telemedicine platform",
-    title: "CareWave",
-    src: "/assets/projects-screenshots/carewave/landing.png",
+    title: "CareWavePatients",
+    src: "/assets/projects-screenshots/carewave-patients/landing.png",
     screenshots: ["landing.png"],
     skills: {
       frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.chakra,
-        PROJECT_SKILLS.reactQuery,
-        PROJECT_SKILLS.firebase,
+        PROJECT_SKILLS.ts,          // TypeScript
+        PROJECT_SKILLS.next,        // Next.js
+        PROJECT_SKILLS.chakra,      // Chakra UI
+        PROJECT_SKILLS.reactQuery,  // React Query
+        PROJECT_SKILLS.firebase,    // Firebase
       ],
       backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.prisma,
-        PROJECT_SKILLS.python,
-        PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.sockerio,
+        PROJECT_SKILLS.node,        // Node.js
+        PROJECT_SKILLS.express,     // Express.js
+        PROJECT_SKILLS.prisma,      // Prisma ORM
+        PROJECT_SKILLS.python,      // Python
+        PROJECT_SKILLS.postgres,    // PostgreSQL
+        PROJECT_SKILLS.socketio,    // Socket.IO
       ],
     },
-    live: "https://www.carewave.vercel.app/",
-    github: "https://github.com/jjingofarouk/CareWave",
+    live: "https://carewave-patients.vercel.app/", // Hypothetical live URL
+    github: "https://github.com/jjingofarouk/CareWave_Patients",
     get content() {
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            Coding Ducks = LeetCode + CodePen + CSS Battles
+            CareWavePatients = Your Health, Your Way
           </TypographyP>
-          <TypographyP className="font-mono ">
-            Coding Ducks is your coding dojo — where you level up your skills,
-            battle in real-time code duels, and earn badges like a true code
-            warrior. Track your progress, flex your brain, and climb the
-            leaderboard. Ready to quack the code?
+          <TypographyP className="font-mono">
+            CareWavePatients is a telemedicine app built for patients to connect with doctors anytime, anywhere. 
+            Book appointments, join video consultations, manage prescriptions, and track your health—all from your phone. 
+            Take control of your care with ease and convenience.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Problems </TypographyH3>
+          
+          <TypographyH3 className="my-4 mt-8">Book Appointments</TypographyH3>
           <p className="font-mono mb-2">
-            Solve coding problems similar to LeetCode, enhancing your
-            problem-solving skills across various languages.
+            Schedule virtual visits with your doctor at a time that works for you, with a simple and intuitive booking system.
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/carewave/problems.png`,
-              `${BASE_PATH}/carewave/problem.png`,
+              `${BASE_PATH}/carewave-patients/book-appointment.png`,
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">Ducklets</TypographyH3>
+          
+          <TypographyH3 className="my-4 mt-8">Video Consultations</TypographyH3>
           <p className="font-mono mb-2">
-            Collaborate in real-time with others in a multiplayer coding
-            environment, just like CodePen but with a social twist.
+            Connect face-to-face with your doctor through secure, real-time video calls powered by Socket.IO.
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/carewave/ducklets.png`,
-              `${BASE_PATH}/carewave/ducklet1.png`,
-              `${BASE_PATH}/carewave/ducklet2.png`,
+              `${BASE_PATH}/carewave-patients/video-consultation.png`,
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">UI Battles </TypographyH3>
-
+          
+          <TypographyH3 className="my-4 mt-8">Health Records</TypographyH3>
           <p className="font-mono mb-2">
-            Challenge yourself to create UI components with HTML/CSS/JS, and get
-            instant feedback with an automated similarity scoring.
+            View your medical history, test results, and doctor notes in one secure place, accessible anytime.
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/carewave/css-battles.png`,
-              `${BASE_PATH}/carewave/css-battle.png`,
-              `${BASE_PATH}/carewave/css-battle2.png`,
+              `${BASE_PATH}/carewave-patients/health-records.png`,
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">Contests </TypographyH3>
+          
+          <TypographyH3 className="my-4 mt-8">Prescriptions</TypographyH3>
           <p className="font-mono mb-2">
-            Organize or participate in coding competitions. Successfully used to
-            host three contests during college.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/carewave/contests.png`]} />
-          <TypographyH3 className="my-4 mt-8">Playground </TypographyH3>
-          <p className="font-mono mb-2">
-            Test and execute your code instantly in my versatile online code
-            runner.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/carewave/playground.png`]} />
-          <TypographyH3 className="my-4 mt-8">Users</TypographyH3>
-
-          <p className="font-mono mb-2">
-            Track your progress, earn badges, and climb the rankings with
-            detailed user profiles and activity tracking.
+            Receive and manage digital prescriptions from your doctor, with options to send them to your pharmacy.
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/carewave/users.png`,
-              `${BASE_PATH}/carewave/user.png`,
+              `${BASE_PATH}/carewave-patients/prescriptions.png`,
+            ]}
+          />
+          
+          <TypographyH3 className="my-4 mt-8">Health Dashboard</TypographyH3>
+          <p className="font-mono mb-2">
+            Monitor your upcoming appointments, recent visits, and health updates from a personalized dashboard.
+          </p>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/carewave-patients/dashboard.png`,
+            ]}
+          />
+          
+          <TypographyH3 className="my-4 mt-8">Notifications</TypographyH3>
+          <p className="font-mono mb-2">
+            Stay on top of your care with real-time reminders for appointments and medication, powered by Firebase.
+          </p>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/carewave-patients/notifications.png`,
             ]}
           />
         </div>
       );
     },
-  },
+},
   {
-    id: "couponluxury",
-    category: "Coupon site",
-    title: "Coupon Luxury",
-    src: "/assets/projects-screenshots/couponluxury/landing.png",
-    screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png"],
-    live: "https://www.couponluxury.com/",
+    id: "drug-interaction-checker",
+    category: "Health Tool",
+    title: "Drug Interaction Checker",
+    src: "/assets/projects-screenshots/drug-interaction-checker/home.jpeg",
+    screenshots: ["home.jpeg", "searches.jpeg", "results.JPG"],
+    live: "https://drug-interaction-checker-vert.vercel.app/",
+    github: "https://github.com/jjingofarouk/drug-interaction-checker",
     skills: {
       frontend: [
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.chakra,
-        PROJECT_SKILLS.vue,
+        PROJECT_SKILLS.js,          // Modern JavaScript (ES6+)
+        PROJECT_SKILLS.react,       // React 18 (replacing Next.js for accuracy)
+        PROJECT_SKILLS.css,         // CSS3 for custom styling
       ],
       backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.prisma,
-        PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.docker,
+        PROJECT_SKILLS.node,        // Node.js (for development environment)
       ],
-    },
-    get content(): JSX.Element {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            CouponLuxury is your go-to destination for snagging the best deals
-            without lifting a finger. Whether you&apos;re hunting for the latest
-            discounts or trying to save a buck at your favorite stores,
-            CouponLuxury&apos;s got you covered.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <p className="font-mono mb-2 mt-4">
-            As soon as you land, boom! You&apos;re greeted with the freshest
-            coupons and top-tier deals that&apos;ll make your wallet happy.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/landing.png`]} />
-          <TypographyH3 className="my-4 ">Stores</TypographyH3>
-          <p className="font-mono mb-2">
-            Dive into a comprehensive list of stores, each packed with exclusive
-            deals and discounts. It&apos;s like having a VIP pass to every sale
-            in town.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/couponluxury/stores.png`,
-              `${BASE_PATH}/couponluxury/store.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Categories</TypographyH3>
-
-          <p className="font-mono mb-2">
-            Whatever you&apos;re into—fashion, tech, food—you&apos;ll find it
-            neatly organized here. No more endless scrolling; just pick a
-            category and get the best offers instantly.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/categories.png`]} />
-          <TypographyH3 className="my-4 mt-8">Custom CMS </TypographyH3>
-          <p className="font-mono mb-2">
-            Powered by Vue.js, this bad boy allows us to keep the content
-            dynamic and up-to-date. From flash sales to limited-time offers, my
-            CMS ensures everything&apos;s live and relevant.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/couponluxury/cms-1.png`,
-              `${BASE_PATH}/couponluxury/cms-2.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-5">
-            Plus, I&apos;ve sprinkled in some extra magic like personalized deal
-            recommendations, user-friendly search features, and a sleek,
-            responsive design that works like a charm on any device.
-          </p>
-          <p className="font-mono mb-2">
-            CouponLuxury isn&apos;t just a website; it&apos;s your personal
-            deal-hunting assistant, ensuring you never miss out on a bargain!
-          </p>
-          {/* <TypographyP className="my-4 mt-8">
-          <strong>Misc:</strong>
-          Hosted not one, not two, but THREE coding contests (Codemacha) during
-          college. Safe to say, Coding Ducks passed the vibe check.
-        </TypographyP>
-        <TypographyP className="my-4 mt-8">
-          <strong>Target Audience:</strong>
-          For all the novice coders out there ready to make their mark.
-        </TypographyP> */}
-        </div>
-      );
-    },
-  },
-  {
-    id: "the-booking-desk",
-    category: "Travel",
-    title: "The Booking Desk",
-    src: "/assets/projects-screenshots/the-booking-desk/landing.png",
-    screenshots: ["1.png"],
-    live: "https://thebookingdesk.vercel.app/",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.aceternity,
-        PROJECT_SKILLS.tailwind,
+      tools: [                    // Added tools section for clarity
+        PROJECT_SKILLS.git,        // Git for version control
+        PROJECT_SKILLS.npm,        // npm for package management
       ],
-      backend: [PROJECT_SKILLS.sanity],
     },
     get content() {
       return (
         <div>
-          <TypographyP className="font-mono ">
-            The Booking Desk is your ultimate travel consultation hub, designed
-            to turn your wanderlust dreams into reality. With a focus on smooth
-            and visually captivating animations, navigating the site feels like
-            a breeze—it&apos;s almost as if the destinations are calling you.
+          <TypographyP className="font-mono text-2xl text-center">
+            Drug Interaction Checker = Safety + Simplicity
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Drug Interaction Checker is a React-based tool that lets you quickly check for potential interactions between medications. 
+            Search for two drugs, get detailed results, and stay informed—all in a clean, user-friendly interface. Your health, made simple.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <p className="font-mono mb-2 mt-8">
-            A sleek, modern interface greets you, featuring the latest travel
-            tips, deals, and must-visit spots around the globe.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/the-booking-desk/landing.png`]} />
-          <TypographyH3 className="my-4 mt-8">Blogs</TypographyH3>
+          
+          <TypographyH3 className="my-4 mt-8">Home Screen</TypographyH3>
           <p className="font-mono mb-2">
-            Dive into the curated articles written by travel experts. Whether
-            you&apos;re looking for hidden gems or travel hacks, our blog
-            section has you covered.
+            Start with a straightforward interface designed to get you checking drug interactions in seconds.
           </p>
           <SlideShow
-            images={[
-              `${BASE_PATH}/the-booking-desk/blogs.png`,
-              `${BASE_PATH}/the-booking-desk/blog.png`,
-            ]}
+            images={[`${BASE_PATH}/drug-interaction-checker/home.jpeg`]}
           />
-          <TypographyH3 className="my-4 mt-8">Sanity CMS</TypographyH3>
-
+          
+          <TypographyH3 className="my-4 mt-8">Search Interface</TypographyH3>
           <p className="font-mono mb-2">
-            Keeping everything fresh and up-to-date, I&apos;ve integrated Sanity
-            CMS to manage all the content with ease, ensuring you always get the
-            latest and greatest information.
+            Type in medication names and get real-time autocomplete suggestions from a comprehensive drug database.
           </p>
           <SlideShow
-            images={[
-              `${BASE_PATH}/the-booking-desk/cms-1.png`,
-              `${BASE_PATH}/the-booking-desk/cms-2.png`,
-            ]}
+            images={[`${BASE_PATH}/drug-interaction-checker/searches.jpeg`]}
           />
-          <p className="font-mono mb-2 my-8">
-            With a stunning 100% score on Lighthouse, The Booking Desk
-            isn&apos;t just beautiful—it&apos;s built to perform. Whether
-            you&apos;re planning your next adventure or just daydreaming, our
-            site delivers a top-notch experience that&apos;s both informative
-            and enjoyable.
+          
+          <TypographyH3 className="my-4 mt-8">Interaction Results</TypographyH3>
+          <p className="font-mono mb-2">
+            View detailed interaction reports, including severity levels and alternative suggestions, all clearly presented.
+          </p>
+          <SlideShow
+            images={[`${BASE_PATH}/drug-interaction-checker/results.JPG`]}
+          />
+          
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            Enjoy a fast, secure, and mobile-responsive experience with no personal data stored—just pure functionality.
+          </p>
+          <ul className="font-mono list-disc list-inside mb-2">
+            <li>Advanced search with smart suggestions</li>
+            <li>Comprehensive interaction analysis</li>
+            <li>Optimized performance with minimal load times</li>
+            <li>Privacy-focused design with HTTPS encryption</li>
+          </ul>
+          
+          <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+          <p className="font-mono mb-2">
+            Built with React 18, this app leverages modern JavaScript, React Hooks, and a local JSON database for efficient data handling.
+          </p>
+          <SlideShow
+            images={[`${BASE_PATH}/drug-interaction-checker/home.jpeg`]} // Reuse home image as placeholder
+          />
+          
+          <p className="font-mono mb-2 mt-5">
+            Whether you’re a patient or a curious learner, Drug Interaction Checker is your go-to tool for understanding medication safety.
           </p>
         </div>
       );
     },
-  },
+},
+  {
+    id: "zano",
+    category: "E-commerce",
+    title: "Zano!",
+    src: "/assets/projects-screenshots/zano/landing.png",
+    screenshots: ["landing.png"],
+    live: "https://ecommerce-react-five-beryl.vercel.app/",
+    github: "https://github.com/jjingofarouk/Ecommerce-React",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.ts,          // TypeScript
+        PROJECT_SKILLS.next,        // Next.js
+        PROJECT_SKILLS.aceternity,  // Aceternity UI (assumed from original)
+        PROJECT_SKILLS.tailwind,    // Tailwind CSS
+      ],
+      backend: [
+        PROJECT_SKILLS.sanity,      // Sanity CMS for product management
+      ],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Zano! = Step Into Style
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Zano! is your go-to online shoe shop, bringing you the latest kicks with a sleek, modern vibe. 
+            Built with smooth animations and a user-friendly design, browsing for your next pair feels as good as wearing them.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          
+          <p className="font-mono mb-2 mt-8">
+            Hit the landing page and find trending styles, exclusive deals, and a curated selection of shoes for every occasion.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/zano/landing.png`]} />
+          
+          <TypographyH3 className="my-4 mt-8">Shop</TypographyH3>
+          <p className="font-mono mb-2">
+            Explore a wide range of shoes—sneakers, boots, sandals, and more. Filter by size, style, or brand to find your perfect fit.
+          </p>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/zano/shop.png`,
+              `${BASE_PATH}/zano/product.png`,
+            ]}
+          />
+          
+          <TypographyH3 className="my-4 mt-8">Sanity CMS</TypographyH3>
+          <p className="font-mono mb-2">
+            Powered by Sanity CMS, Zano! keeps the inventory fresh and dynamic, with real-time updates on stock, styles, and deals.
+          </p>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/zano/cms-1.png`,
+              `${BASE_PATH}/zano/cms-2.png`,
+            ]}
+          />
+          
+          <TypographyH3 className="my-4 mt-8">Cart & Checkout</TypographyH3>
+          <p className="font-mono mb-2">
+            Add your favorites to the cart and breeze through checkout—Zano! makes shopping fast, secure, and stylish.
+          </p>
+          <SlideShow
+            images={[`${BASE_PATH}/zano/cart.png`]}
+          />
+          
+          <p className="font-mono mb-2 my-8">
+            Scoring high on performance and design, Zano! delivers a top-tier shopping experience. 
+            Whether you’re after the latest drop or a timeless classic, step into Zano! and find your stride.
+          </p>
+        </div>
+      );
+    },
+},
+
   {
     id: "portfolio",
     category: "Portfolio",
