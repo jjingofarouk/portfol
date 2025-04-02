@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence, useAnimationControls } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { useMousePosition } from "./useMousePosition"; // Assuming your fancy mouse hook is available
+import { useMousePosition } from "../hooks/use-mouse-position"; // Assuming your fancy mouse hook is available
 
 // Configuration for futuristic flair
 const TRAIL_COLORS = ["#00ffcc", "#ff00cc", "#33ccff", "#ffcc00", "#cc00ff"];
