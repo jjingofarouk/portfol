@@ -426,7 +426,7 @@ const projects: Project[] = [
     category: "Health Tool",
     title: "MediQ",
     src: "/assets/projects-screenshots/mediq/home.png",
-    screenshots: ["home.jpeg", "searches.jpeg", "results.JPG"],
+    screenshots: ["home.png", "searches.png", "results.png"],
     live: "https://mediq.vercel.app/",
     github: "https://github.com/jjingofarouk/drug-interaction-checker",
     skills: {
