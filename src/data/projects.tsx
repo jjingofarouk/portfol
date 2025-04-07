@@ -515,15 +515,15 @@ const projects: Project[] = [
     id: "zano",
     category: "E-commerce",
     title: "Zano!",
-    src: "/assets/projects-screenshots/coding-ducks/landing.png",
-    screenshots: ["landing.png"],
-    live: "https://ecommerce-react-five-beryl.vercel.app/",
+    src: "/assets/projects-screenshots/zano/home_zano.jpg",
+    screenshots: ["home_zano.jpg"],
+    live: "https://zano.vercel.app/",
     github: "https://github.com/jjingofarouk/Ecommerce-React",
     skills: {
       frontend: [
         PROJECT_SKILLS.ts, // TypeScript
         PROJECT_SKILLS.next, // Next.js
-        PROJECT_SKILLS.aceternity, // Aceternity UI (assumed from original)
+        PROJECT_SKILLS.aceternity, // Aceternity UI 
         PROJECT_SKILLS.tailwind, // Tailwind CSS
       ],
       backend: [
@@ -548,7 +548,7 @@ const projects: Project[] = [
             Hit the landing page and find trending styles, exclusive deals, and
             a curated selection of shoes for every occasion.
           </p>
-          <SlideShow images={[`${BASE_PATH}/zano/landing.png`]} />
+          <SlideShow images={[`${BASE_PATH}/zano/home_zano.jpg`]} />
 
           <TypographyH3 className="my-4 mt-8">Shop</TypographyH3>
           <p className="font-mono mb-2">
@@ -557,7 +557,7 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/zano/shop.png`,
+              `${BASE_PATH}/zano/shop.jpg`,
               `${BASE_PATH}/zano/product.png`,
             ]}
           />
@@ -569,8 +569,8 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/zano/cms-1.png`,
-              `${BASE_PATH}/zano/cms-2.png`,
+              `${BASE_PATH}/zano/shoe1.png`,
+              `${BASE_PATH}/zano/shoe2.png`,
             ]}
           />
 
