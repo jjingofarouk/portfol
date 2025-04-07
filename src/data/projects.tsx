@@ -517,7 +517,7 @@ const projects: Project[] = [
     title: "Zano!",
     src: "/assets/projects-screenshots/zano/home_zano.jpg",
     screenshots: ["home_zano.jpg"],
-    live: "https://zano.vercel.app/",
+    live: "https://zanoug.vercel.app/",
     github: "https://github.com/jjingofarouk/Ecommerce-React",
     skills: {
       frontend: [
