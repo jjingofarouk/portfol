@@ -427,7 +427,7 @@ const projects: Project[] = [
     title: "Drug Interaction Checker",
     src: "/assets/projects-screenshots/coding-ducks/landing.png",
     screenshots: ["home.jpeg", "searches.jpeg", "results.JPG"],
-    live: "https://drug-interaction-checker-vert.vercel.app/",
+    live: "https://mediq.vercel.app/",
     github: "https://github.com/jjingofarouk/drug-interaction-checker",
     skills: {
       frontend: [
@@ -443,10 +443,10 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            Drug Interaction Checker = Safety + Simplicity
+            MediQ = Safety + Simplicity
           </TypographyP>
           <TypographyP className="font-mono">
-            Drug Interaction Checker is a React-based tool that lets you quickly
+            MediQ is a React-based tool that lets you quickly
             check for potential interactions between medications. Search for two
             drugs, get detailed results, and stay informed—all in a clean,
             user-friendly interface. Your health, made simple.
@@ -459,7 +459,7 @@ const projects: Project[] = [
             drug interactions in seconds.
           </p>
           <SlideShow
-            images={[`${BASE_PATH}/drug-interaction-checker/home.jpeg`]}
+            images={[`${BASE_PATH}/drug-interaction-checker/home.png`]}
           />
 
           <TypographyH3 className="my-4 mt-8">Search Interface</TypographyH3>
@@ -468,7 +468,7 @@ const projects: Project[] = [
             from a comprehensive drug database.
           </p>
           <SlideShow
-            images={[`${BASE_PATH}/drug-interaction-checker/searches.jpeg`]}
+            images={[`${BASE_PATH}/drug-interaction-checker/searches.png`]}
           />
 
           <TypographyH3 className="my-4 mt-8">Interaction Results</TypographyH3>
@@ -477,7 +477,7 @@ const projects: Project[] = [
             alternative suggestions, all clearly presented.
           </p>
           <SlideShow
-            images={[`${BASE_PATH}/drug-interaction-checker/results.JPG`]}
+            images={[`${BASE_PATH}/drug-interaction-checker/results.png`]}
           />
 
           <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
@@ -496,16 +496,16 @@ const projects: Project[] = [
             Technical Highlights
           </TypographyH3>
           <p className="font-mono mb-2">
-            Built with React 18, this app leverages modern JavaScript, React
+            Built with React 18, this app utilizes modern JavaScript, React
             Hooks, and a local JSON database for efficient data handling.
           </p>
           <SlideShow
-            images={[`${BASE_PATH}/drug-interaction-checker/home.jpeg`]} // Reuse home image as placeholder
+            images={[`${BASE_PATH}/drug-interaction-checker/home.png`]} // Reuse home image as placeholder
           />
 
           <p className="font-mono mb-2 mt-5">
-            Whether you’re a patient or a curious learner, Drug Interaction
-            Checker is your go-to tool for understanding medication safety.
+            Whether you’re a patient or a curious learner, MediQ
+             is your go-to tool for understanding medication safety.
           </p>
         </div>
       );
