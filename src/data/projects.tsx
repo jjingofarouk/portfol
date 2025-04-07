@@ -424,8 +424,8 @@ const projects: Project[] = [
   {
     id: "drug-interaction-checker",
     category: "Health Tool",
-    title: "Drug Interaction Checker",
-    src: "/assets/projects-screenshots/coding-ducks/landing.png",
+    title: "MediQ",
+    src: "/assets/projects-screenshots/mediq/home.png",
     screenshots: ["home.jpeg", "searches.jpeg", "results.JPG"],
     live: "https://mediq.vercel.app/",
     github: "https://github.com/jjingofarouk/drug-interaction-checker",
@@ -459,7 +459,7 @@ const projects: Project[] = [
             drug interactions in seconds.
           </p>
           <SlideShow
-            images={[`${BASE_PATH}/drug-interaction-checker/home.png`]}
+            images={[`${BASE_PATH}/mediq/home.png`]}
           />
 
           <TypographyH3 className="my-4 mt-8">Search Interface</TypographyH3>
@@ -468,7 +468,7 @@ const projects: Project[] = [
             from a comprehensive drug database.
           </p>
           <SlideShow
-            images={[`${BASE_PATH}/drug-interaction-checker/searches.png`]}
+            images={[`${BASE_PATH}/mediq/searches.png`]}
           />
 
           <TypographyH3 className="my-4 mt-8">Interaction Results</TypographyH3>
@@ -477,7 +477,7 @@ const projects: Project[] = [
             alternative suggestions, all clearly presented.
           </p>
           <SlideShow
-            images={[`${BASE_PATH}/drug-interaction-checker/results.png`]}
+            images={[`${BASE_PATH}/mediq/results.png`]}
           />
 
           <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
@@ -500,7 +500,7 @@ const projects: Project[] = [
             Hooks, and a local JSON database for efficient data handling.
           </p>
           <SlideShow
-            images={[`${BASE_PATH}/drug-interaction-checker/home.png`]} // Reuse home image as placeholder
+            images={[`${BASE_PATH}/mediq/home.png`]} // Reuse home image as placeholder
           />
 
           <p className="font-mono mb-2 mt-5">
