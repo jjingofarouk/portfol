@@ -422,7 +422,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: "drug-interaction-checker",
+    id: "mediq",
     category: "Health Tool",
     title: "MediQ",
     src: "/assets/projects-screenshots/mediq/home.png",
