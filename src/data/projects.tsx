@@ -558,7 +558,7 @@ const projects: Project[] = [
           <SlideShow
             images={[
               `${BASE_PATH}/zano/shop.jpg`,
-              `${BASE_PATH}/zano/product.png`,
+              `${BASE_PATH}/zano/product.jpg`,
             ]}
           />
 
