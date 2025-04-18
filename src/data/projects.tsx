@@ -698,7 +698,7 @@ const projects: Project[] = [
         <p className="font-mono mb-2">
           Land on a sleek dashboard to find nearby buses, check live ETAs, and book tickets in seconds—perfect for Uganda’s on-the-go commuters.
         </p>
-        <SlideShow images={[`${BASE_PATH}/matatu/home.png`]} />
+        <SlideShow images={[`${BASE_PATH}/matatu/home.jpg`]} />
         <TypographyH3 className="my-4 mt-8">Admin Command Center</TypographyH3>
         <p className="font-mono mb-2">
           Admins steer the mission: add users, assign roles (Driver, Conductor, Supervisor), suspend accounts, or delete users via a Material-UI-powered dashboard that’s as smooth as a lunar orbit.
@@ -713,7 +713,7 @@ const projects: Project[] = [
         <p className="font-mono mb-2">
           Passengers secure seats with a tap, while conductors manage bookings—all synced in real-time for a seamless ride.
         </p>
-        <SlideShow images={[`${BASE_PATH}/matatu/booking.png`]} />
+        <SlideShow images={[`${BASE_PATH}/matatu/booking.jpg`]} />
         <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
         <p className="font-mono mb-2">
           Built for Uganda’s transport chaos, this PWA is fast, secure, and offline-capable, scaling for a pilot of 5–10 vehicles with cosmic efficiency.
@@ -728,7 +728,7 @@ const projects: Project[] = [
         <p className="font-mono mb-2">
           Powered by React 18, Firebase (Authentication, Firestore, Cloud Functions), and Material-UI, with Tailwind CSS for a polished look. Cloud Functions ensure secure admin tasks, while the PWA setup delivers app-like performance on any device.
         </p>
-        <SlideShow images={[`${BASE_PATH}/matatu/home.png`]} />
+        <SlideShow images={[`${BASE_PATH}/matatu/home.jpg`]} />
         <p className="font-mono mb-2 mt-5 text-center">
           Matatu Tracker transforms Uganda’s minibus maze into a digital constellation. Hop aboard and explore the future of transit!
         </p>
