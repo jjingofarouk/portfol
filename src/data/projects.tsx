@@ -668,7 +668,7 @@ const projects: Project[] = [
   category: "News Aggregation",
   title: "MiniNews",
   src: "/assets/projects-screenshots/mininews/home.jpg",
-  screenshots: ["home.jpg", "filters.png", "article.png", "saved.png"],
+  screenshots: ["home.png", "filters.png", "article.png", "saved.png"],
   live: "https://www.mangunews.vercel.app", // Replace with actual live link, e.g., "https://mininews.vercel.app"
   github: "https://github.com/jjingofarouk/MiniNews",
   skills: {
@@ -695,7 +695,7 @@ const projects: Project[] = [
         <p className="font-mono mb-2">
           Land on a responsive grid of headlines, each card pulsing with images, titles, and snippets. It’s like flipping through a digital newspaper, but make it futuristic.
         </p>
-        <SlideShow images={[`${BASE_PATH}/mininews/home.jpg`]} />
+        <SlideShow images={[`${BASE_PATH}/mininews/home.png`]} />
         <TypographyH3 className="my-4 mt-8">Hyperdrive Filters</TypographyH3>
         <p className="font-mono mb-2">
           Zoom through news with filters for categories (business, tech), countries, languages, and sources. Powered by a slick UI, it’s as intuitive as a stethoscope.
@@ -726,7 +726,7 @@ const projects: Project[] = [
         <p className="font-mono mb-2">
           Crafted with React 18, styled-components for pixel-perfect styling, and Axios for NewsAPI calls. React Router powers seamless navigation, while the Inter font adds a clinical yet modern vibe. The Context API keeps state management as smooth as a surgical procedure.
         </p>
-        <SlideShow images={[`${BASE_PATH}/mininews/home.jpg`]} />
+        <SlideShow images={[`${BASE_PATH}/mininews/home.png`]} />
         <p className="font-mono mb-2 mt-5 text-center">
           MiniNews is your warp-speed gateway to global stories. Dive in and explore the news universe!
         </p>
