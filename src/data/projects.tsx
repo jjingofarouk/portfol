@@ -100,6 +100,13 @@ export const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiChakraui />,
   },
+  mui: {
+    title: "Material-UI",
+    bg: "black",
+    fg: "white",
+    icon: <RiNextjsFill />,
+  },
+};
   node: { title: "Node.js", bg: "black", fg: "white", icon: <RiNodejsFill /> },
   python: { title: "Python", bg: "black", fg: "white", icon: <SiPython /> },
   prisma: { title: "Prisma", bg: "black", fg: "white", icon: <SiPrisma /> },
