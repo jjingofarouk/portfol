@@ -1,6 +1,6 @@
-// thoda zada ts ho gya idhar
 export enum SkillNames {
   JS = "js",
+  MUI = "mui",
   TS = "ts",
   HTML = "html",
   CSS = "css",
@@ -226,6 +226,14 @@ export const SKILLS: Record<SkillNames, Skill> = {
     color: "#41b883",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
   },
+[SkillNames.MUI]: {
+  id: 25,
+  name: "mui",
+  label: "Material UI",
+  shortDescription: "🎨 React components that look good out of the box.",
+  color: "#007FFF",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+},
 };
 export const themeDisclaimers = {
   light: [
