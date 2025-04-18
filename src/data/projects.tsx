@@ -668,7 +668,7 @@ const projects: Project[] = [
   category: "Transport Tech",
   title: "Matatu Tracker",
   src: "/assets/projects-screenshots/matatu/home.jpg",
-  screenshots: ["home.png", "admin.png", "tracking.png", "booking.jpg"],
+  screenshots: ["home.jpg", "admin.png", "tracking.png", "booking.jpg"],
   live: "https://matatu-tracker.vercel.app/",
   github: "https://github.com/jjingofarouk/matatu-tracker",
   skills: {
