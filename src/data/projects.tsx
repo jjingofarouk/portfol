@@ -831,6 +831,82 @@ const projects: Project[] = [
       </div>
     );
   },
+},
+{
+  id: "clinical-trials",
+  category: "Medical Tech",
+  title: " Dwaliro",
+  src: "/assets/projects-screenshots/clinical-trials/home.png",
+  screenshots: ["home.png", "trials.png", "trial-details.png", "mobile.png"],
+  live: "https://dwaliro.vercel.app", // Replace with actual live link
+  github: "https://github.com/jjingofarouk/clinical-trials",
+  skills: {
+    frontend: [
+      PROJECT_SKILLS.js,
+      PROJECT_SKILLS.react,
+      PROJECT_SKILLS.reactRouter,
+      PROJECT_SKILLS.styledComponents,
+      PROJECT_SKILLS.axios,
+      PROJECT_SKILLS.reactSpring,
+      PROJECT_SKILLS.lucideReact,
+    ],
+    backend: [
+      PROJECT_SKILLS.node,
+      PROJECT_SKILLS.firebase,
+    ],
+  },
+  get content() {
+    return (
+      <div>
+        <TypographyP className="font-mono text-2xl text-center">
+          Clinical Trials Explorer = Your Portal to Medical Research
+        </TypographyP>
+        <TypographyP className="font-mono">
+          Clinical Trials Explorer is a React-powered web app that brings clinical trial data from ClinicalTrials.gov to life. With a hospital-inspired teal and beige UI, it offers a seamless way to browse trials, dive into study details, and explore analytics like participant stats and outcomes. Built with my medical background in mind, it’s precise, responsive, and out-of-this-world intuitive.
+        </TypographyP>
+        <ProjectsLinks live={this.live} repo={this.github} />
+        <TypographyH3 className="my-4 mt-8">Trials Grid</TypographyH3>
+        <p className="font-mono mb-2">
+          Land on a sleek grid of trial cards, each showing status, phase, and key details. Filter by criteria or search for specific studies—it’s like a digital lab notebook.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/clinical-trials/trials.png`]} />
+        <TypographyH3 className="my-4 mt-8">Study Deep Dive</TypographyH3>
+        <p className="font-mono mb-2">
+          Click a trial to explore rich details: study design, regulatory info, interventions, outcomes, and more. Accordions and animated counters make data pop like a well-run experiment.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/clinical-trials/trial-details.png`]} />
+        <TypographyH3 className="my-4 mt-8">Hospital-Chic Design</TypographyH3>
+        <p className="font-mono mb-2">
+          Dark teal headers, soft beige backgrounds, and Inter font create a clinical yet approachable vibe. It’s like walking into a modern hospital, but digital.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/clinical-trials/home.png`]} />
+        <TypographyH3 className="my-4 mt-8">Mobile-First Magic</TypographyH3>
+        <p className="font-mono mb-2">
+          Fully responsive UI shines on any device, with smooth transitions and touch-friendly interactions for researchers on the go.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/clinical-trials/mobile.png`]} />
+        <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+        <p className="font-mono mb-2">
+          Designed for medical pros and curious minds, this app delivers real-time trial data with a focus on usability and aesthetics.
+        </p>
+        <ul className="font-mono list-disc list-inside mb-2">
+          <li>Dynamic trial grid with pagination and filters</li>
+          <li>Comprehensive trial details with accordion sections</li>
+          <li>Animated analytics for enrollment and outcomes</li>
+          <li>Real-time data via Firebase and ClinicalTrials.gov API</li>
+          <li>Accessible, WCAG-compliant design</li>
+        </ul>
+        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+        <p className="font-mono mb-2">
+          Built with React 18, styled-components, and React Router for a slick frontend. Firebase Cloud Functions fetch trial data securely, while React-Spring powers animations. Lucide-React icons add a modern touch, and the teal-beige theme screams sophistication.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/clinical-trials/home.png`]} />
+        <p className="font-mono mb-2 mt-5 text-center">
+          Clinical Trials Explorer is where medical data meets stellar design. Dive in and discover the future of research!
+        </p>
+      </div>
+    );
+  },
 }
 ];
 export default projects;
