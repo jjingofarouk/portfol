@@ -832,14 +832,26 @@ const projects: Project[] = [
     );
   },
 },
+
 {
-  id: "clinical-trials",
+  id: "dwaliro",
   category: "Medical Tech",
-  title: " Dwaliro",
-  src: "/assets/projects-screenshots/clinical-trials/home.png",
-  screenshots: ["home.png", "trials.png", "trial-details.png", "mobile.png"],
+  title: "Dwaliro",
+  src: "/assets/projects-screenshots/dwaliro/home.png",
+  screenshots: [
+    "home.png",
+    "trials.png",
+    "study-details.png",
+    "study-design.png",
+    "participants.png",
+    "interventions.png",
+    "locations.png",
+    "regulatory.png",
+    "results.png",
+    "mobile.png",
+  ],
   live: "https://dwaliro.vercel.app", // Replace with actual live link
-  github: "https://github.com/jjingofarouk/clinical-trials",
+  github: "https://github.com/jjingofarouk/dwaliro",
   skills: {
     frontend: [
       PROJECT_SKILLS.js,
@@ -859,50 +871,86 @@ const projects: Project[] = [
     return (
       <div>
         <TypographyP className="font-mono text-2xl text-center">
-          Clinical Trials Explorer = Your Portal to Medical Research
-        </TypographyP>
+          Dwaliro = Your Cosmic Gateway to Clinical Research
+        </Typography>
         <TypographyP className="font-mono">
-          Clinical Trials Explorer is a React-powered web app that brings clinical trial data from ClinicalTrials.gov to life. With a hospital-inspired teal and beige UI, it offers a seamless way to browse trials, dive into study details, and explore analytics like participant stats and outcomes. Built with my medical background in mind, it’s precise, responsive, and out-of-this-world intuitive.
+          Dwaliro is a cutting-edge, React-powered web application that transforms raw clinical trial data from ClinicalTrials.gov into an immersive, user-friendly experience. Named after the Luganda word for "medicine," Dwaliro reflects my medical roots and passion for technology, delivering a hospital-inspired interface with a sophisticated dark teal (#1A4A4F) and soft beige (#F5F1E9) color palette. Designed for researchers, medical professionals, and curious minds, it offers a seamless way to explore trials, dissect study details, and visualize analytics with precision and flair. From real-time data fetching to animated counters and accordion sections, Dwaliro is a digital lab where medical research meets stellar design.
         </TypographyP>
         <ProjectsLinks live={this.live} repo={this.github} />
         <TypographyH3 className="my-4 mt-8">Trials Grid</TypographyH3>
         <p className="font-mono mb-2">
-          Land on a sleek grid of trial cards, each showing status, phase, and key details. Filter by criteria or search for specific studies—it’s like a digital lab notebook.
+          The trials page greets users with a responsive grid of trial cards, each showcasing key details like title, status, phase, and brief description. Built-in filters for status, phase, or keywords let users pinpoint relevant studies, while pagination ensures smooth navigation through thousands of trials. It’s like flipping through a research journal, but with a futuristic edge.
         </p>
-        <SlideShow images={[`${BASE_PATH}/clinical-trials/trials.png`]} />
-        <TypographyH3 className="my-4 mt-8">Study Deep Dive</TypographyH3>
+        <SlideShow images={[`${BASE_PATH}/dwaliro/trials.png`]} />
+        <TypographyH3 className="my-4 mt-8">Study Details</TypographyH3>
         <p className="font-mono mb-2">
-          Click a trial to explore rich details: study design, regulatory info, interventions, outcomes, and more. Accordions and animated counters make data pop like a well-run experiment.
+          Dive into a trial’s core with the Study Details section, featuring an elegant accordion layout. Users can explore the study’s title, status (with dynamic badges like “Recruiting” or “Completed”), type, phase, and timeline (start date, completion date, etc.). The description accordion reveals in-depth narratives, rendered with clean typography for maximum readability.
         </p>
-        <SlideShow images={[`${BASE_PATH}/clinical-trials/trial-details.png`]} />
+        <SlideShow images={[`${BASE_PATH}/dwaliro/study-details.png`]} />
+        <TypographyH3 className="my-4 mt-8">Study Design</TypographyH3>
+        <p className="font-mono mb-2">
+          The Study Design component breaks down the trial’s methodology with clarity. It lists allocation (e.g., randomized), masking (e.g., double-blind), model (e.g., parallel), and endpoint classification, each paired with a Lucide-React icon for visual flair. A no-data state ensures graceful handling of incomplete records, maintaining a polished UX.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/dwaliro/study-design.png`]} />
+        <TypographyH3 className="my-4 mt-8">Participant Information</TypographyH3>
+        <p className="font-mono mb-2">
+          Understand the trial’s demographic with the Participant Information section. Animated counters highlight enrollment numbers, while cards display age range and sex. An eligibility criteria block presents detailed inclusion/exclusion rules, formatted for easy scanning—perfect for researchers evaluating trial relevance.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/dwaliro/participants.png`]} />
+        <TypographyH3 className="my-4 mt-8">Trial Interventions</TypographyH3>
+        <p className="font-mono mb-2">
+          The Interventions component showcases treatments or procedures (e.g., drug, device, behavioral) with expandable cards. Each card details the intervention’s name, type, status, dosage, and route, with dynamic icons (e.g., Pill for drugs) and smooth animations. This section is a go-to for understanding a trial’s therapeutic approach.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/dwaliro/interventions.png`]} />
+        <TypographyH3 className="my-4 mt-8">Study Locations</TypographyH3>
+        <p className="font-mono mb-2">
+          Explore where trials are conducted with the Locations section. A grid of cards lists facility names, cities, states, and countries, with a badge indicating the total number of sites. Interactive scaling on click adds a tactile feel, making geographic data both informative and engaging.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/dwaliro/locations.png`]} />
+        <TypographyH3 className="my-4 mt-8">Regulatory Information</TypographyH3>
+        <p className="font-mono mb-2">
+          The Regulatory Information component provides critical compliance details, including NCT ID, FDA regulation status (with “Yes”/“No” badges), and sponsor. Presented in a clean list with Lucide-React icons, it ensures users can quickly assess a trial’s legal and oversight framework.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/dwaliro/regulatory.png`]} />
+        <TypographyH3 className="my-4 mt-8">Study Results</TypographyH3>
+        <p className="font-mono mb-2">
+          The Results section compiles adverse events, study outcomes, and publications in a structured format. Each result type is presented with an icon and detailed text, with a no-data fallback for unpublished trials. It’s a vital resource for evaluating a trial’s impact and findings.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/dwaliro/results.png`]} />
         <TypographyH3 className="my-4 mt-8">Hospital-Chic Design</TypographyH3>
         <p className="font-mono mb-2">
-          Dark teal headers, soft beige backgrounds, and Inter font create a clinical yet approachable vibe. It’s like walking into a modern hospital, but digital.
+          Dwaliro’s UI is a nod to modern healthcare, with dark teal headers, soft beige backgrounds, and Inter font for a clinical yet inviting aesthetic. Subtle animations (via React-Spring) and high-contrast text ensure accessibility and visual appeal, making every interaction feel like a visit to a state-of-the-art medical facility.
         </p>
-        <SlideShow images={[`${BASE_PATH}/clinical-trials/home.png`]} />
+        <SlideShow images={[`${BASE_PATH}/dwaliro/home.png`]} />
         <TypographyH3 className="my-4 mt-8">Mobile-First Magic</TypographyH3>
         <p className="font-mono mb-2">
-          Fully responsive UI shines on any device, with smooth transitions and touch-friendly interactions for researchers on the go.
+          Optimized for all devices, Dwaliro shines on mobile with touch-friendly controls, responsive layouts, and media queries that adjust font sizes, padding, and card dimensions. Whether on a phone or desktop, the experience is seamless and intuitive.
         </p>
-        <SlideShow images={[`${BASE_PATH}/clinical-trials/mobile.png`]} />
+        <SlideShow images={[`${BASE_PATH}/dwaliro/mobile.png`]} />
         <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
         <p className="font-mono mb-2">
-          Designed for medical pros and curious minds, this app delivers real-time trial data with a focus on usability and aesthetics.
+          Dwaliro is built for medical professionals, researchers, and patients, offering a robust platform to explore clinical trials with unmatched depth and usability.
         </p>
         <ul className="font-mono list-disc list-inside mb-2">
-          <li>Dynamic trial grid with pagination and filters</li>
-          <li>Comprehensive trial details with accordion sections</li>
-          <li>Animated analytics for enrollment and outcomes</li>
-          <li>Real-time data via Firebase and ClinicalTrials.gov API</li>
-          <li>Accessible, WCAG-compliant design</li>
+          <li>Dynamic trial grid with advanced filtering and pagination</li>
+          <li>Comprehensive trial details across eight specialized components</li>
+          <li>Animated analytics for enrollment, outcomes, and participant stats</li>
+          <li>Real-time data integration via Firebase and ClinicalTrials.gov API</li>
+          <li>Accessible, WCAG-compliant design with smooth transitions</li>
+          <li>Responsive UI optimized for desktop, tablet, and mobile</li>
+          <li>Custom teal-beige theme for a professional medical aesthetic</li>
         </ul>
         <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
         <p className="font-mono mb-2">
-          Built with React 18, styled-components, and React Router for a slick frontend. Firebase Cloud Functions fetch trial data securely, while React-Spring powers animations. Lucide-React icons add a modern touch, and the teal-beige theme screams sophistication.
+          Crafted with React 18 and styled-components for a modular, pixel-perfect frontend. React Router enables seamless navigation, while Axios handles API calls to a Firebase Cloud Functions backend, securely fetching trial data. React-Spring drives fluid animations for counters and accordions, and Lucide-React icons add a modern, lightweight touch. The Inter font and custom color scheme (dark teal #1A4A4F, soft beige #F5F1E9) create a cohesive, hospital-inspired look, with ESLint and Prettier ensuring clean, maintainable code.
         </p>
-        <SlideShow images={[`${BASE_PATH}/clinical-trials/home.png`]} />
+        <SlideShow images={[`${BASE_PATH}/dwaliro/home.png`]} />
         <p className="font-mono mb-2 mt-5 text-center">
-          Clinical Trials Explorer is where medical data meets stellar design. Dive in and discover the future of research!
+          Dwaliro is more than an app—it’s a bridge between medical research and digital innovation. Explore the universe of clinical trials with precision and style!
+        </p>
+        <TypographyH3 className="my-4 mt-8">Note on Data Source</TypographyH3>
+        <p className="font-mono mb-2">
+          Dwaliro relies on ClinicalTrials.gov’s API, accessed via Firebase Cloud Functions. Data availability depends on the API’s response, and some trials may lack complete details. Future iterations could integrate additional sources for enhanced coverage.
         </p>
       </div>
     );
