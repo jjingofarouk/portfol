@@ -145,7 +145,7 @@ const HeroSection = () => {
                     variant="outline"
                     className="px-4 py-1 text-sm font-normal bg-white/70 dark:bg-teal-900/50 backdrop-blur-sm border-teal-200 dark:border-teal-800 text-teal-800 dark:text-teal-200"
                   >
-                    Full Stack Engineer • 5+ Years Experience
+                    Full Stack Engineer • 3+ Years Experience
                   </Badge>
                 </BlurIn>
 
