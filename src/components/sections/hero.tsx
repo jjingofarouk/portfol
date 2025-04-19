@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
@@ -10,27 +12,102 @@ import {
 } from "@/components/ui/tooltip";
 import { usePreloader } from "../preloader";
 import { BlurIn, BoxReveal, SlideUp } from "../reveal-animations";
-import { SiGithub, SiLinkedin, SiStackoverflow } from "react-icons/si";
-import { config } from "@/data/config";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 import { Badge } from "../ui/badge";
+import { config } from "@/data/config";
 
 const HeroSection = () => {
   const { isLoading } = usePreloader();
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Animation for tech particle network (simplified version)
+  // Animation for tech particle network
   useEffect(() => {
     if (isLoading || !canvasRef.current) return;
     
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
     
-    // Implementation of particle network animation would go here
-    // This would create an interactive network of particles representing
-    // technologies in your stack
+    type Particle = {
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      color: string;
+    };
 
+    // Create particles representing technologies
+    const particles: Particle[] = [];
+    const particleCount = 30;
+    const colors = ['#3b82f6', '#6366f1', '#8b5cf6'];
+    
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 5 + 1,
+        speedX: (Math.random() - 0.5) * 0.5,
+        speedY: (Math.random() - 0.5) * 0.5,
+        color: colors[Math.floor(Math.random() * colors.length)]
+      });
+    }
+    
+    // Animation loop
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Update and draw particles
+      particles.forEach((particle, index) => {
+        // Move particles
+        particle.x += particle.speedX;
+        particle.y += particle.speedY;
+        
+        // Bounce off edges
+        if (particle.x < 0 || particle.x > canvas.width) {
+          particle.speedX *= -1;
+        }
+        if (particle.y < 0 || particle.y > canvas.height) {
+          particle.speedY *= -1;
+        }
+        
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fillStyle = particle.color;
+        ctx.fill();
+        
+        // Connect particles that are close
+        particles.forEach((otherParticle, otherIndex) => {
+          if (index !== otherIndex) {
+            const dx = particle.x - otherParticle.x;
+            const dy = particle.y - otherParticle.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < 100) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(100, 100, 255, ${0.15 - distance/1000})`;
+              ctx.lineWidth = 0.5;
+              ctx.moveTo(particle.x, particle.y);
+              ctx.lineTo(otherParticle.x, otherParticle.y);
+              ctx.stroke();
+            }
+          }
+        });
+      });
+      
+      requestAnimationFrame(animate);
+    };
+    
+    const animationId = requestAnimationFrame(animate);
+    
+    // Cleanup
+    return () => {
+      cancelAnimationFrame(animationId);
+    };
   }, [isLoading]);
 
   const skills = [
@@ -89,8 +166,7 @@ const HeroSection = () => {
                 <BlurIn delay={1.3}>
                   <div className="flex flex-wrap gap-2 mt-4">
                     {skills.map((skill, index) => (
-                      <Badge key={skill} className="bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300" 
-                        style={{ animationDelay: `${index * 0.1 + 1.3}s` }}>
+                      <Badge key={skill} className="bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
                         {skill}
                       </Badge>
                     ))}
@@ -154,13 +230,12 @@ const HeroSection = () => {
             <BoxReveal delay={1.5} width="80%">
               <div className="relative w-full aspect-square max-w-md bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl p-1">
                 <div className="absolute inset-0 bg-white dark:bg-gray-900 rounded-2xl m-0.5 flex items-center justify-center">
-                  {/* Here you would put a professional photo or a 3D model of your tech stack */}
+                  {/* You can replace this with an actual photo or visualization */}
                   <div className="w-full h-full flex items-center justify-center p-8">
                     <div className="relative w-full h-full bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden">
-                      {/* This could be replaced with your actual visualization or image */}
-                      <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-500">
-                        <span className="text-lg font-mono">
-                          // Your professional photo or tech visualization
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-lg font-mono text-gray-400 dark:text-gray-500">
+                          // Your professional photo
                         </span>
                       </div>
                     </div>
