@@ -71,7 +71,7 @@ const ContactSection = () => {
               </a>
             </div>
             
-            {config.socialLinks && (
+            {config.social && (
               <div className="mt-8">
                 <h4 className="text-lg font-medium mb-4 flex items-center">
                   Social Links
