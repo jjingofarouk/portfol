@@ -1,6 +1,4 @@
-import AceTernityLogo from '@/components/logos/aceternity';
-import {
-  SiCss3, SiBootstrap, SiYoutube, SiChakraui, SiDocker, SiExpress, SiFirebase,
+import { SiCss3, SiBootstrap, SiChakraui, SiDocker, SiExpress, SiFirebase,
   SiJavascript, SiPostgresql, SiPrisma, SiPython, SiReactquery, SiSanity,
   SiReactrouter, SiStyledcomponents, SiAxios, SiShadcnui, SiSocketdotio, SiSupabase,
   SiTailwindcss, SiThreedotjs, SiTypescript, SiVuedotjs, SiRedux, SiGit, SiNpm,
@@ -29,7 +27,7 @@ import {
   SiZeromq, SiConsul, SiVault, SiPacker, SiVagrant, SiArgo, SiHelm, SiIstio,
   SiLinkerd, SiEnvoy, SiTraefik, SiKong, SiCloudflare, SiFastly, SiAkamai,
   SiNewrelic, SiDatadog, SiSentry, SiSplunk, SiLogstash, SiFilebeat, SiKibana,
-  SiZabbix, SiNagios
+  SiZabbix, SiNagios, SiCassandra
 } from 'react-icons/si';
 import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from 'react-icons/ri';
 import { TbBrandFramerMotion } from 'react-icons/tb';
@@ -46,7 +44,6 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
   backbone: { title: 'Backbone.js', bg: 'black', fg: 'white', icon: <SiBackbonedotjs /> },
   jquery: { title: 'jQuery', bg: 'black', fg: 'white', icon: <SiJquery /> },
   next: { title: 'Next.js', bg: 'black', fg: 'white', icon: <RiNextjsFill /> },
-  nextdotjs: { title: 'Next.js (alt)', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
   nuxt: { title: 'Nuxt.js', bg: 'black', fg: 'white', icon: <SiNuxtdotjs /> },
   gatsby: { title: 'Gatsby', bg: 'black', fg: 'white', icon: <SiGatsby /> },
   hugo: { title: 'Hugo', bg: 'black', fg: 'white', icon: <SiHugo /> },
@@ -58,13 +55,13 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
   less: { title: 'Less', bg: 'black', fg: 'white', icon: <SiLess /> },
   tailwind: { title: 'Tailwind CSS', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
   bootstrap: { title: 'Bootstrap', bg: 'black', fg: 'white', icon: <SiBootstrap /> },
-  styledComponents: { title: 'Styled Components', bg: 'black', fg: 'white', icon: <SiStyledcomponents /> },
+  styledcomponents: { title: 'Styled Components', bg: 'black', fg: 'white', icon: <SiStyledcomponents /> },
   chakra: { title: 'Chakra UI', bg: 'black', fg: 'white', icon: <SiChakraui /> },
   shadcn: { title: 'ShadCN UI', bg: 'black', fg: 'white', icon: <SiShadcnui /> },
-  materialui: { title: 'Material-UI', bg: 'black', fg: 'white', icon: <SiReact /> }, // No specific icon, using React as fallback
-  fontAwesome: { title: 'Font Awesome', bg: 'black', fg: 'white', icon: <SiFontawesome /> },
-  framerMotion: { title: 'Framer Motion', bg: 'black', fg: 'white', icon: <TbBrandFramerMotion /> },
-  aceternity: { title: 'Aceternity', bg: 'black', fg: 'white', icon: <AceTernityLogo /> },
+  mui: { title: 'Material-UI', bg: 'black', fg: 'white', icon: <SiReact /> }, // No specific icon, using React
+  fontawesome: { title: 'Font Awesome', bg: 'black', fg: 'white', icon: <SiFontawesome /> },
+  framermotion: { title: 'Framer Motion', bg: 'black', fg: 'white', icon: <TbBrandFramerMotion /> },
+  aceternity: { title: 'Aceternity', bg: 'black', fg: 'white', icon: <SiReact /> }, // Custom logo, using React
 
   // Programming Languages
   js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
@@ -202,8 +199,8 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
   matplotlib: { title: 'Matplotlib', bg: 'black', fg: 'white', icon: <SiMatplotlib /> },
   seaborn: { title: 'Seaborn', bg: 'black', fg: 'white', icon: <SiSeaborn /> },
   jupyter: { title: 'Jupyter', bg: 'black', fg: 'white', icon: <SiJupyter /> },
-  transformers: { title: 'Hugging Face Transformers', bg: 'black', fg: 'white', icon: <SiTensorflow /> }, // No specific icon, using TensorFlow as fallback
-  sentenceTransformers: { title: 'Sentence Transformers', bg: 'black', fg: 'white', icon: <SiTensorflow /> }, // No specific icon
+  transformers: { title: 'Hugging Face Transformers', bg: 'black', fg: 'white', icon: <SiTensorflow /> }, // No specific icon
+  sentencetransformers: { title: 'Sentence Transformers', bg: 'black', fg: 'white', icon: <SiTensorflow /> }, // No specific icon
 
   // Data Engineering and Big Data
   airflow: { title: 'Airflow', bg: 'black', fg: 'white', icon: <SiAirflow /> },
@@ -236,7 +233,7 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
 
   // 3D and Animation
   threejs: { title: 'Three.js', bg: 'black', fg: 'white', icon: <SiThreedotjs /> },
-  spline: { title: 'Spline', bg: 'black', fg: 'white', icon: <SiThreedotjs /> }, // No specific icon, using Three.js
+  spline: { title: 'Spline', bg: 'black', fg: 'white', icon: <SiThreedotjs /> }, // No specific icon
   blender: { title: 'Blender', bg: 'black', fg: 'white', icon: <SiBlender /> },
   maya: { title: 'Maya', bg: 'black', fg: 'white', icon: <SiMaya /> },
 
@@ -303,12 +300,12 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
 
   // Miscellaneous
   redux: { title: 'Redux', bg: 'black', fg: 'white', icon: <SiRedux /> },
-  reactQuery: { title: 'React Query', bg: 'black', fg: 'white', icon: <SiReactquery /> },
-  reactRouter: { title: 'React Router', bg: 'black', fg: 'white', icon: <SiReactrouter /> },
+  reactquery: { title: 'React Query', bg: 'black', fg: 'white', icon: <SiReactquery /> },
+  reactrouter: { title: 'React Router', bg: 'black', fg: 'white', icon: <SiReactrouter /> },
   prisma: { title: 'Prisma', bg: 'black', fg: 'white', icon: <SiPrisma /> },
   deno: { title: 'Deno', bg: 'black', fg: 'white', icon: <SiDeno /> },
   bun: { title: 'Bun', bg: 'black', fg: 'white', icon: <SiBun /> },
-  ytDlp: { title: 'yt-dlp', bg: 'black', fg: 'white', icon: <SiYoutube /> },
+  ytdlp: { title: 'yt-dlp', bg: 'black', fg: 'white', icon: <SiReact /> }, // No specific icon
   googletrans: { title: 'Google Translate', bg: 'black', fg: 'white', icon: <SiGoogletranslate /> },
   html: { title: 'HTML', bg: 'black', fg: 'white', icon: <SiHtml5 /> }
 };
