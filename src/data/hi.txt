@@ -1,0 +1,7 @@
+./src/data/projects/components/index.ts:2:31
+Type error: Cannot find module '@/ProjectsLinks.tsx' or its corresponding type declarations.
+
+  1 | // src/projects/components/index.ts
+> 2 | export { ProjectsLinks } from '@/ProjectsLinks.tsx';
+    |                               ^
+@jjingofarouk ➜ /workspaces/portfol (main) $ 
