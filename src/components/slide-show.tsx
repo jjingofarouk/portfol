@@ -22,7 +22,7 @@ const SlideShow = ({ images }: { images: string[] }) => {
   return (
     <Splide
       options={{
-        autoplay: "true",
+        autoplay: true,
         perPage: 1,
         start: 0,
         rewind: true,
