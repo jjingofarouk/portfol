@@ -13,7 +13,7 @@ import Link from "next/link";
 import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button"; // Assuming you have a Button component; adjust if needed
+import { Button } from "../ui/button"; // Adjust if Button is different
 
 // Utility to shuffle an array (Fisher-Yates algorithm)
 const shuffleArray = <T,>(array: T[]): T[] => {
