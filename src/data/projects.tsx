@@ -51,7 +51,7 @@ import {
   SiFastapi,
   SiNextdotjs,
 } from "react-icons/si";
-import { SiHtml5, SiFontawesome, SiFlask, SiHuggingface, SiGoogletranslate } from "react-icons/si";
+import { SiHtml5, SiFontawesome, SiFlask, SiMongodb, SiGoogletranslate } from "react-icons/si";
 
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { FaJava, FaAws } from "react-icons/fa";
@@ -115,8 +115,8 @@ export const PROJECT_SKILLS = {
   html: { title: "HTML", bg: "black", fg: "white", icon: <SiHtml5 /> },
   fontAwesome: { title: "Font Awesome", bg: "black", fg: "white", icon: <SiFontawesome /> },
   flask: { title: "Flask", bg: "black", fg: "white", icon: <SiFlask /> },
-  transformers: { title: "Hugging Face Transformers", bg: "black", fg: "white", icon: <SiHuggingface /> },
-  sentenceTransformers: { title: "Sentence Transformers", bg: "black", fg: "white", icon: <SiHuggingface /> },
+  transformers: { title: "Hugging Face Transformers", bg: "black", fg: "white", icon: <SiMongodb /> },
+  sentenceTransformers: { title: "Sentence Transformers", bg: "black", fg: "white", icon: <SiMongodb /> },
   googletrans: { title: "Google Translate", bg: "black", fg: "white", icon: <SiGoogletranslate /> },
   node: { title: "Node.js", bg: "black", fg: "white", icon: <RiNodejsFill /> },
   python: { title: "Python", bg: "black", fg: "white", icon: <SiPython /> },
