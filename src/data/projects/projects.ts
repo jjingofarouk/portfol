@@ -25,7 +25,7 @@ const projects: Project[] = [
   dwaliro,
   tubesnap,
   solverpro,
-  touchHearts,
+  touchedHearts,
 ];
 
 export default projects;
