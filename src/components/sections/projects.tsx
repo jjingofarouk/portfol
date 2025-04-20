@@ -15,7 +15,6 @@ import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 
-// Utility to shuffle array
 const shuffleArray = <T,>(array: T[]): T[] => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
