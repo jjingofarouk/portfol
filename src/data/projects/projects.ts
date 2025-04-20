@@ -10,6 +10,7 @@ import { mininews } from './projects/mininews';
 import { matatu } from './projects/matatu';
 import { dwaliro } from './projects/dwaliro';
 import { tubesnap } from './projects/tubesnap';
+import { tubesnap } from './projects/tubesnap';
 
 const projects: Project[] = [
   carewaveDoctor,
@@ -22,6 +23,7 @@ const projects: Project[] = [
   matatu,
   dwaliro,
   tubesnap,
+  solverpro,
 ];
 
 export default projects;
