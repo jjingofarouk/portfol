@@ -1,4 +1,3 @@
-// src/data/projects/projects/carewave-doctor.ts
 import { TypographyH3, TypographyP } from '@/components/ui/typography';
 import { Project } from '../types';
 import { PROJECT_SKILLS } from '../skills';
@@ -17,7 +16,7 @@ export const carewaveDoctor: Project = {
     frontend: [
       PROJECT_SKILLS.react,
       PROJECT_SKILLS.js,
-      PROJECT_SKILLS.materialUI,
+      PROJECT_SKILLS.materialui,
       PROJECT_SKILLS.redux,
       PROJECT_SKILLS.firebase,
     ],
