@@ -8,8 +8,8 @@ const BASE_PATH = '/assets/projects-screenshots';
 
 export const solverpro: Project = {
   id: 'solverpro',
-  category: 'Educational Tech',
-  title: 'SolverPro Graphing Calculator',
+  category: 'Enterprise Educational Tech',
+  title: 'SolverPro Enterprise Graphing Platform',
   src: `${BASE_PATH}/solverpro/home.png`,
   screenshots: ['home.png', 'graph.png', 'controls.png'],
   live: 'https://jjingofarouk.github.io/SolverPro/',
@@ -25,49 +25,50 @@ export const solverpro: Project = {
   content: (
     <div>
       <TypographyP className="font-mono text-2xl text-center">
-        SolverPro = Your Mathematical Cosmos
+        SolverPro Enterprise = Advanced Mathematical Visualization
       </TypographyP>
       <TypographyP className="font-mono">
-        SolverPro is a sleek, web-based graphing calculator powered by the Desmos API, designed to make plotting and exploring mathematical expressions a breeze. Whether you’re graphing parabolas, zooming into functions, or resetting to a clean slate, SolverPro delivers a responsive, user-friendly experience with a nod to my passion for educational tech. Perfect for students, educators, or math enthusiasts, it’s your pocket-sized math lab.
+        SolverPro Enterprise is a professional-grade graphing platform powered by the Desmos API, designed for educational institutions and businesses. It combines sophisticated mathematical visualization with an intuitive UI to deliver a comprehensive solution for plotting, analyzing, and sharing complex equations. With its enterprise-ready design, function library management, and export capabilities, SolverPro transforms complex mathematical concepts into accessible visual representations for students, educators, researchers, and professionals.
       </TypographyP>
       <ProjectsLinks live="https://solverpro.vercel.app" repo="https://github.com/jjingofarouk/SolverPro" />
-      <TypographyH3 className="my-4 mt-8">Interactive Graphing</TypographyH3>
+      <TypographyH3 className="my-4 mt-8">Professional Function Library</TypographyH3>
       <p className="font-mono mb-2">
-        Plot any mathematical expression, from simple lines to complex functions, and interact with the graph in real-time. The default parabola (`y = x^2`) greets you on load, ready for exploration.
+        Manage multiple functions with color-coded organization in the interactive sidebar. Instantly access standard functions (y = x², sin(x), log(x)) or create custom expressions with real-time visualization. Click any function to highlight it in the graph.
       </p>
       <SlideShow images={[`${BASE_PATH}/solverpro/graph.png`]} />
-      <TypographyH3 className="my-4 mt-8">Control Center</TypographyH3>
+      <TypographyH3 className="my-4 mt-8">Enterprise-Grade Controls</TypographyH3>
       <p className="font-mono mb-2">
-        Zoom in, zoom out, or reset the calculator with intuitive buttons. The controls are clean, responsive, and designed for seamless use on any device, from desktops to mobiles.
+        The advanced control panel features precision zooming, workspace management, and export capabilities. Interactive tooltips provide guidance, while the modern UI with subtle animations ensures a premium user experience suitable for professional environments.
       </p>
       <SlideShow images={[`${BASE_PATH}/solverpro/controls.png`]} />
-      <TypographyH3 className="my-4 mt-8">Responsive Design</TypographyH3>
+      <TypographyH3 className="my-4 mt-8">Responsive Enterprise Design</TypographyH3>
       <p className="font-mono mb-2">
-        Built with a mobile-first mindset, SolverPro adapts to any screen size, ensuring a smooth experience whether you’re on a phone, tablet, or laptop.
+        Built with a sophisticated responsive architecture, SolverPro Enterprise adapts seamlessly across devices while maintaining its professional appearance. The carefully crafted interface uses modern UI principles with consistent spacing, shadows, and typography to create a premium look and feel.
       </p>
       <SlideShow images={[`${BASE_PATH}/solverpro/home.png`]} />
-      <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+      <TypographyH3 className="my-4 mt-8">Key Enterprise Features</TypographyH3>
       <p className="font-mono mb-2">
-        SolverPro combines simplicity with power, making math accessible and engaging, with room to customize and extend for advanced use cases.
+        SolverPro Enterprise goes beyond basic graphing to deliver a complete solution for mathematical visualization needs:
       </p>
       <ul className="font-mono list-disc list-inside mb-2">
-        <li>Interactive graphing with Desmos API</li>
-        <li>Zoom in/out and reset functionality</li>
-        <li>Default expression (`y = x^2`) for instant use</li>
-        <li>Responsive, mobile-first design</li>
-        <li>Customizable for additional expressions or features</li>
+        <li>Interactive function library with color-coded organization</li>
+        <li>Workspace saving and export capabilities for documentation</li>
+        <li>Professional UI with intuitive navigation and tooltips</li>
+        <li>Responsive design optimized for all devices</li>
+        <li>Advanced graph manipulation and visualization tools</li>
+        <li>Enterprise-ready architecture for institutional deployment</li>
       </ul>
-      <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+      <TypographyH3 className="my-4 mt-8">Technical Excellence</TypographyH3>
       <p className="font-mono mb-2">
-        Crafted with HTML, CSS, and JavaScript, SolverPro leverages the Desmos API for robust graphing capabilities. The lightweight codebase ensures fast load times, while CSS styles deliver a clean, modern UI with subtle shadows and hover effects. The project is easily extensible, perfect for adding new controls or expressions.
+        SolverPro Enterprise leverages modern web technologies with an architecture designed for performance and scalability. The clean, modular codebase ensures easy maintenance and extension, while the optimized Desmos API integration provides powerful mathematical capabilities with minimal overhead. Custom animations and transitions create a polished user experience worthy of enterprise environments.
       </p>
       <SlideShow images={[`${BASE_PATH}/solverpro/home.png`]} />
       <p className="font-mono mb-2 mt-5 text-center">
-        SolverPro is your go-to tool for visualizing math in style. Plot, explore, and conquer equations today!
+        SolverPro Enterprise: Where mathematical precision meets professional design.
       </p>
-      <TypographyH3 className="my-4 mt-8">Note on Desmos API</TypographyH3>
+      <TypographyH3 className="my-4 mt-8">Integration & Deployment</TypographyH3>
       <p className="font-mono mb-2">
-        SolverPro relies on the Desmos API (v1.10). Ensure a stable internet connection for API access. Future updates could integrate additional APIs or offline capabilities for enhanced functionality.
+        SolverPro Enterprise is designed for seamless integration into existing educational platforms and corporate environments. With its API-driven architecture based on Desmos v1.10, it can be deployed as a standalone application or embedded within larger systems. Future enterprise roadmap includes enhanced collaboration features, authentication integration, and advanced data export options.
       </p>
     </div>
   ),
