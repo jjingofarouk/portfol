@@ -12,7 +12,7 @@ const ModalContent = lazy(() => import("../ui/animated-modal").then(mod => ({ de
 const ModalFooter = lazy(() => import("../ui/animated-modal").then(mod => ({ default: mod.ModalFooter })));
 const ModalTrigger = lazy(() => import("../ui/animated-modal").then(mod => ({ default: mod.ModalTrigger })));
 const SmoothScroll = lazy(() => import("../smooth-scroll"));
-const FloatingDock = lazy(() => import("../ui/floating-dock"));
+const FloatingDock = lazy(() => import("../ui/floating-dock").then(mod => ({ default: mod.FloatingDock })));
 
 // Simple loading fallback
 const LoadingFallback = () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 rounded-lg w-full h-full" />;
