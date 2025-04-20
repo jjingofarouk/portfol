@@ -58,7 +58,6 @@ const ProjectsSection = () => {
         behavior: "smooth"
       });
 
-      // Update current slide for indicators
       const slideWidth = carouselRef.current.clientWidth;
       const newSlide = Math.round(newPosition / slideWidth);
       setCurrentSlide(Math.max(0, Math.min(newSlide, filteredProjects.length - 1)));
@@ -79,7 +78,6 @@ const ProjectsSection = () => {
         </h2>
       </Link>
 
-      {/* View mode & category filters */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-12 px-4">
         <div className="flex items-center gap-4 mb-4 md:mb-0">
           <Filter size={18} className="text-gray-500" />
@@ -127,7 +125,6 @@ const ProjectsSection = () => {
         </div>
       </div>
 
-      {/* Grid View */}
       {viewMode === "grid" && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
           {filteredProjects.map((project) => (
@@ -136,7 +133,6 @@ const ProjectsSection = () => {
         </div>
       )}
 
-      {/* Showcase/Carousel View */}
       {viewMode === "showcase" && (
         <div className="relative">
           <div 
@@ -177,12 +173,12 @@ const ProjectsSection = () => {
                       <div className="flex flex-wrap gap-3 mb-6">
                         {project.skills.frontend?.slice(0, 4).map((skill, idx) => (
                           <span key={idx} className="text-xs bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded">
-                            {skill.name}
+                            {skill.title} {/* Replace 'name' with 'title' */}
                           </span>
                         ))}
                         {project.skills.backend?.slice(0, 2).map((skill, idx) => (
                           <span key={idx} className="text-xs bg-gray-300 dark:bg-gray-700 px-2 py-1 rounded">
-                            {skill.name}
+                            {skill.title} {/* Replace 'name' with 'title' */}
                           </span>
                         ))}
                         {((project.skills.frontend?.length || 0) + (project.skills.backend?.length || 0)) > 6 && (
@@ -227,7 +223,6 @@ const ProjectsSection = () => {
             ))}
           </div>
           
-          {/* Navigation buttons */}
           <button 
             onClick={() => scroll("left")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-md z-10 md:ml-4"
@@ -244,7 +239,6 @@ const ProjectsSection = () => {
             <ChevronRight className="h-6 w-6 text-gray-700 dark:text-gray-300" />
           </button>
           
-          {/* Dot indicators */}
           <div className="flex justify-center gap-2 mt-4">
             {filteredProjects.slice(0, 10).map((_, idx) => (
               <button
@@ -327,22 +321,31 @@ const ModalWrapper = ({ project }: { project: Project }) => {
 };
 
 const ProjectContent = ({ project }: { project: Project }) => {
+  const frontendItems = project.skills.frontend?.map(skill => ({
+    title: skill.title, // Replace 'name' with 'title'
+    icon: skill.icon || "",
+  })) || [];
+  const backendItems = project.skills.backend?.map(skill => ({
+    title: skill.title,
+    icon: skill.icon || "",
+  })) || [];
+
   return (
     <div className="p-4">
       <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
         {project.title}
       </h4>
       <div className="flex flex-col md:flex-row md:justify-evenly max-w-screen overflow-hidden md:overflow-visible mb-8">
-        {project.skills.frontend?.length ? (
+        {frontendItems.length ? (
           <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 mb-8">
             <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">Frontend</p>
-            <FloatingDock items={project.skills.frontend} />
+            <FloatingDock items={frontendItems} />
           </div>
         ) : null}
-        {project.skills.backend?.length ? (
+        {backendItems.length ? (
           <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 mb-8">
             <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">Backend</p>
-            <FloatingDock items={project.skills.backend} />
+            <FloatingDock items={backendItems} />
           </div>
         ) : null}
       </div>
