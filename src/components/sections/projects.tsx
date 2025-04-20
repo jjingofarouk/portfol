@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import {
   Modal,
   ModalBody,
-  ModalContent,
+  ModalContent, 
   ModalFooter,
   ModalTrigger,
 } from "../ui/animated-modal";
