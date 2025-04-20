@@ -8,11 +8,11 @@ import { SiCss3, SiBootstrap, SiChakraui, SiDocker, SiExpress, SiFirebase,
   SiBackbonedotjs, SiJquery, SiSass, SiLess, SiWebpack, SiVite, SiGulp, SiGrunt,
   SiBabel, SiEslint, SiPrettier, SiVercel, SiNetlify, SiHeroku, SiDigitalocean,
   SiMicrosoftazure, SiGooglecloud, SiMysql, SiSqlite, SiRedis, SiMariadb,
-  SiNeo4j, SiDynamodb, SiCouchdb, SiElastic, SiPrometheus, SiGrafana, SiJenkins,
+  SiNeo4J, SiCouchdb, SiElastic, SiPrometheus, SiGrafana, SiJenkins,
   SiTravisci, SiCircleci, SiGitlab, SiGithubactions, SiAnsible, SiPuppet, SiChef,
   SiNginx, SiApache, SiHaproxy, SiLinux, SiWindows, SiMacos, SiGatsby, SiHugo,
   SiJekyll, SiNuxtdotjs, SiElectron, SiReact, SiSolidity, SiGo, SiPhp, SiRuby,
-  SiRails, SiLaravel, SiSymfony, SiDjango, SiSpring, SiDotnet, SiSwift, SiKotlin,
+  SiTails, SiLaravel, SiSymfony, SiDjango, SiSpring, SiDotnet, SiSwift, SiKotlin,
   SiFlutter, SiReactnative, SiIonic, SiApachecordova, SiTensorflow, SiPytorch,
   SiKeras, SiOpencv, SiPandas, SiNumpy, SiScikitlearn, SiMatplotlib, SiSeaborn,
   SiJupyter, SiAirflow, SiKafka, SiSpark, SiHadoop, SiSnowflake, SiDatabricks,
@@ -58,7 +58,7 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
   styledcomponents: { title: 'Styled Components', bg: 'black', fg: 'white', icon: <SiStyledcomponents /> },
   chakra: { title: 'Chakra UI', bg: 'black', fg: 'white', icon: <SiChakraui /> },
   shadcn: { title: 'ShadCN UI', bg: 'black', fg: 'white', icon: <SiShadcnui /> },
-  mui: { title: 'Material-UI', bg: 'black', fg: 'white', icon: <SiReact /> }, // No specific icon, using React
+  mui: { title: 'Material-UI', bg: 'black', fg: 'white', icon: <SiReact /> }, , using React
   fontawesome: { title: 'Font Awesome', bg: 'black', fg: 'white', icon: <SiFontawesome /> },
   framermotion: { title: 'Framer Motion', bg: 'black', fg: 'white', icon: <TbBrandFramerMotion /> },
   aceternity: { title: 'Aceternity', bg: 'black', fg: 'white', icon: <SiReact /> }, // Custom logo, using React
@@ -110,8 +110,8 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
   redis: { title: 'Redis', bg: 'black', fg: 'white', icon: <SiRedis /> },
   mariadb: { title: 'MariaDB', bg: 'black', fg: 'white', icon: <SiMariadb /> },
   cassandra: { title: 'Cassandra', bg: 'black', fg: 'white', icon: <SiCassandra /> },
-  neo4j: { title: 'Neo4j', bg: 'black', fg: 'white', icon: <SiNeo4j /> },
-  dynamodb: { title: 'DynamoDB', bg: 'black', fg: 'white', icon: <SiDynamodb /> },
+  neo4j: { title: 'Neo4j', bg: 'black', fg: 'white', icon: <SiNeo4J /> },
+  dynamodb: { title: 'DynamoDB', bg: 'black', fg: 'white', icon: <SiJenkins /> },
   couchdb: { title: 'CouchDB', bg: 'black', fg: 'white', icon: <SiCouchdb /> },
 
   // Cloud Platforms and Services
@@ -199,10 +199,9 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
   matplotlib: { title: 'Matplotlib', bg: 'black', fg: 'white', icon: <SiMatplotlib /> },
   seaborn: { title: 'Seaborn', bg: 'black', fg: 'white', icon: <SiSeaborn /> },
   jupyter: { title: 'Jupyter', bg: 'black', fg: 'white', icon: <SiJupyter /> },
-  transformers: { title: 'Hugging Face Transformers', bg: 'black', fg: 'white', icon: <SiTensorflow /> }, // No specific icon
-  sentencetransformers: { title: 'Sentence Transformers', bg: 'black', fg: 'white', icon: <SiTensorflow /> }, // No specific icon
+  transformers: { title: 'Hugging Face Transformers', bg: 'black', fg: 'white', icon: <SiTensorflow /> }, 
+  sentencetransformers: { title: 'Sentence Transformers', bg: 'black', fg: 'white', icon: <SiTensorflow /> }, 
 
-  // Data Engineering and Big Data
   airflow: { title: 'Airflow', bg: 'black', fg: 'white', icon: <SiAirflow /> },
   kafka: { title: 'Kafka', bg: 'black', fg: 'white', icon: <SiKafka /> },
   spark: { title: 'Spark', bg: 'black', fg: 'white', icon: <SiSpark /> },
@@ -227,13 +226,13 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
 
   // Content Management Systems
   sanity: { title: 'Sanity', bg: 'black', fg: 'white', icon: <SiSanity /> },
-  wordpress: { title: 'WordPress', bg: 'black', fg: 'white', icon: <SiReact /> }, // No specific icon
-  drupal: { title: 'Drupal', bg: 'black', fg: 'white', icon: <SiReact /> }, // No specific icon
-  joomla: { title: 'Joomla', bg: 'black', fg: 'white', icon: <SiReact /> }, // No specific icon
+  wordpress: { title: 'WordPress', bg: 'black', fg: 'white', icon: <SiReact /> }, 
+  drupal: { title: 'Drupal', bg: 'black', fg: 'white', icon: <SiReact /> }, 
+  joomla: { title: 'Joomla', bg: 'black', fg: 'white', icon: <SiReact /> }, 
 
   // 3D and Animation
   threejs: { title: 'Three.js', bg: 'black', fg: 'white', icon: <SiThreedotjs /> },
-  spline: { title: 'Spline', bg: 'black', fg: 'white', icon: <SiThreedotjs /> }, // No specific icon
+  spline: { title: 'Spline', bg: 'black', fg: 'white', icon: <SiThreedotjs /> }, 
   blender: { title: 'Blender', bg: 'black', fg: 'white', icon: <SiBlender /> },
   maya: { title: 'Maya', bg: 'black', fg: 'white', icon: <SiMaya /> },
 
@@ -305,7 +304,7 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
   prisma: { title: 'Prisma', bg: 'black', fg: 'white', icon: <SiPrisma /> },
   deno: { title: 'Deno', bg: 'black', fg: 'white', icon: <SiDeno /> },
   bun: { title: 'Bun', bg: 'black', fg: 'white', icon: <SiBun /> },
-  ytdlp: { title: 'yt-dlp', bg: 'black', fg: 'white', icon: <SiReact /> }, // No specific icon
+  ytdlp: { title: 'yt-dlp', bg: 'black', fg: 'white', icon: <SiReact /> }, 
   googletrans: { title: 'Google Translate', bg: 'black', fg: 'white', icon: <SiGoogletranslate /> },
   html: { title: 'HTML', bg: 'black', fg: 'white', icon: <SiHtml5 /> }
 };
