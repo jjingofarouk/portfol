@@ -1,7 +1,8 @@
-./src/data/projects/components/index.ts:2:31
-Type error: Cannot find module '@/ProjectsLinks.tsx' or its corresponding type declarations.
+./src/data/projects/components/index.ts:3:30
+Type error: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
 
   1 | // src/projects/components/index.ts
-> 2 | export { ProjectsLinks } from '@/ProjectsLinks.tsx';
-    |                               ^
+  2 | // src/projects/components/index.ts
+> 3 | export { ProjectLinks } from './ProjectLinks.tsx';
+    |                              ^
 @jjingofarouk ➜ /workspaces/portfol (main) $ 
