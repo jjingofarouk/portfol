@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 // Use Material UI's icon library directly:
-import { SiCss3, SiBootstrap, SiYoutubedl } from "react-icons/si";
+import { SiCss3, SiBootstrap, SiYoutube } from "react-icons/si";
 // React Icons
 import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from "react-icons/ri";
 import {
@@ -127,7 +127,7 @@ export const PROJECT_SKILLS = {
   },
   css: { title: "CSS", bg: "black", fg: "white", icon: <SiCss3 /> },
   bootstrap: { title: "Bootstrap", bg: "black", fg: "white", icon: <SiBootstrap /> },
-  ytDlp: { title: "yt-dlp", bg: "black", fg: "white", icon: <SiYoutubedl /> },
+  ytDlp: { title: "yt-dlp", bg: "black", fg: "white", icon: <SiYoutube /> },
   mongodb: { title: "MongoDB", bg: "black", fg: "white", icon: <SiMongodb /> },
   express: { title: "Express", bg: "black", fg: "white", icon: <SiExpress /> },
   reactQuery: {
