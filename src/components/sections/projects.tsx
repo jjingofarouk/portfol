@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import {
   Modal,
   ModalBody,
-  ModalContent, 
+  ModalContent,
   ModalFooter,
   ModalTrigger,
 } from "../ui/animated-modal";
@@ -15,6 +15,7 @@ import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 
+// Utility to shuffle array
 const shuffleArray = <T,>(array: T[]): T[] => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -48,7 +49,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="max-w-7xl mx-auto md:min-h-[130vh] py-16">
-      <Link href={"#projects"}>
+      <Link href="#projects">
         <h2
           className={cn(
             "bg-clip-text text-4xl text-center text-transparent md:text-7xl pt-16",
@@ -61,7 +62,7 @@ const ProjectsSection = () => {
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {displayedProjects.map((project) => (
-          <Modall key={project.id} project={project} />
+          <ModalWrapper key={project.id} project={project} />
         ))}
       </div>
       {hasMore && (
@@ -78,7 +79,7 @@ const ProjectsSection = () => {
   );
 };
 
-const Modall = ({ project }: { project: Project }) => {
+const ModalWrapper = ({ project }: { project: Project }) => {
   return (
     <div className="flex items-center justify-center">
       <Modal>
@@ -107,7 +108,7 @@ const Modall = ({ project }: { project: Project }) => {
         <ModalBody className="md:max-w-4xl md:max-h-[80%] overflow-auto">
           <SmoothScroll isInsideModal={true}>
             <ModalContent>
-              <ProjectContents project={project} />
+              <ProjectContent project={project} />
             </ModalContent>
           </SmoothScroll>
           <ModalFooter className="gap-4">
@@ -126,32 +127,28 @@ const Modall = ({ project }: { project: Project }) => {
   );
 };
 
-const ProjectContents = ({ project }: { project: Project }) => {
+const ProjectContent = ({ project }: { project: Project }) => {
   return (
-    <>
+    <div className="p-4">
       <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
         {project.title}
       </h4>
-      <div className="flex flex-col md:flex-row md:justify-evenly max-w-screen overflow-hidden md:overflow-visible">
-        <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 text-3xl mb-8">
-          <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">
-            Frontend
-          </p>
-          {project.skills.frontend?.length > 0 && (
+      <div className="flex flex-col md:flex-row md:justify-evenly max-w-screen overflow-hidden md:overflow-visible mb-8">
+        {project.skills.frontend?.length ? (
+          <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 mb-8">
+            <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">Frontend</p>
             <FloatingDock items={project.skills.frontend} />
-          )}
-        </div>
-        {project.skills.backend?.length > 0 && (
-          <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 text-3xl mb-8">
-            <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">
-              Backend
-            </p>
+          </div>
+        ) : null}
+        {project.skills.backend?.length ? (
+          <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 mb-8">
+            <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">Backend</p>
             <FloatingDock items={project.skills.backend} />
-          )}
-        </div>
+          </div>
+        ) : null}
       </div>
       {project.content}
-    </>
+    </div>
   );
 };
 
