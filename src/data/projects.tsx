@@ -51,7 +51,7 @@ import {
   SiFastapi,
   SiNextdotjs,
 } from "react-icons/si";
-import { SiJavascript, SiHtml5, SiTailwindcss, SiFontawesome, SiFlask, SiHuggingface, SiGoogletranslate } from "react-icons/si";
+import { SiHtml5, SiFontawesome, SiFlask, SiHuggingface, SiGoogletranslate } from "react-icons/si";
 
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { FaJava, FaAws } from "react-icons/fa";
