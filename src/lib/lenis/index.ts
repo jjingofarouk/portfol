@@ -1,4 +1,5 @@
-// libs/lenis.js
+// src/lib/lenis.js
 "use client";
-
-export * from "lenis/react";
+import * as lenisReact from 'lenis/react';
+console.log(Object.keys(lenisReact)); // Log available exports
+export * from 'lenis/react';
