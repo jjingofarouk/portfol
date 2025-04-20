@@ -1,8 +1,11 @@
-./src/data/projects/components/index.ts:3:30
-Type error: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+./src/data/projects/projects/carewave-doctor.ts:10:14
+Type error: Type 'boolean' is not assignable to type 'Project'.
 
-  1 | // src/projects/components/index.ts
-  2 | // src/projects/components/index.ts
-> 3 | export { ProjectLinks } from './ProjectLinks.tsx';
-    |                              ^
+   8 | const BASE_PATH = '/assets/projects-screenshots';
+   9 |
+> 10 | export const carewaveDoctor: Project = {
+     |              ^
+  11 |   id: 'carewave-doctor',
+  12 |   category: 'telemedicine platform',
+  13 |   title: 'CareWaveDoctor',
 @jjingofarouk ➜ /workspaces/portfol (main) $ 
