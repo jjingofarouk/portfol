@@ -23,15 +23,15 @@ const HeroSection = () => {
 
   // Mouse parallax effect
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: e.clientX / window.innerWidth,
         y: e.clientY / window.innerHeight,
       });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   // Subtle grid animation
@@ -50,7 +50,7 @@ const HeroSection = () => {
     const dotSize = 1;
     const lineOpacity = 0.08;
 
-    const dots = [];
+    const dots: { x: number; y: number; originalX: number; originalY: number; vx: number; vy: number }[] = [];
     for (let x = 0; x < Math.ceil(canvas.width / gridSize); x++) {
       for (let y = 0; y < Math.ceil(canvas.height / gridSize); y++) {
         dots.push({
@@ -131,11 +131,11 @@ const HeroSection = () => {
       canvas.height = canvas.offsetHeight;
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [isLoading, mousePosition]);
 
@@ -169,7 +169,6 @@ const HeroSection = () => {
       {/* Accent elements */}
       <div className="absolute top-0 left-0 w-1/3 h-1 bg-gradient-to-r from-cyan-500 to-transparent" />
       <div className="absolute top-0 right-0 w-1/4 h-1 bg-gradient-to-l from-cyan-500 to-transparent" />
-      
       <div className="absolute bottom-0 left-0 w-1/4 h-1 bg-gradient-to-r from-cyan-500 to-transparent" />
       <div className="absolute bottom-0 right-0 w-1/3 h-1 bg-gradient-to-l from-cyan-500 to-transparent" />
 
@@ -332,21 +331,21 @@ const HeroSection = () => {
                       <div className="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></div>
                     </div>
                   </div>
-                  
+
                   <div className="absolute top-8 bottom-0 left-0 right-0 p-6 font-mono text-sm">
                     <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
                       <span>{"<"}</span>
                       <span className="text-cyan-600 dark:text-cyan-400">Developer</span>
                       <span>{" >"}</span>
                     </div>
-                    
+
                     <div className="mt-4 pl-6">
                       <div className="flex items-start">
                         <span className="text-gray-500 mr-2">{"<"}</span>
                         <span className="text-blue-600 dark:text-blue-400">Skills</span>
                         <span className="text-gray-500 ml-2">{">"}</span>
                       </div>
-                      
+
                       <div className="pl-6 space-y-1 mt-2">
                         {skills.slice(0, 5).map((skill, i) => (
                           <div key={skill} className="flex items-center gap-2 animate-fadeIn" style={{ animationDelay: `${i * 0.2}s` }}>
@@ -355,21 +354,21 @@ const HeroSection = () => {
                           </div>
                         ))}
                       </div>
-                      
+
                       <div className="flex items-start mt-2">
                         <span className="text-gray-500 mr-2">{"</"}</span>
                         <span className="text-blue-600 dark:text-blue-400">Skills</span>
                         <span className="text-gray-500 ml-2">{">"}</span>
                       </div>
                     </div>
-                    
+
                     <div className="mt-4 pl-6">
                       <div className="flex items-start">
                         <span className="text-gray-500 mr-2">{"<"}</span>
                         <span className="text-purple-600 dark:text-purple-400">Projects</span>
                         <span className="text-gray-500 ml-2">{">"}</span>
                       </div>
-                      
+
                       <div className="pl-6 mt-2">
                         <div className="text-gray-700 dark:text-gray-300">// Check out my featured work</div>
                         <div className="text-cyan-600 dark:text-cyan-400 mt-2 font-bold">
@@ -377,14 +376,14 @@ const HeroSection = () => {
                           <span className="animate-pulse">|</span>
                         </div>
                       </div>
-                      
+
                       <div className="flex items-start mt-2">
                         <span className="text-gray-500 mr-2">{"</"}</span>
                         <span className="text-purple-600 dark:text-purple-400">Projects</span>
                         <span className="text-gray-500 ml-2">{">"}</span>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-2 mt-4 text-gray-500 dark:text-gray-400">
                       <span>{"</"}</span>
                       <span className="text-cyan-600 dark:text-cyan-400">Developer</span>
@@ -394,11 +393,11 @@ const HeroSection = () => {
 
                   {/* Subtle gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent to-cyan-500/5"></div>
-                  
+
                   {/* Line numbers */}
                   <div className="absolute top-8 bottom-0 left-0 w-8 bg-gray-100 dark:bg-gray-800/50 flex flex-col items-center pt-6">
                     {[...Array(10)].map((_, i) => (
-                      <div key={i} className="text-xs text-gray-400 dark:text-gray-500 h-6">{i+1}</div>
+                      <div key={i} className="text-xs text-gray-400 dark:text-gray-500 h-6">{i + 1}</div>
                     ))}
                   </div>
                 </div>
@@ -413,11 +412,11 @@ const HeroSection = () => {
       </div>
 
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <Button 
-          variant="ghost" 
+        <Button
+          variant="ghost"
           size="sm"
           className="text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-transparent"
-          onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
         >
           <ChevronDown className="w-6 h-6" />
         </Button>
