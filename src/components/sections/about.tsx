@@ -24,7 +24,7 @@ import {
 
 export default function AboutSection() {
   const [activeTab, setActiveTab] = useState("profile");
-  const [hoveredInterest, setHoveredInterest] = useState(null);
+  const [hoveredInterest, setHoveredInterest] = useState<number | null>(null);
   const [rotateY, setRotateY] = useState(0);
   const [rotateX, setRotateX] = useState(0);
 
@@ -69,24 +69,24 @@ export default function AboutSection() {
 
   // Interactive background effect
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      const container = document.getElementById('card-container');
+    const handleMouseMove = (e: MouseEvent) => {
+      const container = document.getElementById("card-container");
       if (!container) return;
-      
+
       const { left, top, width, height } = container.getBoundingClientRect();
       const x = (e.clientX - left) / width;
       const y = (e.clientY - top) / height;
-      
+
       setRotateY((x - 0.5) * 10);
       setRotateX((y - 0.5) * -10);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   // Generate an orbital path for each interest
-  const getPosition = (index, total) => {
+  const getPosition = (index: number, total: number) => {
     const radius = 120;
     const angle = (index / total) * Math.PI * 2;
     const x = Math.cos(angle) * radius;
@@ -101,41 +101,44 @@ export default function AboutSection() {
         <div className="absolute inset-0 pointer-events-none opacity-20">
           {[...Array(20)].map((_, i) => (
             <div key={i} className="absolute">
-              <div className="absolute w-2 h-2 bg-blue-500 rounded-full animate-pulse" 
-                style={{ 
-                  left: `${Math.sin(i * 0.5) * 100 + 50}%`, 
+              <div
+                className="absolute w-2 h-2 bg-blue-500 rounded-full animate-pulse"
+                style={{
+                  left: `${Math.sin(i * 0.5) * 100 + 50}%`,
                   top: `${i * 5}%`,
-                  animationDelay: `${i * 0.1}s` 
+                  animationDelay: `${i * 0.1}s`,
                 }}
               />
-              <div className="absolute w-2 h-2 bg-purple-500 rounded-full animate-pulse" 
-                style={{ 
-                  left: `${Math.sin(i * 0.5 + Math.PI) * 100 + 50}%`, 
+              <div
+                className="absolute w-2 h-2 bg-purple-500 rounded-full animate-pulse"
+                style={{
+                  left: `${Math.sin(i * 0.5 + Math.PI) * 100 + 50}%`,
                   top: `${i * 5}%`,
-                  animationDelay: `${i * 0.1 + 0.5}s` 
+                  animationDelay: `${i * 0.1 + 0.5}s`,
                 }}
               />
             </div>
           ))}
         </div>
 
-        <div id="card-container" 
+        <div
+          id="card-container"
           className="p-6 rounded-2xl bg-zinc-900/80 border border-zinc-800 shadow-2xl backdrop-blur-md overflow-hidden"
-          style={{ 
+          style={{
             transform: `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`,
-            transition: 'transform 0.1s ease-out'
+            transition: "transform 0.1s ease-out",
           }}
         >
           {/* Navigation Tabs */}
           <div className="flex mb-8 justify-center">
-            {['profile', 'interests', 'contact'].map((tab) => (
+            {["profile", "interests", "contact"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-2 mx-2 rounded-full text-lg font-medium transition-all ${
-                  activeTab === tab 
-                    ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg transform scale-105' 
-                    : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
+                  activeTab === tab
+                    ? "bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg transform scale-105"
+                    : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700"
                 }`}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -144,7 +147,7 @@ export default function AboutSection() {
           </div>
 
           {/* Profile Tab */}
-          {activeTab === 'profile' && (
+          {activeTab === "profile" && (
             <div className="flex flex-col lg:flex-row items-center gap-8 py-6">
               <div className="relative w-56 h-56">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 animate-spin-slow"></div>
@@ -154,14 +157,14 @@ export default function AboutSection() {
                   className="absolute inset-1 rounded-full object-cover border-4 border-zinc-900 shadow-inner"
                 />
               </div>
-              
+
               <div className="lg:flex-1">
                 <div className="text-center lg:text-left">
                   <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                     Farouk Jjingo
                   </h1>
                   <h2 className="text-xl text-zinc-400 mb-6">Full Stack Engineer | MD</h2>
-                  
+
                   <div className="space-y-6 text-lg text-zinc-300">
                     <p className="leading-relaxed">
                       A Full Stack Engineer with roots in medicine, I bring a unique perspective to technology solutions. 
@@ -178,7 +181,7 @@ export default function AboutSection() {
           )}
 
           {/* Interests Tab - Interactive Solar System */}
-          {activeTab === 'interests' && (
+          {activeTab === "interests" && (
             <div className="py-8 relative h-96">
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 {/* Central Core - representing the person */}
@@ -190,23 +193,24 @@ export default function AboutSection() {
                 {INTERESTS.map((interest, idx) => {
                   const pos = getPosition(idx, INTERESTS.length);
                   const isHovered = hoveredInterest === interest.id;
-                  
+
                   return (
-                    <div key={interest.id}
+                    <div
+                      key={interest.id}
                       style={{
-                        position: 'absolute',
+                        position: "absolute",
                         left: `calc(50% + ${pos.x}px)`,
                         top: `calc(50% + ${pos.y}px)`,
-                        transform: 'translate(-50%, -50%)',
+                        transform: "translate(-50%, -50%)",
                         zIndex: isHovered ? 20 : 1,
-                        transition: 'all 0.3s ease'
+                        transition: "all 0.3s ease",
                       }}
                       onMouseEnter={() => setHoveredInterest(interest.id)}
                       onMouseLeave={() => setHoveredInterest(null)}
                       className={`${interest.color} rounded-full p-3 text-white shadow-lg cursor-pointer
-                        ${isHovered ? 'scale-150' : 'scale-100'}`}
+                        ${isHovered ? "scale-150" : "scale-100"}`}
                     >
-                      <interest.icon className={`text-lg ${isHovered ? 'animate-pulse' : ''}`} />
+                      <interest.icon className={`text-lg ${isHovered ? "animate-pulse" : ""}`} />
                       {isHovered && (
                         <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 whitespace-nowrap bg-zinc-800 px-3 py-1 rounded text-sm">
                           {interest.name}
@@ -225,10 +229,10 @@ export default function AboutSection() {
           )}
 
           {/* Contact Tab - Holographic contact methods */}
-          {activeTab === 'contact' && (
+          {activeTab === "contact" && (
             <div className="py-8 flex flex-col items-center">
               <h2 className="text-2xl font-bold mb-6 text-zinc-100">Let's Connect</h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-2xl">
                 {CONTACT_LINKS.map((link) => (
                   <a
