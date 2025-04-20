@@ -20,16 +20,16 @@ export const touchedHearts: Project = {
     'events.png',
     'about.png',
     'gallery.png',
-  ],
-  live: 'https://www.touchedhearts.org/', 
-  github: 'https://github.com/jjingofarouk/touched', 
+  ].map((img) => `${BASE_PATH}/${img}`), // Ensure full paths for screenshots
+  live: 'https://www.touchedhearts.org/',
+  github: 'https://github.com/jjingofarouk/touched',
   skills: {
     frontend: [
       PROJECT_SKILLS.react,
       PROJECT_SKILLS.js,
       PROJECT_SKILLS.bootstrap,
       PROJECT_SKILLS.css,
-      PROJECT_SKILLS.reactRouter, 
+      PROJECT_SKILLS.reactRouter,
     ],
     backend: [],
   },
@@ -39,11 +39,11 @@ export const touchedHearts: Project = {
         Touched Hearts: A React-Powered NGO Platform
       </TypographyP>
       <TypographyP className="font-mono">
-        I developed Touched Hearts, a comprehensive web platform for an NGO focused on education, healthcare, and  support for communities in East & Central Africa. Using React 19, React Router, and Bootstrap, I built a responsive, accessible site with over 20 pages, dynamic content, and optimized performance to showcase the organization’s impact and engage users effectively.
+        I developed Touched Hearts, a comprehensive web platform for an NGO focused on education, healthcare, and support for communities in East & Central Africa. Using React 19, React Router, and Bootstrap, I built a responsive, accessible site with over 20 pages, dynamic content, and optimized performance to showcase the organization’s impact and engage users effectively.
       </TypographyP>
       <ProjectsLinks
-        live="https://www.touchedhearts.org/" 
-        repo="https://github.com/jjingofarouk/touched" 
+        live="https://www.touchedhearts.org/"
+        repo="https://github.com/jjingofarouk/touched"
       />
       <TypographyH3 className="my-4 mt-8">Home Page</TypographyH3>
       <p className="font-mono mb-2">
@@ -51,7 +51,7 @@ export const touchedHearts: Project = {
       </p>
       <SlideShow images={[`${BASE_PATH}/home.png`, `${BASE_PATH}/about.png`]} />
       <TypographyH3 className="my-4 mt-8">Programs</TypographyH3>
-      <p className stronghold mb-2">
+      <p className="font-mono mb-2">
         I created dedicated pages for programs like education and healthcare using React Router for seamless navigation and reusable components for consistency.
       </p>
       <SlideShow
