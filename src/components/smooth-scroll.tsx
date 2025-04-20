@@ -1,7 +1,8 @@
+// src/components/smooth-scroll.tsx
 "use client";
 
 import React, { useEffect } from "react";
-import { ReactLenis, useLenis } from "@/lib/lenis";
+import { Lenis, useLenis } from "@/lib";
 
 interface LenisProps {
   children: React.ReactNode;
@@ -9,23 +10,21 @@ interface LenisProps {
 }
 
 function SmoothScroll({ children, isInsideModal = false }: LenisProps) {
-  const lenis = useLenis(({ scroll }) => {
-    // called every scroll
-  });
+  const lenis = useLenis(); // Remove empty callback if not needed
 
   useEffect(() => {
-    document.addEventListener("DOMContentLoaded", () => {
-      lenis?.stop();
-      lenis?.start();
-    });
-  }, []);
+    if (lenis) {
+      lenis.start();
+      return () => lenis.stop(); // Cleanup on unmount
+    }
+  }, [lenis]);
 
   return (
-    <ReactLenis
+    <Lenis
       root
       options={{
         duration: 2,
-        prevent: (node) => {
+        prevent: (node: HTMLElement) => {
           if (isInsideModal) return true;
           const modalOpen = node.classList.contains("modall");
           return modalOpen;
@@ -33,7 +32,7 @@ function SmoothScroll({ children, isInsideModal = false }: LenisProps) {
       }}
     >
       {children}
-    </ReactLenis>
+    </Lenis>
   );
 }
 
