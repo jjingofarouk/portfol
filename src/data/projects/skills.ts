@@ -1,6 +1,6 @@
 import AceTernityLogo from '@/components/logos/aceternity';
 import {
-  SiCss3, SiBootstrap, SiYoutubedl, SiChakraui, SiDocker, SiExpress, SiFirebase,
+  SiCss3, SiBootstrap, SiYoutube, SiChakraui, SiDocker, SiExpress, SiFirebase,
   SiJavascript, SiPostgresql, SiPrisma, SiPython, SiReactquery, SiSanity,
   SiReactrouter, SiStyledcomponents, SiAxios, SiShadcnui, SiSocketdotio, SiSupabase,
   SiTailwindcss, SiThreedotjs, SiTypescript, SiVuedotjs, SiRedux, SiGit, SiNpm,
