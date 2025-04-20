@@ -1,0 +1,73 @@
+// src/data/projects/skills.ts
+import AceTernityLogo from '@/components/logos/aceternity';
+import { SiCss3, SiBootstrap, SiYoutubedl } from 'react-icons/si';
+import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from 'react-icons/ri';
+import {
+  SiChakraui, SiDocker, SiExpress, SiFirebase, SiJavascript, SiPostgresql,
+  SiPrisma, SiPython, SiReactquery, SiSanity, SiReactrouter, SiStyledcomponents,
+  SiAxios, SiShadcnui, SiSocketdotio, SiSupabase, SiTailwindcss, SiThreedotjs,
+  SiTypescript, SiVuedotjs, SiRedux, SiGit, SiNpm, SiGraphql, SiRust, SiKubernetes,
+  SiDeno, SiSvelte, SiAstro, SiBun, SiJest, SiMocha, SiCypress, SiRabbitmq,
+  SiTerraform, SiFastapi, SiNextdotjs, SiHtml5, SiFontawesome, SiFlask, SiMongodb,
+  SiGoogletranslate
+} from 'react-icons/si';
+import { TbBrandFramerMotion } from 'react-icons/tb';
+import { FaJava, FaAws } from 'react-icons/fa';
+import { Skill } from './types';
+
+export const PROJECT_SKILLS: Record<string, Skill> = {
+  next: { title: 'Next.js', bg: 'black', fg: 'white', icon: <RiNextjsFill /> },
+  chakra: { title: 'Chakra UI', bg: 'black', fg: 'white', icon: <SiChakraui /> },
+  js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
+  html: { title: 'HTML', bg: 'black', fg: 'white', icon: <SiHtml5 /> },
+  fontAwesome: { title: 'Font Awesome', bg: 'black', fg: 'white', icon: <SiFontawesome /> },
+  flask: { title: 'Flask', bg: 'black', fg: 'white', icon: <SiFlask /> },
+  transformers: { title: 'Hugging Face Transformers', bg: 'black', fg: 'white', icon: <SiMongodb /> },
+  sentenceTransformers: { title: 'Sentence Transformers', bg: 'black', fg: 'white', icon: <SiMongodb /> },
+  googletrans: { title: 'Google Translate', bg: 'black', fg: 'white', icon: <SiGoogletranslate /> },
+  node: { title: 'Node.js', bg: 'black', fg: 'white', icon: <RiNodejsFill /> },
+  python: { title: 'Python', bg: 'black', fg: 'white', icon: <SiPython /> },
+  prisma: { title: 'Prisma', bg: 'black', fg: 'white', icon: <SiPrisma /> },
+  postgres: { title: 'PostgreSQL', bg: 'black', fg: 'white', icon: <SiPostgresql /> },
+  css: { title: 'CSS', bg: 'black', fg: 'white', icon: <SiCss3 /> },
+  bootstrap: { title: 'Bootstrap', bg: 'black', fg: 'white', icon: <SiBootstrap /> },
+  ytDlp: { title: 'yt-dlp', bg: 'black', fg: 'white', icon: <SiYoutubedl /> },
+  mongodb: { title: 'MongoDB', bg: 'black', fg: 'white', icon: <SiMongodb /> },
+  express: { title: 'Express', bg: 'black', fg: 'white', icon: <SiExpress /> },
+  reactQuery: { title: 'React Query', bg: 'black', fg: 'white', icon: <SiReactquery /> },
+  shadcn: { title: 'ShadCN UI', bg: 'black', fg: 'white', icon: <SiShadcnui /> },
+  tailwind: { title: 'Tailwind', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+  docker: { title: 'Docker', bg: 'black', fg: 'white', icon: <SiDocker /> },
+  firebase: { title: 'Firebase', bg: 'black', fg: 'white', icon: <SiFirebase /> },
+  reactRouter: { title: 'React Router', bg: 'black', fg: 'white', icon: <SiReactrouter /> },
+  styledComponents: { title: 'Styled Components', bg: 'black', fg: 'white', icon: <SiStyledcomponents /> },
+  axios: { title: 'Axios', bg: 'black', fg: 'white', icon: <SiAxios /> },
+  socketio: { title: 'Socket.io', bg: 'black', fg: 'white', icon: <SiSocketdotio /> },
+  ts: { title: 'TypeScript', bg: 'black', fg: 'white', icon: <SiTypescript /> },
+  vue: { title: 'Vue.js', bg: 'black', fg: 'white', icon: <SiVuedotjs /> },
+  react: { title: 'React.js', bg: 'black', fg: 'white', icon: <RiReactjsFill /> },
+  sanity: { title: 'Sanity', bg: 'black', fg: 'white', icon: <SiSanity /> },
+  framerMotion: { title: 'Framer Motion', bg: 'black', fg: 'white', icon: <TbBrandFramerMotion /> },
+  supabase: { title: 'Supabase', bg: 'black', fg: 'white', icon: <SiSupabase /> },
+  redux: { title: 'Redux', bg: 'black', fg: 'white', icon: <SiRedux /> },
+  git: { title: 'Git', bg: 'black', fg: 'white', icon: <SiGit /> },
+  npm: { title: 'NPM', bg: 'black', fg: 'white', icon: <SiNpm /> },
+  graphql: { title: 'GraphQL', bg: 'black', fg: 'white', icon: <SiGraphql /> },
+  spline: { title: 'Spline', bg: 'black', fg: 'white', icon: <SiThreedotjs /> },
+  aceternity: { title: 'Aceternity', bg: 'black', fg: 'white', icon: <AceTernityLogo /> },
+  rust: { title: 'Rust', bg: 'black', fg: 'white', icon: <SiRust /> },
+  kubernetes: { title: 'Kubernetes', bg: 'black', fg: 'white', icon: <SiKubernetes /> },
+  deno: { title: 'Deno', bg: 'black', fg: 'white', icon: <SiDeno /> },
+  svelte: { title: 'Svelte', bg: 'black', fg: 'white', icon: <SiSvelte /> },
+  astro: { title: 'Astro', bg: 'black', fg: 'white', icon: <SiAstro /> },
+  bun: { title: 'Bun', bg: 'black', fg: 'white', icon: <SiBun /> },
+  jest: { title: 'Jest', bg: 'black', fg: 'white', icon: <SiJest /> },
+  mocha: { title: 'Mocha', bg: 'black', fg: 'white', icon: <SiMocha /> },
+  cypress: { title: 'Cypress', bg: 'black', fg: 'white', icon: <SiCypress /> },
+  rabbitmq: { title: 'RabbitMQ', bg: 'black', fg: 'white', icon: <SiRabbitmq /> },
+  terraform: { title: 'Terraform', bg: 'black', fg: 'white', icon: <SiTerraform /> },
+  fastapi: { title: 'FastAPI', bg: 'black', fg: 'white', icon: <SiFastapi /> },
+  java: { title: 'Java', bg: 'black', fg: 'white', icon: <FaJava /> },
+  aws: { title: 'AWS', bg: 'black', fg: 'white', icon: <FaAws /> },
+  nextdotjs: { title: 'Next.js (alt)', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
+};
