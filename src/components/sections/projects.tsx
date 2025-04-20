@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState, lazy, Suspense } from "react";
 import Link from "next/link";
-import projects from "@/data/projects";
+import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
 // Lazy load modal components to improve initial load time
@@ -40,7 +40,7 @@ const ProjectsSection = () => {
   );
 };
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project }: { project: Project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Only load modal content when needed
@@ -105,7 +105,7 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-const ProjectContents = ({ project }) => {
+const ProjectContents = ({ project }: { project: Project }) => {
   return (
     <>
       <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-6">
