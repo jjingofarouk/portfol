@@ -20,7 +20,7 @@ export const touchedHearts: Project = {
     'events.png',
     'about.png',
     'gallery.png',
-  ].map((img) => `${BASE_PATH}/${img}`), // Ensure full paths for screenshots
+  ],
   live: 'https://www.touchedhearts.org/',
   github: 'https://github.com/jjingofarouk/touched',
   skills: {
@@ -82,26 +82,16 @@ export const touchedHearts: Project = {
       <SlideShow
         images={[`${BASE_PATH}/donate.png`, `${BASE_PATH}/events.png`]}
       />
-      <TypographyH3 className="my-4 mt-8">My Technical Contributions</TypographyH3>
+      <TypographyH3 className="my-4 mt-8">Technical Contributions</TypographyH3>
       <p className="font-mono mb-2">
         This project showcases my ability to deliver a feature-rich and performant web app:
       </p>
       <ul className="font-mono list-disc list-inside mb-2">
-        <li>
-          Architected 20+ routes with React Router for efficient navigation
-        </li>
-        <li>
-          Built responsive layouts with Bootstrap, achieving cross-device compatibility
-        </li>
-        <li>
-          Integrated JSON data for dynamic story rendering, reducing maintenance overhead
-        </li>
-        <li>
-          Optimized performance with lazy-loaded images and minimal DOM updates
-        </li>
-        <li>
-          Ensured WCAG-compliant accessibility with semantic HTML and ARIA attributes
-        </li>
+        <li>Architected 20+ routes with React Router for efficient navigation</li>
+        <li>Built responsive layouts with Bootstrap, achieving cross-device compatibility</li>
+        <li>Integrated JSON data for dynamic story rendering, reducing maintenance overhead</li>
+        <li>Optimized performance with lazy-loaded images and minimal DOM updates</li>
+        <li>Ensured WCAG-compliant accessibility with semantic HTML and ARIA attributes</li>
       </ul>
       <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
       <p className="font-mono mb-2">
