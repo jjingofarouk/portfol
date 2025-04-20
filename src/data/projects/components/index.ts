@@ -1,3 +1,3 @@
 // src/projects/components/index.ts
 // src/projects/components/index.ts
-export { ProjectLinks } from './ProjectLinks.tsx';
+export { ProjectsLinks } from './ProjectsLinks.tsx';
