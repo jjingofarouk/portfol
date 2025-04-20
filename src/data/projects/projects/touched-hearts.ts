@@ -7,7 +7,7 @@ import SlideShow from '@/components/slide-show';
 
 const BASE_PATH = '/assets/projects-screenshots/touched-hearts';
 
-export const touchedhearts: Project = {
+export const touchedHearts: Project = {
   id: 'touched-hearts',
   category: 'NGO Platform',
   title: 'Touched Hearts',
