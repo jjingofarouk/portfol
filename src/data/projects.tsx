@@ -151,6 +151,12 @@ reactRouter: {
     fg: "white",
     icon: <SiReactrouter />,
   },
+lucideReact: {
+    title: "Lucide React",
+    bg: "black",
+    fg: "white",
+    icon: <SiReactrouter />,
+  },
 reactSpring: {
     title: "React Spring",
     bg: "black",
