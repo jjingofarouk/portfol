@@ -308,7 +308,7 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
   prisma: { title: 'Prisma', bg: 'black', fg: 'white', icon: <SiPrisma /> },
   deno: { title: 'Deno', bg: 'black', fg: 'white', icon: <SiDeno /> },
   bun: { title: 'Bun', bg: 'black', fg: 'white', icon: <SiBun /> },
-  ytDlp: { title: 'yt-dlp', bg: 'black', fg: 'white', icon: <SiYoutubedl /> },
+  ytDlp: { title: 'yt-dlp', bg: 'black', fg: 'white', icon: <SiYoutube /> },
   googletrans: { title: 'Google Translate', bg: 'black', fg: 'white', icon: <SiGoogletranslate /> },
   html: { title: 'HTML', bg: 'black', fg: 'white', icon: <SiHtml5 /> }
 };
