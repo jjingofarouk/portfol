@@ -13,11 +13,8 @@ import Link from "next/link";
 import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
-
-// Assuming Button component; replace with <button> if not available
 import { Button } from "../ui/button";
 
-// Utility to shuffle an array (Fisher-Yates algorithm)
 const shuffleArray = <T,>(array: T[]): T[] => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -28,13 +25,11 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 };
 
 const ProjectsSection = () => {
-  // State for displayed projects and randomization
   const [displayedProjects, setDisplayedProjects] = useState<Project[]>([]);
   const [allProjects, setAllProjects] = useState<Project[]>([]);
   const [hasMore, setHasMore] = useState(true);
-  const projectsPerLoad = 6; // Number of projects to load per click
+  const projectsPerLoad = 6;
 
-  // Shuffle projects on initial load
   useEffect(() => {
     const shuffledProjects = shuffleArray(projects);
     setAllProjects(shuffledProjects);
@@ -42,7 +37,6 @@ const ProjectsSection = () => {
     setHasMore(shuffledProjects.length > projectsPerLoad);
   }, []);
 
-  // Load more projects when "Show More" is clicked
   const loadMoreProjects = () => {
     const nextBatch = allProjects.slice(
       displayedProjects.length,
@@ -134,7 +128,7 @@ const Modall = ({ project }: { project: Project }) => {
 
 const ProjectContents = ({ project }: { project: Project }) => {
   return (
-    <React.Fragment>
+    <>
       <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
         {project.title}
       </h4>
@@ -157,7 +151,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
         </div>
       </div>
       {project.content}
-    </React.Fragment>
+    </>
   );
 };
 
