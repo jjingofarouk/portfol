@@ -16,7 +16,6 @@ import {
   SiExpress,
   SiFirebase,
   SiJavascript,
-  SiMongodb,
   SiPostgresql,
   SiPrisma,
   SiPython,
