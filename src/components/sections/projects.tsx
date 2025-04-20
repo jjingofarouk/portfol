@@ -48,6 +48,8 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="max-w-7xl mx-auto md:min-h-[130vh] py-16">
+      < médiat
+
       <Link href="#projects">
         <h2
           className={cn(
@@ -66,12 +68,12 @@ const ProjectsSection = () => {
       </div>
       {hasMore && (
         <div className="flex justify-center mt-12">
-          <Button
+          <button
             onClick={loadMoreProjects}
             className="px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-md text-sm font-mono hover:bg-gray-800 dark:hover:bg-gray-200 transition-all"
           >
             Show More
-          </Button>
+          </button>
         </div>
       )}
     </section>
