@@ -189,7 +189,6 @@ reactSpring: {
     fg: "white",
     icon: <SiSocketdotio />,
   },
-  js: { title: "JavaScript", bg: "black", fg: "white", icon: <SiJavascript /> },
   ts: { title: "TypeScript", bg: "black", fg: "white", icon: <SiTypescript /> },
   vue: { title: "Vue.js", bg: "black", fg: "white", icon: <SiVuedotjs /> },
   react: {
