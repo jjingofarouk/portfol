@@ -10,12 +10,12 @@ interface LenisProps {
 }
 
 function SmoothScroll({ children, isInsideModal = false }: LenisProps) {
-  const lenis = useLenis(); // Remove empty callback if not needed
+  const lenis = useLenis();
 
   useEffect(() => {
     if (lenis) {
       lenis.start();
-      return () => lenis.stop(); // Cleanup on unmount
+      return () => lenis.stop();
     }
   }, [lenis]);
 
