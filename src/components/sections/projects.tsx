@@ -2,10 +2,23 @@
 import Image from "next/image";
 import React, { useState, lazy, Suspense } from "react";
 import Link from "next/link";
-import projects, { Project } from "@/data/projects";
+import projects from "@/data/projects";
 import { cn } from "@/lib/utils";
 
-// Lazy load modal components to improve initial load time
+// Define Project type if not already defined in @/data/projects
+interface Project {
+  src: string;
+  title: string;
+  category: string;
+  live: string;
+  content: React.ReactNode;
+  skills: {
+    frontend?: any[];
+    backend?: any[];
+  };
+}
+
+// Lazy load modal components
 const Modal = lazy(() => import("../ui/animated-modal").then(mod => ({ default: mod.Modal })));
 const ModalBody = lazy(() => import("../ui/animated-modal").then(mod => ({ default: mod.ModalBody })));
 const ModalContent = lazy(() => import("../ui/animated-modal").then(mod => ({ default: mod.ModalContent })));
@@ -14,7 +27,7 @@ const ModalTrigger = lazy(() => import("../ui/animated-modal").then(mod => ({ de
 const SmoothScroll = lazy(() => import("../smooth-scroll"));
 const FloatingDock = lazy(() => import("../ui/floating-dock").then(mod => ({ default: mod.FloatingDock })));
 
-// Simple loading fallback
+// Loading fallback
 const LoadingFallback = () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 rounded-lg w-full h-full" />;
 
 const ProjectsSection = () => {
@@ -32,7 +45,7 @@ const ProjectsSection = () => {
         </h2>
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
+        {projects.map((project: Project) => (
           <ProjectCard key={project.src} project={project} />
         ))}
       </div>
@@ -43,12 +56,10 @@ const ProjectsSection = () => {
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Only load modal content when needed
   const handleOpenModal = () => setIsModalOpen(true);
 
   return (
     <div className="flex items-center justify-center">
-      {/* Project Card */}
       <div
         className="relative w-full rounded-lg overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all group"
         style={{ aspectRatio: "3/2" }}
@@ -72,7 +83,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
       </div>
 
-      {/* Only render the modal when isModalOpen is true */}
       {isModalOpen && (
         <Suspense fallback={<LoadingFallback />}>
           <Modal onClose={() => setIsModalOpen(false)}>
