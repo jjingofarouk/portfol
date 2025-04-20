@@ -125,7 +125,6 @@ export const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiPostgresql />,
   },
-  css: { title: "CSS", bg: "black", fg: "white", icon: <SiCss3 /> },
   bootstrap: { title: "Bootstrap", bg: "black", fg: "white", icon: <SiBootstrap /> },
   ytDlp: { title: "yt-dlp", bg: "black", fg: "white", icon: <SiYoutube /> },
   mongodb: { title: "MongoDB", bg: "black", fg: "white", icon: <SiMongodb /> },
