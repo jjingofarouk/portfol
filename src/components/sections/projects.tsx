@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState, lazy, Suspense, ReactNode } from "react";
 import Link from "next/link";
 import projects from "@/data/projects";
 import { cn } from "@/lib/utils";
 
-// Define Project type if not already defined in @/data/projects
+// Define Project type
 interface Project {
   src: string;
   title: string;
@@ -85,7 +85,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
       {isModalOpen && (
         <Suspense fallback={<LoadingFallback />}>
-          <Modal onClose={() => setIsModalOpen(false)}>
+          <Modal>
             <ModalBody className="md:max-w-4xl md:max-h-[80%] overflow-auto">
               <Suspense fallback={<LoadingFallback />}>
                 <SmoothScroll isInsideModal={true}>
@@ -95,7 +95,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 </SmoothScroll>
               </Suspense>
               <ModalFooter className="gap-4">
-                <button 
+                <button
                   className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28"
                   onClick={() => setIsModalOpen(false)}
                 >
@@ -132,7 +132,6 @@ const ProjectContents = ({ project }: { project: Project }) => {
             </Suspense>
           </div>
         )}
-        
         {project.skills.backend?.length > 0 && (
           <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2">
             <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">
@@ -144,9 +143,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
           </div>
         )}
       </div>
-      <div className="mt-6">
-        {project.content}
-      </div>
+      <div className="mt-6">{project.content}</div>
     </>
   );
 };
