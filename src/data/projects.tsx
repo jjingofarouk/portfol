@@ -32,7 +32,6 @@ import {
   SiTypescript,
   SiVuedotjs,
   SiRedux,
-  SiCss3,
   SiGit,
   SiNpm,
   SiGraphql,
