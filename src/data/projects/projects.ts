@@ -11,6 +11,7 @@ import { matatu } from './projects/matatu';
 import { dwaliro } from './projects/dwaliro';
 import { tubesnap } from './projects/tubesnap';
 import { solverpro } from './projects/solverpro';
+import { touchedHearts } from './projects/touched-hearts';
 
 const projects: Project[] = [
   carewaveDoctor,
@@ -24,6 +25,7 @@ const projects: Project[] = [
   dwaliro,
   tubesnap,
   solverpro,
+  touchHearts,
 ];
 
 export default projects;
