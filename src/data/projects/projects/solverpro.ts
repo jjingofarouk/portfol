@@ -12,7 +12,7 @@ export const solverpro: Project = {
   title: 'SolverPro Graphing Calculator',
   src: `${BASE_PATH}/solverpro/home.png`,
   screenshots: ['home.png', 'graph.png', 'controls.png'],
-  live: 'https://solverpro.vercel.app',
+  live: 'https://jjingofarouk.github.io/SolverPro/',
   github: 'https://github.com/jjingofarouk/SolverPro',
   skills: {
     frontend: [
