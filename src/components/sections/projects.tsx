@@ -1,17 +1,16 @@
 "use client";
+
 import Image from "next/image";
-import React, { useState, lazy, Suspense, ReactNode } from "react";
+import React, { useState, lazy, Suspense, ReactNode, useMemo } from "react";
 import Link from "next/link";
 import projects from "@/data/projects";
 import { cn } from "@/lib/utils";
 
-// Define the type for FloatingDock items
 interface DockItem {
   title: string;
   icon: ReactNode;
 }
 
-// Define Project type
 interface Project {
   src: string;
   title: string;
@@ -24,22 +23,28 @@ interface Project {
   };
 }
 
-// Lazy load modal components
 const Modal = lazy(() => import("../ui/animated-modal").then(mod => ({ default: mod.Modal })));
 const ModalBody = lazy(() => import("../ui/animated-modal").then(mod => ({ default: mod.ModalBody })));
 const ModalContent = lazy(() => import("../ui/animated-modal").then(mod => ({ default: mod.ModalContent })));
 const ModalFooter = lazy(() => import("../ui/animated-modal").then(mod => ({ default: mod.ModalFooter })));
-const ModalTrigger = lazy(() => import("../ui/animated-modal").then(mod => ({ default: mod.ModalTrigger })));
 const SmoothScroll = lazy(() => import("../smooth-scroll"));
 const FloatingDock = lazy(() => import("../ui/floating-dock").then(mod => ({ default: mod.FloatingDock })));
 
-// Loading fallback
-const LoadingFallback = () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 rounded-lg w-full h-full" />;
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
 
 const ProjectsSection = () => {
+  const shuffledProjects = useMemo(() => shuffleArray(projects).slice(0, 10), []);
+
   return (
     <section id="projects" className="max-w-7xl mx-auto py-16">
-      <Link href={"#projects"}>
+      <Link href="#projects">
         <h2
           className={cn(
             "bg-clip-text text-4xl text-center text-transparent md:text-7xl",
@@ -50,10 +55,19 @@ const ProjectsSection = () => {
           Projects
         </h2>
       </Link>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project: Project) => (
+        {shuffledProjects.map((project) => (
           <ProjectCard key={project.src} project={project} />
         ))}
+      </div>
+
+      <div className="mt-12 text-center">
+        <Link href="/projects">
+          <button className="text-sm font-medium px-4 py-2 border border-black dark:border-white rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
+            View All Projects
+          </button>
+        </Link>
       </div>
     </section>
   );
@@ -61,15 +75,12 @@ const ProjectsSection = () => {
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenModal = () => setIsModalOpen(true);
-
   return (
     <div className="flex items-center justify-center">
       <div
         className="relative w-full rounded-lg overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all group"
         style={{ aspectRatio: "3/2" }}
-        onClick={handleOpenModal}
+        onClick={() => setIsModalOpen(true)}
       >
         <Image
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
@@ -90,25 +101,23 @@ const ProjectCard = ({ project }: { project: Project }) => {
       </div>
 
       {isModalOpen && (
-        <Suspense fallback={<LoadingFallback />}>
+        <Suspense fallback={<div className="h-64 w-full bg-gray-200 dark:bg-gray-800 rounded animate-pulse" />}>
           <Modal>
             <ModalBody className="md:max-w-4xl md:max-h-[80%] overflow-auto">
-              <Suspense fallback={<LoadingFallback />}>
-                <SmoothScroll isInsideModal={true}>
-                  <ModalContent>
-                    <ProjectContents project={project} />
-                  </ModalContent>
-                </SmoothScroll>
-              </Suspense>
+              <SmoothScroll isInsideModal={true}>
+                <ModalContent>
+                  <ProjectContents project={project} />
+                </ModalContent>
+              </SmoothScroll>
               <ModalFooter className="gap-4">
                 <button
-                  className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28"
+                  className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded-md text-sm w-28"
                   onClick={() => setIsModalOpen(false)}
                 >
                   Cancel
                 </button>
                 <Link href={project.live} target="_blank">
-                  <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
+                  <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black dark:border-white w-28">
                     Visit
                   </button>
                 </Link>
@@ -130,9 +139,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
       <div className="flex flex-col md:flex-row md:justify-evenly gap-6">
         {project.skills.frontend && project.skills.frontend.length > 0 && (
           <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2">
-            <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">
-              Frontend
-            </p>
+            <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">Frontend</p>
             <Suspense fallback={<div className="h-8 w-32 bg-gray-200 dark:bg-gray-800 rounded animate-pulse" />}>
               <FloatingDock items={project.skills.frontend} />
             </Suspense>
@@ -140,9 +147,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
         )}
         {project.skills.backend && project.skills.backend.length > 0 && (
           <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2">
-            <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">
-              Backend
-            </p>
+            <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">Backend</p>
             <Suspense fallback={<div className="h-8 w-32 bg-gray-200 dark:bg-gray-800 rounded animate-pulse" />}>
               <FloatingDock items={project.skills.backend} />
             </Suspense>
