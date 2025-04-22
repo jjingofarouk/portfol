@@ -14,6 +14,7 @@ import EasterEggs from "@/components/easter-eggs";
 import { config } from "@/data/config";
 import SocketContextProvider from "@/contexts/socketio";
 import RemoteCursors from "@/components/realtime/remote-cursors";
+import {SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: config.title,
@@ -90,6 +91,7 @@ export default function RootLayout({
             <ElasticCursor />
           </Preloader>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
