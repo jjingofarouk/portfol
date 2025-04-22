@@ -12,6 +12,8 @@ import { dwaliro } from './projects/dwaliro';
 import { tubesnap } from './projects/tubesnap';
 import { solverpro } from './projects/solverpro';
 import { touchedHearts } from './projects/touched-hearts';
+import { clinicalCalculators } from './projects/clinical-calculators';
+import { osler } from './projects/osler';
 
 const projects: Project[] = [
   carewaveDoctor,
@@ -26,6 +28,9 @@ const projects: Project[] = [
   tubesnap,
   solverpro,
   touchedHearts,
+  clinicalCalculators,
+  osler,
+
 ];
 
 export default projects;
