@@ -167,12 +167,11 @@ export default function AboutSection() {
 
                   <div className="space-y-6 text-lg text-zinc-300">
                     <p className="leading-relaxed">
-                      A Full Stack Engineer with roots in medicine, I bring a unique perspective to technology solutions. 
-                      My journey from diagnosing patients to debugging code has equipped me with a distinctive approach to problem-solving.
+                      Full Stack Engineer with a background in medicine. I carry a unique perspective to how I approach technology solutions. 
+                     My journey from diagnosing patients to debugging code has handed me with a distinctive approach to problem-solving.
                     </p>
                     <p className="leading-relaxed">
-                      I create digital experiences that blend clinical precision with intuitive design, 
-                      specializing in building applications where healthcare and technology intersect.
+                      Open-minded, but I specialize in building applications where healthcare meets latest trends in tech. 
                     </p>
                   </div>
                 </div>
