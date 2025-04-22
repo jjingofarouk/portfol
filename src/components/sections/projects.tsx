@@ -12,7 +12,8 @@ import { FloatingDock } from "../ui/floating-dock";
 import Link from "next/link";
 
 import SmoothScroll from "../smooth-scroll";
-import projects, { Project } from "@/data/projects";
+import  { Project } from "./data/projects/types";
+import projects from "./data/projects/projects"
 import { cn } from "@/lib/utils";
 
 const ProjectsSection = () => {

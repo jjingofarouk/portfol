@@ -1,0 +1,11 @@
+./src/data/projects/projects/carewave-doctor.ts:10:14
+Type error: Type 'boolean' is not assignable to type 'Project'.
+
+   8 | const BASE_PATH = '/assets/projects-screenshots';
+   9 |
+> 10 | export const carewaveDoctor: Project = {
+     |              ^
+  11 |   id: 'carewave-doctor',
+  12 |   category: 'telemedicine platform',
+  13 |   title: 'CareWaveDoctor',
+@jjingofarouk ➜ /workspaces/portfol (main) $ 
