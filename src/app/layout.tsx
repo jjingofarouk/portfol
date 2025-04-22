@@ -14,7 +14,8 @@ import EasterEggs from "@/components/easter-eggs";
 import { config } from "@/data/config";
 import SocketContextProvider from "@/contexts/socketio";
 import RemoteCursors from "@/components/realtime/remote-cursors";
-import {SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics }  from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: config.title,
@@ -92,6 +93,7 @@ export default function RootLayout({
           </Preloader>
         </ThemeProvider>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
