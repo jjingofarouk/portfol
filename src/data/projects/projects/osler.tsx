@@ -25,11 +25,8 @@ export const osler: Project = {
       PROJECT_SKILLS.python,
       PROJECT_SKILLS.flask,
       PROJECT_SKILLS.gemini,
-    ],
-    other: [
-      PROJECT_SKILLS.pwa,
-      PROJECT_SKILLS.dotenv,
-    ],
+    ]
+
   },
   content: (
     <div>
