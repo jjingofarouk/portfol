@@ -205,14 +205,14 @@ const HeroSection = () => {
 
                 <BlurIn delay={0.9}>
                   <p className="text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-200">
-                    I build <span className="text-cyan-600 dark:text-cyan-400">high-performance</span> web applications with modern tech stacks
+                    I build <span className="text-cyan-600 dark:text-cyan-400">high-performance</span> applications with modern tech stacks
                   </p>
                 </BlurIn>
 
                 <BlurIn delay={1.1}>
                   <p className="text-gray-600 dark:text-gray-400 max-w-lg text-lg leading-relaxed">
-                    Specialized in creating scalable, maintainable solutions for complex problems. From
-                    concept to deployment, I deliver robust applications that drive business growth.
+
+	I build things that work. I keep working, even when no one’s watching.
                   </p>
                 </BlurIn>
 
