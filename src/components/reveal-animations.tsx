@@ -1,5 +1,7 @@
 "use client";
+
 import { motion, useAnimation, useInView } from "framer-motion";
+
 import { cn } from "@/lib/utils";
 import { ReactNode, useEffect, useRef } from "react";
 
@@ -13,7 +15,6 @@ interface BlurIntProps {
   };
   duration?: number;
 }
-
 export const BlurIn = ({
   children,
   className,
@@ -26,13 +27,17 @@ export const BlurIn = ({
     visible: { filter: "blur(0px)", opacity: 1 },
   };
   const combinedVariants = variant || defaultVariants;
+
   return (
     <motion.h1
       initial="hidden"
       animate="visible"
       transition={{ duration, delay }}
       variants={combinedVariants}
-      className={cn(className)}
+      className={cn(
+        className
+        // "font-display text-center text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
+      )}
     >
       {children}
     </motion.h1>
@@ -47,7 +52,6 @@ interface BoxRevealProps {
   delay?: number;
   once?: boolean;
 }
-
 export const BoxReveal = ({
   children,
   width = "fit-content",
@@ -58,9 +62,10 @@ export const BoxReveal = ({
 }: BoxRevealProps) => {
   const mainControls = useAnimation();
   const slideControls = useAnimation();
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once });
-  
+
   useEffect(() => {
     if (isInView) {
       slideControls.start("visible");
@@ -70,7 +75,7 @@ export const BoxReveal = ({
       mainControls.start("hidden");
     }
   }, [isInView, mainControls, slideControls]);
-  
+
   return (
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
       <motion.div
@@ -84,6 +89,7 @@ export const BoxReveal = ({
       >
         {children}
       </motion.div>
+
       <motion.div
         variants={{
           hidden: { left: 0 },
@@ -107,29 +113,5 @@ export const BoxReveal = ({
         }}
       />
     </div>
-  );
-};
-
-// New SlideUp component
-export const SlideUp = ({
-  children,
-  className,
-  delay = 0,
-  duration = 0.5,
-}: {
-  children: ReactNode;
-  className?: string;
-  delay?: number;
-  duration?: number;
-}) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration, delay }}
-      className={className}
-    >
-      {children}
-    </motion.div>
   );
 };
