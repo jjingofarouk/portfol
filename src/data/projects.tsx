@@ -6,53 +6,54 @@ import { ArrowUpRight, ExternalLink, Link2, MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
-// Use Material UI's icon library directly:
-import { SiCss3, SiBootstrap, SiYoutube } from "react-icons/si";
-// React Icons
-import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from "react-icons/ri";
 import {
+  SiAxios,
+  SiBootstrap,
   SiChakraui,
+  SiCss3,
+  SiCypress,
+  SiDeno,
   SiDocker,
   SiExpress,
+  SiFastapi,
   SiFirebase,
+  SiFlask,
+  SiFontawesome,
+  SiGoogletranslate,
+  SiGraphql,
+  SiHtml5,
   SiJavascript,
+  SiJest,
+  SiKubernetes,
+  SiMongodb,
+  SiMocha,
+  SiNextdotjs,
   SiPostgresql,
   SiPrisma,
   SiPython,
+  SiRabbitmq,
+  SiReact,
   SiReactquery,
-  SiSanity,
   SiReactrouter,
-  SiStyledcomponents,
-  SiAxios,
+  SiRedux,
+  SiRust,
+  SiSanity,
   SiShadcnui,
   SiSocketdotio,
-  SiSupabase,
+  SiStyledcomponents,
+  SiSvelte,
   SiTailwindcss,
+  SiTerraform,
   SiThreedotjs,
   SiTypescript,
   SiVuedotjs,
-  SiRedux,
-  SiGit,
-  SiNpm,
-  SiGraphql,
-  SiRust,
-  SiKubernetes,
-  SiDeno,
-  SiSvelte,
-  SiAstro,
-  SiBun,
-  SiJest,
-  SiMocha,
-  SiCypress,
-  SiRabbitmq,
-  SiTerraform,
-  SiFastapi,
-  SiNextdotjs,
+  SiYoutube,
 } from "react-icons/si";
-import { SiHtml5, SiFontawesome, SiFlask, SiMongodb, SiGoogletranslate } from "react-icons/si";
-
+import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { FaJava, FaAws } from "react-icons/fa";
+import { Project } from "../types";
+import { ProjectsLinks } from "../components/ProjectsLinks";
 
 // Base Path for Assets
 const BASE_PATH = "/assets/projects-screenshots";
