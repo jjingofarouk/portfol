@@ -97,7 +97,8 @@ export type Skill = {
 
 export const PROJECT_SKILLS = {
   next: { title: "Next.js", bg: "black", fg: "white", icon: <RiNextjsFill /> },
-  chakra: {
+ expo: { title: "Expo", bg: "black", fg: "white", icon: <SiJavascript /> },
+ chakra: {
     title: "Chakra UI",
     bg: "black",
     fg: "white",
