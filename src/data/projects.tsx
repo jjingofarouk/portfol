@@ -283,7 +283,219 @@ export type Project = {
 };
 
 
-}/carewave-patients/book-appointment.png`]}
+const projects: Project[] = [
+  {
+    id: "carewave-doctor",
+    category: "telemedicine platform",
+    title: "CareWaveDoctor",
+    src: "/assets/projects-screenshots/carewave/carewave.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.materialUI,
+        PROJECT_SKILLS.redux,
+        PROJECT_SKILLS.firebase,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongodb,
+        PROJECT_SKILLS.socketio,
+      ],
+    },
+    live: "https://carewave-doctor.vercel.app/",
+    github: "https://github.com/jjingofarouk/CareWave_Doctors",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            CareWaveDoctor: Empowering Physicians in Telemedicine
+          </TypographyP>
+          <TypographyP className="font-mono">
+            CareWaveDoctor is a comprehensive telemedicine platform that enables
+            doctors to conduct virtual consultations, manage patient records,
+            and schedule appointments seamlessly. Designed with a user-friendly
+            interface, it ensures efficient and effective patient care delivery
+            in a digital environment.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Dashboard</TypographyH3>
+          <p className="font-mono mb-2">
+            A centralized dashboard providing an overview of upcoming
+            appointments, patient messages, and quick access to essential
+            features.
+          </p>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/carewave-doctor/dashboard.png`,
+              `${BASE_PATH}/carewave-doctor/appointments.png`,
+            ]}
+          />
+          <TypographyH3 className="my-4 mt-8">Patient Management</TypographyH3>
+          <p className="font-mono mb-2">
+            Access and manage detailed patient profiles, including medical
+            history, ongoing treatments, and previous consultation notes.
+          </p>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/carewave-doctor/patient-list.png`,
+              `${BASE_PATH}/carewave-doctor/patient-profile.png`,
+            ]}
+          />
+          <TypographyH3 className="my-4 mt-8">
+            Telemedicine Sessions
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Conduct secure video consultations with patients, featuring
+            real-time chat and file sharing capabilities.
+          </p>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/carewave-doctor/video-call.png`,
+              `${BASE_PATH}/carewave-doctor/chat.png`,
+            ]}
+          />
+          <TypographyH3 className="my-4 mt-8">
+            Appointment Scheduling
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Manage your availability and allow patients to book appointments
+            based on your schedule, with automated reminders and notifications.
+          </p>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/carewave-doctor/schedule.png`,
+              `${BASE_PATH}/carewave-doctor/appointment-details.png`,
+            ]}
+          />
+        </div>
+      );
+    },
+  },
+  {
+    id: "ssuubi",
+    category: "Mental Health Tech",
+    title: "Ssuubi Chatbot",
+    src: "/assets/projects-screenshots/ssuubi/home.png",
+    screenshots: ["home.png", "chat.png", "mood.png", "crisis.png"],
+    live: "https://ssuubi-mental-health-bot.onrender.com",
+    github: "https://github.com/jjingofarouk/ssuubi-mental-health-bot",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.html,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.fontAwesome,
+      ],
+      backend: [
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.flask,
+        PROJECT_SKILLS.transformers,
+        PROJECT_SKILLS.sentenceTransformers,
+        PROJECT_SKILLS.googletrans,
+      ],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Ssuubi = Your Empathetic Mental Health Companion
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Ssuubi is a Flask-powered mental health chatbot that delivers compassionate, intent-driven responses with a sleek, dark-mode UI inspired by clinical precision and cosmic calm. Built to support users through anxiety, depression, or crisis, it leverages AI to detect emotions and provide tailored guidance, reflecting my expertise in medical-tech innovation.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Conversational Core</TypographyH3>
+          <p className="font-mono mb-2">
+            Engage in real-time chats with Ssuubi, which uses Hugging Face models to analyze sentiments and intents, delivering responses from a curated JSON library—think of it as a digital therapist with a teal-accented touch.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/ssuubi/home.png`]} />
+          <TypographyH3 className="my-4 mt-8">Mood Check Interface</TypographyH3>
+          <p className="font-mono mb-2">
+            Select your mood (e.g., 😴 Tired, 😔 Not Great) via intuitive buttons, triggering personalized replies that validate your emotions with clinical empathy.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/ssuubi/mood.png`]} />
+          <TypographyH3 className="my-4 mt-8">Crisis Response System</TypographyH3>
+          <p className="font-mono mb-2">
+            For urgent messages like “I can’t go on,” Ssuubi activates crisis mode, displaying red-background alerts with resources like 988 and Text HOME to 741741, ensuring immediate support.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/ssuubi/crisis.png`]} />
+          <TypographyH3 className="my-4 mt-8">Chat Interface</TypographyH3>
+          <p className="font-mono mb-2">
+            The responsive chat UI, with typing indicators and a sidebar for history and resources, offers a seamless experience on mobile and desktop, wrapped in a dark `#202123` theme with `#10A37F` accents.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/ssuubi/chat.png`]} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            Designed for mental health support, Ssuubi combines AI precision with a user-centric interface, scalable for broader deployment with a nod to my medical-tech roots.
+          </p>
+          <ul className="font-mono list-disc list-inside mb-2">
+            <li>Intent detection for anxiety, depression, sleep issues, and more</li>
+            <li>Real-time crisis detection with urgent resource links</li>
+            <li>In-memory context storage for lightweight operation</li>
+            <li>Multilingual support via Google Translate</li>
+            <li>Responsive, dark-mode UI with Tailwind CSS</li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+          <p className="font-mono mb-2">
+            Built with Flask, Python 3.12, and Hugging Face models (`distilbert-base-uncased` for sentiment, `all-MiniLM-L6-v2` for embeddings), Ssuubi uses Tailwind CSS and Font Awesome for a polished frontend. In-memory storage eliminates database needs, while regex patterns and JSON responses ensure robust intent handling.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/ssuubi/home.png`]} />
+          <p className="font-mono mb-2 mt-5 text-center">
+            Ssuubi is your cosmic guide through mental health challenges. Connect and find support today!
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "carewave-patients",
+    category: "telemedicine platform",
+    title: "CareWavePatients",
+    src: "/assets/projects-screenshots/carewave/carewave.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.ts, // TypeScript
+        PROJECT_SKILLS.next, // Next.js
+        PROJECT_SKILLS.chakra, // Chakra UI
+        PROJECT_SKILLS.reactQuery, // React Query
+        PROJECT_SKILLS.firebase, // Firebase
+      ],
+      backend: [
+        PROJECT_SKILLS.node, // Node.js
+        PROJECT_SKILLS.express, // Express.js
+        PROJECT_SKILLS.prisma, // Prisma ORM
+        PROJECT_SKILLS.python, // Python
+        PROJECT_SKILLS.postgres, // PostgreSQL
+        PROJECT_SKILLS.socketio, // Socket.IO
+      ],
+    },
+    live: "https://carewave-patients.vercel.app/", // Hypothetical live URL
+    github: "https://github.com/jjingofarouk/CareWave_Patients",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            CareWavePatients = Your Health, Your Way
+          </TypographyP>
+          <TypographyP className="font-mono">
+            CareWavePatients is a telemedicine app built for patients to connect
+            with doctors anytime, anywhere. Book appointments, join video
+            consultations, manage prescriptions, and track your health—all from
+            your phone. Take control of your care with ease and convenience.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+
+          <TypographyH3 className="my-4 mt-8">Book Appointments</TypographyH3>
+          <p className="font-mono mb-2">
+            Schedule virtual visits with your doctor at a time that works for
+            you, with a simple and intuitive booking system.
+          </p>
+          <SlideShow
+            images={[`${BASE_PATH}/carewave-patients/book-appointment.png`]}
           />
 
           <TypographyH3 className="my-4 mt-8">Video Consultations</TypographyH3>
@@ -503,7 +715,6 @@ export type Project = {
       );
     },
   },
-
   {
     id: "portfolio",
     category: "Portfolio",
@@ -538,7 +749,7 @@ export type Project = {
           <p className="font-mono mb-2">
             Did you see that 3D keyboard modal? Yeah! I made that. That
             interactive keyboard is being rendered in 3D on a webpage 🤯, and
-            pressing each keycap reveals a skill in a goofy way. It&apos;s like
+            pressing each keycap reveals a skill in a goofy way. It's like
             typing, but make it art.
           </p>
           <SlideShow
@@ -553,7 +764,6 @@ export type Project = {
           </p>
           <SlideShow images={[`${BASE_PATH}/portfolio/navbar.png`]} />
           <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
-
           <p className="font-mono mb-2">
             My top personal and freelance projects — no filler, all killer.
           </p>
@@ -564,541 +774,444 @@ export type Project = {
             ]}
           />
           <p className="font-mono mb-2 mt-8 text-center">
-            This site&apos;s not just a portfolio — it&apos;s a whole vibe.
+            This site's not just a portfolio — it's a whole vibe.
           </p>
         </div>
       );
     },
   },
-{
-  id: "mininews",
-  category: "News Aggregation",
-  title: "MiniNews",
-  src: "/assets/projects-screenshots/mininews/home.png",
-  screenshots: ["home.png", "filters.png", "article.png", "saved.png"],
-  live: "https://www.mangunews.vercel.app", // Replace with actual live link, e.g., "https://mininews.vercel.app"
-  github: "https://github.com/jjingofarouk/MiniNews",
-  skills: {
-    frontend: [
-      PROJECT_SKILLS.js,
-      PROJECT_SKILLS.react,
-      PROJECT_SKILLS.reactRouter,
-      PROJECT_SKILLS.styledComponents,
-      PROJECT_SKILLS.axios,
+  {
+    id: "mininews",
+    category: "News Aggregation",
+    title: "MiniNews",
+    src: "/assets/projects-screenshots/mininews/home.png",
+    screenshots: ["home.png", "filters.png", "article.png", "saved.png"],
+    live: "https://www.mangunews.vercel.app", // Replace with actual live link, e.g., "https://mininews.vercel.app"
+    github: "https://github.com/jjingofarouk/MiniNews",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.reactRouter,
+        PROJECT_SKILLS.styledComponents,
+        PROJECT_SKILLS.axios,
+      ],
+      backend: [],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            MiniNews = Your Cosmic News Portal
+          </TypographyP>
+          <TypographyP className="font-mono">
+            MiniNews is a React-powered news aggregator that beams global headlines to your screen with a sleek, black-and-white UI inspired by Grok and ChatGPT. Filter by category, country, or source, search for breaking stories, and save articles for later—all with a nod to clinical precision from my medical roots.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Stellar Headlines Grid</TypographyH3>
+          <p className="font-mono mb-2">
+            Land on a responsive grid of headlines, each card pulsing with images, titles, and snippets. It’s like flipping through a digital newspaper, but make it futuristic.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/mininews/home.png`]} />
+          <TypographyH3 className="my-4 mt-8">Hyperdrive Filters</TypographyH3>
+          <p className="font-mono mb-2">
+            Zoom through news with filters for categories (business, tech), countries, languages, and sources. Powered by a slick UI, it’s as intuitive as a stethoscope.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/mininews/filters.png`]} />
+          <TypographyH3 className="my-4 mt-8">Article Deep Dive</TypographyH3>
+          <p className="font-mono mb-2">
+            Click a headline to explore full articles (well, as full as NewsAPI’s free tier allows). Clean typography and subtle animations keep you locked in.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/mininews/article.png`]} />
+          <TypographyH3 className="my-4 mt-8">Saved Articles Vault</TypographyH3>
+          <p className="font-mono mb-2">
+            Bookmark your favorite stories with a tap. The “Saved” section is your personal news archive, ready for a quick revisit.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/mininews/saved.png`]} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            Built for news junkies, MiniNews delivers a fast, responsive experience with a medical-tech twist, reflecting my dual expertise.
+          </p>
+          <ul className="font-mono list-disc list-inside mb-2">
+            <li>Dynamic headline grid with pagination</li>
+            <li>Advanced filtering by category, country, and source</li>
+            <li>Real-time search with keyword matching</li>
+            <li>Local storage for saving articles</li>
+            <li>Minimalistic UI with smooth transitions</li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+          <p className="font-mono mb-2">
+            Crafted with React 18, styled-components for pixel-perfect styling, and Axios for NewsAPI calls. React Router powers seamless navigation, while the Inter font adds a clinical yet modern vibe. The Context API keeps state management as smooth as a surgical procedure.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/mininews/home.png`]} />
+          <p className="font-mono mb-2 mt-5 text-center">
+            MiniNews is your warp-speed gateway to global stories. Dive in and explore the news universe!
+          </p>
+          <TypographyH3 className="my-4 mt-8">Note on NewsAPI</TypographyH3>
+          <p className="font-mono mb-2">
+            MiniNews uses NewsAPI’s free tier, which caps requests at 100/day and limits article content. If headlines don’t load, the API’s limit may be hit. Swap in a paid key or RSS feeds for uninterrupted access.
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "clinical-calculators",
+    category: "Healthcare",
+    title: "Clinical Calculators",
+    src: "/assets/projects-screenshots/clinical-calculators/home.png",
+    screenshots: [
+      "home.png",
+      "search.png",
+      "favorites.png",
+      "cardiovascular.png",
+      "neurology.png",
+      "gastroenterology.png",
+      "nephrology.png",
+      "obstetrics.png",
+      "pulmonary.png",
+      "orthopedics.png",
+      "icu.png",
+      "general.png",
     ],
-    backend: [],
+    live: "https://clinical-calculators.vercel.app/",
+    github: "https://github.com/jjingofarouk/clinical-calculators",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.expo,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.mui,
+      ],
+      backend: [],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Clinical Calculators: Precision for Healthcare
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Clinical Calculators is a React Native mobile app designed for healthcare professionals. With over 90 specialized calculators across multiple medical specialties, it delivers accurate, real-time clinical insights in a user-friendly, performant interface, empowering clinicians to make informed decisions on the go.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Home Dashboard</TypographyH3>
+          <p className="font-mono mb-2">
+            The app’s home screen offers a dynamic dashboard with quick access to specialty categories, a powerful search feature, and personalized favorites, enhancing clinical efficiency.
+          </p>
+          <SlideShow images={["/assets/projects-screenshots/clinical-calculators/home.png"]} />
+          <TypographyH3 className="my-4 mt-8">Search & Favorites</TypographyH3>
+          <p className="font-mono mb-2">
+            A custom search feature allows quick access to calculators by name or specialty. The favorites system, powered by AsyncStorage, lets users bookmark tools for instant access.
+          </p>
+          <SlideShow images={["/assets/projects-screenshots/clinical-calculators/search.png", "/assets/projects-screenshots/clinical-calculators/favorites.png"]} />
+          <TypographyH3 className="my-4 mt-8">Specialty Calculators</TypographyH3>
+          <p className="font-mono mb-2">
+            The app covers specialties like cardiovascular, neurology, and more, with precise tools for risk scoring, diagnostics, and patient assessment.
+          </p>
+          <ul className="font-mono list-disc list-inside mb-2">
+            <li>Cardiovascular: ASCVD Risk, CHADSVASC, HASBLED</li>
+            <li>Neurology: Glasgow Coma Scale, NIH Stroke Scale</li>
+            <li>Gastroenterology: Child-Pugh Score, FIB-4</li>
+            <li>Nephrology: eGFR, Creatinine Clearance</li>
+            <li>Obstetrics: Due Date, Apgar Score</li>
+            <li>Pulmonary: BODE Index, CURB-65</li>
+            <li>Orthopedics: Fracture Risk Assessment</li>
+            <li>ICU: APACHE, SOFA Scores</li>
+            <li>General: BMR, Caloric Needs</li>
+          </ul>
+          <SlideShow images={["/assets/projects-screenshots/clinical-calculators/cardiovascular.png", "/assets/projects-screenshots/clinical-calculators/neurology.png"]} />
+          <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+          <p className="font-mono mb-2">
+            Built with React Native and Expo for cross-platform support. React Navigation enables seamless navigation, while React Native Paper, MUI, and Tailwind CSS create a modern UI. Reanimated and Gesture Handler deliver smooth animations, and AsyncStorage ensures offline data persistence. Chart Kit and SVG visualizations enhance complex calculators.
+          </p>
+          <SlideShow images={["/assets/projects-screenshots/clinical-calculators/home.png"]} />
+          <p className="font-mono mb-2 mt-5 text-center">
+            Clinical Calculators is a powerful, accessible tool for clinicians, showcasing expertise in building complex, user-centric mobile apps with React Native.
+          </p>
+        </div>
+      );
+    },
   },
-  get content() {
-    return (
-      <div>
-        <TypographyP className="font-mono text-2xl text-center">
-          MiniNews = Your Cosmic News Portal
-        </TypographyP>
-        <TypographyP className="font-mono">
-          MiniNews is a React-powered news aggregator that beams global headlines to your screen with a sleek, black-and-white UI inspired by Grok and ChatGPT. Filter by category, country, or source, search for breaking stories, and save articles for later—all with a nod to clinical precision from my medical roots.
-        </TypographyP>
-        <ProjectsLinks live={this.live} repo={this.github} />
-        <TypographyH3 className="my-4 mt-8">Stellar Headlines Grid</TypographyH3>
-        <p className="font-mono mb-2">
-          Land on a responsive grid of headlines, each card pulsing with images, titles, and snippets. It’s like flipping through a digital newspaper, but make it futuristic.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/mininews/home.png`]} />
-        <TypographyH3 className="my-4 mt-8">Hyperdrive Filters</TypographyH3>
-        <p className="font-mono mb-2">
-          Zoom through news with filters for categories (business, tech), countries, languages, and sources. Powered by a slick UI, it’s as intuitive as a stethoscope.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/mininews/filters.png`]} />
-        <TypographyH3 className="my-4 mt-8">Article Deep Dive</TypographyH3>
-        <p className="font-mono mb-2">
-          Click a headline to explore full articles (well, as full as NewsAPI’s free tier allows). Clean typography and subtle animations keep you locked in.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/mininews/article.png`]} />
-        <TypographyH3 className="my-4 mt-8">Saved Articles Vault</TypographyH3>
-        <p className="font-mono mb-2">
-          Bookmark your favorite stories with a tap. The “Saved” section is your personal news archive, ready for a quick revisit.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/mininews/saved.png`]} />
-        <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-        <p className="font-mono mb-2">
-          Built for news junkies, MiniNews delivers a fast, responsive experience with a medical-tech twist, reflecting my dual expertise.
-        </p>
-        <ul className="font-mono list-disc list-inside mb-2">
-          <li>Dynamic headline grid with pagination</li>
-          <li>Advanced filtering by category, country, and source</li>
-          <li>Real-time search with keyword matching</li>
-          <li>Local storage for saving articles</li>
-          <li>Minimalistic UI with smooth transitions</li>
-        </ul>
-        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-        <p className="font-mono mb-2">
-          Crafted with React 18, styled-components for pixel-perfect styling, and Axios for NewsAPI calls. React Router powers seamless navigation, while the Inter font adds a clinical yet modern vibe. The Context API keeps state management as smooth as a surgical procedure.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/mininews/home.png`]} />
-        <p className="font-mono mb-2 mt-5 text-center">
-          MiniNews is your warp-speed gateway to global stories. Dive in and explore the news universe!
-        </p>
-        <TypographyH3 className="my-4 mt-8">Note on NewsAPI</TypographyH3>
-        <p className="font-mono mb-2">
-          MiniNews uses NewsAPI’s free tier, which caps requests at 100/day and limits article content. If headlines don’t load, the API’s limit may be hit. Swap in a paid key or RSS feeds for uninterrupted access.
-        </p>
-      </div>
-    );
+  {
+    id: "matatu",
+    category: "Transport Tech",
+    title: "Matatu Tracker",
+    src: "/assets/projects-screenshots/matatu/home.jpg",
+    screenshots: ["home.jpg", "admin.png", "tracking.png", "booking.jpg"],
+    live: "https://matatu-tracker.vercel.app/",
+    github: "https://github.com/jjingofarouk/matatu-tracker",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.firebase,
+        PROJECT_SKILLS.mui,
+        PROJECT_SKILLS.tailwind,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.firebase,
+      ],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Matatu Tracker = Navigate Uganda’s Roads Like a Star
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Matatu Tracker is a React-based Progressive Web App that brings order to Uganda’s bustling minibus scene. Track buses in real-time, book tickets on the fly, and manage fleets with a cosmic, mobile-first interface. From passengers to admins, it’s your warp-speed ticket to smarter transit.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Passenger Hub</TypographyH3>
+          <p className="font-mono mb-2">
+            Land on a sleek dashboard to find nearby buses, check live ETAs, and book tickets in seconds—perfect for Uganda’s on-the-go commuters.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/matatu/home.jpg`]} />
+          <TypographyH3 className="my-4 mt-8">Admin Command Center</TypographyH3>
+          <p className="font-mono mb-2">
+            Admins steer the mission: add users, assign roles (Driver, Conductor, Supervisor), suspend accounts, or delete users via a Material-UI-powered dashboard that’s as smooth as a lunar orbit.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/matatu/admin.png`]} />
+          <TypographyH3 className="my-4 mt-8">Real-Time Tracking</TypographyH3>
+          <p className="font-mono mb-2">
+            Drivers beam live location updates to Firestore, letting passengers track buses and supervisors monitor fleets with stellar precision.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/matatu/tracking.png`]} />
+          <TypographyH3 className="my-4 mt-8">Ticket Booking</TypographyH3>
+          <p className="font-mono mb-2">
+            Passengers secure seats with a tap, while conductors manage bookings—all synced in real-time for a seamless ride.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/matatu/booking.jpg`]} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            Built for Uganda’s transport chaos, this PWA is fast, secure, and offline-capable, scaling for a pilot of 5–10 vehicles with cosmic efficiency.
+          </p>
+          <ul className="font-mono list-disc list-inside mb-2">
+            <li>Real-time bus tracking with Firebase Firestore</li>
+            <li>Role-based access for Admins, Drivers, Passengers, and more</li>
+            <li>Secure user management via Cloud Functions</li>
+            <li>Mobile-first PWA with offline support and push notifications</li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+          <p className="font-mono mb-2">
+            Powered by React 18, Firebase (Authentication, Firestore, Cloud Functions), and Material-UI, with Tailwind CSS for a polished look. Cloud Functions ensure secure admin tasks, while the PWA setup delivers app-like performance on any device.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/matatu/home.jpg`]} />
+          <p className="font-mono mb-2 mt-5 text-center">
+            Matatu Tracker transforms Uganda’s minibus maze into a digital constellation. Hop aboard and explore the future of transit!
+          </p>
+        </div>
+      );
+    },
   },
-},
-
-{
-  id: "clinical-calculators",
-  category: "Healthcare",
-  title: "Clinical Calculators",
-  src: "/assets/projects-screenshots/clinical-calculators/home.png",
-  screenshots: [
-    "home.png",
-    "search.png",
-    "favorites.png",
-    "cardiovascular.png",
-    "neurology.png",
-    "gastroenterology.png",
-    "nephrology.png",
-    "obstetrics.png",
-    "pulmonary.png",
-    "orthopedics.png",
-    "icu.png",
-    "general.png",
-  ],
-  live: "https://clinical-calculators.vercel.app/",
-  github: "https://github.com/jjingofarouk/clinical-calculators",
-  skills: {
-    frontend: [
-      "js",
-      "reactNative",
-      "expo",
-      "reactNavigation",
-      "tailwind",
-      "reanimated",
-      "gestureHandler",
-      "reactNativePaper",
-      "mui",
-      "asyncStorage",
-      "chartKit",
-      "vectorIcons",
-      "lucide",
+  {
+    id: "dwaliro",
+    category: "Medical Tech",
+    title: "Dwaliro",
+    src: "/assets/projects-screenshots/dwaliro/home.png",
+    screenshots: [
+      "home.png",
+      "trials.png",
+      "study-details.png",
+      "details.png",
+      "details2.png",
+      "details3.png",
+      "study-design.png",
+      "participants.png",
+      "interventions.png",
+      "locations.png",
+      "regulatory.png",
+      "results.png",
+      "statistics.png",
+      "filters.png",
     ],
-    backend: [],
+    live: "https://dwaliro.vercel.app", // Replace with actual live link
+    github: "https://github.com/jjingofarouk/dwaliro",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.reactRouter,
+        PROJECT_SKILLS.styledComponents,
+        PROJECT_SKILLS.axios,
+        PROJECT_SKILLS.reactSpring,
+        PROJECT_SKILLS.lucideReact,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.firebase,
+      ],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Dwaliro: Your Gateway to Clinical Research
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Dwaliro is my love letter to medical tech—a React-powered web app that makes exploring clinical trials from ClinicalTrials.gov feel like a breeze. Named after the Luganda word for "hospital," it’s got a sleek, hospital-inspired vibe with dark teal (#1A4A4F) headers and soft beige (#F5F1E9) backgrounds. Drawing on my medical background, I built Dwaliro to be intuitive, responsive, and packed with features for researchers, doctors, and curious folks alike. From real-time data to animated analytics, it’s a clean, professional tool that’s as precise as a surgeon’s scalpel.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Trials Grid</TypographyH3>
+          <p className="font-mono mb-2">
+            The trials page is where it all starts—a clean, responsive grid of trial cards showing titles, statuses, phases, and quick summaries. It’s built for speed and scale, handling thousands of trials with pagination that keeps things snappy. Think of it as your digital research binder, but way cooler.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/trials.png`]} />
+          <TypographyH3 className="my-4 mt-8">Smart Filters</TypographyH3>
+          <p className="font-mono mb-2">
+            Need to zero in on specific trials? The filters section is your command center. You can slice and dice trials by status (e.g., Recruiting, Completed), phase (e.g., Phase 1, Phase 3), study type, or even keywords with a real-time search bar. The UI is buttery smooth, with dropdowns and toggles that feel natural and responsive, making it easy to find exactly what you’re after. It’s like having a research assistant who never sleeps.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/filters.png`]} />
+          <TypographyH3 className="my-4 mt-8">Study Details</TypographyH3>
+          <p className="font-mono mb-2">
+            Click into a trial, and the Study Details section lays it all out with accordion-style panels. You’ll see the trial’s title, status (with slick badges like “Recruiting”), type, phase, and full timeline—start dates, completion dates, you name it. The description panel dives deep into the trial’s purpose, formatted for easy reading. It’s like having a study’s entire dossier at your fingertips.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/study-details.png`]} />
+          <TypographyH3 className="my-4 mt-8">Study Design</TypographyH3>
+          <p className="font-mono mb-2">
+            Want to know how a trial’s structured? The Study Design component breaks it down: allocation (randomized or not), masking (double-blind, anyone?), model (parallel or crossover), and endpoint classification. Each field pairs with a Lucide-React icon for that extra polish, and a fallback UI handles missing data gracefully. It’s nerdy in the best way.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/study-design.png`]} />
+          <TypographyH3 className="my-4 mt-8">Participant Information</TypographyH3>
+          <p className="font-mono mb-2">
+            The Participant Information section is all about the people in the trial. Animated counters (powered by React-Spring) show enrollment numbers, while cards highlight age ranges and sex. A detailed eligibility criteria block lays out who can join, formatted for quick scanning. It’s perfect for figuring out if a trial fits your research focus.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/participants.png`]} />
+          <TypographyH3 className="my-4 mt-8">Trial Interventions</TypographyH3>
+          <p className="font-mono mb-2">
+            Curious about the treatments? The Interventions section serves up expandable cards for drugs, devices, procedures, or behavioral therapies. Each card details the name, type, status, dosage, and route, with tailored icons (like a pill for drugs) and smooth animations. It’s a clear, interactive way to explore what’s being tested.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/interventions.png`]} />
+          <TypographyH3 className="my-4 mt-8">Study Locations</TypographyH3>
+          <p className="font-mono mb-2">
+            The Locations section maps out where trials are happening, with cards listing facilities, cities, states, and countries. A badge shows the total number of sites, and a subtle click animation adds a tactile feel. It’s a quick way to see the trial’s geographic scope without wading through spreadsheets.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/locations.png`]} />
+          <TypographyH3 className="my-4 mt-8">Regulatory Information</TypographyH3>
+          <p className="font-mono mb-2">
+            Compliance matters, and the Regulatory Information component delivers. It lists the NCT ID, FDA regulation status (with “Yes” or “No” badges), and sponsor, all in a clean, icon-driven layout. This is your go-to for understanding a trial’s oversight and legitimacy.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/regulatory.png`]} />
+          <TypographyH3 className="my-4 mt-8">Study Results</TypographyH3>
+          <p className="font-mono mb-2">
+            The Results section is where trials come full circle, summarizing adverse events, outcomes, and publications. Each result type gets its own icon and detailed text, with a fallback for unpublished trials. It’s a goldmine for evaluating a study’s impact and findings.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/results.png`]} />
+          <TypographyH3 className="my-4 mt-8">Hospital-Chic Design</TypographyH3>
+          <p className="font-mono mb-2">
+            Dwaliro’s design screams modern healthcare—dark teal headers, soft beige backgrounds, and the Inter font give it a clinical yet welcoming feel. Subtle animations and high-contrast text (WCAG-compliant) make it accessible and engaging, like stepping into a high-tech hospital.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/home.png`]} />
+          <TypographyH3 className="my-4 mt-8">Mobile-First Magic</TypographyH3>
+          <p className="font-mono mb-2">
+            Whether you’re on a phone, tablet, or desktop, Dwaliro’s got you covered. The mobile-first UI adjusts fonts, padding, and layouts dynamically, with touch-friendly controls and smooth transitions. It’s built for researchers on the move.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/mobile.png`]} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            Dwaliro is designed for anyone diving into clinical trials—doctors, researchers, or patients—offering a robust, user-friendly platform with deep insights and a professional edge.
+          </p>
+          <ul className="font-mono list-disc list-inside mb-2">
+            <li>Dynamic trial grid with pagination and advanced filters</li>
+            <li>Comprehensive trial details across eight specialized components</li>
+            <li>Animated analytics for enrollment, outcomes, and participant stats</li>
+            <li>Real-time data via Firebase and ClinicalTrials.gov API</li>
+            <li>Accessible, WCAG-compliant design with fluid animations</li>
+            <li>Responsive UI optimized for all devices</li>
+            <li>Custom teal-beige theme for a medical aesthetic</li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+          <p className="font-mono mb-2">
+            I built Dwaliro with React 18 and styled-components for a modular, pixel-perfect frontend. React Router keeps navigation seamless, while Axios powers API calls to a Firebase Cloud Functions backend, securely fetching trial data. React-Spring drives slick animations for counters and accordions, and Lucide-React icons add a modern touch. The teal-beige theme, Inter font, and clean code (thanks to ESLint and Prettier) make it a joy to work with.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/dwaliro/home.png`]} />
+          <p className="font-mono mb-2 mt-5 text-center">
+            Dwaliro blends medical precision with tech innovation—a tool that’s as functional as it is beautiful. Check it out and let’s talk about bringing this energy to your team!
+          </p>
+          <TypographyH3 className="my-4 mt-8">Note on Data Source</TypographyH3>
+          <p className="font-mono mb-2">
+            Dwaliro pulls data from ClinicalTrials.gov via Firebase Cloud Functions. Some trials may have incomplete details depending on the API’s response. Future updates could tap into additional data sources for even richer insights.
+          </p>
+        </div>
+      );
+    },
   },
-  get content() {
-    return (
-      <div>
-        <TypographyP className="font-mono text-2xl text-center">
-          Clinical Calculators: Precision for Healthcare
-        </TypographyP>
-        <TypographyP className="font-mono">
-          Clinical Calculators is a React Native mobile app designed for healthcare professionals. With over 90 specialized calculators across multiple medical specialties, it delivers accurate, real-time clinical insights in a user-friendly, performant interface, empowering clinicians to make informed decisions on the go.
-        </TypographyP>
-        <ProjectsLinks live={this.live} repo={this.github} />
-        <TypographyH3 className="my-4 mt-8">Home Dashboard</TypographyH3>
-        <p className="font-mono mb-2">
-          The app’s home screen offers a dynamic dashboard with quick access to specialty categories, a powerful search feature, and personalized favorites, enhancing clinical efficiency.
-        </p>
-        <SlideShow images={["/assets/projects-screenshots/clinical-calculators/home.png"]} />
-        <TypographyH3 className="my-4 mt-8">Search & Favorites</TypographyH3>
-        <p className="font-mono mb-2">
-          A custom search feature allows quick access to calculators by name or specialty. The favorites system, powered by AsyncStorage, lets users bookmark tools for instant access.
-        </p>
-        <SlideShow images={["/assets/projects-screenshots/clinical-calculators/search.png", "/assets/projects-screenshots/clinical-calculators/favorites.png"]} />
-        <TypographyH3 className="my-4 mt-8">Specialty Calculators</TypographyH3>
-        <p className="font-mono mb-2">
-          The app covers specialties like cardiovascular, neurology, and more, with precise tools for risk scoring, diagnostics, and patient assessment.
-        </p>
-        <ul className="font-mono list-disc list-inside mb-2">
-          <li>Cardiovascular: ASCVD Risk, CHADSVASC, HASBLED</li>
-          <li>Neurology: Glasgow Coma Scale, NIH Stroke Scale</li>
-          <li>Gastroenterology: Child-Pugh Score, FIB-4</li>
-          <li>Nephrology: eGFR, Creatinine Clearance</li>
-          <li>Obstetrics: Due Date, Apgar Score</li>
-          <li>Pulmonary: BODE Index, CURB-65</li>
-          <li>Orthopedics: Fracture Risk Assessment</li>
-          <li>ICU: APACHE, SOFA Scores</li>
-          <li>General: BMR, Caloric Needs</li>
-        </ul>
-        <SlideShow images={["/assets/projects-screenshots/clinical-calculators/cardiovascular.png", "/assets/projects-screenshots/clinical-calculators/neurology.png"]} />
-        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-        <p className="font-mono mb-2">
-          Built with React Native and Expo for cross-platform support. React Navigation enables seamless navigation, while React Native Paper, MUI, and Tailwind CSS create a modern UI. Reanimated and Gesture Handler deliver smooth animations, and AsyncStorage ensures offline data persistence. Chart Kit and SVG visualizations enhance complex calculators.
-        </p>
-        <SlideShow images={["/assets/projects-screenshots/clinical-calculators/home.png"]} />
-        <p className="font-mono mb-2 mt-5 text-center">
-          Clinical Calculators is a powerful, accessible tool for clinicians, showcasing expertise in building complex, user-centric mobile apps with React Native.
-        </p>
-      </div>
-    );
-  }, // Removed the semicolon here
-},
-
-{
-  id: "matatu",
-  category: "Transport Tech",
-  title: "Matatu Tracker",
-  src: "/assets/projects-screenshots/matatu/home.jpg",
-  screenshots: ["home.jpg", "admin.png", "tracking.png", "booking.jpg"],
-  live: "https://matatu-tracker.vercel.app/",
-  github: "https://github.com/jjingofarouk/matatu-tracker",
-  skills: {
-    frontend: [
-      PROJECT_SKILLS.js,
-      PROJECT_SKILLS.react,
-      PROJECT_SKILLS.firebase,
-      PROJECT_SKILLS.mui,
-      PROJECT_SKILLS.tailwind,
-    ],
-    backend: [
-      PROJECT_SKILLS.node,
-      PROJECT_SKILLS.firebase,
-    ],
-  },
-  get content() {
-    return (
-      <div>
-        <TypographyP className="font-mono text-2xl text-center">
-          Matatu Tracker = Navigate Uganda’s Roads Like a Star
-        </TypographyP>
-        <TypographyP className="font-mono">
-          Matatu Tracker is a React-based Progressive Web App that brings order to Uganda’s bustling minibus scene. Track buses in real-time, book tickets on the fly, and manage fleets with a cosmic, mobile-first interface. From passengers to admins, it’s your warp-speed ticket to smarter transit.
-        </TypographyP>
-        <ProjectsLinks live={this.live} repo={this.github} />
-        <TypographyH3 className="my-4 mt-8">Passenger Hub</TypographyH3>
-        <p className="font-mono mb-2">
-          Land on a sleek dashboard to find nearby buses, check live ETAs, and book tickets in seconds—perfect for Uganda’s on-the-go commuters.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/matatu/home.jpg`]} />
-        <TypographyH3 className="my-4 mt-8">Admin Command Center</TypographyH3>
-        <p className="font-mono mb-2">
-          Admins steer the mission: add users, assign roles (Driver, Conductor, Supervisor), suspend accounts, or delete users via a Material-UI-powered dashboard that’s as smooth as a lunar orbit.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/matatu/admin.png`]} />
-        <TypographyH3 className="my-4 mt-8">Real-Time Tracking</TypographyH3>
-        <p className="font-mono mb-2">
-          Drivers beam live location updates to Firestore, letting passengers track buses and supervisors monitor fleets with stellar precision.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/matatu/tracking.png`]} />
-        <TypographyH3 className="my-4 mt-8">Ticket Booking</TypographyH3>
-        <p className="font-mono mb-2">
-          Passengers secure seats with a tap, while conductors manage bookings—all synced in real-time for a seamless ride.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/matatu/booking.jpg`]} />
-        <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-        <p className="font-mono mb-2">
-          Built for Uganda’s transport chaos, this PWA is fast, secure, and offline-capable, scaling for a pilot of 5–10 vehicles with cosmic efficiency.
-        </p>
-        <ul className="font-mono list-disc list-inside mb-2">
-          <li>Real-time bus tracking with Firebase Firestore</li>
-          <li>Role-based access for Admins, Drivers, Passengers, and more</li>
-          <li>Secure user management via Cloud Functions</li>
-          <li>Mobile-first PWA with offline support and push notifications</li>
-        </ul>
-        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-        <p className="font-mono mb-2">
-          Powered by React 18, Firebase (Authentication, Firestore, Cloud Functions), and Material-UI, with Tailwind CSS for a polished look. Cloud Functions ensure secure admin tasks, while the PWA setup delivers app-like performance on any device.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/matatu/home.jpg`]} />
-        <p className="font-mono mb-2 mt-5 text-center">
-          Matatu Tracker transforms Uganda’s minibus maze into a digital constellation. Hop aboard and explore the future of transit!
-        </p>
-      </div>
-    );
-  },
-},
-{
-  id: "clinical-calculators",
-  category: "Healthcare",
-  title: "Clinical Calculators",
-  src: "/assets/projects-screenshots/clinical-calculators/home.png",
-  screenshots: [
-    "home.png",
-    "search.png",
-    "favorites.png",
-    "cardiovascular.png",
-    "neurology.png",
-    "gastroenterology.png",
-    "nephrology.png",
-    "obstetrics.png",
-    "pulmonary.png",
-    "orthopedics.png",
-    "icu.png",
-    "general.png",
-  ],
-  live: "https://clinical-calculators.vercel.app/",
-  github: "https://github.com/jjingofarouk/clinical-calculators",
-  skills: {
-    frontend: [
-      "js",
-      "reactNative",
-      "expo",
-      "reactNavigation",
-      "tailwind",
-      "reanimated",
-      "gestureHandler",
-      "reactNativePaper",
-      "mui",
-      "asyncStorage",
-      "chartKit",
-      "vectorIcons",
-      "lucide",
-    ],
-    backend: [],
-  },
-  get content() {
-    return (
-      <div>
-        <TypographyP className="font-mono text-2xl text-center">
-          Clinical Calculators: Precision for Healthcare
-        </TypographyP>
-        <TypographyP className="font-mono">
-          Clinical Calculators is a React Native mobile app designed for healthcare professionals. With over 90 specialized calculators across multiple medical specialties, it delivers accurate, real-time clinical insights in a user-friendly, performant interface, empowering clinicians to make informed decisions on the go.
-        </TypographyP>
-        <ProjectsLinks live={this.live} repo={this.github} />
-        <TypographyH3 className="my-4 mt-8">Home Dashboard</TypographyH3>
-        <p className="font-mono mb-2">
-          The app’s home screen offers a dynamic dashboard with quick access to specialty categories, a powerful search feature, and personalized favorites, enhancing clinical efficiency.
-        </p>
-        <SlideShow images={["/assets/projects-screenshots/clinical-calculators/home.png"]} />
-        <TypographyH3 className="my-4 mt-8">Search & Favorites</TypographyH3>
-        <p className="font-mono mb-2">
-          A custom search feature allows quick access to calculators by name or specialty. The favorites system, powered by AsyncStorage, lets users bookmark tools for instant access.
-        </p>
-        <SlideShow images={["/assets/projects-screenshots/clinical-calculators/search.png", "/assets/projects-screenshots/clinical-calculators/favorites.png"]} />
-        <TypographyH3 className="my-4 mt-8">Specialty Calculators</TypographyH3>
-        <p className="font-mono mb-2">
-          The app covers specialties like cardiovascular, neurology, and more, with precise tools for risk scoring, diagnostics, and patient assessment.
-        </p>
-        <ul className="font-mono list-disc list-inside mb-2">
-          <li>Cardiovascular: ASCVD Risk, CHADSVASC, HASBLED</li>
-          <li>Neurology: Glasgow Coma Scale, NIH Stroke Scale</li>
-          <li>Gastroenterology: Child-Pugh Score, FIB-4</li>
-          <li>Nephrology: eGFR, Creatinine Clearance</li>
-          <li>Obstetrics: Due Date, Apgar Score</li>
-          <li>Pulmonary: BODE Index, CURB-65</li>
-          <li>Orthopedics: Fracture Risk Assessment</li>
-          <li>ICU: APACHE, SOFA Scores</li>
-          <li>General: BMR, Caloric Needs</li>
-        </ul>
-        <SlideShow images={["/assets/projects-screenshots/clinical-calculators/cardiovascular.png", "/assets/projects-screenshots/clinical-calculators/neurology.png"]} />
-        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-        <p className="font-mono mb-2">
-          Built with React Native and Expo for cross-platform support. React Navigation enables seamless navigation, while React Native Paper, MUI, and Tailwind CSS create a modern UI. Reanimated and Gesture Handler deliver smooth animations, and AsyncStorage ensures offline data persistence. Chart Kit and SVG visualizations enhance complex calculators.
-        </p>
-        <SlideShow images={["/assets/projects-screenshots/clinical-calculators/home.png"]} />
-        <p className="font-mono mb-2 mt-5 text-center">
-          Clinical Calculators is a powerful, accessible tool for clinicians, showcasing expertise in building complex, user-centric mobile apps with React Native.
-        </p>
-      </div>
-    );
-  },
-},
-{
-  id: "dwaliro",
-  category: "Medical Tech",
-  title: "Dwaliro",
-  src: "/assets/projects-screenshots/dwaliro/home.png",
-  screenshots: [
-    "home.png",
-    "trials.png",
-    "study-details.png",
-    "details.png",
-    "details2.png",
-    "details3.png",
-    "study-design.png",
-    "participants.png",
-    "interventions.png",
-    "locations.png",
-    "regulatory.png",
-    "results.png",
-    "statistics.png",
-    "filters.png",
-  ],
-  live: "https://dwaliro.vercel.app", // Replace with actual live link
-  github: "https://github.com/jjingofarouk/dwaliro",
-  skills: {
-    frontend: [
-      PROJECT_SKILLS.js,
-      PROJECT_SKILLS.react,
-      PROJECT_SKILLS.reactRouter,
-      PROJECT_SKILLS.styledComponents,
-      PROJECT_SKILLS.axios,
-      PROJECT_SKILLS.reactSpring,
-      PROJECT_SKILLS.lucideReact,
-    ],
-    backend: [
-      PROJECT_SKILLS.node,
-      PROJECT_SKILLS.firebase,
-    ],
-  },
-  get content() {
-    return (
-      <div>
-        <TypographyP className="font-mono text-2xl text-center">
-          Dwaliro: Your Gateway to Clinical Research
-        </TypographyP>
-        <TypographyP className="font-mono">
-          Dwaliro is my love letter to medical tech—a React-powered web app that makes exploring clinical trials from ClinicalTrials.gov feel like a breeze. Named after the Luganda word for "hospital," it’s got a sleek, hospital-inspired vibe with dark teal (#1A4A4F) headers and soft beige (#F5F1E9) backgrounds. Drawing on my medical background, I built Dwaliro to be intuitive, responsive, and packed with features for researchers, doctors, and curious folks alike. From real-time data to animated analytics, it’s a clean, professional tool that’s as precise as a surgeon’s scalpel.
-        </TypographyP>
-        <ProjectsLinks live={this.live} repo={this.github} />
-        <TypographyH3 className="my-4 mt-8">Trials Grid</TypographyH3>
-        <p className="font-mono mb-2">
-          The trials page is where it all starts—a clean, responsive grid of trial cards showing titles, statuses, phases, and quick summaries. It’s built for speed and scale, handling thousands of trials with pagination that keeps things snappy. Think of it as your digital research binder, but way cooler.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/trials.png`]} />
-        <TypographyH3 className="my-4 mt-8">Smart Filters</TypographyH3>
-        <p className="font-mono mb-2">
-          Need to zero in on specific trials? The filters section is your command center. You can slice and dice trials by status (e.g., Recruiting, Completed), phase (e.g., Phase 1, Phase 3), study type, or even keywords with a real-time search bar. The UI is buttery smooth, with dropdowns and toggles that feel natural and responsive, making it easy to find exactly what you’re after. It’s like having a research assistant who never sleeps.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/filters.png`]} />
-        <TypographyH3 className="my-4 mt-8">Study Details</TypographyH3>
-        <p className="font-mono mb-2">
-          Click into a trial, and the Study Details section lays it all out with accordion-style panels. You’ll see the trial’s title, status (with slick badges like “Recruiting”), type, phase, and full timeline—start dates, completion dates, you name it. The description panel dives deep into the trial’s purpose, formatted for easy reading. It’s like having a study’s entire dossier at your fingertips.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/study-details.png`]} />
-        <TypographyH3 className="my-4 mt-8">Study Design</TypographyH3>
-        <p className="font-mono mb-2">
-          Want to know how a trial’s structured? The Study Design component breaks it down: allocation (randomized or not), masking (double-blind, anyone?), model (parallel or crossover), and endpoint classification. Each field pairs with a Lucide-React icon for that extra polish, and a fallback UI handles missing data gracefully. It’s nerdy in the best way.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/study-design.png`]} />
-        <TypographyH3 className="my-4 mt-8">Participant Information</TypographyH3>
-        <p className="font-mono mb-2">
-          The Participant Information section is all about the people in the trial. Animated counters (powered by React-Spring) show enrollment numbers, while cards highlight age ranges and sex. A detailed eligibility criteria block lays out who can join, formatted for quick scanning. It’s perfect for figuring out if a trial fits your research focus.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/participants.png`]} />
-        <TypographyH3 className="my-4 mt-8">Trial Interventions</TypographyH3>
-        <p className="font-mono mb-2">
-          Curious about the treatments? The Interventions section serves up expandable cards for drugs, devices, procedures, or behavioral therapies. Each card details the name, type, status, dosage, and route, with tailored icons (like a pill for drugs) and smooth animations. It’s a clear, interactive way to explore what’s being tested.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/interventions.png`]} />
-        <TypographyH3 className="my-4 mt-8">Study Locations</TypographyH3>
-        <p className="font-mono mb-2">
-          The Locations section maps out where trials are happening, with cards listing facilities, cities, states, and countries. A badge shows the total number of sites, and a subtle click animation adds a tactile feel. It’s a quick way to see the trial’s geographic scope without wading through spreadsheets.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/locations.png`]} />
-        <TypographyH3 className="my-4 mt-8">Regulatory Information</TypographyH3>
-        <p className="font-mono mb-2">
-          Compliance matters, and the Regulatory Information component delivers. It lists the NCT ID, FDA regulation status (with “Yes” or “No” badges), and sponsor, all in a clean, icon-driven layout. This is your go-to for understanding a trial’s oversight and legitimacy.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/regulatory.png`]} />
-        <TypographyH3 className="my-4 mt-8">Study Results</TypographyH3>
-        <p className="font-mono mb-2">
-          The Results section is where trials come full circle, summarizing adverse events, outcomes, and publications. Each result type gets its own icon and detailed text, with a fallback for unpublished trials. It’s a goldmine for evaluating a study’s impact and findings.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/results.png`]} />
-        <TypographyH3 className="my-4 mt-8">Hospital-Chic Design</TypographyH3>
-        <p className="font-mono mb-2">
-          Dwaliro’s design screams modern healthcare—dark teal headers, soft beige backgrounds, and the Inter font give it a clinical yet welcoming feel. Subtle animations and high-contrast text (WCAG-compliant) make it accessible and engaging, like stepping into a high-tech hospital.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/home.png`]} />
-        <TypographyH3 className="my-4 mt-8">Mobile-First Magic</TypographyH3>
-        <p className="font-mono mb-2">
-          Whether you’re on a phone, tablet, or desktop, Dwaliro’s got you covered. The mobile-first UI adjusts fonts, padding, and layouts dynamically, with touch-friendly controls and smooth transitions. It’s built for researchers on the move.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/mobile.png`]} />
-        <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-        <p className="font-mono mb-2">
-          Dwaliro is designed for anyone diving into clinical trials—doctors, researchers, or patients—offering a robust, user-friendly platform with deep insights and a professional edge.
-        </p>
-        <ul className="font-mono list-disc list-inside mb-2">
-          <li>Dynamic trial grid with pagination and advanced filters</li>
-          <li>Comprehensive trial details across eight specialized components</li>
-          <li>Animated analytics for enrollment, outcomes, and participant stats</li>
-          <li>Real-time data via Firebase and ClinicalTrials.gov API</li>
-          <li>Accessible, WCAG-compliant design with fluid animations</li>
-          <li>Responsive UI optimized for all devices</li>
-          <li>Custom teal-beige theme for a medical aesthetic</li>
-        </ul>
-        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-        <p className="font-mono mb-2">
-          I built Dwaliro with React 18 and styled-components for a modular, pixel-perfect frontend. React Router keeps navigation seamless, while Axios powers API calls to a Firebase Cloud Functions backend, securely fetching trial data. React-Spring drives slick animations for counters and accordions, and Lucide-React icons add a modern touch. The teal-beige theme, Inter font, and clean code (thanks to ESLint and Prettier) make it a joy to work with.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/dwaliro/home.png`]} />
-        <p className="font-mono mb-2 mt-5 text-center">
-          Dwaliro blends medical precision with tech innovation—a tool that’s as functional as it is beautiful. Check it out and let’s talk about bringing this energy to your team!
-        </p>
-        <TypographyH3 className="my-4 mt-8">Note on Data Source</TypographyH3>
-        <p className="font-mono mb-2">
-          Dwaliro pulls data from ClinicalTrials.gov via Firebase Cloud Functions. Some trials may have incomplete details depending on the API’s response. Future updates could tap into additional data sources for even richer insights.
-        </p>
-      </div>
-    );
-  },
-},
-{
-  id: "tubesnap",
-  category: "Media Downloader",
-  title: "TubeSnap",
-  src: "/assets/projects-screenshots/tubesnap/home.png",
-  screenshots: ["home.png", "download.png", "features.png"],
-  live: "https://tubesnap-vko7.onrender.com",
-  github: "https://github.com/jjingofarouk/TubeSnap",
-  skills: {
-    frontend: [
-      PROJECT_SKILLS.html,
-      PROJECT_SKILLS.css,
-      PROJECT_SKILLS.js,
-      PROJECT_SKILLS.bootstrap,
-      PROJECT_SKILLS.fontAwesome,
-    ],
-    backend: [
-      PROJECT_SKILLS.python,
-      PROJECT_SKILLS.flask,
-      PROJECT_SKILLS.ytDlp,
-    ],
-  },
-  get content() {
-    return (
-      <div>
-        <TypographyP className="font-mono text-2xl text-center">
-          TubeSnap = Your Cosmic YouTube Downloader
-        </TypographyP>
-        <TypographyP className="font-mono">
-          TubeSnap is a Flask-powered YouTube downloader that snaps videos and audio off the platform with stellar speed and precision. Has a sleek, YouTube-red interface that offers high-quality downloads up to 1080p and audio extraction in MP3 or WAV. Blends my medical-tech finesse with user-centric design. I got inspired to create his tool to more easily download physiology videos. 
-        </TypographyP> 
-        <ProjectsLinks live={this.live} repo={this.github} />
-        <TypographyH3 className="my-4 mt-8">Interstellar Interface</TypographyH3>
-        <p className="font-mono mb-2">
-          Land on a vibrant, red-accented UI (#FF0000) with a pulsating download button. Enter a YouTube URL, pick your format, and watch TubeSnap work its magic—fast, secure, and ad-free.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/tubesnap/home.png`]} />
-        <TypographyH3 className="my-4 mt-8">Download Command Center</TypographyH3>
-        <p className="font-mono mb-2">
-          Choose video resolutions (1080p, 720p, 480p, 360p) or extract audio in MP3/WAV. Powered by yt-dlp, downloads are as smooth as a feather! Has real-time feedback via a spinning loader.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/tubesnap/download.png`]} />
-        <TypographyH3 className="my-4 mt-8">Feature Constellation</TypographyH3>
-        <p className="font-mono mb-2">
-          From high-speed downloads to a responsive feature grid showcasing speed, quality, and security, TubeSnap’s design ensures a seamless experience across devices. has modern hover animations for cosmic flair.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/tubesnap/features.png`]} />
-        <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-        <p className="font-mono mb-2">
-          Engineered for media enthusiasts. TubeSnap delivers a lightweight, secure, and intuitive platform that helped me improve my expertise in crafting impactful tech solutions at the start of my software career. 
-        </p>
-        <ul className="font-mono list-disc list-inside mb-2">
-          <li>Video downloads in MP4 up to 1080p</li>
-          <li>Audio extraction in MP3 or WAV</li>
-          <li>Responsive UI with Bootstrap and Font Awesome</li>
-          <li>Fast downloads via yt-dlp</li>
-          <li>Safe, ad-free experience with error handling</li>
-        </ul>
-        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-        <p className="font-mono mb-2">
-          Built with Flask and Python 3.12, TubeSnap leverages yt-dlp for robust downloads. The frontend uses HTML, CSS, Bootstrap, and Font Awesome for a polished, mobile-first UI. Asynchronous fetch ensures smooth file delivery, while the Inter font adds clinical elegance.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/tubesnap/home.png`]} />
-        <p className="font-mono mb-2 mt-5 text-center">
-          TubeSnap is your warp-speed portal to YouTube content. Snap videos and audio with ease!
-        </p>
-        <TypographyH3 className="my-4 mt-8">Note on Usage</TypographyH3>
-        <p className="font-mono mb-2">
-          TubeSnap respects YouTube’s terms of service. Use it for personal, non-commercial purposes. Ensure valid URLs and sufficient server capacity for high-quality downloads.
-        </p>
-      </div>
-    );
-  },
-}
+  {
+    id: "tubesnap",
+    category: "Media Downloader",
+    title: "TubeSnap",
+    src: "/assets/projects-screenshots/tubesnap/home.png",
+    screenshots: ["home.png", "download.png", "features.png"],
+    live: "https://tubesnap-vko7.onrender.com",
+    github: "https://github.com/jjingofarouk/TubeSnap",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.html,
+        PROJECT_SKILLS.css,
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.bootstrap,
+        PROJECT_SKILLS.fontAwesome,
+      ],
+      backend: [
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.flask,
+        PROJECT_SKILLS.ytDlp,
+      ],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            TubeSnap = Your Cosmic YouTube Downloader
+          </TypographyP>
+          <TypographyP className="font-mono">
+            TubeSnap is a Flask-powered YouTube downloader that snaps videos and audio off the platform with stellar speed and precision. Has a sleek, YouTube-red interface that offers high-quality downloads up to 1080p and audio extraction in MP3 or WAV. Blends my medical-tech finesse with user-centric design. I got inspired to create his tool to more easily download physiology videos. 
+          </TypographyP> 
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Interstellar Interface</TypographyH3>
+          <p className="font-mono mb-2">
+            Land on a vibrant, red-accented UI (#FF0000) with a pulsating download button. Enter a YouTube URL, pick your format, and watch TubeSnap work its magic—fast, secure, and ad-free.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/tubesnap/home.png`]} />
+          <TypographyH3 className="my-4 mt-8">Download Command Center</TypographyH3>
+          <p className="font-mono mb-2">
+            Choose video resolutions (1080p, 720p, 480p, 360p) or extract audio in MP3/WAV. Powered by yt-dlp, downloads are as smooth as a feather! Has real-time feedback via a spinning loader.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/tubesnap/download.png`]} />
+          <TypographyH3 className="my-4 mt-8">Feature Constellation</TypographyH3>
+          <p className="font-mono mb-2">
+            From high-speed downloads to a responsive feature grid showcasing speed, quality, and security, TubeSnap’s design ensures a seamless experience across devices. has modern hover animations for cosmic flair.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/tubesnap/features.png`]} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            Engineered for media enthusiasts. TubeSnap delivers a lightweight, secure, and intuitive platform that helped me improve my expertise in crafting impactful tech solutions at the start of my software career. 
+          </p>
+          <ul className="font-mono list-disc list-inside mb-2">
+            <li>Video downloads in MP4 up to 1080p</li>
+            <li>Audio extraction in MP3 or WAV</li>
+            <li>Responsive UI with Bootstrap and Font Awesome</li>
+            <li>Fast downloads via yt-dlp</li>
+            <li>Safe, ad-free experience with error handling</li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+          <p className="font-mono mb-2">
+            Built with Flask and Python 3.12, TubeSnap leverages yt-dlp for robust downloads. The frontend uses HTML, CSS, Bootstrap, and Font Awesome for a polished, mobile-first UI. Asynchronous fetch ensures smooth file delivery, while the Inter font adds clinical elegance.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/tubesnap/home.png`]} />
+          <p className="font-mono mb-2 mt-5 text-center">
+            TubeSnap is your warp-speed portal to YouTube content. Snap videos and audio with ease!
+          </p>
+          <TypographyH3 className="my-4 mt-8">Note on Usage</TypographyH3>
+          <p className="font-mono mb-2">
+            TubeSnap respects YouTube’s terms of service. Use it for personal, non-commercial purposes. Ensure valid URLs and sufficient server capacity for high-quality downloads.
+          </p>
+        </div>
+      );
+    },
+  }
 ];
 export default projects;
