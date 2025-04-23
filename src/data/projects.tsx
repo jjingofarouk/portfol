@@ -98,7 +98,17 @@ export type Skill = {
 export const PROJECT_SKILLS = {
   next: { title: "Next.js", bg: "black", fg: "white", icon: <RiNextjsFill /> },
  expo: { title: "Expo", bg: "black", fg: "white", icon: <SiJavascript /> },
- chakra: {
+ jquery: { title: "jQuery", bg: "black", fg: "white", icon: <SiJavascript /> },
+  gemini: { title: "Gemini API", bg: "black", fg: "white", icon: <SiPython /> },
+  reactNavigation: { title: "React Navigation", bg: "black", fg: "white", icon: <SiReactrouter /> },
+  reanimated: { title: "React Native Reanimated", bg: "black", fg: "white", icon: <SiReact /> },
+  gestureHandler: { title: "Gesture Handler", bg: "black", fg: "white", icon: <SiReact /> },
+  reactNativePaper: { title: "React Native Paper", bg: "black", fg: "white", icon: <SiReact /> },
+  asyncStorage: { title: "AsyncStorage", bg: "black", fg: "white", icon: <SiReact /> },
+  chartKit: { title: "Chart Kit", bg: "black", fg: "white", icon: <SiReact /> },
+  vectorIcons: { title: "Vector Icons", bg: "black", fg: "white", icon: <SiReact /> },
+  lucide: { title: "Lucide Icons", bg: "black", fg: "white", icon: <SiReactrouter /> },
+chakra: {
     title: "Chakra UI",
     bg: "black",
     fg: "white",
@@ -1140,6 +1150,241 @@ const projects: Project[] = [
       );
     },
   },
+{
+  id: "osler",
+  category: "Health Tool",
+  title: "Osler Mentor",
+  src: "/assets/projects-screenshots/osler/home.png",
+  screenshots: ["home.png", "chat.png", "results.png"],
+  live: "https://oslermentor.onrender.com/",
+  github: "https://github.com/jjingofarouk/osler",
+  skills: {
+    frontend: [
+      PROJECT_SKILLS.js,
+      PROJECT_SKILLS.jquery,
+      PROJECT_SKILLS.css,
+      PROJECT_SKILLS.bootstrap,
+    ],
+    backend: [
+      PROJECT_SKILLS.python,
+      PROJECT_SKILLS.flask,
+      PROJECT_SKILLS.gemini,
+    ],
+  },
+  get content() {
+    return (
+      <div>
+        <TypographyP className="font-mono text-2xl text-center">
+          Osler Mentor = Clinical Expertise + Technical Innovation
+        </TypographyP>
+        <TypographyP className="font-mono">
+          Osler Mentor is a Flask-based Progressive Web App (PWA) I developed to provide clinical medical guidance through a virtual Ugandan clinician, Dr. Osler. Powered by the Gemini API, it delivers real-time, scenario-based medical responses in a responsive, offline-capable chat interface, showcasing my expertise in Python, Flask, and front-end development.
+        </TypographyP>
+        <ProjectsLinks live={this.live} repo={this.github} />
+        <TypographyH3 className="my-4 mt-8">Home Screen</TypographyH3>
+        <p className="font-mono mb-2">
+          A sleek, dark-themed interface welcomes users to engage with Dr. Osler, built with Bootstrap and custom CSS for a polished, responsive design.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/osler/home.png`]} />
+        <TypographyH3 className="my-4 mt-8">Chat Interface</TypographyH3>
+        <p className="font-mono mb-2">
+          Using jQuery and Flask, I crafted a dynamic chat UI with a sticky input bar, ensuring seamless interaction across devices.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/osler/chat.png`]} />
+        <TypographyH3 className="my-4 mt-8">Clinical Guidance</TypographyH3>
+        <p className="font-mono mb-2">
+          Integrated the Gemini API to deliver tailored, evidence-based clinical responses, leveraging Python for secure API key management.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/osler/results.png`]} />
+        <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+        <p className="font-mono mb-2">
+          This PWA combines technical prowess with clinical utility, offering a fast, secure, and accessible experience.
+        </p>
+        <ul className="font-mono list-disc list-inside mb-2">
+          <li>Real-time clinical chat powered by Gemini API</li>
+          <li>Progressive Web App with offline support via service workers</li>
+          <li>Responsive UI with jQuery and Bootstrap</li>
+          <li>Secure backend with Flask and environment management</li>
+        </ul>
+        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+        <p className="font-mono mb-2">
+          I engineered a robust Flask backend to handle API requests, integrated jQuery for dynamic front-end interactions, and implemented PWA features (manifest, service worker) for a native app-like experience. The app uses secure HTTPS and efficient streaming responses for optimal performance.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/osler/home.png`]} />
+        <p className="font-mono mb-2 mt-5 text-center">
+          Osler Mentor reflects my ability to blend Python-based backend development, AI integration, and modern front-end techniques to create impactful health tools.
+        </p>
+      </div>
+    );
+  },
+},
+{
+  id: "solverpro",
+  category: "Enterprise Educational Tech",
+  title: "SolverPro Enterprise Graphing Platform",
+  src: "/assets/projects-screenshots/solverpro/home.png",
+  screenshots: ["home.png", "graph.png", "controls.png"],
+  live: "https://jjingofarouk.github.io/SolverPro/",
+  github: "https://github.com/jjingofarouk/SolverPro",
+  skills: {
+    frontend: [
+      PROJECT_SKILLS.html,
+      PROJECT_SKILLS.css,
+      PROJECT_SKILLS.js,
+    ],
+    backend: [],
+  },
+  get content() {
+    return (
+      <div>
+        <TypographyP className="font-mono text-2xl text-center">
+          SolverPro Enterprise = Advanced Mathematical Visualization
+        </TypographyP>
+        <TypographyP className="font-mono">
+          SolverPro Enterprise is a professional-grade graphing platform powered by the Desmos API, designed for educational institutions and businesses. It combines sophisticated mathematical visualization with an intuitive UI to deliver a comprehensive solution for plotting, analyzing, and sharing complex equations. With its enterprise-ready design, function library management, and export capabilities, SolverPro transforms complex mathematical concepts into accessible visual representations for students, educators, researchers, and professionals.
+        </TypographyP>
+        <ProjectsLinks live={this.live} repo={this.github} />
+        <TypographyH3 className="my-4 mt-8">Professional Function Library</TypographyH3>
+        <p className="font-mono mb-2">
+          Manage multiple functions with color-coded organization in the interactive sidebar. Instantly access standard functions (y = x², sin(x), log(x)) or create custom expressions with real-time visualization. Click any function to highlight it in the graph.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/solverpro/graph.png`]} />
+        <TypographyH3 className="my-4 mt-8">Enterprise-Grade Controls</TypographyH3>
+        <p className="font-mono mb-2">
+          The advanced control panel features precision zooming, workspace management, and export capabilities. Interactive tooltips provide guidance, while the modern UI with subtle animations ensures a premium user experience suitable for professional environments.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/solverpro/controls.png`]} />
+        <TypographyH3 className="my-4 mt-8">Responsive Enterprise Design</TypographyH3>
+        <p className="font-mono mb-2">
+          Built with a sophisticated responsive architecture, SolverPro Enterprise adapts seamlessly across devices while maintaining its professional appearance. The carefully crafted interface uses modern UI principles with consistent spacing, shadows, and typography to create a premium look and feel.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/solverpro/home.png`]} />
+        <TypographyH3 className="my-4 mt-8">Key Enterprise Features</TypographyH3>
+        <p className="font-mono mb-2">
+          SolverPro Enterprise goes beyond basic graphing to deliver a complete solution for mathematical visualization needs:
+        </p>
+        <ul className="font-mono list-disc list-inside mb-2">
+          <li>Interactive function library with color-coded organization</li>
+          <li>Workspace saving and export capabilities for documentation</li>
+          <li>Professional UI with intuitive navigation and tooltips</li>
+          <li>Responsive design optimized for all devices</li>
+          <li>Advanced graph manipulation and visualization tools</li>
+          <li>Enterprise-ready architecture for institutional deployment</li>
+        </ul>
+        <TypographyH3 className="my-4 mt-8">Technical Excellence</TypographyH3>
+        <p className="font-mono mb-2">
+          SolverPro Enterprise leverages modern web technologies with an architecture designed for performance and scalability. The clean, modular codebase ensures easy maintenance and extension, while the optimized Desmos API integration provides powerful mathematical capabilities with minimal overhead. Custom animations and transitions create a polished user experience worthy of enterprise environments.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/solverpro/home.png`]} />
+        <p className="font-mono mb-2 mt-5 text-center">
+          SolverPro Enterprise: Where mathematical precision meets professional design.
+        </p>
+        <TypographyH3 className="my-4 mt-8">Integration & Deployment</TypographyH3>
+        <p className="font-mono mb-2">
+          SolverPro Enterprise is designed for seamless integration into existing educational platforms and corporate environments. With its API-driven architecture based on Desmos v1.10, it can be deployed as a standalone application or embedded within larger systems. Future enterprise roadmap includes enhanced collaboration features, authentication integration, and advanced data export options.
+        </p>
+      </div>
+    );
+  },
+},
+{
+  id: "touched-hearts",
+  category: "NGO Platform",
+  title: "Touched Hearts",
+  src: "/assets/projects-screenshots/touched-hearts/home.png",
+  screenshots: [
+    "home.png",
+    "programs.png",
+    "stories.png",
+    "donate.png",
+    "events.png",
+    "about.png",
+    "gallery.png",
+  ],
+  live: "https://www.touchedhearts.org/",
+  github: "https://github.com/jjingofarouk/touched",
+  skills: {
+    frontend: [
+      PROJECT_SKILLS.react,
+      PROJECT_SKILLS.js,
+      PROJECT_SKILLS.bootstrap,
+      PROJECT_SKILLS.css,
+      PROJECT_SKILLS.reactRouter,
+    ],
+    backend: [],
+  },
+  get content() {
+    return (
+      <div>
+        <TypographyP className="font-mono text-2xl text-center">
+          Touched Hearts: A React-Powered NGO Platform
+        </TypographyP>
+        <TypographyP className="font-mono">
+          I developed Touched Hearts, a comprehensive web platform for an NGO focused on education, healthcare, and support for communities in East & Central Africa. Using React 19, React Router, and Bootstrap, I built a responsive, accessible site with over 20 pages, dynamic content, and optimized performance to showcase the organization’s impact and engage users effectively.
+        </TypographyP>
+        <ProjectsLinks live={this.live} repo={this.github} />
+        <TypographyH3 className="my-4 mt-8">Home Page</TypographyH3>
+        <p className="font-mono mb-2">
+          I designed a clean and responsive homepage with Bootstrap. Integrated key CTAs and a modular layout to highlight the NGO’s mission and initiatives.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/touched-hearts/home.png`, `${BASE_PATH}/touched-hearts/about.png`]} />
+        <TypographyH3 className="my-4 mt-8">Programs</TypographyH3>
+        <p className="font-mono mb-2">
+          I created dedicated pages for programs like education and healthcare using React Router for seamless navigation and reusable components for consistency.
+        </p>
+        <SlideShow
+          images={[
+            `${BASE_PATH}/touched-hearts/programs.png`,
+            `${BASE_PATH}/touched-hearts/education.png`,
+            `${BASE_PATH}/touched-hearts/healthcare.png`,
+          ]}
+        />
+        <TypographyH3 className="my-4 mt-8">Stories</TypographyH3>
+        <p className="font-mono mb-2">
+          I implemented dynamic story pages using React Router’s params and a JSON database to enable scalable content updates without a backend.
+        </p>
+        <SlideShow
+          images={[`${BASE_PATH}/touched-hearts/stories.png`, `${BASE_PATH}/touched-hearts/story-detail.png`]}
+        />
+        <TypographyH3 className="my-4 mt-8">Get Involved</TypographyH3>
+        <p className="font-mono mb-2">
+          I built intuitive pages for volunteering and partnerships. Optimized user flows with React state management and responsive grids.
+        </p>
+        <SlideShow
+          images={[`${BASE_PATH}/touched-hearts/get-involved.png`, `${BASE_PATH}/touched-hearts/volunteers.png`]}
+        />
+        <TypographyH3 className="my-4 mt-8">Donate & Events</TypographyH3>
+        <p className="font-mono mb-2">
+          I developed streamlined donation and event pages, ensuring fast load times and accessibility with modern JavaScript and CSS.
+        </p>
+        <SlideShow
+          images={[`${BASE_PATH}/touched-hearts/donate.png`, `${BASE_PATH}/touched-hearts/events.png`]}
+        />
+        <TypographyH3 className="my-4 mt-8">Technical Contributions</TypographyH3>
+        <p className="font-mono mb-2">
+          This project showcases my ability to deliver a feature-rich and performant web app:
+        </p>
+        <ul className="font-mono list-disc list-inside mb-2">
+          <li>Architected 20+ routes with React Router for efficient navigation</li>
+          <li>Built responsive layouts with Bootstrap, achieving cross-device compatibility</li>
+          <li>Integrated JSON data for dynamic story rendering, reducing maintenance overhead</li>
+          <li>Optimized performance with lazy-loaded images and minimal DOM updates</li>
+          <li>Ensured WCAG-compliant accessibility with semantic HTML and ARIA attributes</li>
+        </ul>
+        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+        <p className="font-mono mb-2">
+          I leveraged React 19’s latest features, React Router for dynamic routing, and Bootstrap for rapid styling. The app uses a JSON-based content system, enabling easy updates without server-side logic.
+        </p>
+        <SlideShow
+          images={[`${BASE_PATH}/touched-hearts/home.png`, `${BASE_PATH}/touched-hearts/gallery.png`]}
+        />
+        <p className="font-mono mb-2 mt-5 text-center">
+          Touched Hearts demonstrates my skills in building scalable, user-focused web applications that meet real-world needs.
+        </p>
+      </div>
+    );
+  },
+},
   {
     id: "tubesnap",
     category: "Media Downloader",
