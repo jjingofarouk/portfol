@@ -1103,7 +1103,7 @@ const projects: Project[] = [
       </div>
     );
   },
-}
+},
 {
   id: "dwaliro",
   category: "Medical Tech",
