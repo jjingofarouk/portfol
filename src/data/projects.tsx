@@ -272,7 +272,7 @@ reactSpring: {
     icon: <SiTerraform />,
   },
   fastapi: { title: "FastAPI", bg: "black", fg: "white", icon: <SiFastapi /> },
-  go: { title: "Go", bg: "black", fg: "white", icon: <SiGit /> },
+  go: { title: "Go", bg: "black", fg: "white", icon: <FaJava /> },
   java: { title: "Java", bg: "black", fg: "white", icon: <FaJava /> },
   aws: { title: "AWS", bg: "black", fg: "white", icon: <FaAws /> },
   nextdotjs: {
