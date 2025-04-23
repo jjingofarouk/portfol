@@ -228,7 +228,7 @@ reactSpring: {
   // Newly Added Skills
   redux: { title: "Redux", bg: "black", fg: "white", icon: <SiRedux /> },
   css: { title: "CSS", bg: "black", fg: "white", icon: <SiCss3 /> },
-  git: { title: "Git", bg: "black", fg: "white", icon: <SiGit /> },
+  git: { title: "Git", bg: "black", fg: "white", icon: <SiRedux /> },
   npm: { title: "NPM", bg: "black", fg: "white", icon: <SiNpm /> },
   graphql: { title: "GraphQL", bg: "black", fg: "white", icon: <SiGraphql /> },
   spline: { title: "Spline", bg: "black", fg: "white", icon: <SiThreedotjs /> },
