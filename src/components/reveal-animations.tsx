@@ -1,11 +1,10 @@
 "use client";
 
 import { motion, useAnimation, useInView } from "framer-motion";
-
 import { cn } from "@/lib/utils";
 import { ReactNode, useEffect, useRef } from "react";
 
-interface BlurIntProps {
+interface BlurInProps {
   children: ReactNode;
   className?: string;
   delay?: number;
@@ -15,13 +14,14 @@ interface BlurIntProps {
   };
   duration?: number;
 }
+
 export const BlurIn = ({
   children,
   className,
   variant,
   delay = 0,
   duration = 1,
-}: BlurIntProps) => {
+}: BlurInProps) => {
   const defaultVariants = {
     hidden: { filter: "blur(10px)", opacity: 0 },
     visible: { filter: "blur(0px)", opacity: 1 },
@@ -29,18 +29,15 @@ export const BlurIn = ({
   const combinedVariants = variant || defaultVariants;
 
   return (
-    <motion.h1
+    <motion.div
       initial="hidden"
       animate="visible"
       transition={{ duration, delay }}
       variants={combinedVariants}
-      className={cn(
-        className
-        // "font-display text-center text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
-      )}
+      className={cn(className)}
     >
       {children}
-    </motion.h1>
+    </motion.div>
   );
 };
 
@@ -52,6 +49,7 @@ interface BoxRevealProps {
   delay?: number;
   once?: boolean;
 }
+
 export const BoxReveal = ({
   children,
   width = "fit-content",
@@ -62,7 +60,6 @@ export const BoxReveal = ({
 }: BoxRevealProps) => {
   const mainControls = useAnimation();
   const slideControls = useAnimation();
-
   const ref = useRef(null);
   const isInView = useInView(ref, { once });
 
@@ -89,7 +86,6 @@ export const BoxReveal = ({
       >
         {children}
       </motion.div>
-
       <motion.div
         variants={{
           hidden: { left: 0 },
@@ -113,5 +109,49 @@ export const BoxReveal = ({
         }}
       />
     </div>
+  );
+};
+
+interface SlideUpProps {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+  duration?: number;
+  once?: boolean;
+}
+
+export const SlideUp = ({
+  children,
+  className,
+  delay = 0,
+  duration = 0.5,
+  once = true,
+}: SlideUpProps) => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      initial="hidden"
+      animate={controls}
+      transition={{ duration, delay, ease: "easeOut" }}
+      className={cn(className)}
+    >
+      {children}
+    </motion.div>
   );
 };
