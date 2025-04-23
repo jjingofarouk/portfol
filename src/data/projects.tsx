@@ -222,7 +222,7 @@ reactSpring: {
     title: "Supabase",
     bg: "black",
     fg: "white",
-    icon: <SiSupabase />,
+    icon: <SiFirebase />,
   },
 
   // Newly Added Skills
