@@ -212,7 +212,7 @@ const HeroSection = () => {
                 <BlurIn delay={1.1}>
                   <p className="text-gray-600 dark:text-gray-400 max-w-lg text-lg leading-relaxed">
 
-	I build things that work. I keep working, even when no one’s watching.
+	I build things that work. And I keep working, even when no one’s watching.
                   </p>
                 </BlurIn>
 
