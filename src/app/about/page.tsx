@@ -49,8 +49,8 @@ import "@splidejs/react-splide/css";
 const CONTACT_LINKS = [
   {
     name: "Email",
-    content: "jjingofaroukk@gmail.com",
-    href: "mailto:jjingofaroukk@gmail.com",
+    content: "jjingofarouq@gmail.com",
+    href: "mailto:jjingofarouq@gmail.com",
     icon: <FaEnvelope />,
   },
   {
@@ -61,7 +61,7 @@ const CONTACT_LINKS = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/jjingo-farouk-0341b01a5/",
+    href: "ug.linkedin.com/in/farouk-jjingo-0341b01a5",
     content: "/jjingofarouk",
     icon: <FaLinkedin />,
   },
@@ -283,7 +283,7 @@ const INTERESTS = [
   {
     name: "Film",
     icon: <FaFilm size={"24px"} />,
-    description: "Cinema enthusiast with an appreciation for storytelling",
+    description: "Huge cinema fan with an appreciation for not-so-common",
   },
 ];
 
@@ -357,18 +357,18 @@ function Page() {
           >
             <h1 className="text-3xl font-bold mb-6 lg:mb-10">About me</h1>
             <p className="mb-6 text-lg leading-relaxed">
-              I'm Farouk, a Full Stack Engineer with a unique background in
-              medicine who bridges healthcare and technology. Specializing in
-              building high-performance applications, I'm passionate about
-              creating elegant solutions to complex problems.
+              I'm a Full Stack Engineer with a unique background in
+              medicine, which I'm using to bridge healthcare challenges around the globe. I deeply love what I do, and I can skip anything to get things done. My biggest asset is that I'm a life-long learner. I will learn anything that can help me solve an itching problem!
+              I'm also a bit of a mini-perfectionist, so I tend to squeeze the best out of everything. 
+              
             </p>
 
             <p className="mb-10 text-lg leading-relaxed">
-              My dual expertise as both a medical doctor and software engineer
-              gives me a distinctive advantage in understanding complex systems,
-              analytical thinking, and delivering solutions that truly make an
+              Prior exposure to healthcare challenges in the Global South has given me 
+              a distinctive advantage. I quickly understand and work with complex systems,
+              through analytical thinking to deliver solutions that truly make an
               impact. I excel in creating clean maintainable code with a focus
-              on performance and user experience.
+              on performance and user experience. Most importantly, I am ever learning. i won't fix a bug before learning all about it. 
             </p>
 
             <div className="mb-10">
@@ -465,10 +465,10 @@ function Page() {
               </h2>
               <p className="mb-4">
                 I'm always open to discussing new projects, innovative ideas, or
-                opportunities to be part of your team.
+                opportunities to be part of your team. Most importantly, I value creating connections with people that last beyond the lifespan of any project. 
               </p>
               <a
-                href="mailto:jjingofaroukk@gmail.com"
+                href="mailto:jjingofarouq@gmail.com"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-700 hover:bg-zinc-600 rounded-md transition-colors duration-300"
               >
                 <FaEnvelope />
