@@ -254,7 +254,7 @@ reactSpring: {
   },
   deno: { title: "Deno", bg: "black", fg: "white", icon: <SiDeno /> },
   svelte: { title: "Svelte", bg: "black", fg: "white", icon: <SiSvelte /> },
-  astro: { title: "Astro", bg: "black", fg: "white", icon: <SiAstro /> },
+  astro: { title: "Astro", bg: "black", fg: "white", icon: <SiJest /> },
   bun: { title: "Bun", bg: "black", fg: "white", icon: <SiBun /> },
   jest: { title: "Jest", bg: "black", fg: "white", icon: <SiJest /> },
   mocha: { title: "Mocha", bg: "black", fg: "white", icon: <SiMocha /> },
