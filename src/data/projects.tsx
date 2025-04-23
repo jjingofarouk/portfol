@@ -52,8 +52,8 @@ import {
 import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { FaJava, FaAws } from "react-icons/fa";
-import { Project } from "../types";
-import { ProjectsLinks } from "../components/ProjectsLinks";
+
+
 
 // Base Path for Assets
 const BASE_PATH = "/assets/projects-screenshots";
