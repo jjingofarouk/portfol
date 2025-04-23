@@ -13,6 +13,7 @@ import {
   SiCss3,
   SiCypress,
   SiDeno,
+SiNpm,
   SiDocker,
   SiExpress,
   SiFastapi,
