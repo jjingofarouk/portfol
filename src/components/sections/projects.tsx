@@ -26,17 +26,11 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 
 const ProjectsSection = () => {
   const [shuffledProjects, setShuffledProjects] = useState<Project[]>([]);
-  const [displayCount, setDisplayCount] = useState<number>(10); // Default to 10 projects
 
   // Shuffle projects on component mount
   useEffect(() => {
     setShuffledProjects(shuffleArray(projects));
   }, []);
-
-  // Handle "Show More" button click
-  const handleShowMore = () => {
-    setDisplayCount(projects.length); // Show all projects
-  };
 
   return (
     <section id="projects" className="max-w-7xl mx-auto md:h-[130vh] py-16">
@@ -52,20 +46,10 @@ const ProjectsSection = () => {
         </h2>
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {shuffledProjects.slice(0, displayCount).map((project, index) => (
+        {shuffledProjects.map((project, index) => (
           <Modall key={project.src} project={project} />
         ))}
       </div>
-      {displayCount < projects.length && (
-        <div className="flex justify-center mt-12">
-          <button
-            onClick={handleShowMore}
-            className="px-6 py-2 bg-black text-white dark:bg-white dark:text-black rounded-md border border-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-300"
-          >
-            Show More Projects
-          </button>
-        </div>
-      )}
     </section>
   );
 };
