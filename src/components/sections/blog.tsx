@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BoxReveal } from "../reveal-animations";
 import { cn } from "@/lib/utils";
 
@@ -14,32 +14,31 @@ interface BlogPost {
   createdAt: string;
 }
 
-// Static blog posts (shared with [slug].tsx)
-const blogPosts: BlogPost[] = [
-  {
-    id: "1",
-    title: "Building Scalable Web Apps with Next.js",
-    excerpt: "Learn how to structure and optimize your Next.js apps for performance and scalability.",
-    slug: "/blog/nextjs-scalability",
-    createdAt: "2025-04-01",
-  },
-  {
-    id: "2",
-    title: "Balancing Medicine and Tech: My Journey",
-    excerpt: "A deep dive into my experiences as both a doctor and a web developer.",
-    slug: "/blog/medicine-and-tech",
-    createdAt: "2025-03-15",
-  },
-  {
-    id: "3",
-    title: "Optimizing React Apps for Performance",
-    excerpt: "Techniques and best practices to make your React apps faster and more efficient.",
-    slug: "/blog/react-performance",
-    createdAt: "2025-02-20",
-  },
-];
-
 const BlogSection = () => {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch blog posts from JSON file
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch("/data/blogs.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch blog posts");
+        }
+        const data: BlogPost[] = await response.json();
+        setPosts(data);
+      } catch (err) {
+        setError("Could not load blog posts. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
   return (
     <section
       id="blog"
@@ -70,12 +69,20 @@ const BlogSection = () => {
 
         {/* Blog Post Cards */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogPosts.length === 0 ? (
+          {loading ? (
+            <p className="text-center col-span-full text-neutral-600 dark:text-neutral-300">
+              Loading blog posts...
+            </p>
+          ) : error ? (
+            <p className="text-center col-span-full text-red-600 dark:text-red-400">
+              {error}
+            </p>
+          ) : posts.length === 0 ? (
             <p className="text-center col-span-full text-neutral-600 dark:text-neutral-300">
               No blog posts available. Check back soon!
             </p>
           ) : (
-            blogPosts.map((post) => (
+            posts.map((post) => (
               <Link
                 key={post.id}
                 href={post.slug}
