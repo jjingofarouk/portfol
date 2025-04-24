@@ -33,7 +33,7 @@ const links: Link[] = [
   // },
   {
     title: 'Blogs',
-    href: '/blogs',
+    href: '/blog',
     thumbnail: '/assets/nav-link-previews/blog.png',
   },
   {
