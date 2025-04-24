@@ -41,7 +41,7 @@ const BlogSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center">
-          <Link href="#blog" aria-label="Blog Section">
+          <Link href="/blog" aria-label="Blog Section">
             <h2
               id="blog-heading"
               className={cn(
@@ -66,7 +66,6 @@ const BlogSection = () => {
               href={post.href}
               className="group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg"
               aria-label={`Read blog post: ${post.title}`}
-              onClick={() => console.log(`Navigating to ${post.href}`)}
             >
               <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-transform transform group-hover:scale-105 group-focus:scale-105 pointer-events-auto">
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white line-clamp-2">
