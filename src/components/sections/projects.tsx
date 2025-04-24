@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Modal,
   ModalBody,
@@ -10,33 +10,66 @@ import {
 } from "../ui/animated-modal";
 import { FloatingDock } from "../ui/floating-dock";
 import Link from "next/link";
-
 import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
+// Function to shuffle an array (Fisher-Yates algorithm)
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 const ProjectsSection = () => {
+  const [shuffledProjects, setShuffledProjects] = useState<Project[]>([]);
+  const [displayCount, setDisplayCount] = useState<number>(10); // Default to 10 projects
+
+  // Shuffle projects on component mount
+  useEffect(() => {
+    setShuffledProjects(shuffleArray(projects));
+  }, []);
+
+  // Handle "Show More" button click
+  const handleShowMore = () => {
+    setDisplayCount(projects.length); // Show all projects
+  };
+
   return (
-    <section id="projects" className="max-w-7xl mx-auto md:h-[130vh]">
+    <section id="projects" className="max-w-7xl mx-auto md:h-[130vh] py-16">
       <Link href={"#projects"}>
         <h2
           className={cn(
             "bg-clip-text text-4xl text-center text-transparent md:text-7xl pt-16",
             "bg-gradient-to-b from-black/80 to-black/50",
-            "dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 mb-32"
+            "dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 mb-16"
           )}
         >
           Projects
         </h2>
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-3">
-        {projects.map((project, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {shuffledProjects.slice(0, displayCount).map((project, index) => (
           <Modall key={project.src} project={project} />
         ))}
       </div>
+      {displayCount < projects.length && (
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={handleShowMore}
+            className="px-6 py-2 bg-black text-white dark:bg-white dark:text-black rounded-md border border-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-300"
+          >
+            Show More Projects
+          </button>
+        </div>
+      )}
     </section>
   );
 };
+
 const Modall = ({ project }: { project: Project }) => {
   return (
     <div className="flex items-center justify-center">
@@ -84,7 +117,6 @@ const Modall = ({ project }: { project: Project }) => {
     </div>
   );
 };
-export default ProjectsSection;
 
 const ProjectContents = ({ project }: { project: Project }) => {
   return (
@@ -110,36 +142,9 @@ const ProjectContents = ({ project }: { project: Project }) => {
           </div>
         )}
       </div>
-      {/* <div className="flex justify-center items-center">
-        {project.screenshots.map((image, idx) => (
-          <motion.div
-            key={"images" + idx}
-            style={{
-              rotate: Math.random() * 20 - 10,
-            }}
-            whileHover={{
-              scale: 1.1,
-              rotate: 0,
-              zIndex: 100,
-            }}
-            whileTap={{
-              scale: 1.1,
-              rotate: 0,
-              zIndex: 100,
-            }}
-            className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
-          >
-            <Image
-              src={`${project.src.split("1.png")[0]}${image}`}
-              alt="screenshots"
-              width="500"
-              height="500"
-              className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0"
-            />
-          </motion.div>
-        ))}
-      </div> */}
       {project.content}
     </>
   );
 };
+
+export default ProjectsSection;
