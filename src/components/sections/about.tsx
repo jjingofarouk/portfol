@@ -358,17 +358,18 @@ function AboutSection() {
             <h1 className="text-3xl font-bold mb-6 lg:mb-10">About me</h1>
             <p className="mb-6 text-lg leading-relaxed">
               I'm a Full Stack Engineer with a unique background in
-              medicine, which I'm using to bridge healthcare challenges around the globe. I deeply love what I do, and I can skip anything to get things done. My biggest asset is that I'm a life-long learner. I will learn anything that can help me solve an itching problem!
+              medicine, which I'm using to bridge healthcare challenges around the globe. I deeply love what I do, and I can skip anything to get things done. My biggest asset is that I'm a life-long learner. I can quickly 
+ learn anything that will help me solve an itching problem!
               I'm also a bit of a mini-perfectionist, so I tend to squeeze the best out of everything. 
               
             </p>
 
             <p className="mb-10 text-lg leading-relaxed">
               Prior exposure to healthcare challenges in the Global South has given me 
-              a distinctive advantage. I quickly understand and work with complex systems,
+              a distinctive advantage. I quickly understand and work with complex systems
               through analytical thinking to deliver solutions that truly make an
-              impact. I excel in creating clean maintainable code with a focus
-              on performance and user experience. Most importantly, I am ever learning. i won't fix a bug before learning all about it. 
+              impact. I also excel in creating clean maintainable code with a focus
+              on performance and user experience. Most importantly, I am ever learning. I won't fix a bug without learning all about it. 
             </p>
 
             <div className="mb-10">
