@@ -1,83 +1,88 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-  import { useRouter } from "next/router";
-  import { cn } from "@/lib/utils";
+"use client";
 
-  // Define BlogPost type (same as BlogSection)
-  interface BlogPost {
-    id: string;
-    title: string;
-    excerpt: string;
-    slug: string;
-    createdAt: string;
-    content?: string; // Optional for static content
-  }
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { notFound } from "next/navigation";
 
-  // Static blog posts (same as BlogSection)
-  const blogPosts: BlogPost[] = [
-    {
-      id: "1",
-      title: "Building Scalable Web Apps with Next.js",
-      excerpt: "Learn how to structure and optimize your Next.js apps for performance and scalability.",
-      slug: "/blog/nextjs-scalability",
-      createdAt: "2025-04-01",
-      content: "This is a placeholder for the full article about Next.js scalability. Add your content here.",
-    },
-    {
-      id: "2",
-      title: "Balancing Medicine and Tech: My Journey",
-      excerpt: "A deep dive into my experiences as both a doctor and a web developer.",
-      slug: "/blog/medicine-and-tech",
-      createdAt: "2025-03-15",
-      content: "This is a placeholder for the full article about balancing medicine and tech. Add your content here.",
-    },
-    {
-      id: "3",
-      title: "Optimizing React Apps for Performance",
-      excerpt: "Techniques and best practices to make your React apps faster and more efficient.",
-      slug: "/blog/react-performance",
-      createdAt: "2025-02-20",
-      content: "This is a placeholder for the full article about React performance. Add your content here.",
-    },
-  ];
+// Define BlogPost type
+interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  slug: string;
+  createdAt: string;
+  content: string;
+}
 
-  export const getStaticPaths: GetStaticPaths = async () => {
-    return {
-      paths: blogPosts.map((post) => ({ params: { slug: post.slug.replace("/blog/", "") } })),
-      fallback: false, // 404 for unknown slugs
+const BlogPostPage = ({ params }: { params: { slug: string } }) => {
+  const [post, setPost] = useState<BlogPost | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const response = await fetch("/data/blogs.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch blog posts");
+        }
+        const posts: BlogPost[] = await response.json();
+        const foundPost = posts.find((p) => p.slug === `/blog/${params.slug}`);
+        if (!foundPost) {
+          notFound();
+        }
+        setPost(foundPost);
+      } catch (err) {
+        setError("Could not load blog post. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
     };
-  };
 
-  export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const post = blogPosts.find((p) => p.slug === `/blog/${params?.slug}`);
-    if (!post) {
-      return { notFound: true };
-    }
-    return { props: { post } };
-  };
+    fetchPost();
+  }, [params.slug]);
 
-  const BlogPostPage = ({ post }: { post: BlogPost }) => {
-    const router = useRouter();
-
-    if (router.isFallback) {
-      return <div>Loading...</div>;
-    }
-
+  if (loading) {
     return (
-      <div className={cn("container mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-gray-100 dark:bg-gray-900")}>
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
-          {post.title}
-        </h1>
-        <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-          Published on {new Date(post.createdAt).toLocaleDateString()}
+      <div className="container mx-auto px-4 py-16 text-center">
+        <p className="text-neutral-600 dark:text-neutral-300">
+          Loading blog post...
         </p>
-        <p className="mt-4 text-base sm:text-lg text-neutral-600 dark:text-neutral-300">
-          {post.excerpt}
-        </p>
-        <div className="mt-6 prose dark:prose-invert max-w-none">
-          <p>{post.content || "Full blog post content coming soon!"}</p>
-        </div>
       </div>
     );
-  };
+  }
 
-  export default BlogPostPage;
+  if (error || !post) {
+    return (
+      <div className="container mx-auto px-4 py-16 text-center">
+        <p className="text-red-600 dark:text-red-400">
+          {error || "Blog post not found."}
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <article className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        {post.title}
+      </h1>
+      <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-8">
+        Published on {new Date(post.createdAt).toLocaleDateString()}
+      </p>
+      <div
+        className="prose dark:prose-invert max-w-none"
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      />
+      <button
+        onClick={() => router.back()}
+        className="mt-8 px-4 py-2 bg-gray-200 text-black dark:bg-gray-800 dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+      >
+        Back to Blog
+      </button>
+    </article>
+  );
+};
+
+export default BlogPostPage;
