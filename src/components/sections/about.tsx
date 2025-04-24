@@ -308,7 +308,7 @@ function AboutSection() {
                 <img
                   className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px] lg:w-[200px] aspect-square bg-zinc-800"
                   alt="Farouk Jjingo"
-                  src="/assets/me.jpg"
+                  src="/assets/me.png"
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
