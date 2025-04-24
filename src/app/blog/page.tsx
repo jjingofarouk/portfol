@@ -1,4 +1,5 @@
-All those things have failed. But when I pasted this into page.tsx, the page now loads import React from "react";
+
+import React from "react";
 
 function Page() {
 
