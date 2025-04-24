@@ -1,70 +1,73 @@
-"use client";
-
-import Link from "next/link";
 import React from "react";
 
-// Define BlogPost type
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  href: string;
-  date: string;
-}
+function Page() {
 
-// Static blog post data
-const blogPosts: BlogPost[] = [
-  {
-    id: "1",
-    title: "Building Scalable Web Apps with Next.js",
-    excerpt: "Learn how to structure and optimize your Next.js apps for performance and scalability.",
-    href: "/blog/post1",
-    date: "April 1, 2025",
-  },
-  {
-    id: "2",
-    title: "Balancing Medicine and Tech: My Journey",
-    excerpt: "A deep dive into my experiences as both a doctor and a web developer.",
-    href: "/blog/post2",
-    date: "March 15, 2025",
-  },
-  {
-    id: "3",
-    title: "Optimizing React Apps for Performance",
-    excerpt: "Techniques and best practices to make your React apps faster and more efficient.",
-    href: "/blog/post3",
-    date: "February 20, 2025",
-  },
-];
-
-export default page = () => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    console.log(event)
+  }
   return (
-    <div className="container mx-auto md:px-[50px] xl:px-[150px] text-zinc-300 h-full">
-      <h1 className="text-4xl mt-[100px] mb-[50px]">Blog</h1>
-      <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 place-content-around">
-        {blogPosts.map((post) => (
-          <li
-            key={post.id}
-            className="w-[300px] h-[400px] border-[.5px] rounded-md border-zinc-600"
-            style={{ backdropFilter: "blur(2px)" }}
+    <section>
+      <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-zinc-200">
+          Contact Me
+        </h2>
+        <form action="#" className="space-y-8">
+          <div>
+            <label
+              htmlFor="email"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >
+              Your email
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              placeholder="name@flowbite.com"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="subject"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              placeholder="Let me know how I can help you"
+              required
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <label
+              htmlFor="message"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+            >
+              Your message
+            </label>
+            <textarea
+              id="message"
+              rows={6}
+              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Leave a comment..."
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            // onClick={handleSubmit}
           >
-            <div className="p-4 text-zinc-300">
-              <h2 className="text-xl">{post.title}</h2>
-              <p className="mt-2 text-xs text-zinc-500">{post.date}</p>
-              <p className="mt-2 text-sm text-zinc-400 line-clamp-4">
-                {post.excerpt}
-              </p>
-              <div className="mt-4">
-                <Link href={post.href} onClick={() => console.log(`Navigating to ${post.href}`)}>
-                  <span className="text-blue-400 hover:underline">
-                    Read More →
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+            Send message
+          </button>
+        </form>
+      </div>
+    </section>
   );
 }
+
+export default Page;
