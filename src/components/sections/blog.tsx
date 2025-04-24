@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { BoxReveal } from "../reveal-animations";
+import { BoxReveal } from "@/components/reveal-animations";
 import { cn } from "@/lib/utils";
 
 // Define BlogPost type
@@ -38,6 +38,11 @@ const BlogSection = () => {
 
     fetchPosts();
   }, []);
+
+  // Debug click events
+  const handleLinkClick = (slug: string) => {
+    console.log(`Navigating to /blog/${slug}`);
+  };
 
   return (
     <section
@@ -85,7 +90,8 @@ const BlogSection = () => {
             posts.map((post) => (
               <Link
                 key={post.id}
-                href={post.slug}
+                href={`/blog/${post.slug}`}
+                onClick={() => handleLinkClick(post.slug)}
                 className="group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg"
                 aria-label={`Read blog post: ${post.title}`}
               >
