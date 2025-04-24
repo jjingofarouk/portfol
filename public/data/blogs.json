@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Building Scalable Web Apps with Next.js",
+    "excerpt": "Learn how to structure and optimize your Next.js apps for performance and scalability.",
+    "slug": "/blog/nextjs-scalability",
+    "createdAt": "2025-04-01",
+    "content": "<p>This is the full content of the Next.js scalability post. It includes tips on server-side rendering, static site generation, and optimizing API routes.</p>"
+  },
+  {
+    "id": "2",
+    "title": "Balancing Medicine and Tech: My Journey",
+    "excerpt": "A deep dive into my experiences as both a doctor and a web developer.",
+    "slug": "/blog/medicine-and-tech",
+    "createdAt": "2025-03-15",
+    "content": "<p>This post details my journey balancing medicine and tech, including challenges and insights from both fields.</p>"
+  },
+  {
+    "id": "3",
+    "title": "Optimizing React Apps for Performance",
+    "excerpt": "Techniques and best practices to make your React apps faster and more efficient.",
+    "slug": "/blog/react-performance",
+    "createdAt": "2025-02-20",
+    "content": "<p>Learn about memoization, lazy loading, and other techniques to boost React app performance.</p>"
+  }
+]
