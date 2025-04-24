@@ -23,17 +23,21 @@ const BlogPostPage = ({ params }: { params: { slug: string } }) => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
+        console.log(`Fetching blogs.json for slug: ${params.slug}`);
         const response = await fetch("/data/blogs.json");
         if (!response.ok) {
           throw new Error("Failed to fetch blog posts");
         }
         const posts: BlogPost[] = await response.json();
-        const foundPost = posts.find((p) => p.slug === `/blog/${params.slug}`);
+        const foundPost = posts.find((p) => p.slug === params.slug);
         if (!foundPost) {
+          console.log(`Post not found for slug: ${params.slug}`);
           notFound();
         }
+        console.log(`Found post: ${foundPost.title}`);
         setPost(foundPost);
       } catch (err) {
+        console.error("Fetch error:", err);
         setError("Could not load blog post. Please try again later.");
       } finally {
         setLoading(false);
