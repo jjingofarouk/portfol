@@ -16,8 +16,9 @@ import SocketContextProvider from "@/contexts/socketio";
 import RemoteCursors from "@/components/realtime/remote-cursors";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google"; // Add this import
 
-const GA_MEASUREMENT_ID = "G-VV2EQ7JH2R"; // Replace with your GA4 ID
+const GA_MEASUREMENT_ID = "G-VV2EQ7JH2R"; // Your GA4 Measurement ID
 
 export const metadata: Metadata = {
   title: config.title,
@@ -69,20 +70,6 @@ export default function RootLayout({
           src={process.env.UMAMI_DOMAIN}
           data-website-id={process.env.UMAMI_SITE_ID}
         />
-
-        {/* Google Analytics (GA4) */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-          `}
-        </Script>
       </head>
       <body>
         <ThemeProvider
@@ -108,6 +95,9 @@ export default function RootLayout({
             <ElasticCursor />
           </Preloader>
         </ThemeProvider>
+
+        {/* Google Analytics */}
+        <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
 
         {/* Speed Insights */}
         <SpeedInsights />
