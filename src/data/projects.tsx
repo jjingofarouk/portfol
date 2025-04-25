@@ -1152,12 +1152,13 @@ const projects: Project[] = [
       );
     },
   },
+
 {
   id: "osler",
   category: "Health Tool",
-  title: "Osler Mentor",
+  title: "Dr. Jingo",
   src: "/assets/projects-screenshots/osler/home.png",
-  screenshots: ["home.png", "chat.png", "results.png"],
+  screenshots: ["home.png", "chat.png", "case_study_1.png", "case_study_2.png", "history.png", "navigation.png"],
   live: "https://oslermentor.onrender.com/",
   github: "https://github.com/jjingofarouk/osler",
   skills: {
@@ -1177,44 +1178,56 @@ const projects: Project[] = [
     return (
       <div>
         <TypographyP className="font-mono text-2xl text-center">
-          Osler Mentor = Clinical Expertise + Technical Innovation
+          Dr. Jingo = Clinical Mentorship + Modern Web Technology
         </TypographyP>
         <TypographyP className="font-mono">
-          Osler Mentor is a Flask-based Progressive Web App (PWA) I developed to provide clinical medical guidance through a virtual Ugandan clinician, Dr. Osler. Powered by the Gemini API, it delivers real-time, scenario-based medical responses in a responsive, offline-capable chat interface, showcasing my expertise in Python, Flask, and front-end development.
+          Dr. Jingo is a Flask-based Progressive Web App (PWA) I developed to deliver clinical mentorship through a virtual Ugandan clinician, Dr. Jingo. Powered by the Gemini API, it provides real-time, evidence-based medical guidance with features like interactive case studies, chat history, and intuitive navigation, showcasing my expertise in Python, Flask, and responsive front-end development.
         </TypographyP>
         <ProjectsLinks live={this.live} repo={this.github} />
         <TypographyH3 className="my-4 mt-8">Home Screen</TypographyH3>
         <p className="font-mono mb-2">
-          A sleek, dark-themed interface welcomes users to engage with Dr. Osler, built with Bootstrap and custom CSS for a polished, responsive design.
+          A clean and modern interface invites users to engage with Dr. Jingo. Built with Bootstrap and custom CSS for a responsive and user-friendly design across devices.
         </p>
         <SlideShow images={[`${BASE_PATH}/osler/home.png`]} />
+        <TypographyH3 className="my-4 mt-8">Navigation</TypographyH3>
+        <p className="font-mono mb-2">
+          I implemented a sleek hamburger menu for seamless navigation, allowing users to effortlessly switch between chat, case study, and history features, optimized for both mobile and desktop experiences.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/osler/navigation.png`]} />
         <TypographyH3 className="my-4 mt-8">Chat Interface</TypographyH3>
         <p className="font-mono mb-2">
-          Using jQuery and Flask, I crafted a dynamic chat UI with a sticky input bar, ensuring seamless interaction across devices.
+          Using jQuery and Flask, I created a dynamic chat UI with a hamburger menu for navigation and a sticky input bar for seamless interaction on mobile and desktop.
         </p>
         <SlideShow images={[`${BASE_PATH}/osler/chat.png`]} />
-        <TypographyH3 className="my-4 mt-8">Clinical Guidance</TypographyH3>
+        <TypographyH3 className="my-4 mt-8">Case Study Mode</TypographyH3>
         <p className="font-mono mb-2">
-          Integrated the Gemini API to deliver tailored, evidence-based clinical responses, leveraging Python for secure API key management.
+          I implemented an interactive case study feature that allows users to practice clinical reasoning with tailored scenarios. This is also powered by the Gemini API for accurate responses.
         </p>
-        <SlideShow images={[`${BASE_PATH}/osler/results.png`]} />
+        <SlideShow images={[`${BASE_PATH}/osler/case_study_1.png`, `${BASE_PATH}/osler/case_study_2.png`]} />
+        <TypographyH3 className="my-4 mt-8">Chat History</TypographyH3>
+        <p className="font-mono mb-2">
+          A dedicated history page tracks user interactions using local storage and Flask session management for persistence and accessibility.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/osler/history.png`]} />
         <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
         <p className="font-mono mb-2">
-          This PWA combines technical prowess with clinical utility, offering a fast, secure, and accessible experience.
+          This PWA combines clinical utility with technical innovation, thus offering a fast, secure, and offline-capable experience.
         </p>
         <ul className="font-mono list-disc list-inside mb-2">
-          <li>Real-time clinical chat powered by Gemini API</li>
-          <li>Progressive Web App with offline support via service workers</li>
-          <li>Responsive UI with jQuery and Bootstrap</li>
-          <li>Secure backend with Flask and environment management</li>
+          <li>Real-time medical guidance boosted by Gemini API</li>
+          <li>Interactive case studies for clinical practice</li>
+          <li>Chat history with local storage integration</li>
+          <li>Progressive Web App with offline support</li>
+          <li>Responsive UI with jQuery, Bootstrap, and hamburger menu</li>
+          <li>Secure Flask backend with environment management</li>
         </ul>
         <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
         <p className="font-mono mb-2">
-          I engineered a robust Flask backend to handle API requests, integrated jQuery for dynamic front-end interactions, and implemented PWA features (manifest, service worker) for a native app-like experience. The app uses secure HTTPS and efficient streaming responses for optimal performance.
+          I built a robust Flask backend to manage API requests, integrated jQuery for dynamic front-end interactions, and implemented PWA features (manifest, service worker) for a native app-like experience. The hamburger menu enhances navigation and streaming responses ensure performance. Secure HTTPS and environment variables protect API keys.
         </p>
         <SlideShow images={[`${BASE_PATH}/osler/home.png`]} />
         <p className="font-mono mb-2 mt-5 text-center">
-          Osler Mentor reflects my ability to blend Python-based backend development, AI integration, and modern front-end techniques to create impactful health tools.
+          This app demonstrates my ability to merge Python-based backend development, AI integration, and modern front-end techniques to create powerful health tools for medical education.
         </p>
       </div>
     );
