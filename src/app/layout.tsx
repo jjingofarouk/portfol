@@ -19,8 +19,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-// Google Analytics tracking
-const GA_MEASUREMENT_ID = "G-VV2EQ7JH2R"; // Your actual GA ID
+// Google Analytics tracking ID
+const GA_MEASUREMENT_ID = "G-VV2EQ7JH2R"; // Replace with your GA4 ID
 
 export const metadata: Metadata = {
   title: config.title,
@@ -69,6 +69,7 @@ export default function RootLayout({
   useEffect(() => {
     if (typeof window.gtag !== "function") return;
 
+    // Track pageview when pathname changes
     window.gtag("config", GA_MEASUREMENT_ID, {
       page_path: pathname,
     });
