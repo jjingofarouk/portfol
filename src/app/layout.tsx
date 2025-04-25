@@ -14,8 +14,13 @@ import EasterEggs from "@/components/easter-eggs";
 import { config } from "@/data/config";
 import SocketContextProvider from "@/contexts/socketio";
 import RemoteCursors from "@/components/realtime/remote-cursors";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics }  from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+
+// Google Analytics tracking
+const GA_MEASUREMENT_ID = "G-VV2EQ7JH2R"; // Your actual GA ID
 
 export const metadata: Metadata = {
   title: config.title,
@@ -58,15 +63,42 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // GA4 pageview tracker
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (typeof window.gtag !== "function") return;
+
+    window.gtag("config", GA_MEASUREMENT_ID, {
+      page_path: pathname,
+    });
+  }, [pathname]);
+
   return (
     <html lang="en" className={[archivoBlack.className].join(" ")}>
       <head>
+        {/* Umami Analytics (existing) */}
         <Script
           defer
           src={process.env.UMAMI_DOMAIN}
           data-website-id={process.env.UMAMI_SITE_ID}
         ></Script>
-        {/* <Analytics /> */}
+
+        {/* Google Analytics (GA4) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VV2EQ7JH2R"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VV2EQ7JH2R', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
       </head>
       <body>
         <ThemeProvider
@@ -92,7 +124,11 @@ export default function RootLayout({
             <ElasticCursor />
           </Preloader>
         </ThemeProvider>
+
+        {/* Speed Insights */}
         <SpeedInsights />
+
+        {/* Vercel Analytics (optional) */}
         <Analytics />
       </body>
     </html>
