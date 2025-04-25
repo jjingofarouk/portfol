@@ -16,9 +16,9 @@ import SocketContextProvider from "@/contexts/socketio";
 import RemoteCursors from "@/components/realtime/remote-cursors";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { GoogleAnalytics } from "@next/third-parties/google"; // Add this import
+import { GoogleAnalytics } from "@next/third-parties/google";
 
-const GA_MEASUREMENT_ID = "G-VV2EQ7JH2R"; // Your GA4 Measurement ID
+const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || ""; // Use environment variable
 
 export const metadata: Metadata = {
   title: config.title,
