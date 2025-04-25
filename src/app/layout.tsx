@@ -16,12 +16,9 @@ import SocketContextProvider from "@/contexts/socketio";
 import RemoteCursors from "@/components/realtime/remote-cursors";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import GoogleAnalytics from "@/components/GoogleAnalytics"; // Import the new component
 
-// Google Analytics tracking ID
-const GA_MEASUREMENT_ID = "G-VV2EQ7JH2R"; // Replace with your GA4 ID
-
+// Metadata and font setup remain unchanged
 export const metadata: Metadata = {
   title: config.title,
   description: config.description.long,
@@ -63,22 +60,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // GA4 pageview tracker
-  const pathname = usePathname();
-
-  useEffect(() => {
-    if (typeof window.gtag !== "function") return;
-
-    // Track pageview when pathname changes
-    window.gtag("config", GA_MEASUREMENT_ID, {
-      page_path: pathname,
-    });
-  }, [pathname]);
-
   return (
     <html lang="en" className={[archivoBlack.className].join(" ")}>
       <head>
-        {/* Umami Analytics (existing) */}
+        {/* Umami Analytics */}
         <Script
           defer
           src={process.env.UMAMI_DOMAIN}
@@ -126,10 +111,13 @@ export default function RootLayout({
           </Preloader>
         </ThemeProvider>
 
+        {/* Google Analytics Tracking */}
+        <GoogleAnalytics />
+
         {/* Speed Insights */}
         <SpeedInsights />
 
-        {/* Vercel Analytics (optional) */}
+        {/* Vercel Analytics */}
         <Analytics />
       </body>
     </html>
