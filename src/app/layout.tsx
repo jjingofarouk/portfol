@@ -8,7 +8,6 @@ import Header from "@/components/header/header";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Footer from "@/components/footer/footer";
-import Script from "next/script";
 import Preloader from "@/components/preloader";
 import EasterEggs from "@/components/easter-eggs";
 import { config } from "@/data/config";
@@ -64,12 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={[archivoBlack.className].join(" ")}>
       <head>
-        {/* Umami Analytics */}
-        <Script
-          defer
-          src={process.env.UMAMI_DOMAIN}
-          data-website-id={process.env.UMAMI_SITE_ID}
-        />
+        {/* Umami Analytics removed */}
       </head>
       <body>
         <ThemeProvider
