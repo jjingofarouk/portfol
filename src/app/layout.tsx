@@ -16,9 +16,9 @@ import SocketContextProvider from "@/contexts/socketio";
 import RemoteCursors from "@/components/realtime/remote-cursors";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import GoogleAnalytics from "@/components/GoogleAnalytics"; // Import the new component
 
-// Metadata and font setup remain unchanged
+const GA_MEASUREMENT_ID = "G-VV2EQ7JH2R"; // Replace with your GA4 ID
+
 export const metadata: Metadata = {
   title: config.title,
   description: config.description.long,
@@ -68,11 +68,11 @@ export default function RootLayout({
           defer
           src={process.env.UMAMI_DOMAIN}
           data-website-id={process.env.UMAMI_SITE_ID}
-        ></Script>
+        />
 
         {/* Google Analytics (GA4) */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-VV2EQ7JH2R"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
@@ -80,9 +80,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-VV2EQ7JH2R', {
-              page_path: window.location.pathname,
-            });
+            gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
       </head>
@@ -110,9 +108,6 @@ export default function RootLayout({
             <ElasticCursor />
           </Preloader>
         </ThemeProvider>
-
-        {/* Google Analytics Tracking */}
-        <GoogleAnalytics />
 
         {/* Speed Insights */}
         <SpeedInsights />
