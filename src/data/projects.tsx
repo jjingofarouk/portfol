@@ -1152,6 +1152,114 @@ const projects: Project[] = [
       );
     },
   },
+{
+  id: "gigmap",
+  category: "Freelance Tech",
+  title: "GigMap",
+  src: "/assets/projects-screenshots/gigmap/home.png",
+  screenshots: [
+    "home.png",
+    "freelancer-profile.png",
+    "create-pin.png",
+    "map-view.png",
+    "search-filters.png",
+    "skills-display.png",
+    "contact-form.png",
+    "not-found.png",
+  ],
+  live: "https://gigmap.vercel.app", // Replace with actual live link
+  github: "https://github.com/jjingofarouk/gigmap", // Replace with actual GitHub link
+  skills: {
+    frontend: [
+      PROJECT_SKILLS.javascript,
+      PROJECT_SKILLS.react,
+      PROJECT_SKILLS.reactRouter,
+      PROJECT_SKILLS.reactLeaflet,
+      PROJECT_SKILLS.axios,
+      PROJECT_SKILLS.typescript,
+    ],
+    backend: [
+      PROJECT_SKILLS.node,
+      PROJECT_SKILLS.express,
+      PROJECT_SKILLS.firebase,
+    ],
+  },
+  get content() {
+    return (
+      <div>
+        <TypographyP className="font-mono text-2xl text-center">
+          GigMap: Empowering Freelancers with a Global Stage
+        </TypographyP>
+        <TypographyP className="font-mono">
+          GigMap is a sophisticated React 19 Progressive Web App (PWA) that redefines freelance networking by connecting talent with opportunities worldwide. Leveraging OpenStreetMap and React-Leaflet for precise geolocation, GigMap offers a dynamic platform where freelancers can pin their services on an interactive map, showcase their expertise, and engage with clients seamlessly. As a full-stack developer with three years of experience, I architected GigMap with a vibrant, gradient-driven UI (#8b5cf6 to #ec4899), TypeScript for type safety, and a robust Node.js backend, delivering a scalable, mobile-first solution that’s as intuitive as it is powerful.
+        </TypographyP>
+        <ProjectsLinks live={this.live} repo={this.github} />
+        <TypographyH3 className="my-4 mt-8">Interactive Map Experience</TypographyH3>
+        <p className="font-mono mb-2">
+          At its core, GigMap features an interactive map powered by React-Leaflet 5.0.0 and OpenStreetMap, enabling users to explore freelancers’ locations with pinpoint precision. Custom markers, styled with a modern aesthetic, reveal profile previews on click, while smooth zoom and pan controls ensure a fluid experience across devices.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/gigmap/map-view.png`]} />
+        <TypographyH3 className="my-4 mt-8">Dynamic Freelancer Profiles</TypographyH3>
+        <p className="font-mono mb-2">
+          Freelancer profiles are a centerpiece of GigMap, built with React Router 7.5.1 for seamless navigation. Each profile features a gradient header (#8b5cf6 to #d946ef), a bio, skill tags, and an embedded OpenStreetMap view. Tabbed sections for portfolios and reviews, styled with subtle animations, provide a comprehensive showcase of talent, optimized for both desktop and mobile.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/gigmap/freelancer-profile.png`]} />
+        <TypographyH3 className="my-4 mt-8">Streamlined Profile Creation</TypographyH3>
+        <p className="font-mono mb-2">
+          The “Create Pin” feature offers a multi-step form, crafted with React 19’s state management for a smooth onboarding experience. Freelancers input their details, skills, and geolocation coordinates, guided by a vibrant progress bar and real-time validation. The form’s clean, SVG-free design uses Unicode icons (e.g., →, ✓) and gradient buttons for a modern, accessible UI.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/gigmap/create-pin.png`]} />
+        <TypographyH3 className="my-4 mt-8">Advanced Search & Filters</TypographyH3>
+        <p className="font-mono mb-2">
+          GigMap’s search and filter system, powered by Axios 1.8.4 for API calls, allows clients to discover freelancers by skills, location, or keywords. A responsive search bar and dropdowns, accented with #d946ef highlights, adapt dynamically to screen sizes, ensuring a delightful and efficient talent discovery process.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/gigmap/search-filters.png`]} />
+        <TypographyH3 className="my-4 mt-8">Skills Showcase</TypographyH3>
+        <p className="font-mono mb-2">
+          Skills are presented as interactive tags with a soft gradient (#ede9fe to #fae8ff), clickable to filter related freelancers. This feature, built with TypeScript for type-safe data handling, enhances discoverability and aligns with GigMap’s vibrant, user-centric design.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/gigmap/skills-display.png`]} />
+        <TypographyH3 className="my-4 mt-8">Seamless Contact Integration</TypographyH3>
+        <p className="font-mono mb-2">
+          Clients can connect with freelancers via an integrated contact form, supporting email links and a “Save” feature for profile bookmarking. The form’s rounded inputs and hover effects (#8b5cf6 on focus) ensure a cohesive, professional interaction, WCAG-compliant for accessibility.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/gigmap/contact-form.png`]} />
+        <TypographyH3 className="my-4 mt-8">Robust Error Handling</TypographyH3>
+        <p className="font-mono mb-2">
+          GigMap includes a polished 404 page for invalid routes, featuring a text-based error indicator and a gradient-styled “Back to Homepage” button. This ensures a consistent user experience, even when navigating to non-existent pages.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/gigmap/not-found.png`]} />
+        <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+        <p className="font-mono mb-2">
+          Engineered for global scalability, GigMap combines cutting-edge technology with a visually stunning interface, empowering freelancers and clients in a competitive digital marketplace.
+        </p>
+        <ul className="font-mono list-disc list-inside mb-2">
+          <li>Interactive OpenStreetMap integration with React-Leaflet 5.0.0</li>
+          <li>Dynamic profiles with tabbed navigation via React Router 7.5.1</li>
+          <li>Multi-step profile creation with TypeScript validation</li>
+          <li>Advanced search and filtering with Axios-powered API calls</li>
+          <li>Mobile-first PWA with offline support and responsive layouts</li>
+          <li>Secure backend with Node.js, Express, and Firebase</li>
+          <li>SVG-free, accessible UI with Unicode icons and WCAG compliance</li>
+          <li>Gradient-driven design (#8b5cf6 to #ec4899) for a modern aesthetic</li>
+        </ul>
+        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+        <p className="font-mono mb-2">
+          With three years of full-stack expertise, I built GigMap’s frontend using React 19, TypeScript 5.7.2, and Vite 6.3.1 for lightning-fast development and builds. React-Leaflet 5.0.0 powers the mapping functionality, with Axios 1.8.4 handling API requests to a Node.js/Express backend, augmented by Firebase for real-time data and authentication. ESLint 9.22.0, with plugins for React Hooks and Refresh, ensures code quality, while TypeScript provides robust type safety. The UI, styled with a custom CSS framework inspired by Tailwind’s utility-first approach, features vibrant gradients (#8b5cf6 to #ec4899), Inter font, and subtle shadows for a professional, hospital-chic aesthetic. OpenStreetMap integration adheres to ODbL licensing, with proper attribution.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/gigmap/home.png`]} />
+        <TypographyH3 className="my-4 mt-8">Development Process</TypographyH3>
+        <p className="font-mono mb-2">
+          GigMap was developed using a modern JavaScript ecosystem, with Vite as the build tool for rapid iteration and optimized production builds. The frontend leverages React 19’s latest features, including improved state management and hooks, while TypeScript ensures type-safe components and API responses. The backend, built with Node.js and Express, uses Firebase for secure user management and real-time database operations. Development was streamlined with ESLint and TypeScript-ESLint for linting, ensuring maintainable, error-free code. The project was deployed on Vercel, with CI/CD pipelines for seamless updates.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/gigmap/home.png`]} />
+        <p className="font-mono mb-2 mt-5 text-center">
+          GigMap transforms freelance networking into a global, map-driven experience. Explore the live app, review the code, and let’s collaborate to elevate your next project to cosmic heights!
+        </p>
+      </div>
+    );
+  },
+},
 
 {
   id: "osler",
