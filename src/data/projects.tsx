@@ -12,6 +12,7 @@ import {
   SiChakraui,
   SiCss3,
   SiCypress,
+SiVercel,
   SiDeno,
 SiNpm,
   SiDocker,
@@ -110,6 +111,7 @@ export const PROJECT_SKILLS = {
   asyncStorage: { title: "AsyncStorage", bg: "black", fg: "white", icon: <SiReact /> },
   chartKit: { title: "Chart Kit", bg: "black", fg: "white", icon: <SiReact /> },
   vectorIcons: { title: "Vector Icons", bg: "black", fg: "white", icon: <SiReact /> },
+  vercelAnalytics: { title: "Vercel Analytics", bg: "black", fg: "white", icon: <SiVercel /> },
   lucide: { title: "Lucide Icons", bg: "black", fg: "white", icon: <SiReactrouter /> },
 chakra: {
     title: "Chakra UI",
