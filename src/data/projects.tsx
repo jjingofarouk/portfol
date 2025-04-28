@@ -1159,25 +1159,29 @@ const projects: Project[] = [
       );
     },
   },
+
 {
   id: "news-summarizer",
   category: "AI & News",
-  title: "SumNews",
+  title: "News Summarizer",
   src: "/assets/projects-screenshots/news-summarizer/home.png",
   screenshots: [
     "home.png",
     "features.png",
+    "features2.png",
     "pricing.png",
     "pricing2.png",
+    "api.png",
     "blog.png",
     "guides.png",
     "faq.png",
     "about.png",
     "contact.png",
+    "contact2.png",
     "privacy.png",
     "not-found.png"
   ],
-  live: "https://news-summarizerr.vercel.app",
+  live: "https://news-summarizer.vercel.app",
   github: "https://github.com/jjingofarouk/news-summary",
   skills: {
     frontend: [
@@ -1202,34 +1206,32 @@ const projects: Project[] = [
           News Summarizer: AI-Driven Clarity for Modern News
         </TypographyP>
         <TypographyP className="font-mono">
-          News Summarizer is a Next.js 14 Progressive Web App (PWA) that redefines news consumption by delivering precise AI-powered article summaries. Built with TypeScript 4.9.4 for type safety, Tailwind CSS 3.2.4 for a vibrant gradient UI (#5b21b6 to #9333ea), and Framer Motion 9.0.1 for seamless animations, this full-stack project integrates Upstash Redis 1.20.0 for caching and Vercel Analytics 0.1.8 for performance insights. I designed this app to be mobile-first, WCAG-compliant, and globally scalable. It offers users a fast yet intuitive way to navigate the news landscape.
+          News Summarizer is a Next.js 14 Progressive Web App (PWA) that redefines news consumption by delivering precise, AI-powered article summaries. Built with TypeScript 4.9.4 for type safety, Tailwind CSS 3.2.4 for a vibrant gradient UI (#5b21b6 to #9333ea), and Framer Motion 9.0.1 for seamless animations, this full-stack project integrates Upstash Redis 1.20.0 for caching and Vercel Analytics 0.1.8 for performance insights. I designed this app to be mobile-first, WCAG-compliant, and globally scalable, offering users a fast, intuitive way to navigate the news landscape.
         </TypographyP>
         <ProjectsLinks live={this.live} repo={this.github} />
         <TypographyH3 className="my-4 mt-8">Engaging Home Interface</TypographyH3>
         <p className="font-mono mb-2">
-          The homepage greets users with a sleek, gradient-driven design (#5b21b6 to #9333ea) featuring a URL input for instant summarization. Built with Next.js 14 and React 18.2.0, it uses `react-hot-toast` 2.4.0 for polished notifications and `next-themes` 0.2.1 for effortless dark mode switching to ensure a responsive delightful experience across devices.
+          The homepage greets users with a sleek, gradient-driven design (#5b21b6 to #9333ea), featuring a URL input for instant summarization. Built with Next.js 14 and React 18.2.0, it uses `react-hot-toast` 2.4.0 for polished notifications and `next-themes` 0.2.1 for effortless dark mode switching, ensuring a responsive, delightful experience across devices.
         </p>
         <SlideShow images={[`${BASE_PATH}/news-summarizer/home.png`]} />
         <TypographyH3 className="my-4 mt-8">Feature-Rich Showcase</TypographyH3>
         <p className="font-mono mb-2">
-          The Features page highlights News Summarizer’s strengths including AI summaries with customizable lengths and article saving. Styled with Tailwind CSS and `@heroicons/react` 2.0.18 icons (e.g., AdjustmentsHorizontalIcon, ClockIcon), the grid layout animates with Framer Motion for an accessible and engaging overview of functionality.
+          The Features page highlights News Summarizer’s strengths, including AI summaries with customizable lengths and article saving. Styled with Tailwind CSS and `@heroicons/react` 2.0.18 icons (e.g., AdjustmentsHorizontalIcon, ClockIcon), the grid layout animates with Framer Motion for an accessible and engaging overview of functionality.
         </p>
-        <SlideShow images={[`${BASE_PATH}/news-summarizer/features.png`]}, `${BASE_PATH}/news-summarizer/features2.png`]}/>
+        <SlideShow images={[`${BASE_PATH}/news-summarizer/features.png`, `${BASE_PATH}/news-summarizer/features2.png`]} />
         <TypographyH3 className="my-4 mt-8">Flexible Pricing Options</TypographyH3>
         <p className="font-mono mb-2">
-          The Pricing page presents Free, Pro, and Enterprise plans in a card-based layout accented with gradient buttons (#5b21b6 to #9333ea). TypeScript ensures type-safe data rendering while Tailwind CSS enables responsive design with hover effects that adapt seamlessly to mobile and desktop.
+          The Pricing page presents Free, Pro, and Enterprise plans in a card-based layout, accented with gradient buttons (#5b21b6 to #9333ea). TypeScript ensures type-safe data rendering, while Tailwind CSS enables responsive design with hover effects that adapt seamlessly to mobile and desktop.
         </p>
-        <SlideShow images={[`${BASE_PATH}/news-summarizer/pricing.png`]},  
-`${BASE_PATH}/news-summarizer/pricing2.png`]}
-/>
+        <SlideShow images={[`${BASE_PATH}/news-summarizer/pricing.png`, `${BASE_PATH}/news-summarizer/pricing2.png`]} />
         <TypographyH3 className="my-4 mt-8">API Integration Hub</TypographyH3>
         <p className="font-mono mb-2">
-          The API page promotes News Summarizer’s RESTful API powered by Upstash Redis for caching. Styled with Tailwind CSS and `@heroicons/react` icons (e.g., ShieldCheckIcon), it provides clear links to the API documentation designed for developer clarity and accessibility.
+          The API page promotes News Summarizer’s RESTful API, powered by Upstash Redis for caching. Styled with Tailwind CSS and `@heroicons/react` icons (e.g., ShieldCheckIcon), it provides clear links to the API documentation, designed for developer clarity and accessibility.
         </p>
-        <SlideShow images={[`${BASE_PATH}/news-summarizer/home.png`]} />
+        <SlideShow images={[`${BASE_PATH}/news-summarizer/api.png`]} />
         <TypographyH3 className="my-4 mt-8">Dynamic Blog Platform</TypographyH3>
         <p className="font-mono mb-2">
-          The Blog page showcases articles with placeholder images and summaries parsed via `node-html-parser` 6.1.4. The responsive grid featuring gradient links (#9333ea) uses Framer Motion for smooth transitions to create a modern yet reader-friendly experience.
+          The Blog page showcases articles with placeholder images and summaries, parsed via `node-html-parser` 6.1.4. The responsive grid, featuring gradient links (#9333ea), uses Framer Motion for smooth transitions to create a modern, reader-friendly experience.
         </p>
         <SlideShow images={[`${BASE_PATH}/news-summarizer/blog.png`]} />
         <TypographyH3 className="my-4 mt-8">In-Depth User Guides</TypographyH3>
@@ -1239,36 +1241,32 @@ const projects: Project[] = [
         <SlideShow images={[`${BASE_PATH}/news-summarizer/guides.png`]} />
         <TypographyH3 className="my-4 mt-8">Accessible FAQ Section</TypographyH3>
         <p className="font-mono mb-2">
-          The FAQ page addresses user queries in a structured accordion-style format. Built with Tailwind CSS and `@heroicons/react` icons (e.g., QuestionMarkCircleIcon), it ensures quick answers with gradient highlights (#9333ea) for visual cohesion.
+          The FAQ page addresses user queries in a structured, accordion-style format. Built with Tailwind CSS and `@heroicons/react` icons (e.g., QuestionMarkCircleIcon), it ensures quick answers with gradient highlights (#9333ea) for visual cohesion.
         </p>
         <SlideShow images={[`${BASE_PATH}/news-summarizer/faq.png`]} />
         <TypographyH3 className="my-4 mt-8">Team & Mission Overview</TypographyH3>
         <p className="font-mono mb-2">
-          The About page introduces the News Summarizer team with placeholder bios and images styled with Tailwind CSS and animated with Framer Motion. Gradient headers (#5b21b6 to #9333ea) and `@heroicons/react` icons (e.g., HeartIcon) present a professional approachable vibe.
+          The About page introduces the News Summarizer team with placeholder bios and images, styled with Tailwind CSS and animated with Framer Motion. Gradient headers (#5b21b6 to #9333ea) and `@heroicons/react` icons (e.g., HeartIcon) present a professional, approachable vibe.
         </p>
         <SlideShow images={[`${BASE_PATH}/news-summarizer/about.png`]} />
         <TypographyH3 className="my-4 mt-8">Seamless Contact Experience</TypographyH3>
         <p className="font-mono mb-2">
-          The Contact page features a multi-field form (name, email, subject, message) with real-time validation powered by React 18.2.0. Styled with Tailwind CSS, gradient buttons (#5b21b6), and `@heroicons/react` icons (e.g., PhoneIcon), it includes accessible social links (Twitter, GitHub, LinkedIn) with SVG icons for WCAG compliance.
+          The Contact page features a multi-field form (name, email, subject, message) with real-time validation, powered by React 18.2.0. Styled with Tailwind CSS, gradient buttons (#5b21b6), and `@heroicons/react` icons (e.g., PhoneIcon), it includes accessible social links (Twitter, GitHub, LinkedIn) with SVG icons for WCAG compliance.
         </p>
-        <SlideShow images={[`${BASE_PATH}/news-summarizer/contact.png`]},
-`${BASE_PATH}/news-summarizer/contact2.png`]}
- />
+        <SlideShow images={[`${BASE_PATH}/news-summarizer/contact.png`, `${BASE_PATH}/news-summarizer/contact2.png`]} />
         <TypographyH3 className="my-4 mt-8">Clear Privacy Policy</TypographyH3>
         <p className="font-mono mb-2">
-          The Privacy page details data practices in a transparent single-column layout. Built with Tailwind CSS and TypeScript, it uses gradient-accented sections (#9333ea) to enhance readability and build user trust.
+          The Privacy page details data practices in a transparent, single-column layout. Built with Tailwind CSS and TypeScript, it uses gradient-accented sections (#9333ea) to enhance readability and build user trust.
         </p>
-        <SlideShow images={[`${BASE_PATH}/news-summarizer/privacy.png`]},
-`${BASE_PATH}/news-summarizer/privacy.png`]}
- />
+        <SlideShow images={[`${BASE_PATH}/news-summarizer/privacy.png`]} />
         <TypographyH3 className="my-4 mt-8">Robust Error Handling</TypographyH3>
         <p className="font-mono mb-2">
-          A custom 404 page styled with a gradient button (#5b21b6 to #9333ea) ensures a consistent experience for invalid routes. Built with Next.js routing and Tailwind CSS, it features a friendly “Back to Home” link.
+          A custom 404 page, styled with a gradient button (#5b21b6 to #9333ea), ensures a consistent experience for invalid routes. Built with Next.js routing and Tailwind CSS, it features a friendly “Back to Home” link.
         </p>
         <SlideShow images={[`${BASE_PATH}/news-summarizer/not-found.png`]} />
         <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
         <p className="font-mono mb-2">
-          This app blends AI innovation with intuitive design and delivers a scalable solution for news consumption.
+          This app blends AI innovation with intuitive design, delivering a scalable solution for news consumption.
         </p>
         <ul className="font-mono list-disc list-inside mb-2">
           <li>AI-driven article summarization with short, medium, or detailed options</li>
@@ -1280,11 +1278,14 @@ const projects: Project[] = [
           <li>WCAG-compliant UI with `@heroicons/react` 2.0.18 icons</li>
           <li>Gradient aesthetic (#5b21b6 to #9333ea) with Inter font</li>
         </ul>
-
+        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+        <p className="font-mono mb-2">
+          With three years of full-stack experience, I built News Summarizer using Next.js 14 for server-side rendering and static generation, TypeScript 4.9.4 for type safety, and Tailwind CSS 3.2.4 for utility-first styling. The frontend leverages React 18.2.0 hooks, Framer Motion 9.0.1 for animations, and `react-hot-toast` 2.4.0 for notifications. The backend integrates Upstash Redis 1.20.0 for caching and Vercel Analytics 0.1.8 for performance monitoring. Prettier 2.8.3 with `prettier-plugin-tailwindcss` 0.2.2 ensures code consistency, while `@next/font` 13.1.5 loads the Inter font for a modern, hospital-chic aesthetic (gradients #5b21b6 to #9333ea). Deployed on Vercel with CI/CD pipelines, the app ensures seamless updates.
+        </p>
         <SlideShow images={[`${BASE_PATH}/news-summarizer/home.png`]} />
         <TypographyH3 className="my-4 mt-8">Development Process</TypographyH3>
         <p className="font-mono mb-2">
-          This app was developed with a modern JavaScript ecosystem, using Next.js 14 for optimal performance and TypeScript 4.9.4 for type-safe development. The frontend employs React 18.2.0 for component architecture, Tailwind CSS 3.2.4 for styling, and Framer Motion 9.0.1 for animations. `node-html-parser` 6.1.4 handles content parsing, while Upstash Redis and Vercel Analytics power the backend. Prettier with `prettier-plugin-tailwindcss` ensures consistent formatting and TypeScript enforces robust error handling. The project was deployed on Vercel with GitHub-triggered CI/CD pipelines for continuous deployment.
+          This app was developed with a modern JavaScript ecosystem, using Next.js 14 for optimal performance and TypeScript 4.9.4 for type-safe development. The frontend employs React 18.2.0 for component architecture, Tailwind CSS 3.2.4 for styling, and Framer Motion 9.0.1 for animations. `node-html-parser` 6.1.4 handles content parsing, while Upstash Redis and Vercel Analytics power the backend. Prettier with `prettier-plugin-tailwindcss` ensures consistent formatting, and TypeScript enforces robust error handling. The project was deployed on Vercel with GitHub-triggered CI/CD pipelines for continuous deployment.
         </p>
         <SlideShow images={[`${BASE_PATH}/news-summarizer/home.png`]} />
         <p className="font-mono mb-2 mt-5 text-center">
