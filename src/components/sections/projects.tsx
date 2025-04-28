@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import {
   Modal,
   ModalBody,
@@ -25,16 +25,16 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 };
 
 const ProjectsSection = () => {
-  const [shuffledProjects, setShuffledProjects] = useState<Project[]>([]);
-
-  // Shuffle projects on component mount
-  useEffect(() => {
-    setShuffledProjects(shuffleArray(projects));
-  }, []);
+  // Memoize shuffled projects to prevent re-shuffling on re-renders
+  const shuffledProjects = useMemo(() => shuffleArray(projects), []);
 
   return (
-    <section id="projects" className="max-w-7xl mx-auto md:h-[130vh] py-16">
-      <Link href={"#projects"}>
+    <section
+      id="projects"
+      className="max-w-7xl mx-auto py-16"
+      aria-label="Projects Section"
+    >
+      <Link href="#projects">
         <h2
           className={cn(
             "bg-clip-text text-4xl text-center text-transparent md:text-7xl pt-16",
@@ -45,10 +45,13 @@ const ProjectsSection = () => {
           Projects
         </h2>
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {shuffledProjects.map((project, index) => (
-          <Modall key={project.src} project={project} />
-        ))}
+      {/* Fixed-height scrollable container */}
+      <div className="max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+          {shuffledProjects.map((project) => (
+            <Modall key={project.src} project={project} />
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -123,8 +126,8 @@ const ProjectContents = ({ project }: { project: Project }) => {
               Backend
             </p>
             <FloatingDock items={project.skills.backend} />
-          </div>
-        )}
+          )}
+        </div>
       </div>
       {project.content}
     </>
