@@ -100,6 +100,7 @@ export type Skill = {
 export const PROJECT_SKILLS = {
   next: { title: "Next.js", bg: "black", fg: "white", icon: <RiNextjsFill /> },
  expo: { title: "Expo", bg: "black", fg: "white", icon: <SiJavascript /> },
+  upstashRedis: { title: "Upstash Redis", bg: "black", fg: "white", icon: <RiNextjsFill /> },
  jquery: { title: "jQuery", bg: "black", fg: "white", icon: <SiJavascript /> },
   gemini: { title: "Gemini API", bg: "black", fg: "white", icon: <SiPython /> },
   reactNavigation: { title: "React Navigation", bg: "black", fg: "white", icon: <SiReactrouter /> },
