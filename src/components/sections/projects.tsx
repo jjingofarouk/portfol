@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useMemo } from "react";
 import {
-  Modal,
+  Modal as AnimatedModal,
   ModalBody,
   ModalContent,
   ModalFooter,
@@ -49,7 +49,7 @@ const ProjectsSection = () => {
       <div className="max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
           {shuffledProjects.map((project) => (
-            <Modal key={project.src} project={project} />
+            <Modall key={project.src} project={project} />
           ))}
         </div>
       </div>
@@ -57,10 +57,10 @@ const ProjectsSection = () => {
   );
 };
 
-const Modal = ({ project }: { project: Project }) => {
+const Modall = ({ project }: { project: Project }) => {
   return (
     <div className="flex items-center justify-center">
-      <Modal>
+      <AnimatedModal>
         <ModalTrigger className="bg-transparent flex justify-center group/modal-btn">
           <div
             className="relative w-[400px] h-auto rounded-lg overflow-hidden"
@@ -100,7 +100,7 @@ const Modal = ({ project }: { project: Project }) => {
             </Link>
           </ModalFooter>
         </ModalBody>
-      </Modal>
+      </AnimatedModal>
     </div>
   );
 };
