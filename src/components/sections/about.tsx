@@ -362,8 +362,7 @@ function AboutSection() {
             </p>
 
             <p className="mb-10 text-lg leading-relaxed">
-               Absolutely—here’s a sharp, dev-style version:
-
+              
 	Ex-med, now Full Stack. I build clean and fast tools for real-world problems. I learn fast, code sharp, and never patch without understanding the core.
             </p>
 
