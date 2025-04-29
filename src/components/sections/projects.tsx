@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo } from "react";
 import {
   Modal,
   ModalBody,
@@ -49,7 +49,7 @@ const ProjectsSection = () => {
       <div className="max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
           {shuffledProjects.map((project) => (
-            <Modall key={project.src} project={project} />
+            <Modal key={project.src} project={project} />
           ))}
         </div>
       </div>
@@ -57,7 +57,7 @@ const ProjectsSection = () => {
   );
 };
 
-const Modall = ({ project }: { project: Project }) => {
+const Modal = ({ project }: { project: Project }) => {
   return (
     <div className="flex items-center justify-center">
       <Modal>
@@ -126,8 +126,8 @@ const ProjectContents = ({ project }: { project: Project }) => {
               Backend
             </p>
             <FloatingDock items={project.skills.backend} />
-          )}
-        </div>
+          </div>
+        )}
       </div>
       {project.content}
     </>
