@@ -456,11 +456,10 @@ function AboutSection() {
 
             <div className="p-6 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700">
               <h2 className="text-xl font-semibold mb-3">
-                Let's Build Something Amazing
+                Let's Build Bold
               </h2>
               <p className="mb-4">
-                I'm always open to discussing new projects, innovative ideas, or
-                opportunities to be part of your team. Most importantly, I value creating connections with people that last beyond the lifespan of any project. 
+	Always up for bold ideas, solid teams, and work that outlives the project. Let’s build something that matters.
               </p>
               <a
                 href="mailto:jjingofarouq@gmail.com"
