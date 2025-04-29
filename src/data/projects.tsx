@@ -1199,9 +1199,6 @@ const projects: Project[] = [
       PROJECT_SKILLS.node,
       PROJECT_SKILLS.vercelAnalytics
     ],
-    testing: [
-      PROJECT_SKILLS.jest
-    ]
   },
   get content() {
     return (
