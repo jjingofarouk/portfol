@@ -361,11 +361,6 @@ function AboutSection() {
               
             </p>
 
-            <p className="mb-10 text-lg leading-relaxed">
-              
-	Ex-med, now Full Stack. I build clean and fast tools for real-world problems. I learn fast, code sharp, and never patch without understanding the core.
-            </p>
-
             <div className="mb-10">
               <h2 className="text-2xl font-semibold mb-4">Beyond Code</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
