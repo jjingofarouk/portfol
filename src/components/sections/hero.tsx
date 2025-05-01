@@ -244,7 +244,7 @@ const HeroSection = () => {
                   </Link>
 
                   <Link
-                    href="https://drive.google.com/file/d/16GiJoNpWJLZhQNn0iG5zRbo9GvaeR2LZ/view?usp=drivesdk"
+                    href="https://drive.google.com/file/d/1aRRXh7Ni9iLc6IOSASJjCRf-AqJ3t2LB/view?usp=drivesdk"
                     target="_blank"
                     className="flex-1"
                   >
