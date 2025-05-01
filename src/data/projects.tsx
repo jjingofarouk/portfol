@@ -12,6 +12,7 @@ import {
   SiChakraui,
   SiCss3,
   SiCypress,
+SiChartdotjs,
 SiVercel,
   SiDeno,
 SiNpm,
@@ -283,7 +284,8 @@ heroicons: {
     icon: <SiTerraform />,
   },
   fastapi: { title: "FastAPI", bg: "black", fg: "white", icon: <SiFastapi /> },
-  go: { title: "Go", bg: "black", fg: "white", icon: <FaJava /> },
+    chartjs: { title: "ChartJs", bg: "black", fg: "white", icon: <SiChartdotjs /> },
+go: { title: "Go", bg: "black", fg: "white", icon: <FaJava /> },
   java: { title: "Java", bg: "black", fg: "white", icon: <FaJava /> },
   aws: { title: "AWS", bg: "black", fg: "white", icon: <FaAws /> },
   nextdotjs: {
@@ -1282,6 +1284,118 @@ const projects: Project[] = [
         <SlideShow images={[`${BASE_PATH}/free-resume/home.png`]} />
         <p className="font-mono mb-2 mt-5 text-center">
           FreeResume is my way of giving back to Uganda’s job seekers, helping them land opportunities with confidence. Check out the live app, dive into the code, and let’s make job applications easier together!
+        </p>
+      </div>
+    );
+  }
+},
+{
+  id: "vault-vision",
+  category: "Web Development & Financial Tools",
+  title: "VaultVision",
+  src: "/assets/projects-screenshots/vault-vision/dashboard.png",
+  screenshots: [
+    "dashboard.png",
+    "budget-forecast.png",
+    "ai-insights.png",
+    "collaboration-hub.png",
+    "expense-history.png",
+    "allocations.png",
+    "analytics.png",
+    "not-found.png"
+  ],
+  live: "https://budgett.vercel.app",
+  github: "https://github.com/jjingofarouk/budgett",
+  skills: {
+    frontend: [
+      PROJECT_SKILLS.js,
+      PROJECT_SKILLS.react,
+      PROJECT_SKILLS.bootstrap,
+      PROJECT_SKILLS.chartjs,
+      PROJECT_SKILLS.reactIcons,
+      PROJECT_SKILLS.redux
+    ],
+    backend: [
+      PROJECT_SKILLS.node,
+      PROJECT_SKILLS.vercelAnalytics
+    ]
+  },
+  get content() {
+    return (
+      <div>
+        <TypographyP className="font-mono text-2xl text-center">
+          VaultVision: Empowering Enterprises with Smart Budget Management
+        </TypographyP>
+        <TypographyP className="font-mono">
+          VaultVision is a powerful web application designed to streamline enterprise budget management, offering real-time tracking, forecasting, and AI-driven insights. Built with React 18.2.0, Bootstrap 5.3.0, and Chart.js 4.2.1, this app delivers a sleek, responsive interface with a dark navy and gradient UI (#1a2a44 to #c3cfe2). Leveraging React Context for state management, localStorage for persistent data, and Vercel for seamless deployment, VaultVision empowers businesses to optimize their financial strategies with confidence.
+        </TypographyP>
+        <ProjectsLinks live={this.live} repo={this.github} />
+        <TypographyH3 className="my-4 mt-8">Dynamic Dashboard</TypographyH3>
+        <p className="font-mono mb-2">
+          The dashboard welcomes users with a clean, navy-themed layout (#1a2a44), showcasing key metrics like core capital, liquidity reserve, and deployed capital. Built with React 18.2.0 and Bootstrap 5.3.0, it uses React-Icons 4.7.1 (e.g., FaWallet) for intuitive visuals and a responsive grid for seamless navigation across devices.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/vault-vision/dashboard.png`]} />
+        <TypographyH3 className="my-4 mt-8">Advanced Budget Forecasting</TypographyH3>
+        <p className="font-mono mb-2">
+          The Budget Forecast feature projects future capital with adjustable timeframes, confidence levels, and scenarios (base, optimistic, pessimistic). Powered by Chart.js 4.2.1 and date-fns 3.6.0, it visualizes trends with smooth line charts, styled with Bootstrap 5.3.0 for a polished, enterprise-grade experience.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/vault-vision/budget-forecast.png`]} />
+        <TypographyH3 className="my-4 mt-8">AI-Powered Insights</TypographyH3>
+        <p className="font-mono mb-2">
+          AI Insights deliver actionable recommendations based on spending patterns, using React Context for real-time data analysis. Styled with Bootstrap 5.3.0 and accented with navy badges (#1a2a44), this feature uses React-Icons (e.g., FaLightbulb) to highlight critical financial strategies.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/vault-vision/ai-insights.png`]} />
+        <TypographyH3 className="my-4 mt-8">Team Collaboration Hub</TypographyH3>
+        <p className="font-mono mb-2">
+          The Collaboration Hub enables role-based team messaging with real-time updates, powered by UUID 9.0.0 for unique message IDs and localStorage for persistence. Bootstrap 5.3.0 styles a clean chat interface, with React-Icons (e.g., FaUsers) enhancing usability.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/vault-vision/collaboration-hub.png`]} />
+        <TypographyH3 className="my-4 mt-8">Transaction Ledger</TypographyH3>
+        <p className="font-mono mb-2">
+          The Expense History page offers a filterable, sortable ledger of transactions, with export functionality. Built with React 18.2.0 and Bootstrap 5.3.0, it uses React-Icons (e.g., FaHistory) and a navy-themed table (#1a2a44) for a professional, data-driven experience.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/vault-vision/expense-history.png`]} />
+        <TypographyH3 className="my-4 mt-8">Resource Allocations</TypographyH3>
+        <p className="font-mono mb-2">
+          The Resource Allocation form allows users to add or reduce expenses across sectors, with category-based tracking. Styled with Bootstrap 5.3.0 and React-Icons (e.g., FaPlusCircle), it ensures intuitive financial management with real-time validation.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/vault-vision/allocations.png`]} />
+        <TypographyH3 className="my-4 mt-8">Capital Analytics</TypographyH3>
+        <p className="font-mono mb-2">
+          The Capital Distribution chart visualizes expense breakdowns using Chart.js 4.2.1, with toggleable pie and bar views. Bootstrap 5.3.0 and a navy gradient palette (#1a2a44 to #c3cfe2) create a cohesive, data-rich interface for financial insights.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/vault-vision/analytics.png`]} />
+        <TypographyH3 className="my-4 mt-8">Graceful Error Handling</TypographyH3>
+        <p className="font-mono mb-2">
+          A custom 404 page ensures users stay engaged, featuring a navy button (#1a2a44) and a “Back to Dashboard” link. Built with React 18.2.0 and Bootstrap 5.3.0, it maintains a consistent, professional design.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/vault-vision/not-found.png`]} />
+        <TypographyH3 className="my-4 mt-8">What Makes It Special</TypographyH3>
+        <p className="font-mono mb-2">
+          VaultVision is tailored for enterprises seeking precision in financial management.
+        </p>
+        <ul className="font-mono list-disc list-inside mb-2">
+          <li>Real-time budget tracking with React Context</li>
+          <li>Advanced forecasting with Chart.js 4.2.1 and date-fns 3.6.0</li>
+          <li>AI-driven insights for strategic decision-making</li>
+          <li>Team collaboration with persistent messaging</li>
+          <li>Responsive, navy-themed UI with Bootstrap 5.3.0</li>
+          <li>LocalStorage for transaction history persistence</li>
+          <li>Accessible design with React-Icons 4.7.1</li>
+          <li>Seamless deployment via Vercel</li>
+        </ul>
+        <TypographyH3 className="my-4 mt-8">Tech Behind the Scenes</TypographyH3>
+        <p className="font-mono mb-2">
+          With three years of full-stack experience, I crafted VaultVision to be robust and user-friendly. React 18.2.0 powers the frontend, with Bootstrap 5.3.0 for a polished, responsive UI. Chart.js 4.2.1 drives data visualization, while React Context manages state efficiently. React-Icons 4.7.1 enhances usability, and localStorage ensures data persistence. Deployed on Vercel with GitHub CI/CD, the app leverages Vercel Analytics 1.0.1 for performance insights, ensuring a scalable, enterprise-ready solution.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/vault-vision/dashboard.png`]} />
+        <TypographyH3 className="my-4 mt-8">How It Came Together</TypographyH3>
+        <p className="font-mono mb-2">
+          VaultVision was built with precision, using React 18.2.0 for a dynamic UI and Bootstrap 5.3.0 for a navy-themed, responsive design (#1a2a44 to #c3cfe2). React Context streamlined state management, while Chart.js 4.2.1 and date-fns 3.6.0 powered forecasting. React-Icons 4.7.1 added intuitive visuals, and UUID 9.0.0 ensured unique message IDs. Vercel Analytics provided usage insights, and Jest 29.5.0 ensured reliability. Deployed on Vercel with GitHub CI/CD, VaultVision is ready to transform enterprise budgeting.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/vault-vision/dashboard.png`]} />
+        <p className="font-mono mb-2 mt-5 text-center">
+          VaultVision is my commitment to empowering enterprises with smart financial tools. Explore the live app, dive into the code, and let’s optimize budgeting together!
         </p>
       </div>
     );
