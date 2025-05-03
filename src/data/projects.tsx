@@ -1652,7 +1652,98 @@ const projects: Project[] = [
     );
   }
 },
-
+{
+  id: "book-recommender",
+  category: "Personalized Tech",
+  title: "Book Recommender",
+  src: "/assets/projects-screenshots/book-recommender/home.png",
+  screenshots: [
+    "home.png",
+    "recommendations.png",
+    "question-form.png",
+    "book-card.png",
+    "wishlist.png",
+    "recently-viewed.png",
+    "random-username.png",
+    "mobile-view.png"
+  ],
+  live: "https://book-recommender.vercel.app",
+  github: "https://github.com/jjingofarouk/book-recommender",
+  skills: {
+    frontend: [
+      PROJECT_SKILLS.js,
+      PROJECT_SKILLS.react,
+      PROJECT_SKILLS.ts,
+      PROJECT_SKILLS.nextjs,
+      PROJECT_SKILLS.tailwind
+    ],
+    backend: [] // No backend since data is client-side with localStorage
+  },
+  get content() {
+    return (
+      <div>
+        <TypographyP className="font-mono text-2xl text-center">
+          Book Recommender: Your Personalized Reading Journey
+        </TypographyP>
+        <TypographyP className="font-mono">
+          Book Recommender is a Next.js 15.3.1-powered Progressive Web App (PWA) that delivers a highly personalized book discovery experience. Built with React 19 and TypeScript 5.7.2, it features a hybrid recommendation algorithm combining collaborative and content-based filtering, an interactive question-based form for user preferences, and a unique random username signup system for data persistence. With a sleek glassmorphic UI and a warm teal/sage palette, this app offers a delightful, mobile-first experience for book lovers to find their next read, manage wishlists, and explore curated suggestions—all without a traditional backend.
+        </TypographyP>
+        <ProjectsLinks live={this.live} repo={this.github} />
+        <TypographyH3 className="my-4 mt-8">Smart Recommendation Engine</TypographyH3>
+        <p className="font-mono mb-2">
+          At the heart of Book Recommender lies a sophisticated hybrid recommendation system, blending collaborative filtering (using user wishlist data) and content-based filtering (via cosine similarity on book metadata like genres, tags, and keywords). This ensures highly personalized suggestions while maintaining diversity, with up to two books per genre for variety. The algorithm dynamically adjusts based on user interactions, providing a tailored reading list on every visit.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/book-recommender/recommendations.png`]} />
+        <TypographyH3 className="my-4 mt-8">Interactive Question-Based Form</TypographyH3>
+        <p className="font-mono mb-2">
+          The preference form reimagines user input as a conversational journey. Users answer questions like “What’s your favorite genre?” or “What’s your budget?” by clicking buttons, with options dynamically pulled from the book dataset (e.g., genres, languages, price ranges). A “Get Recommendations Now” button at each step lets users stop early, while a progress indicator (e.g., “3/12”) keeps them engaged. The glassmorphic design, with subtle hover effects, ensures a modern, intuitive experience.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/book-recommender/question-form.png`]} />
+        <TypographyH3 className="my-4 mt-8">Book Discovery Interface</TypographyH3>
+        <p className="font-mono mb-2">
+          Books are displayed in a responsive grid using BookCard components, showcasing cover images, titles, authors, and ratings. Users can toggle the question form to refine suggestions, with a loading state for seamless transitions. The UI adapts across devices, with a mobile-first layout ensuring accessibility and usability on all screen sizes.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/book-recommender/book-card.png`, `${BASE_PATH}/book-recommender/mobile-view.png`]} />
+        <TypographyH3 className="my-4 mt-8">Wishlist & Recently Viewed</TypographyH3>
+        <p className="font-mono mb-2">
+          Users can save books to a wishlist or track recently viewed books, with data persisted in localStorage. These interactions feed into the recommendation engine, enhancing personalization over time. The interface provides clear visual feedback, with buttons styled in a warm teal palette for consistency.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/book-recommender/wishlist.png`, `${BASE_PATH}/book-recommender/recently-viewed.png`]} />
+        <TypographyH3 className="my-4 mt-8">Random Username Signup</TypographyH3>
+        <p className="font-mono mb-2">
+          A unique feature, the random username signup assigns each user an identifier like “Reader_a2q5wtm2” on their first visit, stored in localStorage. This lightweight method persists wishlist and viewing data across sessions without a backend, offering a creative alternative to traditional authentication. Users are prompted to save their ID for use on other devices.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/book-recommender/random-username.png`]} />
+        <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+        <p className="font-mono mb-2">
+          Book Recommender combines cutting-edge personalization with a user-centric design, making book discovery both fun and efficient.
+        </p>
+        <ul className="font-mono list-disc list-inside mb-2">
+          <li>Hybrid recommendation engine with cosine similarity and diversity control</li>
+          <li>Interactive, button-based preference form with skippable questions</li>
+          <li>Random username signup for lightweight data persistence</li>
+          <li>Responsive, glassmorphic UI with a teal/sage palette</li>
+          <li>Mobile-first PWA with offline support via Next.js</li>
+          <li>Type-safe development with TypeScript 5.7.2</li>
+          <li>Client-side data management using localStorage</li>
+        </ul>
+        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+        <p className="font-mono mb-2">
+          Built with Next.js 15.3.1 and React 19, Book Recommender leverages TypeScript for robust type safety, ensuring maintainable and error-free code. The frontend uses Tailwind CSS for utility-first styling, with custom variables (--foreground, --background) for a cohesive glassmorphic aesthetic. The recommendation algorithm employs cosine similarity for content-based filtering, implemented without external libraries for a lightweight solution. LocalStorage handles data persistence, making the app serverless yet functional. Vercel deployment with CI/CD ensures seamless updates, while ESLint and TypeScript-ESLint maintain code quality.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/book-recommender/home.png`]} />
+        <TypographyH3 className="my-4 mt-8">Development Process</TypographyH3>
+        <p className="font-mono mb-2">
+          The project was developed using a modern JavaScript ecosystem, with Next.js as the framework for its server-side rendering and static site generation capabilities. React 19’s hooks and state management powered the interactive form and dynamic UI updates. TypeScript ensured type-safe handling of book data and user preferences, while Tailwind CSS streamlined the styling process with utility classes. The recommendation algorithm was iteratively refined, incorporating user feedback from wishlist interactions. Deployment on Vercel, with automatic scaling and domain management, made the app accessible globally.
+        </p>
+        <SlideShow images={[`${BASE_PATH}/book-recommender/home.png`]} />
+        <p className="font-mono mb-2 mt-5 text-center">
+          Book Recommender transforms book discovery into a personalized, engaging experience. Check out the live app, explore the code, and let’s craft your next reading adventure together!
+        </p>
+      </div>
+    );
+  }
+},
 {
   id: "osler",
   category: "Health Tool",
