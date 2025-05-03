@@ -107,6 +107,7 @@ export const PROJECT_SKILLS = {
   gemini: { title: "Gemini API", bg: "black", fg: "white", icon: <SiPython /> },
   reactNavigation: { title: "React Navigation", bg: "black", fg: "white", icon: <SiReactrouter /> },
     reactPDF: { title: "React PDF", bg: "black", fg: "white", icon: <SiReact /> },
+    reactIcons: { title: "React Icons", bg: "black", fg: "white", icon: <SiReact /> },
 reanimated: { title: "React Native Reanimated", bg: "black", fg: "white", icon: <SiReact /> },
   gestureHandler: { title: "Gesture Handler", bg: "black", fg: "white", icon: <SiReact /> },
   reactNativePaper: { title: "React Native Paper", bg: "black", fg: "white", icon: <SiReact /> },
