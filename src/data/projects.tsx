@@ -25,6 +25,7 @@ SiNpm,
   SiGoogletranslate,
   SiGraphql,
   SiHtml5,
+SiNextdotjs
   SiJavascript,
   SiJest,
   SiKubernetes,
@@ -115,7 +116,8 @@ reanimated: { title: "React Native Reanimated", bg: "black", fg: "white", icon: 
   chartKit: { title: "Chart Kit", bg: "black", fg: "white", icon: <SiReact /> },
   vectorIcons: { title: "Vector Icons", bg: "black", fg: "white", icon: <SiReact /> },
   vercelAnalytics: { title: "Vercel Analytics", bg: "black", fg: "white", icon: <SiVercel /> },
-  lucide: { title: "Lucide Icons", bg: "black", fg: "white", icon: <SiReactrouter /> },
+    nextjs: { title: "Next Js ", bg: "black", fg: "white", icon: <SiNextdotjs /> },
+lucide: { title: "Lucide Icons", bg: "black", fg: "white", icon: <SiReactrouter /> },
 chakra: {
     title: "Chakra UI",
     bg: "black",
