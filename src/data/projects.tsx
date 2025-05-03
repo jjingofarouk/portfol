@@ -1656,8 +1656,8 @@ const projects: Project[] = [
 {
   id: "book-recommender",
   category: "Personalized Tech",
-  title: "Book Recommender",
-  src: "/assets/projects-screenshots/book-recommender/home.png",
+  title: "LitShelf",
+  src: "/assets/projects-screenshots/litshelf/home.png",
   screenshots: [
     "home.png",
     "recommendations.png",
@@ -1668,7 +1668,7 @@ const projects: Project[] = [
     "random-username.png",
     "mobile-view.png"
   ],
-  live: "https://book-recommender.vercel.app",
+  live: "https://litshelfvercel.app",
   github: "https://github.com/jjingofarouk/book-recommender",
   skills: {
     frontend: [
@@ -1684,15 +1684,15 @@ const projects: Project[] = [
     return (
       <div>
         <TypographyP className="font-mono text-2xl text-center">
-          Book Recommender: Your Personalized Reading Journey
+          LitShelf: Your Personalized Reading Journey
         </TypographyP>
         <TypographyP className="font-mono">
-          Book Recommender is a Next.js 15.3.1-powered Progressive Web App (PWA) that delivers a highly personalized book discovery experience. Built with React 19 and TypeScript 5.7.2, it features a hybrid recommendation algorithm combining collaborative and content-based filtering, an interactive question-based form for user preferences, and a unique random username signup system for data persistence. With a sleek glassmorphic UI and a warm teal/sage palette, this app offers a delightful, mobile-first experience for book lovers to find their next read, manage wishlists, and explore curated suggestions—all without a traditional backend.
+          LitShelfis a Next.js 15.3.1-powered Progressive Web App (PWA) that delivers a highly personalized book discovery experience. Built with React 19 and TypeScript 5.7.2, it features a hybrid recommendation algorithm combining collaborative and content-based filtering, an interactive question-based form for user preferences, and a unique random username signup system for data persistence. With a sleek glassmorphic UI and a warm teal/sage palette, this app offers a delightful, mobile-first experience for book lovers to find their next read, manage wishlists, and explore curated suggestions—all without a traditional backend.
         </TypographyP>
         <ProjectsLinks live={this.live} repo={this.github} />
         <TypographyH3 className="my-4 mt-8">Smart Recommendation Engine</TypographyH3>
         <p className="font-mono mb-2">
-          At the heart of Book Recommender lies a sophisticated hybrid recommendation system, blending collaborative filtering (using user wishlist data) and content-based filtering (via cosine similarity on book metadata like genres, tags, and keywords). This ensures highly personalized suggestions while maintaining diversity, with up to two books per genre for variety. The algorithm dynamically adjusts based on user interactions, providing a tailored reading list on every visit.
+          At the heart of LitShelf lies a sophisticated hybrid recommendation system, blending collaborative filtering (using user wishlist data) and content-based filtering (via cosine similarity on book metadata like genres, tags, and keywords). This ensures highly personalized suggestions while maintaining diversity, with up to two books per genre for variety. The algorithm dynamically adjusts based on user interactions, providing a tailored reading list on every visit.
         </p>
         <SlideShow images={[`${BASE_PATH}/book-recommender/recommendations.png`]} />
         <TypographyH3 className="my-4 mt-8">Interactive Question-Based Form</TypographyH3>
@@ -1717,7 +1717,7 @@ const projects: Project[] = [
         <SlideShow images={[`${BASE_PATH}/book-recommender/random-username.png`]} />
         <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
         <p className="font-mono mb-2">
-          Book Recommender combines cutting-edge personalization with a user-centric design, making book discovery both fun and efficient.
+          LitShelf combines cutting-edge personalization with a user-centric design, making book discovery both fun and efficient.
         </p>
         <ul className="font-mono list-disc list-inside mb-2">
           <li>Hybrid recommendation engine with cosine similarity and diversity control</li>
@@ -1739,7 +1739,7 @@ const projects: Project[] = [
         </p>
         <SlideShow images={[`${BASE_PATH}/book-recommender/home.png`]} />
         <p className="font-mono mb-2 mt-5 text-center">
-          Book Recommender transforms book discovery into a personalized, engaging experience. Check out the live app, explore the code, and let’s craft your next reading adventure together!
+          LitShelf transforms book discovery into a personalized, engaging experience. Check out the live app, explore the code, and let’s craft your next reading adventure together!
         </p>
       </div>
     );
