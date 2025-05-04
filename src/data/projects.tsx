@@ -25,7 +25,7 @@ SiNpm,
   SiGoogletranslate,
   SiGraphql,
   SiHtml5,
-SiNextdotjs
+SiNextdotjs,
   SiJavascript,
   SiJest,
   SiKubernetes,
