@@ -1185,7 +1185,7 @@ const projects: Project[] = [
     "contact.png",
     "not-found.png"
   ],
-  live: "https://free-resume.vercel.app",
+  live: "http://free-resume-indol.vercel.app",
   github: "https://github.com/jjingofarouk/free-resume",
   skills: {
     frontend: [
@@ -1306,7 +1306,7 @@ const projects: Project[] = [
     "analytics.png",
     "not-found.png"
   ],
-  live: "https://budgett.vercel.app",
+  live: "https://budgetbig.vercel.app",
   github: "https://github.com/jjingofarouk/budgett",
   skills: {
     frontend: [
