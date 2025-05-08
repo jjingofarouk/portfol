@@ -148,6 +148,12 @@ chakra: {
     fg: "white",
     icon: <SiPostgresql />,
   },
+postgresql: {
+    title: "PostgreSQL",
+    bg: "black",
+    fg: "white",
+    icon: <SiPostgresql />,
+  },
   bootstrap: { title: "Bootstrap", bg: "black", fg: "white", icon: <SiBootstrap /> },
   ytDlp: { title: "yt-dlp", bg: "black", fg: "white", icon: <SiYoutube /> },
   mongodb: { title: "MongoDB", bg: "black", fg: "white", icon: <SiMongodb /> },
