@@ -1999,10 +1999,10 @@ const projects: Project[] = [
   },
 },
 {
-  id: "mastermind-dashboard",
+  id: "marketminds-dashboard",
   category: "Finance",
-  title: "MasterMind",
-  src: "/assets/projects-screenshots/mastermind/home.png",
+  title: "MarketMinds",
+  src: "/assets/projects-screenshots/marketminds/home.png",
   screenshots: [
     "home.png",
     "stock-detail.png",
@@ -2010,8 +2010,8 @@ const projects: Project[] = [
     "portfolio.png",
     "news.png",
   ],
-  live: "https://mastermind-dashboard.vercel.app/",
-  github: "https://github.com/jjingofarouk/mastermind-dashboard",
+  live: "https://marketminds-dashboard.vercel.app/",
+  github: "https://github.com/jjingofarouk/marketminds-dashboard",
   skills: {
     frontend: [
       PROJECT_SKILLS.react,
@@ -2031,38 +2031,38 @@ const projects: Project[] = [
     return (
       <div>
         <TypographyP className="font-mono text-2xl text-center">
-          MasterMind: AI-Powered Stock Market Dashboard
+          MarketMinds: Advanced Stock Market Dashboard
         </TypographyP>
         <TypographyP className="font-mono">
-          MasterMind is an advanced stock analytics dashboard built using React, TypeScript, FastAPI, and TensorFlow. It combines real-time market data with machine learning predictions to help users make smarter investment decisions. The app features interactive charts, AI-powered forecasts, live news, and a customizable watchlist—all in a sleek, performance-optimized UI.
+          MarketMind is an advanced stock analytics dashboard built using React, TypeScript, FastAPI, and TensorFlow. It combines real-time market data with machine learning predictions to help users make smarter investment decisions. The app features interactive charts, AI-powered forecasts, live news, and a customizable watchlist—all in a sleek, performance-optimized UI.
         </TypographyP>
         <ProjectsLinks live={this.live} repo={this.github} />
         <TypographyH3 className="my-4 mt-8">Live Market Dashboard</TypographyH3>
         <p className="font-mono mb-2">
           The home screen offers a live snapshot of stock prices, indices, and trends via WebSocket-powered updates. Users can interact with the charts, drill into stock detail pages, and monitor key metrics in real-time.
         </p>
-        <SlideShow images={["/assets/projects-screenshots/mastermind/home.png"]} />
+        <SlideShow images={["/assets/projects-screenshots/marketminds/home.png"]} />
         <TypographyH3 className="my-4 mt-8">Stock Analytics & AI Predictions</TypographyH3>
         <p className="font-mono mb-2">
           Each stock page provides detailed performance history, technical indicators, and TensorFlow-generated price forecasts. The backend prediction model uses historical OHLC data and LSTM architecture to output confidence-scored predictions.
         </p>
-        <SlideShow images={["/assets/projects-screenshots/mastermind/stock-detail.png", "/assets/projects-screenshots/mastermind/ai-prediction.png"]} />
+        <SlideShow images={["/assets/projects-screenshots/marketminds/stock-detail.png", "/assets/projects-screenshots/marketminds/ai-prediction.png"]} />
         <TypographyH3 className="my-4 mt-8">Watchlist & Portfolio</TypographyH3>
         <p className="font-mono mb-2">
           Users can create and manage watchlists to track favorite stocks, and a simulated portfolio lets them test investment strategies with historical and forecasted data.
         </p>
-        <SlideShow images={["/assets/projects-screenshots/mastermind/portfolio.png"]} />
+        <SlideShow images={["/assets/projects-screenshots/marketminds/portfolio.png"]} />
         <TypographyH3 className="my-4 mt-8">Real-time Financial News</TypographyH3>
         <p className="font-mono mb-2">
-          MasterMind integrates with free financial news APIs to surface real-time headlines and news sentiment analysis alongside stock data, giving users a complete view of the market landscape.
+          MarketMinds integrates with free financial news APIs to surface real-time headlines and news sentiment analysis alongside stock data, giving users a complete view of the market landscape.
         </p>
-        <SlideShow images={["/assets/projects-screenshots/mastermind/news.png"]} />
+        <SlideShow images={["/assets/projects-screenshots/marketminds/news.png"]} />
         <TypographyH3 className="my-4 mt-8">Tech Highlights</TypographyH3>
         <p className="font-mono mb-2">
           React with Tailwind and Chart.js powers the dynamic frontend UI. FastAPI serves a high-performance backend, integrating with TensorFlow for ML predictions and PostgreSQL for user portfolio data. WebSockets deliver live updates, and all external data is sourced from open financial APIs.
         </p>
         <p className="font-mono mb-2 mt-5 text-center">
-          MasterMind showcases mastery in combining real-time systems, financial data handling, and ML prediction in a single, cohesive experience.
+          MarketMinds showcases mastery in combining real-time systems, financial data handling, and ML prediction in a single, cohesive experience.
         </p>
       </div>
     );
