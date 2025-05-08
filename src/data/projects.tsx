@@ -11,6 +11,8 @@ import {
   SiBootstrap,
   SiChakraui,
   SiCss3,
+SiTensorflow,
+SiApifox,
   SiCypress,
 SiChartdotjs,
 SiVercel,
@@ -285,7 +287,9 @@ heroicons: {
     fg: "white",
     icon: <SiTerraform />,
   },
-  fastapi: { title: "FastAPI", bg: "black", fg: "white", icon: <SiFastapi /> },
+    apiintegration: { title: "API Integration", bg: "black", fg: "white", icon: <SiApifox /> },
+tensorflow: { title: "Tensor Flow", bg: "black", fg: "white", icon: <SiTensorflow /> },
+fastapi: { title: "FastAPI", bg: "black", fg: "white", icon: <SiFastapi /> },
     chartjs: { title: "ChartJs", bg: "black", fg: "white", icon: <SiChartdotjs /> },
 go: { title: "Go", bg: "black", fg: "white", icon: <FaJava /> },
   java: { title: "Java", bg: "black", fg: "white", icon: <FaJava /> },
@@ -2062,7 +2066,7 @@ const projects: Project[] = [
       </div>
     );
   },
-}
+},
   {
     id: "tubesnap",
     category: "Media Downloader",
