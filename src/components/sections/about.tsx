@@ -21,6 +21,7 @@ import {
   FaCode,
   FaUser,
   FaFilm,
+  FaPython,
 } from "react-icons/fa6";
 import {
   RiFirebaseFill,
@@ -38,6 +39,11 @@ import {
   SiTypescript,
   SiVercel,
   SiVisualstudiocode,
+  SiKubernetes,
+  SiGraphql,
+  SiTerraform,
+  SiPytorch,
+  SiRedis,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 import { TbTerminal2 } from "react-icons/tb";
@@ -50,7 +56,7 @@ const CONTACT_LINKS = [
   {
     name: "Email",
     content: "jjingofarouq@gmail.com",
-    href: "mailto:jjingofarouq@gmail.com",
+    href: "mailto:jjingofolauq@gmail.com",
     icon: <FaEnvelope />,
   },
   {
@@ -73,33 +79,6 @@ const CONTACT_LINKS = [
   },
 ];
 
-const SKILLS_CATEGORIES = [
-  {
-    name: "Frontend",
-    skills: [
-      "JavaScript",
-      "TypeScript",
-      "React.js",
-      "Vue.js",
-      "HTML",
-      "CSS",
-      "Tailwind CSS",
-    ],
-  },
-  {
-    name: "Backend",
-    skills: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Firebase"],
-  },
-  {
-    name: "DevOps",
-    skills: ["Docker", "AWS", "NginX", "Linux", "Kubuntu", "Git"],
-  },
-  {
-    name: "Tools",
-    skills: ["VS Code", "VIM", "Terminal", "Prettier", "NPM", "Yarn", "Vercel"],
-  },
-];
-
 const TOOLS = [
   {
     name: "JavaScript",
@@ -114,6 +93,12 @@ const TOOLS = [
     color: "#007acc",
   },
   {
+    name: "Python",
+    content: "Versatile language for AI, data science, and backend",
+    icon: <FaPython size={"50px"} color={"#3776ab"} />,
+    color: "#3776ab",
+  },
+  {
     name: "HTML",
     content: "Semantic markup for accessible web experiences",
     icon: <FaHtml5 size={"50px"} color="#e34c26" />,
@@ -126,7 +111,7 @@ const TOOLS = [
     color: "#563d7c",
   },
   {
-    name: "Nodejs",
+    name: "Node.js",
     content: "Server-side JavaScript for scalable applications",
     icon: <FaNodeJs size={"50px"} color="#6cc24a" />,
     color: "#6cc24a",
@@ -138,16 +123,10 @@ const TOOLS = [
     color: "#61dafb",
   },
   {
-    name: "Docker",
-    content: "Containerization for consistent deployment",
-    icon: <FaDocker size={"50px"} color="#2496ed" />,
-    color: "#2496ed",
-  },
-  {
-    name: "NginX",
-    content: "High-performance web server and reverse proxy",
-    icon: <DiNginx size={"50px"} color="#008000" />,
-    color: "#008000",
+    name: "Next.js",
+    content: "React framework for SSR and static sites",
+    icon: <RiNextjsFill size={"50px"} color="#000000" />,
+    color: "#000000",
   },
   {
     name: "Vue.js",
@@ -162,6 +141,12 @@ const TOOLS = [
     color: "#000000",
   },
   {
+    name: "GraphQL",
+    content: "Query language for flexible APIs",
+    icon: <SiGraphql size={"50px"} color="#e10098" />,
+    color: "#e10098",
+  },
+  {
     name: "PostgreSQL",
     content: "Powerful open-source relational database",
     icon: <DiPostgresql size={"50px"} color="#336791" />,
@@ -174,6 +159,12 @@ const TOOLS = [
     color: "#4db33d",
   },
   {
+    name: "Redis",
+    content: "In-memory database for high-speed caching",
+    icon: <SiRedis size={"50px"} color="#dc382d" />,
+    color: "#dc382d",
+  },
+  {
     name: "Tailwind CSS",
     content: "Utility-first CSS for rapid development",
     icon: <RiTailwindCssFill size={"50px"} color="#06b6d4" />,
@@ -184,6 +175,36 @@ const TOOLS = [
     content: "Google's platform for app development",
     icon: <RiFirebaseFill size={"50px"} color="#FFCA28" />,
     color: "#FFCA28",
+  },
+  {
+    name: "Docker",
+    content: "Containerization for consistent deployment",
+    icon: <FaDocker size={"50px"} color="#2496ed" />,
+    color: "#2496ed",
+  },
+  {
+    name: "Kubernetes",
+    content: "Orchestration for scalable containerized apps",
+    icon: <SiKubernetes size={"50px"} color="#326ce5" />,
+    color: "#326ce5",
+  },
+  {
+    name: "AWS",
+    content: "Cloud computing for scalable infrastructure",
+    icon: <FaAws size={"50px"} color="#FF9900" />,
+    color: "#FF9900",
+  },
+  {
+    name: "Terraform",
+    content: "Infrastructure as code for cloud provisioning",
+    icon: <SiTerraform size={"50px"} color="#7b42bc" />,
+    color: "#7b42bc",
+  },
+  {
+    name: "Nginx",
+    content: "High-performance web server and reverse proxy",
+    icon: <DiNginx size={"50px"} color="#008000" />,
+    color: "#008000",
   },
   {
     name: "Git",
@@ -204,7 +225,7 @@ const TOOLS = [
     color: "#007acc",
   },
   {
-    name: "VIM",
+    name: "Vim",
     content: "Efficient text editor for rapid development",
     icon: <DiVim size={"50px"} color="#fff" />,
     color: "#000000",
@@ -252,10 +273,10 @@ const TOOLS = [
     color: "#000000",
   },
   {
-    name: "AWS",
-    content: "Cloud computing services for scalable infrastructure",
-    icon: <FaAws size={"50px"} color="#FF9900" />,
-    color: "#FF9900",
+    name: "PyTorch",
+    content: "Machine learning framework for AI research",
+    icon: <SiPytorch size={"50px"} color="#ee4c2c" />,
+    color: "#ee4c2c",
   },
 ];
 
@@ -357,8 +378,7 @@ function AboutSection() {
           >
             <h1 className="text-3xl font-bold mb-6 lg:mb-10">About me</h1>
             <p className="mb-6 text-lg leading-relaxed">
-            I’m a Full Stack Developer with a background in medicine. Currently building tech that tackles real healthcare problems and beyond. I obsess over details, learn insanely fast, and won’t stop until something works—and works brilliantly. I’ll skip sleep to solve the right problem. Coding is purpose. 
-              
+              I’m a Full Stack Developer with a background in medicine. Currently building tech that tackles real healthcare problems and beyond. I obsess over details, learn insanely fast, and won’t stop until something works—and works brilliantly. I’ll skip sleep to solve the right problem. Coding is purpose.
             </p>
 
             <div className="mb-10">
@@ -381,28 +401,6 @@ function AboutSection() {
                   </div>
                 ))}
               </div>
-            </div>
-
-            <h2 className="text-2xl font-semibold mb-6">Technical Expertise</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-              {SKILLS_CATEGORIES.map((category) => (
-                <div
-                  key={category.name}
-                  className="p-4 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700"
-                >
-                  <h3 className="text-lg font-medium mb-3">{category.name}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 bg-zinc-700 rounded-full text-sm"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
             </div>
 
             <h2 className="text-2xl font-semibold mb-4">Technology Stack</h2>
@@ -449,21 +447,7 @@ function AboutSection() {
               )}
             </div>
 
-            <div className="p-6 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700">
-              <h2 className="text-xl font-semibold mb-3">
-                Let's Build Bold
-              </h2>
-              <p className="mb-4">
-	Always up for bold ideas, solid teams, and work that outlives the project. Let’s build something that matters.
-              </p>
-              <a
-                href="mailto:jjingofarouq@gmail.com"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-700 hover:bg-zinc-600 rounded-md transition-colors duration-300"
-              >
-                <FaEnvelope />
-                <span>Get in touch</span>
-              </a>
-            </div>
+
           </div>
         </main>
       </div>
