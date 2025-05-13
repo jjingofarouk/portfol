@@ -44,12 +44,38 @@ import {
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 import { TbTerminal2 } from "react-icons/tb";
-
-// @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
-const CONTACT_LINKS = [
+interface ContactLink {
+  name: string;
+  content: string;
+  href: string;
+  icon: JSX.Element;
+}
+
+interface SkillCategory {
+  name: string;
+  skills: string[];
+}
+
+interface Tool {
+  name: string;
+  content: string;
+  icon: JSX.Element;
+  color: string;
+}
+
+interface Interest {
+  name: string;
+  icon: JSX.Element;
+  description: string;
+  colorClass: string;
+  bgColor: string;
+  level: string;
+}
+
+const CONTACT_LINKS: ContactLink[] = [
   {
     name: "Email",
     content: "jjingofarouq@gmail.com",
@@ -76,7 +102,7 @@ const CONTACT_LINKS = [
   },
 ];
 
-const SKILLS_CATEGORIES = [
+const SKILLS_CATEGORIES: SkillCategory[] = [
   {
     name: "Frontend",
     skills: [
@@ -103,7 +129,7 @@ const SKILLS_CATEGORIES = [
   },
 ];
 
-const TOOLS = [
+const TOOLS: Tool[] = [
   {
     name: "JavaScript",
     content: "Core language for modern web development",
@@ -262,7 +288,7 @@ const TOOLS = [
   },
 ];
 
-const INTERESTS = [
+const INTERESTS: Interest[] = [
   {
     name: "Medicine",
     icon: <FaUser size={24} />,
@@ -300,14 +326,19 @@ const INTERESTS = [
     icon: <FaFilm size={24} />,
     description: "Huge cinema fan with an appreciation for not-so-common",
     colorClass: "from-green-600 to-green-900",
-    bgColor: "bg-green-900/30", 
+    bgColor: "bg-green-900/30",
     level: "Enthusiast",
   },
 ];
 
-function InterestCard({ interest, index }) {
+interface InterestCardProps {
+  interest: Interest;
+  index: number;
+}
+
+function InterestCard({ interest, index }: InterestCardProps) {
   const [isHovered, setIsHovered] = useState(false);
-  
+
   return (
     <div
       className={`relative overflow-hidden rounded-lg transition-all duration-500 ${interest.bgColor} border border-zinc-700 hover:border-zinc-500 transform hover:-translate-y-1`}
@@ -329,11 +360,10 @@ function InterestCard({ interest, index }) {
         </div>
         <h3 className="text-lg font-semibold mb-1">{interest.name}</h3>
         <p className="text-sm text-zinc-400 mb-4 flex-grow">{interest.description}</p>
-        
         <div className={`transition-all duration-500 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <div className="h-1 w-full bg-zinc-700 rounded-full overflow-hidden">
-            <div 
-              className={`h-full bg-gradient-to-r ${interest.colorClass}`} 
+            <div
+              className={`h-full bg-gradient-to-r ${interest.colorClass}`}
               style={{ width: index % 2 === 0 ? '85%' : '70%' }}
             ></div>
           </div>
@@ -343,10 +373,10 @@ function InterestCard({ interest, index }) {
   );
 }
 
-function Page() {
+export default function Page() {
   const [toolsLoaded, setToolsLoaded] = useState(false);
-  const [activeTab, setActiveTab] = useState('interests');
-  
+  const [activeTab, setActiveTab] = useState<'interests' | 'timeline'>('interests');
+
   useEffect(() => {
     setToolsLoaded(true);
   }, []);
@@ -370,11 +400,10 @@ function Page() {
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl font-semibold">
-                  Farouk Jjingo
-                </p>
+                <p className="text-center text-xl font-semibold">Farouk Jjingo</p>
                 <div className="flex gap-2">
                   <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
+                
                     Full Stack Engineer
                   </div>
                   <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
@@ -397,9 +426,7 @@ function Page() {
                       <div className="w-8">{link.icon}</div>
                       <div className="flex flex-col">
                         <div className="text-sm">{link.name}</div>
-                        <div className="text-xs text-zinc-500">
-                          {link.content}
-                        </div>
+                        <div className="text-xs text-zinc-500">{link.content}</div>
                       </div>
                     </a>
                   </li>
@@ -415,32 +442,22 @@ function Page() {
           >
             <h1 className="text-3xl font-bold mb-6 lg:mb-10">About me</h1>
             <p className="mb-6 text-lg leading-relaxed">
-              I'm a Full Stack Engineer with a unique background in
-              medicine, which I'm using to bridge healthcare challenges around the globe. I deeply love what I do, and I can skip anything to get things done. My biggest asset is that I'm a life-long learner. I will learn anything that can help me solve an itching problem!
-              I'm also a bit of a mini-perfectionist, so I tend to squeeze the best out of everything. 
-              
+              I'm a Full Stack Engineer with a unique background in medicine, which I'm using to bridge healthcare challenges around the globe. I deeply love what I do, and I can skip anything to get things done. My biggest asset is that I'm a life-long learner. I will learn anything that can help me solve an itching problem! I'm also a bit of a mini-perfectionist, so I tend to squeeze the best out of everything.
             </p>
-
             <p className="mb-10 text-lg leading-relaxed">
-              Prior exposure to healthcare challenges in the Global South has given me 
-              a distinctive advantage. I quickly understand and work with complex systems,
-              through analytical thinking to deliver solutions that truly make an
-              impact. I excel in creating clean maintainable code with a focus
-              on performance and user experience. Most importantly, I am ever learning. i won't fix a bug before learning all about it. 
+              Prior exposure to healthcare challenges in the Global South has given me a distinctive advantage. I quickly understand and work with complex systems, through analytical thinking to deliver solutions that truly make an impact. I excel in creating clean maintainable code with a focus on performance and user experience. Most importantly, I am ever learning. I won't fix a bug before learning all about it.
             </p>
-
-            {/* Enhanced Beyond Code Section */}
             <div className="mb-10">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-semibold">Beyond Code</h2>
                 <div className="flex rounded-lg overflow-hidden border border-zinc-700">
-                  <button 
+                  <button
                     onClick={() => setActiveTab('interests')}
                     className={`px-4 py-2 text-sm transition-colors ${activeTab === 'interests' ? 'bg-zinc-700 text-white' : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700/50'}`}
                   >
                     Interests
                   </button>
-                  <button 
+                  <button
                     onClick={() => setActiveTab('timeline')}
                     className={`px-4 py-2 text-sm transition-colors ${activeTab === 'timeline' ? 'bg-zinc-700 text-white' : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700/50'}`}
                   >
@@ -448,7 +465,6 @@ function Page() {
                   </button>
                 </div>
               </div>
-              
               {activeTab === 'interests' && (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {INTERESTS.map((interest, index) => (
@@ -456,13 +472,9 @@ function Page() {
                   ))}
                 </div>
               )}
-              
               {activeTab === 'timeline' && (
                 <div className="relative">
-                  {/* Timeline line */}
                   <div className="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 via-purple-600 to-red-600 rounded-full"></div>
-                  
-                  {/* Timeline events */}
                   <div className="space-y-6 pl-12">
                     <div className="relative">
                       <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-blue-600 border-2 border-zinc-800 z-10"></div>
@@ -472,7 +484,6 @@ function Page() {
                         <p className="text-sm text-zinc-400">Using my medical background to understand healthcare challenges and create tech solutions that bridge the gap.</p>
                       </div>
                     </div>
-                    
                     <div className="relative">
                       <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-purple-600 border-2 border-zinc-800 z-10"></div>
                       <div className="p-4 rounded-lg bg-zinc-800/50 border border-zinc-700">
@@ -481,7 +492,6 @@ function Page() {
                         <p className="text-sm text-zinc-400">Mastering the art of building web applications from frontend to backend with a focus on healthcare solutions.</p>
                       </div>
                     </div>
-                    
                     <div className="relative">
                       <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-red-600 border-2 border-zinc-800 z-10"></div>
                       <div className="p-4 rounded-lg bg-zinc-800/50 border border-zinc-700">
@@ -494,7 +504,6 @@ function Page() {
                 </div>
               )}
             </div>
-
             <h2 className="text-2xl font-semibold mb-4">Technology Stack</h2>
             <div className="mb-10">
               {!toolsLoaded ? (
@@ -515,12 +524,8 @@ function Page() {
                     easing: "cubic-bezier(0.25, 1, 0.5, 1)",
                     arrows: false,
                     breakpoints: {
-                      640: {
-                        perPage: 3,
-                      },
-                      768: {
-                        perPage: 4,
-                      },
+                      640: { perPage: 3 },
+                      768: { perPage: 4 },
                     },
                   }}
                   aria-label="Technology Stack"
@@ -538,14 +543,10 @@ function Page() {
                 </Splide>
               )}
             </div>
-
             <div className="p-6 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700">
-              <h2 className="text-xl font-semibold mb-3">
-                Let's Build Something Amazing
-              </h2>
+              <h2 className="text-xl font-semibold mb-3">Let's Build Something Amazing</h2>
               <p className="mb-4">
-                I'm always open to discussing new projects, innovative ideas, or
-                opportunities to be part of your team. Most importantly, I value creating connections with people that last beyond the lifespan of any project. 
+                I'm always open to discussing new projects, innovative ideas, or opportunities to be part of your team. Most importantly, I value creating connections with people that last beyond the lifespan of any project.
               </p>
               <a
                 href="mailto:jjingofarouq@gmail.com"
