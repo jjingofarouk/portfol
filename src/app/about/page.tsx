@@ -21,6 +21,9 @@ import {
   FaCode,
   FaUser,
   FaFilm,
+  FaBrain,
+  FaBook,
+  FaGraduationCap,
 } from "react-icons/fa6";
 import {
   RiFirebaseFill,
@@ -262,33 +265,88 @@ const TOOLS = [
 const INTERESTS = [
   {
     name: "Medicine",
-    icon: <FaUser size={"24px"} />,
+    icon: <FaUser size={24} />,
     description: "Medical Doctor with expertise in clinical diagnostics",
+    colorClass: "from-blue-600 to-blue-900",
+    bgColor: "bg-blue-900/30",
+    level: "Professional",
   },
   {
     name: "Chess",
-    icon: <FaChess size={"24px"} />,
+    icon: <FaChess size={24} />,
     description: "Strategic thinker and chess enthusiast",
+    colorClass: "from-amber-500 to-amber-800",
+    bgColor: "bg-amber-800/30",
+    level: "Advanced",
   },
   {
     name: "Football",
-    icon: <FaFutbol size={"24px"} />,
+    icon: <FaFutbol size={24} />,
     description: "Man United and Real Madrid supporter",
+    colorClass: "from-red-600 to-red-900",
+    bgColor: "bg-red-900/30",
+    level: "Enthusiast",
   },
   {
     name: "Problem Solving",
-    icon: <RiBrainFill size={"24px"} />,
+    icon: <RiBrainFill size={24} />,
     description: "Applying analytical thinking across disciplines",
+    colorClass: "from-purple-600 to-purple-900",
+    bgColor: "bg-purple-900/30",
+    level: "Expert",
   },
   {
     name: "Film",
-    icon: <FaFilm size={"24px"} />,
+    icon: <FaFilm size={24} />,
     description: "Huge cinema fan with an appreciation for not-so-common",
+    colorClass: "from-green-600 to-green-900",
+    bgColor: "bg-green-900/30", 
+    level: "Enthusiast",
   },
 ];
 
+function InterestCard({ interest, index }) {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+    <div
+      className={`relative overflow-hidden rounded-lg transition-all duration-500 ${interest.bgColor} border border-zinc-700 hover:border-zinc-500 transform hover:-translate-y-1`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        transitionDelay: `${index * 50}ms`,
+      }}
+    >
+      <div className={`absolute inset-0 bg-gradient-to-br ${interest.colorClass} opacity-20`}></div>
+      <div className="relative p-6 h-full flex flex-col">
+        <div className="flex justify-between items-start mb-3">
+          <div className="p-3 rounded-lg bg-zinc-800/70 backdrop-blur-sm">
+            {interest.icon}
+          </div>
+          <span className="text-xs px-2 py-1 rounded-full bg-zinc-700/70 backdrop-blur-sm">
+            {interest.level}
+          </span>
+        </div>
+        <h3 className="text-lg font-semibold mb-1">{interest.name}</h3>
+        <p className="text-sm text-zinc-400 mb-4 flex-grow">{interest.description}</p>
+        
+        <div className={`transition-all duration-500 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div className="h-1 w-full bg-zinc-700 rounded-full overflow-hidden">
+            <div 
+              className={`h-full bg-gradient-to-r ${interest.colorClass}`} 
+              style={{ width: index % 2 === 0 ? '85%' : '70%' }}
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Page() {
   const [toolsLoaded, setToolsLoaded] = useState(false);
+  const [activeTab, setActiveTab] = useState('interests');
+  
   useEffect(() => {
     setToolsLoaded(true);
   }, []);
@@ -371,48 +429,70 @@ function Page() {
               on performance and user experience. Most importantly, I am ever learning. i won't fix a bug before learning all about it. 
             </p>
 
+            {/* Enhanced Beyond Code Section */}
             <div className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">Beyond Code</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                {INTERESTS.map((interest) => (
-                  <div
-                    key={interest.name}
-                    className="flex items-start gap-3 p-4 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700"
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-semibold">Beyond Code</h2>
+                <div className="flex rounded-lg overflow-hidden border border-zinc-700">
+                  <button 
+                    onClick={() => setActiveTab('interests')}
+                    className={`px-4 py-2 text-sm transition-colors ${activeTab === 'interests' ? 'bg-zinc-700 text-white' : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700/50'}`}
                   >
-                    <div className="mt-1 text-zinc-300">{interest.icon}</div>
-                    <div>
-                      <h3 className="font-medium text-zinc-200">
-                        {interest.name}
-                      </h3>
-                      <p className="text-sm text-zinc-400">
-                        {interest.description}
-                      </p>
+                    Interests
+                  </button>
+                  <button 
+                    onClick={() => setActiveTab('timeline')}
+                    className={`px-4 py-2 text-sm transition-colors ${activeTab === 'timeline' ? 'bg-zinc-700 text-white' : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700/50'}`}
+                  >
+                    Journey
+                  </button>
+                </div>
+              </div>
+              
+              {activeTab === 'interests' && (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {INTERESTS.map((interest, index) => (
+                    <InterestCard key={interest.name} interest={interest} index={index} />
+                  ))}
+                </div>
+              )}
+              
+              {activeTab === 'timeline' && (
+                <div className="relative">
+                  {/* Timeline line */}
+                  <div className="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 via-purple-600 to-red-600 rounded-full"></div>
+                  
+                  {/* Timeline events */}
+                  <div className="space-y-6 pl-12">
+                    <div className="relative">
+                      <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-blue-600 border-2 border-zinc-800 z-10"></div>
+                      <div className="p-4 rounded-lg bg-zinc-800/50 border border-zinc-700">
+                        <div className="text-sm text-blue-400 mb-1">2018 - Present</div>
+                        <h3 className="font-semibold mb-1">Medical Practice</h3>
+                        <p className="text-sm text-zinc-400">Using my medical background to understand healthcare challenges and create tech solutions that bridge the gap.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="relative">
+                      <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-purple-600 border-2 border-zinc-800 z-10"></div>
+                      <div className="p-4 rounded-lg bg-zinc-800/50 border border-zinc-700">
+                        <div className="text-sm text-purple-400 mb-1">2020 - Present</div>
+                        <h3 className="font-semibold mb-1">Full Stack Development</h3>
+                        <p className="text-sm text-zinc-400">Mastering the art of building web applications from frontend to backend with a focus on healthcare solutions.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="relative">
+                      <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-red-600 border-2 border-zinc-800 z-10"></div>
+                      <div className="p-4 rounded-lg bg-zinc-800/50 border border-zinc-700">
+                        <div className="text-sm text-red-400 mb-1">Lifelong</div>
+                        <h3 className="font-semibold mb-1">Continuous Learning</h3>
+                        <p className="text-sm text-zinc-400">Always exploring new technologies, methodologies, and frameworks to stay ahead of the curve.</p>
+                      </div>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <h2 className="text-2xl font-semibold mb-6">Technical Expertise</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-              {SKILLS_CATEGORIES.map((category) => (
-                <div
-                  key={category.name}
-                  className="p-4 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700"
-                >
-                  <h3 className="text-lg font-medium mb-3">{category.name}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 bg-zinc-700 rounded-full text-sm"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
                 </div>
-              ))}
+              )}
             </div>
 
             <h2 className="text-2xl font-semibold mb-4">Technology Stack</h2>
