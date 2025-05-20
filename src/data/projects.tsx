@@ -1774,15 +1774,15 @@ const projects: Project[] = [
     github: "https://github.com/jjingofarouk/osler",
     skills: {
       frontend: [
-        "PROJECT_SKILLS.js",
-        "PROJECT_SKILLS.jquery",
-        "PROJECT_SKILLS.css",
-        "PROJECT_SKILLS.bootstrap",
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.jquery,
+        PROJECT_SKILLS.css,
+        PROJECT_SKILLS.bootstrap,
       ],
       backend: [
-        "PROJECT_SKILLS.python",
-        "PROJECT_SKILLS.flask",
-        "PROJECT_SKILLS.gemini",
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.flask,
+        PROJECT_SKILLS.gemini,
       ],
     },
     get content() {
@@ -1854,13 +1854,13 @@ const projects: Project[] = [
     github: "https://github.com/jjingofarouk/uccr",
     skills: {
       frontend: [
-        "PROJECT_SKILLS.js",
-        "PROJECT_SKILLS.react",
-        "PROJECT_SKILLS.nextjs",
-        "PROJECT_SKILLS.css"
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.nextjs,
+        PROJECT_SKILLS.css
       ],
       backend: [
-        "PROJECT_SKILLS.firebase"
+        PROJECT_SKILLS.firebase
       ]
     },
     get content() {
@@ -1928,19 +1928,19 @@ const projects: Project[] = [
     github: "https://github.com/jjingofarouk/BloodMatch",
     skills: {
       frontend: [
-        "PROJECT_SKILLS.react",
-        "PROJECT_SKILLS.ts",
-        "PROJECT_SKILLS.css",
-        "PROJECT_SKILLS.reactLeaflet",
-        "PROJECT_SKILLS.chartjs",
-        "PROJECT_SKILLS.pwa"
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.css,
+        PROJECT_SKILLS.reactLeaflet,
+        PROJECT_SKILLS.chartjs,
+        PROJECT_SKILLS.pwa,
       ],
       backend: [
-        "PROJECT_SKILLS.firebase",
-        "PROJECT_SKILLS.node",
-        "PROJECT_SKILLS.geofire",
-        "PROJECT_SKILLS.twilio",
-        "PROJECT_SKILLS.nodemailer"
+        PROJECT_SKILLS.firebase,
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.geofire,
+        PROJECT_SKILLS.twilio,
+        PROJECT_SKILLS.nodemailer,
       ]
     },
     get content() {
