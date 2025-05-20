@@ -1765,35 +1765,106 @@ const projects: Project[] = [
   }
 },
   {
-    "id": "uccr",
-    "category": "Healthcare",
-    "title": "UCCR - Uganda Clinical Case Reports",
-    "src": "/assets/projects-screenshots/uccr/home.png",
-    "screenshots": [
-      "home.png",
-      "case-detail.png",
-      "case-create.png",
-      "comment-section.png",
-      "profile.png",
-      "inbox.png",
-      "mobile-view.png"
-    ],
-    "live": "https://uccrug.vercel.app",
-    "github": "https://github.com/jjingofarouk/uccr",
-    "skills": {
-      "frontend": [
+    id: "osler",
+    category: "Health Tool",
+    title: "Dr. Jingo",
+    src: "/assets/projects-screenshots/osler/home.png",
+    screenshots: ["home.png", "chat.png", "case_study_1.png", "case_study_2.png", "history.png", "navigation.png"],
+    live: "https://oslermentor.onrender.com/",
+    github: "https://github.com/jjingofarouk/osler",
+    skills: {
+      frontend: [
+        "PROJECT_SKILLS.js",
+        "PROJECT_SKILLS.jquery",
+        "PROJECT_SKILLS.css",
+        "PROJECT_SKILLS.bootstrap",
+      ],
+      backend: [
+        "PROJECT_SKILLS.python",
+        "PROJECT_SKILLS.flask",
+        "PROJECT_SKILLS.gemini",
+      ],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Dr. Jingo = Clinical Mentorship + Modern Web Technology
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Dr. Jingo is a Flask-based Progressive Web App (PWA) I developed to deliver clinical mentorship through a virtual Ugandan clinician, Dr. Jingo. Powered by the Gemini API, it provides real-time, evidence-based medical guidance with features like interactive case studies, chat history, and intuitive navigation, showcasing my expertise in Python, Flask, and responsive front-end development.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Home Screen</TypographyH3>
+          <p className="font-mono mb-2">
+            A clean and modern interface invites users to engage with Dr. Jingo. Built with Bootstrap and custom CSS for a responsive and user-friendly design across devices.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/osler/home.png`]} />
+          <TypographyH3 className="my-4 mt-8">Navigation</TypographyH3>
+          <p className="font-mono mb-2">
+            I implemented a sleek hamburger menu for seamless navigation, allowing users to effortlessly switch between chat, case study, and history features, optimized for both mobile and desktop experiences.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/osler/navigation.png`]} />
+          <TypographyH3 className="my-4 mt-8">Chat Interface</TypographyH3>
+          <p className="font-mono mb-2">
+            Using jQuery and Flask, I created a dynamic chat UI with a hamburger menu for navigation and a sticky input bar for seamless interaction on mobile and desktop.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/osler/chat.png`]} />
+          <TypographyH3 className="my-4 mt-8">Case Study Mode</TypographyH3>
+          <p className="font-mono mb-2">
+            I implemented an interactive case study feature that allows users to practice clinical reasoning with tailored scenarios. This is also powered by the Gemini API for accurate responses.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/osler/case_study_1.png`, `${BASE_PATH}/osler/case_study_2.png`]} />
+          <TypographyH3 className="my-4 mt-8">Chat History</TypographyH3>
+          <p className="font-mono mb-2">
+            A dedicated history page tracks user interactions using local storage and Flask session management for persistence and accessibility.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/osler/history.png`]} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            This PWA combines clinical utility with technical innovation, thus offering a fast, secure, and offline-capable experience.
+          </p>
+          <ul className="font-mono list-disc list-inside mb-2">
+            <li>Real-time medical guidance boosted by Gemini API</li>
+            <li>Interactive case studies for clinical practice</li>
+            <li>Chat history with local storage integration</li>
+            <li>Progressive Web App with offline support</li>
+            <li>Responsive UI with jQuery, Bootstrap, and hamburger menu</li>
+            <li>Secure Flask backend with environment management</li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+          <p className="font-mono mb-2">
+            I built a robust Flask backend to manage API requests, integrated jQuery for dynamic front-end interactions, and implemented PWA features (manifest, service worker) for a native app-like experience. The hamburger menu enhances navigation and streaming responses ensure performance. Secure HTTPS and environment variables protect API keys.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/osler/home.png`]} />
+          <p className="font-mono mb-2 mt-5 text-center">
+            This app demonstrates my ability to merge Python-based backend development, AI integration, and modern front-end techniques to create powerful health tools for medical education.
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "uccr",
+    category: "Healthcare",
+    title: "UCCR - Uganda Clinical Case Reports",
+    src: "/assets/projects-screenshots/uccr/home.png",
+    screenshots: ["home.png", "case-detail.png", "case-create.png", "comment-section.png", "profile.png", "inbox.png", "mobile-view.png"],
+    live: "https://uccrug.vercel.app",
+    github: "https://github.com/jjingofarouk/uccr",
+    skills: {
+      frontend: [
         "PROJECT_SKILLS.js",
         "PROJECT_SKILLS.react",
         "PROJECT_SKILLS.nextjs",
         "PROJECT_SKILLS.css"
       ],
-      "backend": [
+      backend: [
         "PROJECT_SKILLS.firebase"
       ]
     },
-    "content": {
-      "type": "jsx",
-      "value": `
+    get content() {
+      return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
             UCCR: Uganda Clinical Case Reports
@@ -1801,22 +1872,22 @@ const projects: Project[] = [
           <TypographyP className="font-mono">
             UCCR is a Next.js 14.2.3-powered web application designed for doctors, medical students, and healthcare professionals to share and discuss clinical cases from Uganda. Built with React 18.2.0 and Firebase 10.12.2, it offers features like case creation with multimedia support, interactive comment sections with reactions, user profiles, and private messaging. The app features a responsive design with plain CSS, providing a professional platform for medical collaboration.
           </TypographyP>
-          <ProjectsLinks live="${this.live}" repo="${this.github}" />
+          <ProjectsLinks live={this.live} repo={this.github} />
           <TypographyH3 className="my-4 mt-8">Case Management</TypographyH3>
           <p className="font-mono mb-2">
             UCCR allows users to create detailed case reports with titles, presenting complaints, histories, investigations, management plans, and optional image uploads stored in Firebase Storage. The interface is intuitive, with a responsive layout that adapts to various devices, ensuring accessibility for medical professionals on the go.
           </p>
-          <SlideShow images={["${BASE_PATH}/uccr/case-create.png", "${BASE_PATH}/uccr/case-detail.png"]} />
+          <SlideShow images={[`${BASE_PATH}/uccr/case-create.png`, `${BASE_PATH}/uccr/case-detail.png`]} />
           <TypographyH3 className="my-4 mt-8">Interactive Discussions</TypographyH3>
           <p className="font-mono mb-2">
             The comment section enables rich discussions with features like comments, replies, and reactions (Like, Insightful, Dislike) powered by Firestore. Users can engage with cases, share insights, and vote on comments, fostering a collaborative learning environment.
           </p>
-          <SlideShow images={["${BASE_PATH}/uccr/comment-section.png"]} />
+          <SlideShow images={[`${BASE_PATH}/uccr/comment-section.png`]} />
           <TypographyH3 className="my-4 mt-8">User Profiles & Messaging</TypographyH3>
           <p className="font-mono mb-2">
             Users can upload profile photos and access private messaging via Firebase Authentication and Firestore. The inbox feature supports secure communication between healthcare professionals, enhancing networking and case consultation.
           </p>
-          <SlideShow images={["${BASE_PATH}/uccr/profile.png", "${BASE_PATH}/uccr/inbox.png"]} />
+          <SlideShow images={[`${BASE_PATH}/uccr/profile.png`, `${BASE_PATH}/uccr/inbox.png`]} />
           <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
           <p className="font-mono mb-2">
             UCCR combines robust functionality with a user-focused design to support medical education and collaboration.
@@ -1834,190 +1905,109 @@ const projects: Project[] = [
           <p className="font-mono mb-2">
             Built with Next.js 14.2.3 and React 18.2.0, UCCR leverages Firebase 10.12.2 for authentication, Firestore for real-time data, and Storage for media. The frontend uses plain CSS for styling, ensuring a lightweight and customizable design. Framer Motion adds smooth animations, while Lucide React provides icons. Deployed on Vercel, the app benefits from automatic scaling and CI/CD, with ESLint maintaining code quality.
           </p>
-          <SlideShow images={["${BASE_PATH}/uccr/home.png"]} />
+          <SlideShow images={[`${BASE_PATH}/uccr/home.png`]} />
           <TypographyH3 className="my-4 mt-8">Development Process</TypographyH3>
           <p className="font-mono mb-2">
             Developed using Next.js for server-side rendering and static generation, UCCR integrates Firebase for backend services. React hooks manage state and user interactions, while Firestore ensures real-time updates for comments and messages. Plain CSS provides a tailored styling approach, with responsive design tested across devices. Deployment on Vercel with Firebase Hosting ensures global accessibility and scalability.
           </p>
-          <SlideShow images={["${BASE_PATH}/uccr/mobile-view.png"]} />
+          <SlideShow images={[`${BASE_PATH}/uccr/mobile-view.png`]} />
           <p className="font-mono mb-2 mt-5 text-center">
             UCCR empowers healthcare professionals with a platform for sharing and learning from clinical cases. Explore the live app, review the code, and contribute to enhancing medical knowledge!
           </p>
         </div>
       );
-    }
+    },
   },
-
-{
-  id: "BloodMatch",
-  category: "Health Tool",
-  title: "BloodMatch",
-  src: "/assets/projects-screenshots/BloodMatch/home.png",
-  screenshots: ["home.png", "donor_dashboard.png", "request_blood.png", "profile.png", "emergency_services.png", "hospitals.png", "pharmacies.png"],
-  live: "https://bloodmatchug.vercel.app/",
-  github: "https://github.com/jjingofarouk/BloodMatch",
-  skills: {
-    frontend: [
-      PROJECT_SKILLS.react,
-      PROJECT_SKILLS.ts,
-      PROJECT_SKILLS.css,
-      PROJECT_SKILLS.reactLeaflet,
-      PROJECT_SKILLS.chartjs,
-      PROJECT_SKILLS.pwa,
-    ],
-    backend: [
-      PROJECT_SKILLS.firebase,
-      PROJECT_SKILLS.node,
-      PROJECT_SKILLS.geofire,
-      PROJECT_SKILLS.twilio,
-      PROJECT_SKILLS.nodemailer,
-    ],
+  {
+    id: "BloodMatch",
+    category: "Health Tool",
+    title: "BloodMatch",
+    src: "/assets/projects-screenshots/BloodMatch/home.png",
+    screenshots: ["home.png", "donor_dashboard.png", "request_blood.png", "profile.png", "emergency_services.png", "hospitals.png", "pharmacies.png"],
+    live: "https://bloodmatchug.vercel.app/",
+    github: "https://github.com/jjingofarouk/BloodMatch",
+    skills: {
+      frontend: [
+        "PROJECT_SKILLS.react",
+        "PROJECT_SKILLS.ts",
+        "PROJECT_SKILLS.css",
+        "PROJECT_SKILLS.reactLeaflet",
+        "PROJECT_SKILLS.chartjs",
+        "PROJECT_SKILLS.pwa"
+      ],
+      backend: [
+        "PROJECT_SKILLS.firebase",
+        "PROJECT_SKILLS.node",
+        "PROJECT_SKILLS.geofire",
+        "PROJECT_SKILLS.twilio",
+        "PROJECT_SKILLS.nodemailer"
+      ]
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            BloodMatch = Blood Donation Platform + Modern Web Technology
+          </TypographyP>
+          <TypographyP className="font-mono">
+            BloodMatch is a Firebase-based Progressive Web App (PWA) I developed to connect blood donors with recipients in real-time across Uganda. Powered by Firebase, GeoFire, and React, it offers geolocation-based matching, multi-channel notifications, and comprehensive healthcare resources, showcasing my expertise in full-stack development, geospatial technology, and responsive UI design.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Home Screen</TypographyH3>
+          <p className="font-mono mb-2">
+            A clean and modern interface with a responsive navbar, designed with a red-white theme to reflect the blood donation mission, built using React and custom CSS for accessibility across devices.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/BloodMatch/home.png`]} />
+          <TypographyH3 className="my-4 mt-8">Donor Dashboard</TypographyH3>
+          <p className="font-mono mb-2">
+            An interactive map powered by Leaflet and GeoFire displays nearby blood requests with filters and Google Maps directions, optimized for donor engagement and usability.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/BloodMatch/donor_dashboard.png`]} />
+          <TypographyH3 className="my-4 mt-8">Request Blood</TypographyH3>
+          <p className="font-mono mb-2">
+            Recipients can submit urgent blood requests with geolocation data, processed by Firebase Cloud Functions for real-time matching with compatible donors.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/BloodMatch/request_blood.png`]} />
+          <TypographyH3 className="my-4 mt-8">Profile Management</TypographyH3>
+          <p className="font-mono mb-2">
+            Users can update profiles with photos via Firebase Storage and track donation eligibility, enhancing personalization and user engagement.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/BloodMatch/profile.png`]} />
+          <TypographyH3 className="my-4 mt-8">Emergency Services</TypographyH3>
+          <p className="font-mono mb-2">
+            A curated list of Ugandan ambulance services with contact details, integrated as a static dataset for quick access during emergencies.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/BloodMatch/emergency_services.png`]} />
+          <TypographyH3 className="my-4 mt-8">Hospitals & Pharmacies</TypographyH3>
+          <p className="font-mono mb-2">
+            Comprehensive lists of hospitals and pharmacies across Uganda, providing critical healthcare resources, styled for clarity and accessibility.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/BloodMatch/hospitals.png`, `${BASE_PATH}/BloodMatch/pharmacies.png`]} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            This PWA combines lifesaving utility with technical innovation, offering a fast, secure, and offline-capable experience.
+          </p>
+          <ul className="font-mono list-disc list-inside mb-2">
+            <li>Geolocation-based donor-recipient matching with GeoFire</li>
+            <li>Real-time push, email, and SMS notifications via Firebase, Twilio, and Nodemailer</li>
+            <li>Interactive map with Leaflet for request visualization</li>
+            <li>Progressive Web App with offline support and installability</li>
+            <li>Admin dashboard with Chart.js analytics for platform insights</li>
+            <li>Curated healthcare resources including emergency services, hospitals, and pharmacies</li>
+            <li>Secure Firebase backend with Cloud Functions and Firestore</li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+          <p className="font-mono mb-2">
+            I built a robust Firebase backend with Cloud Functions for matching and notifications, integrated React with TypeScript for a type-safe frontend, and implemented PWA features for a native-like experience. The responsive navbar with a hamburger menu ensures accessibility, while Twilio and Nodemailer enable multi-channel notifications.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/BloodMatch/home.png`]} />
+          <p className="font-mono mb-2 mt-5 text-center">
+            This app demonstrates my ability to merge geospatial technology, real-time systems, and user-centric design to create impactful health tools for social good.
+          </p>
+        </div>
+      );
+    },
   },
-  get content() {
-    return (
-      <div>
-        <TypographyP className="font-mono text-2xl text-center">
-          BloodMatch = Blood Donation Platform + Modern Web Technology
-        </TypographyP>
-        <TypographyP className="font-mono">
-          BloodMatch is a Firebase-based Progressive Web App (PWA) I developed to connect blood donors with recipients in real-time across Uganda. Powered by Firebase, GeoFire, and React, it offers geolocation-based matching, multi-channel notifications, and comprehensive healthcare resources, showcasing my expertise in full-stack development, geospatial technology, and responsive UI design.
-        </TypographyP>
-        <ProjectsLinks live={this.live} repo={this.github} />
-        <TypographyH3 className="my-4 mt-8">Home Screen</TypographyH3>
-        <p className="font-mono mb-2">
-          A clean and modern interface with a responsive navbar, designed with a red-white theme to reflect the blood donation mission, built using React and custom CSS for accessibility across devices.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/BloodMatch/home.png`]} />
-        <TypographyH3 className="my-4 mt-8">Donor Dashboard</TypographyH3>
-        <p className="font-mono mb-2">
-          An interactive map powered by Leaflet and GeoFire displays nearby blood requests with filters and Google Maps directions, optimized for donor engagement and usability.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/BloodMatch/donor_dashboard.png`]} />
-        <TypographyH3 className="my-4 mt-8">Request Blood</TypographyH3>
-        <p className="font-mono mb-2">
-          Recipients can submit urgent blood requests with geolocation data, processed by Firebase Cloud Functions for real-time matching with compatible donors.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/BloodMatch/request_blood.png`]} />
-        <TypographyH3 className="my-4 mt-8">Profile Management</TypographyH3>
-        <p className="font-mono mb-2">
-          Users can update profiles with photos via Firebase Storage and track donation eligibility, enhancing personalization and user engagement.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/BloodMatch/profile.png`]} />
-        <TypographyH3 className="my-4 mt-8">Emergency Services</TypographyH3>
-        <p className="font-mono mb-2">
-          A curated list of Ugandan ambulance services with contact details, integrated as a static dataset for quick access during emergencies.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/BloodMatch/emergency_services.png`]} />
-        <TypographyH3 className="my-4 mt-8">Hospitals & Pharmacies</TypographyH3>
-        <p className="font-mono mb-2">
-          Comprehensive lists of hospitals and pharmacies across Uganda, providing critical healthcare resources, styled for clarity and accessibility.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/BloodMatch/hospitals.png`, `${BASE_PATH}/BloodMatch/pharmacies.png`]} />
-        <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-        <p className="font-mono mb-2">
-          This PWA combines lifesaving utility with technical innovation, offering a fast, secure, and offline-capable experience.
-        </p>
-        <ul className="font-mono list-disc list-inside mb-2">
-          <li>Geolocation-based donor-recipient matching with GeoFire</li>
-          <li>Real-time push, email, and SMS notifications via Firebase, Twilio, and Nodemailer</li>
-          <li>Interactive map with Leaflet for request visualization</li>
-          <li>Progressive Web App with offline support and installability</li>
-          <li>Admin dashboard with Chart.js analytics for platform insights</li>
-          <li>Curated healthcare resources including emergency services, hospitals, and pharmacies</li>
-          <li>Secure Firebase backend with Cloud Functions and Firestore</li>
-        </ul>
-        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-        <p className="font-mono mb-2">
-          I built a robust Firebase backend with Cloud Functions for matching and notifications, integrated React with TypeScript for a type-safe frontend, and implemented PWA features for a native-like experience. The responsive navbar with a hamburger menu ensures accessibility, while Twilio and Nodemailer enable multi-channel notifications.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/BloodMatch/home.png`]} />
-        <p className="font-mono mb-2 mt-5 text-center">
-          This app demonstrates my ability to merge geospatial technology, real-time systems, and user-centric design to create impactful health tools for social good.
-        </p>
-      </div>
-    );
-  },
-},
-{
-  id: "osler",
-  category: "Health Tool",
-  title: "Dr. Jingo",
-  src: "/assets/projects-screenshots/osler/home.png",
-  screenshots: ["home.png", "chat.png", "case_study_1.png", "case_study_2.png", "history.png", "navigation.png"],
-  live: "https://oslermentor.onrender.com/",
-  github: "https://github.com/jjingofarouk/osler",
-  skills: {
-    frontend: [
-      PROJECT_SKILLS.js,
-      PROJECT_SKILLS.jquery,
-      PROJECT_SKILLS.css,
-      PROJECT_SKILLS.bootstrap,
-    ],
-    backend: [
-      PROJECT_SKILLS.python,
-      PROJECT_SKILLS.flask,
-      PROJECT_SKILLS.gemini,
-    ],
-  },
-  get content() {
-    return (
-      <div>
-        <TypographyP className="font-mono text-2xl text-center">
-          Dr. Jingo = Clinical Mentorship + Modern Web Technology
-        </TypographyP>
-        <TypographyP className="font-mono">
-          Dr. Jingo is a Flask-based Progressive Web App (PWA) I developed to deliver clinical mentorship through a virtual Ugandan clinician, Dr. Jingo. Powered by the Gemini API, it provides real-time, evidence-based medical guidance with features like interactive case studies, chat history, and intuitive navigation, showcasing my expertise in Python, Flask, and responsive front-end development.
-        </TypographyP>
-        <ProjectsLinks live={this.live} repo={this.github} />
-        <TypographyH3 className="my-4 mt-8">Home Screen</TypographyH3>
-        <p className="font-mono mb-2">
-          A clean and modern interface invites users to engage with Dr. Jingo. Built with Bootstrap and custom CSS for a responsive and user-friendly design across devices.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/osler/home.png`]} />
-        <TypographyH3 className="my-4 mt-8">Navigation</TypographyH3>
-        <p className="font-mono mb-2">
-          I implemented a sleek hamburger menu for seamless navigation, allowing users to effortlessly switch between chat, case study, and history features, optimized for both mobile and desktop experiences.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/osler/navigation.png`]} />
-        <TypographyH3 className="my-4 mt-8">Chat Interface</TypographyH3>
-        <p className="font-mono mb-2">
-          Using jQuery and Flask, I created a dynamic chat UI with a hamburger menu for navigation and a sticky input bar for seamless interaction on mobile and desktop.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/osler/chat.png`]} />
-        <TypographyH3 className="my-4 mt-8">Case Study Mode</TypographyH3>
-        <p className="font-mono mb-2">
-          I implemented an interactive case study feature that allows users to practice clinical reasoning with tailored scenarios. This is also powered by the Gemini API for accurate responses.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/osler/case_study_1.png`, `${BASE_PATH}/osler/case_study_2.png`]} />
-        <TypographyH3 className="my-4 mt-8">Chat History</TypographyH3>
-        <p className="font-mono mb-2">
-          A dedicated history page tracks user interactions using local storage and Flask session management for persistence and accessibility.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/osler/history.png`]} />
-        <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-        <p className="font-mono mb-2">
-          This PWA combines clinical utility with technical innovation, thus offering a fast, secure, and offline-capable experience.
-        </p>
-        <ul className="font-mono list-disc list-inside mb-2">
-          <li>Real-time medical guidance boosted by Gemini API</li>
-          <li>Interactive case studies for clinical practice</li>
-          <li>Chat history with local storage integration</li>
-          <li>Progressive Web App with offline support</li>
-          <li>Responsive UI with jQuery, Bootstrap, and hamburger menu</li>
-          <li>Secure Flask backend with environment management</li>
-        </ul>
-        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-        <p className="font-mono mb-2">
-          I built a robust Flask backend to manage API requests, integrated jQuery for dynamic front-end interactions, and implemented PWA features (manifest, service worker) for a native app-like experience. The hamburger menu enhances navigation and streaming responses ensure performance. Secure HTTPS and environment variables protect API keys.
-        </p>
-        <SlideShow images={[`${BASE_PATH}/osler/home.png`]} />
-        <p className="font-mono mb-2 mt-5 text-center">
-          This app demonstrates my ability to merge Python-based backend development, AI integration, and modern front-end techniques to create powerful health tools for medical education.
-        </p>
-      </div>
-    );
-  },
-},
 {
   id: "solverpro",
   category: "Enterprise Educational Tech",
