@@ -1764,6 +1764,90 @@ const projects: Project[] = [
     );
   }
 },
+  {
+    "id": "uccr",
+    "category": "Healthcare",
+    "title": "UCCR - Uganda Clinical Case Reports",
+    "src": "/assets/projects-screenshots/uccr/home.png",
+    "screenshots": [
+      "home.png",
+      "case-detail.png",
+      "case-create.png",
+      "comment-section.png",
+      "profile.png",
+      "inbox.png",
+      "mobile-view.png"
+    ],
+    "live": "https://uccrug.vercel.app",
+    "github": "https://github.com/jjingofarouk/uccr",
+    "skills": {
+      "frontend": [
+        "PROJECT_SKILLS.js",
+        "PROJECT_SKILLS.react",
+        "PROJECT_SKILLS.nextjs",
+        "PROJECT_SKILLS.css"
+      ],
+      "backend": [
+        "PROJECT_SKILLS.firebase"
+      ]
+    },
+    "content": {
+      "type": "jsx",
+      "value": `
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            UCCR: Uganda Clinical Case Reports
+          </TypographyP>
+          <TypographyP className="font-mono">
+            UCCR is a Next.js 14.2.3-powered web application designed for doctors, medical students, and healthcare professionals to share and discuss clinical cases from Uganda. Built with React 18.2.0 and Firebase 10.12.2, it offers features like case creation with multimedia support, interactive comment sections with reactions, user profiles, and private messaging. The app features a responsive design with plain CSS, providing a professional platform for medical collaboration.
+          </TypographyP>
+          <ProjectsLinks live="${this.live}" repo="${this.github}" />
+          <TypographyH3 className="my-4 mt-8">Case Management</TypographyH3>
+          <p className="font-mono mb-2">
+            UCCR allows users to create detailed case reports with titles, presenting complaints, histories, investigations, management plans, and optional image uploads stored in Firebase Storage. The interface is intuitive, with a responsive layout that adapts to various devices, ensuring accessibility for medical professionals on the go.
+          </p>
+          <SlideShow images={["${BASE_PATH}/uccr/case-create.png", "${BASE_PATH}/uccr/case-detail.png"]} />
+          <TypographyH3 className="my-4 mt-8">Interactive Discussions</TypographyH3>
+          <p className="font-mono mb-2">
+            The comment section enables rich discussions with features like comments, replies, and reactions (Like, Insightful, Dislike) powered by Firestore. Users can engage with cases, share insights, and vote on comments, fostering a collaborative learning environment.
+          </p>
+          <SlideShow images={["${BASE_PATH}/uccr/comment-section.png"]} />
+          <TypographyH3 className="my-4 mt-8">User Profiles & Messaging</TypographyH3>
+          <p className="font-mono mb-2">
+            Users can upload profile photos and access private messaging via Firebase Authentication and Firestore. The inbox feature supports secure communication between healthcare professionals, enhancing networking and case consultation.
+          </p>
+          <SlideShow images={["${BASE_PATH}/uccr/profile.png", "${BASE_PATH}/uccr/inbox.png"]} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            UCCR combines robust functionality with a user-focused design to support medical education and collaboration.
+          </p>
+          <ul className="font-mono list-disc list-inside mb-2">
+            <li>Firebase Authentication with Email/Password</li>
+            <li>Case creation with multimedia support</li>
+            <li>Interactive comment system with reactions</li>
+            <li>User profiles with photo upload</li>
+            <li>Private messaging between users</li>
+            <li>Responsive design with plain CSS</li>
+            <li>Mobile-first layout for accessibility</li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+          <p className="font-mono mb-2">
+            Built with Next.js 14.2.3 and React 18.2.0, UCCR leverages Firebase 10.12.2 for authentication, Firestore for real-time data, and Storage for media. The frontend uses plain CSS for styling, ensuring a lightweight and customizable design. Framer Motion adds smooth animations, while Lucide React provides icons. Deployed on Vercel, the app benefits from automatic scaling and CI/CD, with ESLint maintaining code quality.
+          </p>
+          <SlideShow images={["${BASE_PATH}/uccr/home.png"]} />
+          <TypographyH3 className="my-4 mt-8">Development Process</TypographyH3>
+          <p className="font-mono mb-2">
+            Developed using Next.js for server-side rendering and static generation, UCCR integrates Firebase for backend services. React hooks manage state and user interactions, while Firestore ensures real-time updates for comments and messages. Plain CSS provides a tailored styling approach, with responsive design tested across devices. Deployment on Vercel with Firebase Hosting ensures global accessibility and scalability.
+          </p>
+          <SlideShow images={["${BASE_PATH}/uccr/mobile-view.png"]} />
+          <p className="font-mono mb-2 mt-5 text-center">
+            UCCR empowers healthcare professionals with a platform for sharing and learning from clinical cases. Explore the live app, review the code, and contribute to enhancing medical knowledge!
+          </p>
+        </div>
+      );
+    }
+  },
+
 {
   id: "BloodMatch",
   category: "Health Tool",
