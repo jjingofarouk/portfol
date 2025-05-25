@@ -13,7 +13,7 @@ import {
   SiCss3,
 SiTensorflow,
 SiApifox,
-  SiCypress,
+  SiCypress, 
 SiAppstore,
 SiChartdotjs,
 SiVercel,
@@ -833,7 +833,7 @@ const projects: Project[] = [
     src: "/assets/projects-screenshots/mininews/home.png",
     screenshots: ["home.png", "filters.png", "article.png", "saved.png"],
     live: "https://www.mangunews.vercel.app", // Replace with actual live link, e.g., "https://mininews.vercel.app"
-    github: "https://github.com/jjingofarouk/MiniNews",
+    github: "https://github.com/faroukjjingo/MiniNews",
     skills: {
       frontend: [
         PROJECT_SKILLS.js,
