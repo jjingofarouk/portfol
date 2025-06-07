@@ -331,95 +331,106 @@ export type Project = {
 
 const projects: Project[] = [
   {
-    id: "carewave-doctor",
-    category: "telemedicine platform",
-    title: "CareWaveDoctor",
-    src: "/assets/projects-screenshots/carewave/carewave.png",
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.materialUI,
-        PROJECT_SKILLS.redux,
-        PROJECT_SKILLS.firebase,
-      ],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.mongodb,
-        PROJECT_SKILLS.socketio,
-      ],
-    },
-    live: "https://carewave-doctor.vercel.app/",
-    github: "https://github.com/jjingofarouk/CareWave_Doctors",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            CareWaveDoctor: Empowering Physicians in Telemedicine
-          </TypographyP>
-          <TypographyP className="font-mono">
-            CareWaveDoctor is a comprehensive telemedicine platform that enables
-            doctors to conduct virtual consultations, manage patient records,
-            and schedule appointments seamlessly. Designed with a user-friendly
-            interface, it ensures efficient and effective patient care delivery
-            in a digital environment.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Dashboard</TypographyH3>
-          <p className="font-mono mb-2">
-            A centralized dashboard providing an overview of upcoming
-            appointments, patient messages, and quick access to essential
-            features.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/carewave-doctor/dashboard.png`,
-              `${BASE_PATH}/carewave-doctor/appointments.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Patient Management</TypographyH3>
-          <p className="font-mono mb-2">
-            Access and manage detailed patient profiles, including medical
-            history, ongoing treatments, and previous consultation notes.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/carewave-doctor/patient-list.png`,
-              `${BASE_PATH}/carewave-doctor/patient-profile.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">
-            Telemedicine Sessions
-          </TypographyH3>
-          <p className="font-mono mb-2">
-            Conduct secure video consultations with patients, featuring
-            real-time chat and file sharing capabilities.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/carewave-doctor/video-call.png`,
-              `${BASE_PATH}/carewave-doctor/chat.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">
-            Appointment Scheduling
-          </TypographyH3>
-          <p className="font-mono mb-2">
-            Manage your availability and allow patients to book appointments
-            based on your schedule, with automated reminders and notifications.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/carewave-doctor/schedule.png`,
-              `${BASE_PATH}/carewave-doctor/appointment-details.png`,
-            ]}
-          />
-        </div>
-      );
-    },
+  id: "carewave-hospital",
+  category: "hospital management system",
+  title: "CareWave",
+  src: "/assets/projects-screenshots/carewave/carewave.png",
+  screenshots: ["landing.png"],
+  skills: {
+    frontend: [
+      PROJECT_SKILLS.react,
+      PROJECT_SKILLS.js,
+      PROJECT_SKILLS.materialUI,
+      PROJECT_SKILLS.redux,
+      PROJECT_SKILLS.firebase,
+      PROJECT_SKILLS.tailwindcss,
+      PROJECT_SKILLS.chartjs,
+    ],
+    backend: [
+      PROJECT_SKILLS.node,
+      PROJECT_SKILLS.express,
+      PROJECT_SKILLS.mongodb,
+      PROJECT_SKILLS.socketio,
+      PROJECT_SKILLS.prisma,
+      PROJECT_SKILLS.postgresql,
+    ],
   },
+  live: "https://carewave-doctor.vercel.app/",
+  github: "https://github.com/jjingofarouk/CareWave_Doctors",
+  get content() {
+    return (
+      <div>
+        <TypographyP className="font-mono text-2xl text-center">
+          CareWave: Comprehensive Hospital Management System
+        </TypographyP>
+        <TypographyP className="font-mono">
+          CareWave is an enterprise-grade hospital management system engineered to streamline clinical, administrative, and operational workflows. This modular platform integrates a wide array of specialized modules, enabling seamless coordination among doctors, nurses, lab technicians, administrators, and support staff. Leveraging modern technologies, it ensures real-time data access, secure communications, and advanced analytics to enhance patient care and operational efficiency. Designed for scalability and security, CareWave is a robust solution for digital transformation in healthcare.
+        </TypographyP>
+        <ProjectsLinks live={this.live} repo={this.github} />
+        <TypographyH3 className="my-4 mt-8">Clinical Operations</TypographyH3>
+        <p className="font-mono mb-2">
+          Empowers healthcare professionals with modules like Clinical, Laboratory, Radiology, and Operation Theatre, providing tools for diagnostics, treatment planning, and surgical management, all integrated with real-time patient data.
+        </p>
+        <SlideShow
+          images={[
+            `${BASE_PATH}/carewave-hospital/clinical-dashboard.png`,
+            `${BASE_PATH}/carewave-hospital/lab-results.png`,
+          ]}
+        />
+        <TypographyH3 className="my-4 mt-8">Patient and Appointment Management</TypographyH3>
+        <p className="font-mono mb-2">
+          Enhances patient engagement through Appointment, Patient, and Queue Management modules, offering seamless scheduling, detailed patient profiles, and efficient queue handling with automated notifications.
+        </p>
+        <SlideShow
+          images={[
+            `${BASE_PATH}/carewave-hospital/patient-profile.png`,
+            `${BASE_PATH}/carewave-hospital/appointment-schedule.png`,
+          ]}
+        />
+        <TypographyH3 className="my-4 mt-8">Financial and Administrative Tools</TypographyH3>
+        <p className="font-mono mb-2">
+          Streamlines hospital administration with Accounting, Billing, Claim Management, and Payroll modules, ensuring accurate financial tracking, insurance processing, and staff compensation management.
+        </p>
+        <SlideShow
+          images={[
+            `${BASE_PATH}/carewave-hospital/billing-overview.png`,
+            `${BASE_PATH}/carewave-hospital/claims-status.png`,
+          ]}
+        />
+        <TypographyH3 className="my-4 mt-8">Resource Management</TypographyH3>
+        <p className="font-mono mb-2">
+          Optimizes hospital resources via Inventory, Procurement, Pharmacy, and Substore modules, enabling efficient stock control, supply chain management, and medication dispensing to minimize waste.
+        </p>
+        <SlideShow
+          images=[
+            `${BASE_PATH}/carewave-hospital/inventory-dashboard.png`,
+            `${BASE_PATH}/carewave-hospital/procurement-orders.png`,
+          ]
+        />
+        <TypographyH3 className="my-4 mt-8">Specialized Care Services</TypographyH3>
+        <p className="font-mono mb-2">
+          Supports targeted healthcare delivery with Maternity, Emergency, Nursing, and Vaccination modules, alongside CSSD and Social Service for operational support and patient welfare.
+        </p>
+        <SlideShow
+          images={[
+            `${BASE_PATH}/carewave-hospital/maternity-records.png`,
+            `${BASE_PATH}/carewave-hospital/emergency-triage.png`,
+          ]}
+        />
+        <TypographyH3 className="my-4 mt-8">System Administration and Reporting</TypographyH3>
+        <p className="font-mono mb-2">
+          Provides administrators with System Admin, Settings, Dynamic Report, and Reports modules for system configuration, user management, and data-driven insights to monitor performance and compliance.
+        </p>
+        <SlideShow
+          images={[
+            `${BASE_PATH}/carewave-hospital/admin-panel.png`,
+            `${BASE_PATH}/carewave-hospital/report-analytics.png`,
+          ]}
+        />
+      </div>
+    );
+  },
+},
   {
     id: "ssuubi",
     category: "Mental Health Tech",
