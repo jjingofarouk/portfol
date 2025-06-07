@@ -331,11 +331,13 @@ export type Project = {
 
 const projects: Project[] = [
   {
-  id: "carewave-hospital",
-  category: "hospital management system",
-  title: "CareWave",
-  src: "/assets/projects-screenshots/carewave/carewave.png",
-  screenshots: ["landing.png"],
+  id: "carewave",
+  category: "Hospital Management Tech",
+  title: "CareWave System",
+  src: "/assets/projects-screenshots/carewave/landing.png",
+  screenshots: ["landing.png", "clinical.png", "patient.png", "billing.png", "inventory.png"],
+  live: "https://carewave-doctor.vercel.app",
+  github: "https://github.com/jjingofarouk/CareWave_Doctors",
   skills: {
     frontend: [
       PROJECT_SKILLS.react,
@@ -355,78 +357,55 @@ const projects: Project[] = [
       PROJECT_SKILLS.postgresql,
     ],
   },
-  live: "https://carewave-doctor.vercel.app/",
-  github: "https://github.com/jjingofarouk/CareWave_Doctors",
   get content() {
     return (
       <div>
         <TypographyP className="font-mono text-2xl text-center">
-          CareWave: Comprehensive Hospital Management System
+          CareWave = Your All-in-One Hospital Management Solution
         </TypographyP>
         <TypographyP className="font-mono">
-          CareWave is an enterprise-grade hospital management system engineered to streamline clinical, administrative, and operational workflows. This modular platform integrates a wide array of specialized modules, enabling seamless coordination among doctors, nurses, lab technicians, administrators, and support staff. Leveraging modern technologies, it ensures real-time data access, secure communications, and advanced analytics to enhance patient care and operational efficiency. Designed for scalability and security, CareWave is a robust solution for digital transformation in healthcare.
+          CareWave is an enterprise-grade hospital management system designed to streamline clinical, administrative, and operational workflows. With a modular architecture and modern tech stack, it empowers healthcare teams with real-time data, secure communication, and advanced analytics, reflecting my expertise in medical-tech innovation.
         </TypographyP>
         <ProjectsLinks live={this.live} repo={this.github} />
         <TypographyH3 className="my-4 mt-8">Clinical Operations</TypographyH3>
         <p className="font-mono mb-2">
-          Empowers healthcare professionals with modules like Clinical, Laboratory, Radiology, and Operation Theatre, providing tools for diagnostics, treatment planning, and surgical management, all integrated with real-time patient data.
+          Equip doctors and staff with tools for diagnostics, treatment, and surgical planning via Clinical, Laboratory, Radiology, and Operation Theatre modules, all synced with live patient data.
         </p>
-        <SlideShow
-          images={[
-            `${BASE_PATH}/carewave-hospital/clinical-dashboard.png`,
-            `${BASE_PATH}/carewave-hospital/lab-results.png`,
-          ]}
-        />
-        <TypographyH3 className="my-4 mt-8">Patient and Appointment Management</TypographyH3>
+        <SlideShow images={[`${BASE_PATH}/carewave-hospital/clinical.png`]} />
+        <TypographyH3 className="my-4 mt-8">Patient Management</TypographyH3>
         <p className="font-mono mb-2">
-          Enhances patient engagement through Appointment, Patient, and Queue Management modules, offering seamless scheduling, detailed patient profiles, and efficient queue handling with automated notifications.
+          Simplify scheduling and engagement with Appointment, Patient, and Queue Management modules, offering intuitive profiles, automated notifications, and efficient queue handling.
         </p>
-        <SlideShow
-          images={[
-            `${BASE_PATH}/carewave-hospital/patient-profile.png`,
-            `${BASE_PATH}/carewave-hospital/appointment-schedule.png`,
-          ]}
-        />
-        <TypographyH3 className="my-4 mt-8">Financial and Administrative Tools</TypographyH3>
+        <SlideShow images={[`${BASE_PATH}/carewave-hospital/patient.png`]} />
+        <TypographyH3 className="my-4 mt-8">Financial Tools</TypographyH3>
         <p className="font-mono mb-2">
-          Streamlines hospital administration with Accounting, Billing, Claim Management, and Payroll modules, ensuring accurate financial tracking, insurance processing, and staff compensation management.
+          Streamline finances with Accounting, Billing, Claim Management, and Payroll modules, ensuring accurate tracking, insurance processing, and staff compensation.
         </p>
-        <SlideShow
-          images={[
-            `${BASE_PATH}/carewave-hospital/billing-overview.png`,
-            `${BASE_PATH}/carewave-hospital/claims-status.png`,
-          ]}
-        />
-        <TypographyH3 className="my-4 mt-8">Resource Management</TypographyH3>
+        <SlideShow images={[`${BASE_PATH}/carewave-hospital/billing.png`]} />
+        <TypographyH3 className="my-4 mt-8">Resource Optimization</TypographyH3>
         <p className="font-mono mb-2">
-          Optimizes hospital resources via Inventory, Procurement, Pharmacy, and Substore modules, enabling efficient stock control, supply chain management, and medication dispensing to minimize waste.
+          Manage resources efficiently with Inventory, Procurement, Pharmacy, and Substore modules, minimizing waste through robust stock and supply chain controls.
         </p>
-        <SlideShow
-          images=[
-            `${BASE_PATH}/carewave-hospital/inventory-dashboard.png`,
-            `${BASE_PATH}/carewave-hospital/procurement-orders.png`,
-          ]
-        />
-        <TypographyH3 className="my-4 mt-8">Specialized Care Services</TypographyH3>
+        <SlideShow images={[`${BASE_PATH}/carewave-hospital/inventory.png`]} />
+        <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
         <p className="font-mono mb-2">
-          Supports targeted healthcare delivery with Maternity, Emergency, Nursing, and Vaccination modules, alongside CSSD and Social Service for operational support and patient welfare.
+          Built for scalability and security, CareWave transforms healthcare operations with a user-centric design and comprehensive functionality.
         </p>
-        <SlideShow
-          images={[
-            `${BASE_PATH}/carewave-hospital/maternity-records.png`,
-            `${BASE_PATH}/carewave-hospital/emergency-triage.png`,
-          ]}
-        />
-        <TypographyH3 className="my-4 mt-8">System Administration and Reporting</TypographyH3>
+        <ul className="font-mono list-disc list-inside mb-2">
+          <li>Real-time clinical and patient data integration</li>
+          <li>Automated appointment and queue management</li>
+          <li>Advanced financial and billing tools</li>
+          <li>Efficient inventory and procurement systems</li>
+          <li>Dynamic reporting and analytics dashboards</li>
+        </ul>
+        <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
         <p className="font-mono mb-2">
-          Provides administrators with System Admin, Settings, Dynamic Report, and Reports modules for system configuration, user management, and data-driven insights to monitor performance and compliance.
+          Powered by React, Node.js, and Express, CareWave uses MongoDB and PostgreSQL for data, Prisma for ORM, and Socket.IO for real-time updates. The frontend shines with Tailwind CSS, Material UI, Redux, and Chart.js for dynamic visuals.
         </p>
-        <SlideShow
-          images={[
-            `${BASE_PATH}/carewave-hospital/admin-panel.png`,
-            `${BASE_PATH}/carewave-hospital/report-analytics.png`,
-          ]}
-        />
+        <SlideShow images={[`${BASE_PATH}/carewave-hospital/landing.png`]} />
+        <p className="font-mono mb-2 mt-10 text-center">
+          CareWave is your hospital’s path to digital efficiency. Explore now and elevate care!
+        </p>
       </div>
     );
   },
