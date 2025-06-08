@@ -12,7 +12,7 @@ import {
   SiChakraui,
   SiCss3,
 SiTensorflow,
-SiApifox,
+SiApifox, 
   SiCypress, 
 SiAppstore,
 SiChartdotjs, 
@@ -333,7 +333,7 @@ const projects: Project[] = [
   {
   id: "carewave",
   category: "Hospital Management Tech",
-  title: "CareWave System",
+  title: "CareWave",
   src: "/assets/projects-screenshots/carewave/landing.png",
   screenshots: ["landing.png", "clinical.png", "patient.png", "billing.png", "inventory.png"],
   live: "https://carewave-doctor.vercel.app",
