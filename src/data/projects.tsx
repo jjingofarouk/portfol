@@ -277,7 +277,7 @@ heroicons: {
   kubernetes: {
     title: "Kubernetes",
     bg: "black",
-    fg: "white",
+    fg: "white", 
     icon: <SiKubernetes />,
   },
   deno: { title: "Deno", bg: "black", fg: "white", icon: <SiDeno /> },
@@ -345,7 +345,7 @@ const projects: Project[] = [
       PROJECT_SKILLS.materialUI,
       PROJECT_SKILLS.redux,
       PROJECT_SKILLS.firebase,
-      PROJECT_SKILLS.tailwindcss,
+      PROJECT_SKILLS.tailwind,
       PROJECT_SKILLS.chartjs,
     ],
     backend: [
