@@ -582,7 +582,7 @@ const projects: Project[] = [
   title: "CareView",
   src: "/assets/projects-screenshots/careview/home.png",
   screenshots: ["home.png", "symptom-input.png", "diagnosis-results.png"],
-  live: "https://careview.vercel.app/",
+  live: "https://careviewu.vercel.app/",
   github: "https://github.com/jjingofarouk/careview-symptom-checker",
   skills: {
     frontend: [
