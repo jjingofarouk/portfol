@@ -143,22 +143,22 @@ export const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) =
   );
 };
 
-// Dynamic imports to prevent circular dependencies
-const CareWave = dynamic(() => import('./carewave').then(mod => mod.CareWave));
-const Ssuubi = dynamic(() => import('./ssuubi').then(mod => mod.Ssuubi));
-const MediQ = dynamic(() => import('./mediq').then(mod => mod.MediQ));
-const CareView = dynamic(() => import('./careview').then(mod => mod.CareView));
-const Zano = dynamic(() => import('./zano').then(mod => mod.Zano));
-const ClinicalCalculators = dynamic(() => import('./clinical-calculators').then(mod => mod.ClinicalCalculators));
-const MatatuTracker = dynamic(() => import('./matatu').then(mod => mod.MatatuTracker));
-const Dwaliro = dynamic(() => import('./dwaliro').then(mod => mod.Dwaliro));
-const FreeResume = dynamic(() => import('./free-resume').then(mod => mod.FreeResume));
-const GigMap = dynamic(() => import('./gigmap').then(mod => mod.GigMap));
-const LitShelf = dynamic(() => import('./litshelf').then(mod => mod.LitShelf));
-const DrJingo = dynamic(() => import('./osler').then(mod => mod.DrJingo));
-const UCCR = dynamic(() => import('./uccr').then(mod => mod.UCCR));
-const BloodMatch = dynamic(() => import('./bloodmatch').then(mod => mod.BloodMatch));
-const TouchedHearts = dynamic(() => import('./touched-hearts').then(mod => mod.TouchedHearts));
+// Dynamic imports with explicit type annotation to satisfy TypeScript
+const CareWave: Project = dynamic(() => import('./carewave').then(mod => mod.CareWave), { ssr: false }) as any;
+const Ssuubi: Project = dynamic(() => import('./ssuubi').then(mod => mod.Ssuubi), { ssr: false }) as any;
+const MediQ: Project = dynamic(() => import('./mediq').then(mod => mod.MediQ), { ssr: false }) as any;
+const CareView: Project = dynamic(() => import('./careview').then(mod => mod.CareView), { ssr: false }) as any;
+const Zano: Project = dynamic(() => import('./zano').then(mod => mod.Zano), { ssr: false }) as any;
+const ClinicalCalculators: Project = dynamic(() => import('./clinical-calculators').then(mod => mod.ClinicalCalculators), { ssr: false }) as any;
+const MatatuTracker: Project = dynamic(() => import('./matatu').then(mod => mod.MatatuTracker), { ssr: false }) as any;
+const Dwaliro: Project = dynamic(() => import('./dwaliro').then(mod => mod.Dwaliro), { ssr: false }) as any;
+const FreeResume: Project = dynamic(() => import('./free-resume').then(mod => mod.FreeResume), { ssr: false }) as any;
+const GigMap: Project = dynamic(() => import('./gigmap').then(mod => mod.GigMap), { ssr: false }) as any;
+const LitShelf: Project = dynamic(() => import('./litshelf').then(mod => mod.LitShelf), { ssr: false }) as any;
+const DrJingo: Project = dynamic(() => import('./osler').then(mod => mod.DrJingo), { ssr: false }) as any;
+const UCCR: Project = dynamic(() => import('./uccr').then(mod => mod.UCCR), { ssr: false }) as any;
+const BloodMatch: Project = dynamic(() => import('./bloodmatch').then(mod => mod.BloodMatch), { ssr: false }) as any;
+const TouchedHearts: Project = dynamic(() => import('./touched-hearts').then(mod => mod.TouchedHearts), { ssr: false }) as any;
 
 const projects: Project[] = [
   CareWave,
