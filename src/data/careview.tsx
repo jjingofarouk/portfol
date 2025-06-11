@@ -1,72 +1,106 @@
-import { PROJECT_SKILLS } from "./projects";
-import { TypographyH3, TypographyP } from "@/components/ui/typography";
-import SlideShow from "@/components/slide-show";
-import { ProjectsLinks } from "./projects";
+// src/data/careview.tsx
+import { ReactNode } from 'react';
+import { SiJavascript, SiReact, SiFirebase, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { Button } from '@/components/ui/button';
+import { TypographyH3, TypographyP } from '@/components/ui/typography';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import SlideShow from '@/components/slide-show';
 
-const BASE_PATH = "/assets/projects-screenshots";
+const BASE_PATH = '/assets/projects-screenshots';
 
-export const CareView = {
-  id: "careview",
-  category: "Diagnostic Assistant",
-  title: "CareView",
-  src: "/assets/projects-screenshots/careview/home.png",
-  screenshots: ["home.png", "symptom-input.png", "diagnosis-results.png"],
-  live: "https://careviewu.vercel.app/",
-  github: "https://github.com/jjingofarouk/careview-symptom-checker",
+type Skill = {
+  title: string;
+  bg: string;
+  fg: string;
+  icon: ReactNode;
+};
+
+type Project = {
+  id: string;
+  category: string;
+  title: string;
+  src: string;
+  screenshots: string[];
+  skills: { frontend: Skill[]; backend: Skill[] };
+  content: ReactNode | any;
+  github?: string;
+  live: string;
+};
+
+const PROJECT_SKILLS = {
+  js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
+  react: { title: 'React.js', bg: 'black', fg: 'white', icon: <SiReact /> },
+  firebase: { title: 'Firebase', bg: 'black', fg: 'white', icon: <SiFirebase /> },
+  nextjs: { title: 'Next Js ', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
+  tailwind: { title: 'Tailwind', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+};
+
+const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+  return (
+    <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
+      <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={live}>
+        <Button variant="default" size="sm">
+          Visit Website
+          <ArrowUpRight className="ml-3 w-5 h-5" />
+        </Button>
+      </Link>
+      {repo && (
+        <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={repo}>
+          <Button variant="default" size="sm">
+            Github
+            <ArrowUpRight className="ml-3 w-5 h-5" />
+          </Button>
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export const CareView: Project = {
+  id: 'careview',
+  category: 'Health Tech',
+  title: 'CareView',
+  src: `${BASE_PATH}/careview/home.jpg`,
+  screenshots: ['home.jpg', 'dashboard.png', 'reports.png'],
+  live: 'https://careview.vercel.app/',
+  github: 'https://github.com/jjingofarouk/careview',
   skills: {
     frontend: [
       PROJECT_SKILLS.js,
       PROJECT_SKILLS.react,
-      PROJECT_SKILLS.css,
-      PROJECT_SKILLS.mui,
+      PROJECT_SKILLS.nextjs,
+      PROJECT_SKILLS.tailwind,
     ],
     backend: [
-      PROJECT_SKILLS.node,
+      PROJECT_SKILLS.firebase,
     ],
   },
   content: (
     <div>
       <TypographyP className="font-mono text-2xl text-center">
-        CareView = Precision + Care
+        CareView = Healthcare Analytics
       </TypographyP>
       <TypographyP className="font-mono">
-        CareView is an advanced React-based symptom checker designed to empower users with potential diagnoses based on their symptoms. Uses an advanced algorithm that analyzes symptoms, risk factors, and medical history to provide accurate yet user-friendly diagnostic insights. The app focuses on accessibility and clarity to guides users toward informed health decisions.
+        CareView provides healthcare analytics and reporting tools, built with Next.js for a responsive and data-driven experience.
       </TypographyP>
-      <ProjectsLinks live="https://careviewu.vercel.app/" repo="https://github.com/jjingofarouk/careview-symptom-checker" />
-      <TypographyH3 className="my-4 mt-8">Home Screen</TypographyH3>
+      <ProjectsLinks live="https://careview.vercel.app/" repo="https://github.com/jjingofarouk/careview" />
+      <TypographyH3 className="my-4 mt-8">Analytics Dashboard</TypographyH3>
       <p className="font-mono mb-2">
-        A welcoming interface invites users to input symptoms and explore potential diagnoses with ease and confidence.
+        Visualize patient data and trends with interactive charts.
       </p>
-      <SlideShow images={[`${BASE_PATH}/careview/home.png`]} />
-      <TypographyH3 className="my-4 mt-8">Symptom Input</TypographyH3>
+      <SlideShow images={[`${BASE_PATH}/careview/dashboard.png`]} />
+      <TypographyH3 className="my-4 mt-8">Reports</TypographyH3>
       <p className="font-mono mb-2">
-        Users can select symptoms, specify severity, duration, and additional factors like risk factors and travel history for a comprehensive analysis.
+        Generate detailed healthcare reports for providers.
       </p>
-      <SlideShow images={[`${BASE_PATH}/careview/symptom-input.png`]} />
-      <TypographyH3 className="my-4 mt-8">Diagnosis Results</TypographyH3>
-      <p className="font-mono mb-2">
-        Detailed diagnostic reports display top differential diagnoses, probability scores, confidence levels, and tailored medical guidance when available.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/careview/diagnosis-results.png`]} />
+      <SlideShow images={[`${BASE_PATH}/careview/reports.png`]} />
       <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-      <p className="font-mono mb-2">
-        CareView has a user-centric design to deliver a seamless and secure health tool experience.
-      </p>
       <ul className="font-mono list-disc list-inside mb-2">
-        <li>Intelligent symptom analysis with weighted scoring</li>
-        <li>Support for single and combination symptom inputs</li>
-        <li>Integration of risk factors, travel, and drug history</li>
-        <li>Mobile-responsive, accessible UI with Material-UI</li>
-        <li>Privacy-first approach with no personal data storage</li>
+        <li>Data visualization with charts</li>
+        <li>Secure data storage with Firebase</li>
+        <li>Responsive design with Tailwind CSS</li>
       </ul>
-      <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-      <p className="font-mono mb-2">
-        Built with React 18, CareView utilizes modern JavaScript, React Hooks, and Material-UI for a fully responsive interface. The diagnostic algorithm processes weighted symptom data to ensure reliable results even for single-symptom inputs.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/careview/home.png`]} />
-      <p className="font-mono mb-2 mt-5">
-        CareView is a vital tool for individuals seeking preliminary health insights and for professionals exploring innovative health tech solutions.
-      </p>
     </div>
   ),
 };
