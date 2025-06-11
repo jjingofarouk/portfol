@@ -1,18 +1,72 @@
-import { PROJECT_SKILLS } from "./projects";
-import { TypographyH3, TypographyP } from "@/components/ui/typography";
-import SlideShow from "@/components/slide-show";
-import { ProjectsLinks } from "./projects";
+// src/data/matatu.tsx
+import { ReactNode } from 'react';
+import { SiJavascript, SiReact, SiFirebase, SiNextdotjs, SiTailwindcss, RiNodejsFill } from 'react-icons/si';
+import { RiNextjsFill } from 'react-icons/ri';
+import { Button } from '@/components/ui/button';
+import { TypographyH3, TypographyP } from '@/components/ui/typography';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import SlideShow from '@/components/slide-show';
 
-const BASE_PATH = "/assets/projects-screenshots";
+const BASE_PATH = '/assets/projects-screenshots';
 
-export const MatatuTracker = {
-  id: "matatu",
-  category: "Transport Tech",
-  title: "Matatu Tracker",
-  src: "/assets/projects-screenshots/matatu/home.jpg",
-  screenshots: ["home.jpg", "admin.png", "tracking.png", "booking.jpg"],
-  live: "https://matatu-tracker.vercel.app/",
-  github: "https://github.com/jjingofarouk/matatu-tracker",
+type Skill = {
+  title: string;
+  bg: string;
+  fg: string;
+  icon: ReactNode;
+};
+
+type Project = {
+  id: string;
+  category: string;
+  title: string;
+  src: string;
+  screenshots: string[];
+  skills: { frontend: Skill[]; backend: Skill[] };
+  content: ReactNode | any;
+  github?: string;
+  live: string;
+};
+
+const PROJECT_SKILLS = {
+  js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
+  react: { title: 'React.js', bg: 'black', fg: 'white', icon: <SiReact /> },
+  firebase: { title: 'Firebase', bg: 'black', fg: 'white', icon: <SiFirebase /> },
+  mui: { title: 'Material-UI', bg: 'black', fg: 'white', icon: <RiNextjsFill /> },
+  tailwind: { title: 'Tailwind', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+  node: { title: 'Node.js', bg: 'black', fg: 'white', icon: <RiNodejsFill /> },
+};
+
+const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+  return (
+    <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
+      <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={live}>
+        <Button variant="default" size="sm">
+          Visit Website
+          <ArrowUpRight className="ml-3 w-5 h-5" />
+        </Button>
+      </Link>
+      {repo && (
+        <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={repo}>
+          <Button variant="default" size="sm">
+            Github
+            <ArrowUpRight className="ml-3 w-5 h-5" />
+          </Button>
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export const MatatuTracker: Project = {
+  id: 'matatu',
+  category: 'Transport Tech',
+  title: 'Matatu Tracker',
+  src: `${BASE_PATH}/matatu/home.jpg`,
+  screenshots: ['home.jpg', 'admin.png', 'tracking.png', 'booking.jpg'],
+  live: 'https://matatu-tracker.vercel.app/',
+  github: 'https://github.com/jjingofarouk/matatu-tracker',
   skills: {
     frontend: [
       PROJECT_SKILLS.js,
