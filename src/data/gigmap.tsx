@@ -1,86 +1,106 @@
-import { PROJECT_SKILLS } from "./projects";
-import { TypographyH3, TypographyP } from "@/components/ui/typography";
-import SlideShow from "@/components/slide-show";
-import { ProjectsLinks } from "./projects";
+// src/data/gigmap.tsx
+import { ReactNode } from 'react';
+import { SiJavascript, SiReact, SiFirebase, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { Button } from '@/components/ui/button';
+import { TypographyH3, TypographyP } from '@/components/ui/typography';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import SlideShow from '@/components/slide-show';
 
-const BASE_PATH = "/assets/projects-screenshots";
+const BASE_PATH = '/assets/projects-screenshots';
 
-export const GigMap = {
-  id: "gigmap",
-  category: "Freelance Tech",
-  title: "GigMap",
-  src: "/assets/projects-screenshots/gigmap/home.png",
-  screenshots: [
-    "home.png",
-    "map-view.png",
-    "freelancer-profile.png",
-    "create-pin.png",
-    "search-filters.png",
-  ],
-  live: "https://gigmap.vercel.app",
-  github: "https://github.com/jjingofarouk/gigmap",
+type Skill = {
+  title: string;
+  bg: string;
+  fg: string;
+  icon: ReactNode;
+};
+
+type Project = {
+  id: string;
+  category: string;
+  title: string;
+  src: string;
+  screenshots: string[];
+  skills: { frontend: Skill[]; backend: Skill[] };
+  content: ReactNode | any;
+  github?: string;
+  live: string;
+};
+
+const PROJECT_SKILLS = {
+  js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
+  react: { title: 'React.js', bg: 'black', fg: 'white', icon: <SiReact /> },
+  firebase: { title: 'Firebase', bg: 'black', fg: 'white', icon: <SiFirebase /> },
+  nextjs: { title: 'Next Js ', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
+  tailwind: { title: 'Tailwind', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+};
+
+const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+  return (
+    <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
+      <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={live}>
+        <Button variant="default" size="sm">
+          Visit Website
+          <ArrowUpRight className="ml-3 w-5 h-5" />
+        </Button>
+      </Link>
+      {repo && (
+        <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={repo}>
+          <Button variant="default" size="sm">
+            Github
+            <ArrowUpRight className="ml-3 w-5 h-5" />
+          </Button>
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export const GigMap: Project = {
+  id: 'gigmap',
+  category: 'Freelance Tech',
+  title: 'GigMap',
+  src: `${BASE_PATH}/gigmap/home.jpg`,
+  screenshots: ['home.jpg', 'gigs.png', 'map.png'],
+  live: 'https://gigmap.vercel.app/',
+  github: 'https://github.com/jjingofarouk/gigmap',
   skills: {
     frontend: [
-      PROJECT_SKILLS.ts,
+      PROJECT_SKILLS.js,
       PROJECT_SKILLS.react,
-      PROJECT_SKILLS.reactLeaflet,
+      PROJECT_SKILLS.nextjs,
       PROJECT_SKILLS.tailwind,
-      PROJECT_SKILLS.framerMotion,
     ],
     backend: [
-      PROJECT_SKILLS.node,
-      PROJECT_SKILLS.express,
       PROJECT_SKILLS.firebase,
     ],
   },
   content: (
     <div>
       <TypographyP className="font-mono text-2xl text-center">
-        GigMap = Connect Freelancers Worldwide
+        GigMap = Find Freelance Opportunities
       </TypographyP>
       <TypographyP className="font-mono">
-        GigMap is a React-based PWA that transforms freelance networking by pinning talent on an interactive global map. Powered by OpenStreetMap and React-Leaflet, it offers a sleek, gradient-driven UI (#9333ea to #f472b6) for freelancers to showcase skills and connect with clients, blending precision with a vibrant, mobile-first design.
+        GigMap is a Next.js platform connecting freelancers with local gigs using geolocation.
       </TypographyP>
-      <ProjectsLinks live="https://gigmap.vercel.app" repo="https://github.com/jjingofarouk/gigmap" />
-      <TypographyH3 className="my-4 mt-8">Interactive Map</TypographyH3>
+      <ProjectsLinks live="https://gigmap.vercel.app/" repo="https://github.com/jjingofarouk/gigmap" />
+      <TypographyH3 className="my-4 mt-8">Gig Listings</TypographyH3>
       <p className="font-mono mb-2">
-        Explore freelancers’ locations on a dynamic map with custom markers, offering profile previews on click and smooth navigation via React-Leaflet.
+        Browse and apply for freelance opportunities nearby.
       </p>
-      <SlideShow images={[`${BASE_PATH}/gigmap/map-view.png`]} />
-      <TypographyH3 className="my-4 mt-8">Freelancer Profiles</TypographyH3>
+      <SlideShow images={[`${BASE_PATH}/gigmap/gigs.png`]} />
+      <TypographyH3 className="my-4 mt-8">Map View</TypographyH3>
       <p className="font-mono mb-2">
-        Detailed profiles highlight skills, portfolios, and reviews in a gradient-styled layout, with embedded maps for location context, optimized for all devices.
+        Visualize gig locations on an interactive map.
       </p>
-      <SlideShow images={[`${BASE_PATH}/gigmap/freelancer-profile.png`]} />
-      <TypographyH3 className="my-4 mt-8">Profile Creation</TypographyH3>
-      <p className="font-mono mb-2">
-        A multi-step form guides freelancers to add details, skills, and geolocation, featuring real-time validation and Framer Motion animations for a seamless onboarding experience.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/gigmap/create-pin.png`]} />
-      <TypographyH3 className="my-4 mt-8">Search & Filters</TypographyH3>
-      <p className="font-mono mb-2">
-        Find talent fast with keyword search and filters for skills, location, and availability, backed by Firebase for real-time results.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/gigmap/search-filters.png`]} />
+      <SlideShow images={[`${BASE_PATH}/gigmap/map.png`]} />
       <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-      <p className="font-mono mb-2">
-        GigMap is built for scalability and accessibility, empowering freelancers with a global platform to shine.
-      </p>
       <ul className="font-mono list-disc list-inside mb-2">
-        <li>Geolocation-based talent discovery</li>
-        <li>Dynamic profile creation and management</li>
-        <li>Real-time search and filtering</li>
-        <li>Mobile-first PWA with offline support</li>
-        <li>Secure data handling via Firebase</li>
+        <li>Geolocation-based gig search</li>
+        <li>Secure backend with Firebase</li>
+        <li>Responsive design with Tailwind CSS</li>
       </ul>
-      <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-      <p className="font-mono mb-2">
-        Crafted with React 18, TypeScript, and Tailwind CSS, GigMap uses React-Leaflet for mapping, Framer Motion for animations, and a Node.js/Express backend with Firebase for secure, real-time data management.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/gigmap/home.png`]} />
-      <p className="font-mono mb-2 mt-5 text-center">
-        GigMap is your gateway to global freelance opportunities. Pin your skills and start connecting today!
-      </p>
     </div>
   ),
 };
