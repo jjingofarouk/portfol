@@ -1,84 +1,103 @@
-import { PROJECT_SKILLS } from "./projects";
-import { TypographyH3, TypographyP } from "@/components/ui/typography";
-import SlideShow from "@/components/slide-show";
-import { ProjectsLinks } from "./projects";
+// src/data/clinical-calculators.tsx
+import { ReactNode } from 'react';
+import { SiJavascript, SiReact, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { Button } from '@/components/ui/button';
+import { TypographyH3, TypographyP } from '@/components/ui/typography';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import SlideShow from '@/components/slide-show';
 
-const BASE_PATH = "/assets/projects-screenshots";
+const BASE_PATH = '/assets/projects-screenshots';
 
-export const ClinicalCalculators = {
-  id: "clinical-calculators",
-  category: "Healthcare",
-  title: "Clinical Calculators",
-  src: "/assets/projects-screenshots/clinical-calculators/home.png",
-  screenshots: [
-    "home.png",
-    "search.png",
-    "favorites.png",
-    "cardiovascular.png",
-    "neurology.png",
-    "gastroenterology.png",
-    "nephrology.png",
-    "obstetrics.png",
-    "pulmonary.png",
-    "orthopedics.png",
-    "icu.png",
-    "general.png",
-  ],
-  live: "https://clinical-calculators.vercel.app/",
-  github: "https://github.com/jjingofarouk/clinical-calculators",
+type Skill = {
+  title: string;
+  bg: string;
+  fg: string;
+  icon: ReactNode;
+};
+
+type Project = {
+  id: string;
+  category: string;
+  title: string;
+  src: string;
+  screenshots: string[];
+  skills: { frontend: Skill[]; backend: Skill[] };
+  content: ReactNode | any;
+  github?: string;
+  live: string;
+};
+
+const PROJECT_SKILLS = {
+  js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
+  react: { title: 'React.js', bg: 'black', fg: 'white', icon: <SiReact /> },
+  nextjs: { title: 'Next Js ', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
+  tailwind: { title: 'Tailwind', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+};
+
+const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+  return (
+    <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
+      <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={live}>
+        <Button variant="default" size="sm">
+          Visit Website
+          <ArrowUpRight className="ml-3 w-5 h-5" />
+        </Button>
+      </Link>
+      {repo && (
+        <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={repo}>
+          <Button variant="default" size="sm">
+            Github
+            <ArrowUpRight className="ml-3 w-5 h-5" />
+          </Button>
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export const ClinicalCalculators: Project = {
+  id: 'clinical-calculators',
+  category: 'Health Tech',
+  title: 'Clinical Calculators',
+  src: `${BASE_PATH}/clinical-calculators/home.jpg`,
+  screenshots: ['home.jpg', 'calculators.png', 'results.png'],
+  live: 'https://clinical-calculators.vercel.app/',
+  github: 'https://github.com/jjingofarouk/clinical-calculators',
   skills: {
     frontend: [
       PROJECT_SKILLS.js,
       PROJECT_SKILLS.react,
-      PROJECT_SKILLS.expo,
+      PROJECT_SKILLS.nextjs,
       PROJECT_SKILLS.tailwind,
-      PROJECT_SKILLS.mui,
     ],
     backend: [],
   },
   content: (
     <div>
       <TypographyP className="font-mono text-2xl text-center">
-        Clinical Calculators: Precision for Healthcare
+        Clinical Calculators = Precision Medicine
       </TypographyP>
       <TypographyP className="font-mono">
-        Clinical Calculators is a React Native mobile app designed for healthcare professionals. With over 90 specialized calculators across multiple medical specialties, it delivers accurate, real-time clinical insights in a user-friendly, performant interface, empowering clinicians to make informed decisions on the go.
+        Clinical Calculators is a Next.js tool for healthcare professionals, offering precise medical calculations.
       </TypographyP>
       <ProjectsLinks live="https://clinical-calculators.vercel.app/" repo="https://github.com/jjingofarouk/clinical-calculators" />
-      <TypographyH3 className="my-4 mt-8">Home Dashboard</TypographyH3>
+      <TypographyH3 className="my-4 mt-8">Calculator Interface</TypographyH3>
       <p className="font-mono mb-2">
-        The app’s home screen offers a dynamic dashboard with quick access to specialty categories, a powerful search feature, and personalized favorites, enhancing clinical efficiency.
+        Easy-to-use calculators for medical metrics like BMI and drug dosages.
       </p>
-      <SlideShow images={["/assets/projects-screenshots/clinical-calculators/home.png"]} />
-      <TypographyH3 className="my-4 mt-8">Search & Favorites</TypographyH3>
+      <SlideShow images={[`${BASE_PATH}/clinical-calculators/calculators.png`]} />
+      <TypographyH3 className="my-4 mt-8">Results Display</TypographyH3>
       <p className="font-mono mb-2">
-        A custom search feature allows quick access to calculators by name or specialty. The favorites system, powered by AsyncStorage, lets users bookmark tools for instant access.
+        Clear and accurate results for clinical decision-making.
       </p>
-      <SlideShow images={["/assets/projects-screenshots/clinical-calculators/search.png", "/assets/projects-screenshots/clinical-calculators/favorites.png"]} />
-      <TypographyH3 className="my-4 mt-8">Specialty Calculators</TypographyH3>
-      <p className="font-mono mb-2">
-        The app covers specialties like cardiovascular, neurology, and more, with precise tools for risk scoring, diagnostics, and patient assessment.
-      </p>
+      <SlideShow images={[`${BASE_PATH}/clinical-calculators/results.png`]} />
+      <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
       <ul className="font-mono list-disc list-inside mb-2">
-        <li>Cardiovascular: ASCVD Risk, CHADSVASC, HASBLED</li>
-        <li>Neurology: Glasgow Coma Scale, NIH Stroke Scale</li>
-        <li>Gastroenterology: Child-Pugh Score, FIB-4</li>
-        <li>Nephrology: eGFR, Creatinine Clearance</li>
-        <li>Obstetrics: Due Date, Apgar Score</li>
-        <li>Pulmonary: BODE Index, CURB-65</li>
-        <li>Orthopedics: Fracture Risk Assessment</li>
-        <li>ICU: APACHE, SOFA Scores</li>
-        <li>General: BMR, Caloric Needs</li>
+        <li>Accurate medical calculations</li>
+        <li>Responsive design with Tailwind CSS</li>
+        <li>Client-side processing for speed</li>
       </ul>
-      <SlideShow images={["/assets/projects-screenshots/clinical-calculators/cardiovascular.png", "/assets/projects-screenshots/clinical-calculators/neurology.png"]} />
-      <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-      <p className="font-mono mb-2">
-        Built with React Native and Expo for cross-platform support. React Navigation enables seamless navigation, while React Native Paper, MUI, and Tailwind CSS create a modern UI. Reanimated and Gesture Handler deliver smooth animations, and AsyncStorage ensures offline data persistence. Chart Kit and SVG visualizations enhance complex calculators.
-      </p>
-      <SlideShow images={["/assets/projects-screenshots/clinical-calculators/home.png"]} />
-      <p className="font-mono mb-2 mt-5 text-center">
-        Clinical Calculators is a powerful, accessible tool for clinicians, showcasing expertise in building complex, user-centric mobile apps with React Native.
-      </p>
     </div>
   ),
 };
