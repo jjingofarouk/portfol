@@ -1,70 +1,106 @@
-import { PROJECT_SKILLS } from "./projects";
-import { TypographyH3, TypographyP } from "@/components/ui/typography";
-import SlideShow from "@/components/slide-show";
-import { ProjectsLinks } from "./projects";
+// src/data/mediq.tsx
+import { ReactNode } from 'react';
+import { SiJavascript, SiReact, SiFirebase, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { Button } from '@/components/ui/button';
+import { TypographyH3, TypographyP } from '@/components/ui/typography';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import SlideShow from '@/components/slide-show';
 
-const BASE_PATH = "/assets/projects-screenshots";
+const BASE_PATH = '/assets/projects-screenshots';
 
-export const MediQ = {
-  id: "mediq",
-  category: "Health Tool",
-  title: "MediQ",
-  src: "/assets/projects-screenshots/mediq/home.png",
-  screenshots: ["home.png", "searches.png", "results.png"],
-  live: "https://mediq.vercel.app/",
-  github: "https://github.com/jjingofarouk/drug-interaction-checker",
+type Skill = {
+  title: string;
+  bg: string;
+  fg: string;
+  icon: ReactNode;
+};
+
+type Project = {
+  id: string;
+  category: string;
+  title: string;
+  src: string;
+  screenshots: string[];
+  skills: { frontend: Skill[]; backend: Skill[] };
+  content: ReactNode | any;
+  github?: string;
+  live: string;
+};
+
+const PROJECT_SKILLS = {
+  js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
+  react: { title: 'React.js', bg: 'black', fg: 'white', icon: <SiReact /> },
+  firebase: { title: 'Firebase', bg: 'black', fg: 'white', icon: <SiFirebase /> },
+  nextjs: { title: 'Next Js ', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
+  tailwind: { title: 'Tailwind', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+};
+
+const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+  return (
+    <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
+      <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={live}>
+        <Button variant="default" size="sm">
+          Visit Website
+          <ArrowUpRight className="ml-3 w-5 h-5" />
+        </Button>
+      </Link>
+      {repo && (
+        <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={repo}>
+          <Button variant="default" size="sm">
+            Github
+            <ArrowUpRight className="ml-3 w-5 h-5" />
+          </Button>
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export const MediQ: Project = {
+  id: 'mediq',
+  category: 'Health Tech',
+  title: 'MediQ',
+  src: `${BASE_PATH}/mediq/home.jpg`,
+  screenshots: ['home.jpg', 'records.png', 'appointments.png'],
+  live: 'https://mediq.vercel.app/',
+  github: 'https://github.com/jjingofarouk/mediq',
   skills: {
     frontend: [
       PROJECT_SKILLS.js,
       PROJECT_SKILLS.react,
-      PROJECT_SKILLS.css,
+      PROJECT_SKILLS.nextjs,
+      PROJECT_SKILLS.tailwind,
     ],
     backend: [
-      PROJECT_SKILLS.node,
+      PROJECT_SKILLS.firebase,
     ],
   },
   content: (
     <div>
       <TypographyP className="font-mono text-2xl text-center">
-        MediQ = Safety + Simplicity
+        MediQ = Smart Medical Records
       </TypographyP>
       <TypographyP className="font-mono">
-        MediQ is a React-based tool that lets you quickly check for potential interactions between medications. Search for two drugs, get detailed results, and stay informed—all in a clean, user-friendly interface. Your health, made simple.
+        MediQ is a Next.js platform for managing medical records and appointments with a focus on security and accessibility.
       </TypographyP>
-      <ProjectsLinks live="https://mediq.vercel.app/" repo="https://github.com/jjingofarouk/drug-interaction-checker" />
-      <TypographyH3 className="my-4 mt-8">Home Screen</TypographyH3>
+      <ProjectsLinks live="https://mediq.vercel.app/" repo="https://github.com/jjingofarouk/mediq" />
+      <TypographyH3 className="my-4 mt-8">Record Management</TypographyH3>
       <p className="font-mono mb-2">
-        Start with a straightforward interface designed to get you checking drug interactions in seconds.
+        Patients access and update their medical records securely.
       </p>
-      <SlideShow images={[`${BASE_PATH}/mediq/home.png`]} />
-      <TypographyH3 className="my-4 mt-8">Search Interface</TypographyH3>
+      <SlideShow images={[`${BASE_PATH}/mediq/records.png`]} />
+      <TypographyH3 className="my-4 mt-8">Appointment Scheduling</TypographyH3>
       <p className="font-mono mb-2">
-        Type in medication names and get real-time autocomplete suggestions from a comprehensive drug database.
+        Seamless booking and management of medical appointments.
       </p>
-      <SlideShow images={[`${BASE_PATH}/mediq/searches.png`]} />
-      <TypographyH3 className="my-4 mt-8">Interaction Results</TypographyH3>
-      <p className="font-mono mb-2">
-        View detailed interaction reports, including severity levels and alternative suggestions, all clearly presented.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/mediq/results.png`]} />
+      <SlideShow images={[`${BASE_PATH}/mediq/appointments.png`]} />
       <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-      <p className="font-mono mb-2">
-        Enjoy a fast, secure, and mobile-responsive experience with no personal data stored—just pure functionality.
-      </p>
       <ul className="font-mono list-disc list-inside mb-2">
-        <li>Advanced search with smart suggestions</li>
-        <li>Comprehensive interaction analysis</li>
-        <li>Optimized performance with minimal load times</li>
-        <li>Privacy-focused design with HTTPS encryption</li>
+        <li>Secure medical record storage</li>
+        <li>Appointment scheduling with Firebase</li>
+        <li>Responsive design with Tailwind CSS</li>
       </ul>
-      <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-      <p className="font-mono mb-2">
-        Built with React 18, this app utilizes modern JavaScript, React Hooks, and a local JSON database for efficient data handling.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/mediq/home.png`]} />
-      <p className="font-mono mb-2 mt-5">
-        Whether you’re a patient or a curious learner, MediQ is your go-to tool for understanding medication safety.
-      </p>
     </div>
   ),
 };
