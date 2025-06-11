@@ -1,81 +1,106 @@
-import { PROJECT_SKILLS } from "./projects";
-import { TypographyH3, TypographyP } from "@/components/ui/typography";
-import SlideShow from "@/components/slide-show";
-import { ProjectsLinks } from "./projects";
+// src/data/ssuubi.tsx
+import { ReactNode } from 'react';
+import { SiJavascript, SiReact, SiFirebase, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { Button } from '@/components/ui/button';
+import { TypographyH3, TypographyP } from '@/components/ui/typography';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import SlideShow from '@/components/slide-show';
 
-const BASE_PATH = "/assets/projects-screenshots";
+const BASE_PATH = '/assets/projects-screenshots';
 
-export const Ssuubi = {
-  id: "ssuubi",
-  category: "Mental Health Tech",
-  title: "Ssuubi Chatbot",
-  src: "/assets/projects-screenshots/ssuubi/home.png",
-  screenshots: ["home.png", "chat.png", "mood.png", "crisis.png"],
-  live: "https://ssuubi-mental-health-bot.onrender.com",
-  github: "https://github.com/jjingofarouk/ssuubi-mental-health-bot",
+type Skill = {
+  title: string;
+  bg: string;
+  fg: string;
+  icon: ReactNode;
+};
+
+type Project = {
+  id: string;
+  category: string;
+  title: string;
+  src: string;
+  screenshots: string[];
+  skills: { frontend: Skill[]; backend: Skill[] };
+  content: ReactNode | any;
+  github?: string;
+  live: string;
+};
+
+const PROJECT_SKILLS = {
+  js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
+  react: { title: 'React.js', bg: 'black', fg: 'white', icon: <SiReact /> },
+  firebase: { title: 'Firebase', bg: 'black', fg: 'white', icon: <SiFirebase /> },
+  nextjs: { title: 'Next Js ', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
+  tailwind: { title: 'Tailwind', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+};
+
+const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+  return (
+    <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
+      <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={live}>
+        <Button variant="default" size="sm">
+          Visit Website
+          <ArrowUpRight className="ml-3 w-5 h-5" />
+        </Button>
+      </Link>
+      {repo && (
+        <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={repo}>
+          <Button variant="default" size="sm">
+            Github
+            <ArrowUpRight className="ml-3 w-5 h-5" />
+          </Button>
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export const Ssuubi: Project = {
+  id: 'ssuubi',
+  category: 'Education Tech',
+  title: 'Ssuubi',
+  src: `${BASE_PATH}/ssuubi/home.jpg`,
+  screenshots: ['home.jpg', 'courses.png', 'dashboard.png'],
+  live: 'https://ssuubi.vercel.app/',
+  github: 'https://github.com/jjingofarouk/ssuubi',
   skills: {
     frontend: [
       PROJECT_SKILLS.js,
-      PROJECT_SKILLS.html,
+      PROJECT_SKILLS.react,
+      PROJECT_SKILLS.nextjs,
       PROJECT_SKILLS.tailwind,
-      PROJECT_SKILLS.fontAwesome,
     ],
     backend: [
-      PROJECT_SKILLS.python,
-      PROJECT_SKILLS.flask,
-      PROJECT_SKILLS.transformers,
-      PROJECT_SKILLS.sentenceTransformers,
-      PROJECT_SKILLS.googletrans,
+      PROJECT_SKILLS.firebase,
     ],
   },
   content: (
     <div>
       <TypographyP className="font-mono text-2xl text-center">
-        Ssuubi = Your Empathetic Mental Health Companion
+        Ssuubi = Empowering Education
       </TypographyP>
       <TypographyP className="font-mono">
-        Ssuubi is a Flask-powered mental health chatbot that delivers compassionate, intent-driven responses with a sleek, dark-mode UI inspired by clinical precision and cosmic calm. Built to support users through anxiety, depression, or crisis, it leverages AI to detect emotions and provide tailored guidance, reflecting my expertise in medical-tech innovation.
+        Ssuubi is a Next.js-based platform designed to enhance access to educational resources with course management and student progress tracking. It delivers a seamless experience for learners and educators.
       </TypographyP>
-      <ProjectsLinks live="https://ssuubi-mental-health-bot.onrender.com" repo="https://github.com/jjingofarouk/ssuubi-mental-health-bot" />
-      <TypographyH3 className="my-4 mt-8">Conversational Core</TypographyH3>
+      <ProjectsLinks live="https://ssuubi.vercel.app/" repo="https://github.com/jjingofarouk/ssuubi" />
+      <TypographyH3 className="my-4 mt-8">Course Portal</TypographyH3>
       <p className="font-mono mb-2">
-        Engage in real-time chats with Ssuubi, which uses Hugging Face models to analyze sentiments and intents, delivering responses from a curated JSON library—think of it as a digital therapist with a teal-accented touch.
+        Students browse and enroll in courses with a user-friendly interface.
       </p>
-      <SlideShow images={[`${BASE_PATH}/ssuubi/home.png`]} />
-      <TypographyH3 className="my-4 mt-8">Mood Check Interface</TypographyH3>
+      <SlideShow images={[`${BASE_PATH}/ssuubi/courses.png`]} />
+      <TypographyH3 className="my-4 mt-8">Educator Dashboard</TypographyH3>
       <p className="font-mono mb-2">
-        Select your mood (e.g., 😴 Tired, 😔 Not Great) via intuitive buttons, triggering personalized replies that validate your emotions with clinical empathy.
+        Educators manage course content and track student progress efficiently.
       </p>
-      <SlideShow images={[`${BASE_PATH}/ssuubi/mood.png`]} />
-      <TypographyH3 className="my-4 mt-8">Crisis Response System</TypographyH3>
-      <p className="font-mono mb-2">
-        For urgent messages like “I can’t go on,” Ssuubi activates crisis mode, displaying red-background alerts with resources like 988 and Text HOME to 741741, ensuring immediate support.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/ssuubi/crisis.png`]} />
-      <TypographyH3 className="my-4 mt-8">Chat Interface</TypographyH3>
-      <p className="font-mono mb-2">
-        The responsive chat UI, with typing indicators and a sidebar for history and resources, offers a seamless experience on mobile and desktop, wrapped in a dark `#202123` theme with `#10A37F` accents.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/ssuubi/chat.png`]} />
+      <SlideShow images={[`${BASE_PATH}/ssuubi/dashboard.png`]} />
       <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-      <p className="font-mono mb-2">
-        Designed for mental health support, Ssuubi combines AI precision with a user-centric interface, scalable for broader deployment with a nod to my medical-tech roots.
-      </p>
       <ul className="font-mono list-disc list-inside mb-2">
-        <li>Intent detection for anxiety, depression, sleep issues, and more</li>
-        <li>Real-time crisis detection with urgent resource links</li>
-        <li>In-memory context storage for lightweight operation</li>
-        <li>Multilingual support via Google Translate</li>
-        <li>Responsive, dark-mode UI with Tailwind CSS</li>
+        <li>Course enrollment and management</li>
+        <li>Real-time progress tracking with Firebase</li>
+        <li>Responsive design with Tailwind CSS</li>
       </ul>
-      <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-      <p className="font-mono mb-2">
-        Built with Flask, Python 3.12, and Hugging Face models (`distilbert-base-uncased` for sentiment, `all-MiniLM-L6-v2` for embeddings), Ssuubi uses Tailwind CSS and Font Awesome for a polished frontend. In-memory storage eliminates database needs, while regex patterns and JSON responses ensure robust intent handling.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/ssuubi/home.png`]} />
-      <p className="font-mono mb-2 mt-5 text-center">
-        Ssuubi is your cosmic guide through mental health challenges. Connect and find support today!
-      </p>
     </div>
   ),
 };
