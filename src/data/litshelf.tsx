@@ -1,80 +1,106 @@
-import { PROJECT_SKILLS } from "./projects";
-import { TypographyH3, TypographyP } from "@/components/ui/typography";
-import SlideShow from "@/components/slide-show";
-import { ProjectsLinks } from "./projects";
+// src/data/litshelf.tsx
+import { ReactNode } from 'react';
+import { SiJavascript, SiReact, SiFirebase, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { Button } from '@/components/ui/button';
+import { TypographyH3, TypographyP } from '@/components/ui/typography';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import SlideShow from '@/components/slide-show';
 
-const BASE_PATH = "/assets/projects-screenshots";
+const BASE_PATH = '/assets/projects-screenshots';
 
-export const LitShelf = {
-  id: "litshelf",
-  category: "Digital Library",
-  title: "LitShelf",
-  src: "/assets/projects-screenshots/litshelf/home.png",
-  screenshots: ["home.png", "book-list.png", "book-details.png", "reading-view.png"],
-  live: "https://litshelf.vercel.app",
-  github: "https://github.com/jjingofarouk/litshelf",
+type Skill = {
+  title: string;
+  bg: string;
+  fg: string;
+  icon: ReactNode;
+};
+
+type Project = {
+  id: string;
+  category: string;
+  title: string;
+  src: string;
+  screenshots: string[];
+  skills: { frontend: Skill[]; backend: Skill[] };
+  content: ReactNode | any;
+  github?: string;
+  live: string;
+};
+
+const PROJECT_SKILLS = {
+  js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
+  react: { title: 'React.js', bg: 'black', fg: 'white', icon: <SiReact /> },
+  firebase: { title: 'Firebase', bg: 'black', fg: 'white', icon: <SiFirebase /> },
+  nextjs: { title: 'Next Js ', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
+  tailwind: { title: 'Tailwind', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+};
+
+const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+  return (
+    <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
+      <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={live}>
+        <Button variant="default" size="sm">
+          Visit Website
+          <ArrowUpRight className="ml-3 w-5 h-5" />
+        </Button>
+      </Link>
+      {repo && (
+        <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={repo}>
+          <Button variant="default" size="sm">
+            Github
+            <ArrowUpRight className="ml-3 w-5 h-5" />
+          </Button>
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export const LitShelf: Project = {
+  id: 'litshelf',
+  category: 'Education Tech',
+  title: 'LitShelf',
+  src: `${BASE_PATH}/litshelf/home.jpg`,
+  screenshots: ['home.jpg', 'library.png', 'reading.png'],
+  live: 'https://litshelf.vercel.app/',
+  github: 'https://github.com/jjingofarouk/litshelf',
   skills: {
     frontend: [
-      PROJECT_SKILLS.ts,
+      PROJECT_SKILLS.js,
       PROJECT_SKILLS.react,
-      PROJECT_SKILLS.next,
+      PROJECT_SKILLS.nextjs,
       PROJECT_SKILLS.tailwind,
-      PROJECT_SKILLS.framerMotion,
     ],
     backend: [
-      PROJECT_SKILLS.node,
-      PROJECT_SKILLS.mongodb,
-      PROJECT_SKILLS.prisma,
+      PROJECT_SKILLS.firebase,
     ],
   },
   content: (
     <div>
       <TypographyP className="font-mono text-2xl text-center">
-        LitShelf = Your Digital Bookshelf
+        LitShelf = Digital Library
       </TypographyP>
       <TypographyP className="font-mono">
-        LitShelf is a Next.js-powered digital library app that brings your reading world to life. Browse, read, and manage books with a clean, book-inspired UI (#4a2c2a to #f5e8d3), offering a seamless experience for book lovers on any device.
+        LitShelf is a Next.js platform for managing and reading digital books.
       </TypographyP>
-      <ProjectsLinks live="https://litshelf.vercel.app" repo="https://github.com/jjingofarouk/litshelf" />
-      <TypographyH3 className="my-4 mt-8">Home Page</TypographyH3>
+      <ProjectsLinks live="https://litshelf.vercel.app/" repo="https://github.com/jjingofarouk/litshelf" />
+      <TypographyH3 className="my-4 mt-8">Library Interface</TypographyH3>
       <p className="font-mono mb-2">
-        Dive into a cozy landing page showcasing featured books and personalized recommendations, styled with warm tones and smooth Framer Motion animations.
+        Browse and manage a digital book collection.
       </p>
-      <SlideShow images={[`${BASE_PATH}/litshelf/home.png`]} />
-      <TypographyH3 className="my-4 mt-8">Book Catalog</TypographyH3>
+      <SlideShow images={[`${BASE_PATH}/litshelf/library.png`]} />
+      <TypographyH3 className="my-4 mt-8">Reading Mode</TypographyH3>
       <p className="font-mono mb-2">
-        Explore a responsive grid of books with filters for genre, author, or ratings, powered by Prisma and MongoDB for fast, dynamic queries.
+        Immersive reading experience with customizable settings.
       </p>
-      <SlideShow images={[`${BASE_PATH}/litshelf/book-list.png`]} />
-      <TypographyH3 className="my-4 mt-8">Book Details</TypographyH3>
-      <p className="font-mono mb-2">
-        View rich book profiles with summaries, reviews, and metadata, presented in a clean layout with Tailwind CSS and interactive elements.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/litshelf/book-details.png`]} />
-      <TypographyH3 className="my-4 mt-8">Reading View</TypographyH3>
-      <p className="font-mono mb-2">
-        Enjoy an immersive reading experience with customizable fonts and themes, optimized for focus and comfort across devices.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/litshelf/reading-view.png`]} />
+      <SlideShow images={[`${BASE_PATH}/litshelf/reading.png`]} />
       <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-      <p className="font-mono mb-2">
-        LitShelf combines functionality with a reader-first design, making it a haven for book enthusiasts.
-      </p>
       <ul className="font-mono list-disc list-inside mb-2">
-        <li>Dynamic book catalog with advanced filtering</li>
-        <li>Personalized reading recommendations</li>
-        <li>Immersive reading interface with customization</li>
-        <li>Secure user data management with MongoDB</li>
-        <li>Responsive, accessible UI for all devices</li>
+        <li>Digital book management</li>
+        <li>Secure storage with Firebase</li>
+        <li>Responsive design with Tailwind CSS</li>
       </ul>
-      <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-      <p className="font-mono mb-2">
-        Built with Next.js 13, TypeScript, and Tailwind CSS, LitShelf uses Prisma for MongoDB interactions, Framer Motion for animations, and a Node.js backend for robust data handling.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/litshelf/home.png`]} />
-      <p className="font-mono mb-2 mt-5 text-center">
-        LitShelf is where stories live. Start your reading journey today!
-      </p>
     </div>
   ),
 };
