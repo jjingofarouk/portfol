@@ -1,79 +1,106 @@
-import { PROJECT_SKILLS } from "./projects";
-import { TypographyH3, TypographyP } from "@/components/ui/typography";
-import SlideShow from "@/components/slide-show";
-import { ProjectsLinks } from "./projects";
+// src/data/bloodmatch.tsx
+import { ReactNode } from 'react';
+import { SiJavascript, SiReact, SiFirebase, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { Button } from '@/components/ui/button';
+import { TypographyH3, TypographyP } from '@/components/ui/typography';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import SlideShow from '@/components/slide-show';
 
-const BASE_PATH = "/assets/projects-screenshots";
+const BASE_PATH = '/assets/projects-screenshots';
 
-export const BloodMatch = {
-  id: "bloodmatch",
-  category: "Healthcare",
-  title: "BloodMatch",
-  src: "/assets/projects-screenshots/bloodmatch/home.png",
-  screenshots: ["home.png", "donor-search.png", "request-form.png", "map-view.png"],
-  live: "https://bloodmatch.vercel.app",
-  github: "https://github.com/jjingofarouk/bloodmatch",
+type Skill = {
+  title: string;
+  bg: string;
+  fg: string;
+  icon: ReactNode;
+};
+
+type Project = {
+  id: string;
+  category: string;
+  title: string;
+  src: string;
+  screenshots: string[];
+  skills: { frontend: Skill[]; backend: Skill[] };
+  content: ReactNode | any;
+  github?: string;
+  live: string;
+};
+
+const PROJECT_SKILLS = {
+  js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
+  react: { title: 'React.js', bg: 'black', fg: 'white', icon: <SiReact /> },
+  firebase: { title: 'Firebase', bg: 'black', fg: 'white', icon: <SiFirebase /> },
+  nextjs: { title: 'Next Js ', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
+  tailwind: { title: 'Tailwind', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+};
+
+const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+  return (
+    <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
+      <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={live}>
+        <Button variant="default" size="sm">
+          Visit Website
+          <ArrowUpRight className="ml-3 w-5 h-5" />
+        </Button>
+      </Link>
+      {repo && (
+        <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={repo}>
+          <Button variant="default" size="sm">
+            Github
+            <ArrowUpRight className="ml-3 w-5 h-5" />
+          </Button>
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export const BloodMatch: Project = {
+  id: 'bloodmatch',
+  category: 'Health Tech',
+  title: 'BloodMatch',
+  src: `${BASE_PATH}/bloodmatch/home.jpg`,
+  screenshots: ['home.jpg', 'donor.png', 'request.png'],
+  live: 'https://bloodmatch.vercel.app/',
+  github: 'https://github.com/jjingofarouk/bloodmatch',
   skills: {
     frontend: [
-      PROJECT_SKILLS.ts,
+      PROJECT_SKILLS.js,
       PROJECT_SKILLS.react,
-      PROJECT_SKILLS.reactLeaflet,
+      PROJECT_SKILLS.nextjs,
       PROJECT_SKILLS.tailwind,
     ],
     backend: [
-      PROJECT_SKILLS.node,
-      PROJECT_SKILLS.mongodb,
-      PROJECT_SKILLS.express,
+      PROJECT_SKILLS.firebase,
     ],
   },
   content: (
     <div>
       <TypographyP className="font-mono text-2xl text-center">
-        BloodMatch = Save Lives with Connection
+        BloodMatch = Connecting Blood Donors
       </TypographyP>
       <TypographyP className="font-mono">
-        BloodMatch is a React-based platform connecting blood donors with those in need. Featuring a geo-powered map and a vibrant UI (#b91c1c to #fee2e2), it streamlines donations with real-time matching and secure data handling.
+        BloodMatch is a Next.js platform for coordinating blood donations and requests.
       </TypographyP>
-      <ProjectsLinks live="https://bloodmatch.vercel.app" repo="https://github.com/jjingofarouk/bloodmatch" />
-      <TypographyH3 className="my-4 mt-8">Home Page</TypographyH3>
+      <ProjectsLinks live="https://bloodmatch.vercel.app/" repo="https://github.com/jjingofarouk/bloodmatch" />
+      <TypographyH3 className="my-4 mt-8">Donor Portal</TypographyH3>
       <p className="font-mono mb-2">
-        A bold home page invites users to search for donors or request blood, styled with Tailwind CSS and a lifesaving aesthetic.
+        Donors register and manage their availability.
       </p>
-      <SlideShow images={[`${BASE_PATH}/bloodmatch/home.png`]} />
-      <TypographyH3 className="my-4 mt-8">Donor Search</TypographyH3>
+      <SlideShow images={[`${BASE_PATH}/bloodmatch/donor.png`]} />
+      <TypographyH3 className="my-4 mt-8">Request System</TypographyH3>
       <p className="font-mono mb-2">
-        Find donors by blood type and location with real-time filters, backed by MongoDB for fast, secure queries.
+        Request blood with specific requirements.
       </p>
-      <SlideShow images={[`${BASE_PATH}/bloodmatch/donor-search.png`]} />
-      <TypographyH3 className="my-4 mt-8">Request Form</TypographyH3>
-      <p className="font-mono mb-2">
-        Submit urgent blood requests with a simple form, featuring validation and instant notifications to nearby donors.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/bloodmatch/request-form.png`]} />
-      <TypographyH3 className="my-4 mt-8">Map View</TypographyH3>
-      <p className="font-mono mb-2">
-        Locate donors on an interactive map using React-Leaflet, with custom markers for a seamless, mobile-friendly experience.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/bloodmatch/map-view.png`]} />
+      <SlideShow images={[`${BASE_PATH}/bloodmatch/request.png`]} />
       <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-      <p className="font-mono mb-2">
-        BloodMatch is built to save lives through efficient, secure connections.
-      </p>
       <ul className="font-mono list-disc list-inside mb-2">
-        <li>Geo-based donor matching</li>
-        <li>Real-time blood request system</li>
-        <li>Interactive map with donor locations</li>
-        <li>Secure data with MongoDB and Express</li>
-        <li>Responsive, accessible UI</li>
+        <li>Blood donation coordination</li>
+        <li>Secure backend with Firebase</li>
+        <li>Responsive design with Tailwind CSS</li>
       </ul>
-      <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
-      <p className="font-mono mb-2">
-        Developed with React 18, TypeScript, and Tailwind CSS, BloodMatch uses React-Leaflet for mapping and a Node.js/Express backend with MongoDB for real-time data.
-      </p>
-      <SlideShow images={[`${BASE_PATH}/bloodmatch/home.png`]} />
-      <p className="font-mono mb-2 mt-5 text-center">
-        BloodMatch bridges the gap between donors and recipients. Join the lifesaving network today!
-      </p>
     </div>
   ),
 };
