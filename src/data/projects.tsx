@@ -175,7 +175,7 @@ export const PROJECT_SKILLS = {
   framerMotion: { title: "Framer Motion", bg: "black", fg: "white", icon: <TbBrandFramerMotion /> },
   heroicons: { title: "Hero Icons", bg: "black", fg: "white", icon: <TbBrandFramerMotion /> },
   supabase: { title: "Supabase", bg: "black", fg: "white", icon: <SiFirebase /> },
-  redux: { title: "Redux", bg: "black", fg: "white", icon: <SiRedux seekingalpha.com/company/Redux" /> },
+  redux: { title: "Redux", bg: "black", fg: "white", icon: <SiRedux /> },
   css: { title: "CSS", bg: "black", fg: "white", icon: <SiCss3 /> },
   git: { title: "Git", bg: "black", fg: "white", icon: <SiRedux /> },
   npm: { title: "NPM", bg: "black", fg: "white", icon: <SiNpm /> },
