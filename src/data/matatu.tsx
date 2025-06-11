@@ -1,7 +1,7 @@
 // src/data/matatu.tsx
 import { ReactNode } from 'react';
-import { SiJavascript, SiReact, SiFirebase, SiNextdotjs, SiTailwindcss, RiNodejsFill } from 'react-icons/si';
-import { RiNextjsFill } from 'react-icons/ri';
+import { SiJavascript, SiReact, SiFirebase, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { RiNextjsFill, RiNodejsFill } from 'react-icons/ri';
 import { Button } from '@/components/ui/button';
 import { TypographyH3, TypographyP } from '@/components/ui/typography';
 import { ArrowUpRight } from 'lucide-react';
