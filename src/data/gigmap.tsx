@@ -61,8 +61,8 @@ export const GigMap: Project = {
   id: 'gigmap',
   category: 'Freelance Tech',
   title: 'GigMap',
-  src: `${BASE_PATH}/gigmap/home.jpg`,
-  screenshots: ['home.jpg', 'gigs.png', 'map.png'],
+  src: `${BASE_PATH}/gigmap/home.png`,
+  screenshots: ['home.png', 'gigs.png', 'map.png'],
   live: 'https://gigmap.vercel.app/',
   github: 'https://github.com/jjingofarouk/gigmap',
   skills: {
