@@ -61,8 +61,8 @@ export const Zano: Project = {
   id: 'zano',
   category: 'Health Tech',
   title: 'Zano',
-  src: `${BASE_PATH}/zano/home.png`,
-  screenshots: ['home.png', 'telemedicine.png', 'dashboard.png'],
+  src: `${BASE_PATH}/zano/home.jpg`,
+  screenshots: ['home.jpg', 'telemedicine.png', 'dashboard.png'],
   live: 'https://zano.vercel.app/',
   github: 'https://github.com/jjingofarouk/zano',
   skills: {
