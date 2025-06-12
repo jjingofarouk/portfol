@@ -60,8 +60,8 @@ export const ClinicalCalculators: Project = {
   id: 'clinical-calculators',
   category: 'Health Tech',
   title: 'Clinical Calculators',
-  src: `${BASE_PATH}/clinical-calculators/home.jpg`,
-  screenshots: ['home.jpg', 'calculators.png', 'results.png'],
+  src: `${BASE_PATH}/clinical-calculators/home.png`,
+  screenshots: ['home.png', 'calculators.png', 'results.png'],
   live: 'https://clinical-calculators.vercel.app/',
   github: 'https://github.com/jjingofarouk/clinical-calculators',
   skills: {
