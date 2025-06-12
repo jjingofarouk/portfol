@@ -61,8 +61,8 @@ export const BloodMatch: Project = {
   id: 'bloodmatch',
   category: 'Health Tech',
   title: 'BloodMatch',
-  src: `${BASE_PATH}/bloodmatch/home.png`,
-  screenshots: ['home.png', 'donor.png', 'request.png'],
+  src: `${BASE_PATH}/bloodmatch/home.jpg`,
+  screenshots: ['home.jpg', 'donor.png', 'request.png'],
   live: 'https://bloodmatch.vercel.app/',
   github: 'https://github.com/jjingofarouk/bloodmatch',
   skills: {
