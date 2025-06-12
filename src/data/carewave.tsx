@@ -62,8 +62,8 @@ export const CareWave: Project = {
   id: 'carewave',
   category: 'Health Tech',
   title: 'CareWave',
-  src: `${BASE_PATH}/carewave/home.jpg`,
-  screenshots: ['home.jpg', 'dashboard.png', 'booking.png'],
+  src: `${BASE_PATH}/carewave/home.png`,
+  screenshots: ['home.png', 'dashboard.png', 'booking.png'],
   live: 'https://carewave.vercel.app/',
   github: 'https://github.com/jjingofarouk/carewave',
   skills: {
@@ -90,7 +90,7 @@ export const CareWave: Project = {
       <p className="font-mono mb-2">
         Patients can view upcoming appointments, book new ones, and manage their profiles with ease.
       </p>
-      <SlideShow images={[`${BASE_PATH}/carewave/home.jpg`]} />
+      <SlideShow images={[`${BASE_PATH}/carewave/home.png`]} />
       <TypographyH3 className="my-4 mt-8">Provider Interface</TypographyH3>
       <p className="font-mono mb-2">
         Healthcare providers manage schedules and patient data through a clean, intuitive dashboard.
