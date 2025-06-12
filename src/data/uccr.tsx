@@ -61,8 +61,8 @@ export const UCCR: Project = {
   id: 'uccr',
   category: 'Health Tech',
   title: 'UCCR',
-  src: `${BASE_PATH}/uccr/home.jpg`,
-  screenshots: ['home.jpg', 'calculator.png', 'results.png'],
+  src: `${BASE_PATH}/uccr/home.png`,
+  screenshots: ['home.png', 'calculator.png', 'results.png'],
   live: 'https://uccr.vercel.app/',
   github: 'https://github.com/jjingofarouk/uccr',
   skills: {
