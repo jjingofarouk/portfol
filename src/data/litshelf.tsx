@@ -61,8 +61,8 @@ export const LitShelf: Project = {
   id: 'litshelf',
   category: 'Education Tech',
   title: 'LitShelf',
-  src: `${BASE_PATH}/litshelf/home.jpg`,
-  screenshots: ['home.jpg', 'library.png', 'reading.png'],
+  src: `${BASE_PATH}/litshelf/home.png`,
+  screenshots: ['home.png', 'library.png', 'reading.png'],
   live: 'https://litshelf.vercel.app/',
   github: 'https://github.com/jjingofarouk/litshelf',
   skills: {
