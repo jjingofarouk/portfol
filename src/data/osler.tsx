@@ -61,8 +61,8 @@ export const DrJingo: Project = {
   id: 'osler',
   category: 'Health Tech',
   title: 'DrJingo',
-  src: `${BASE_PATH}/osler/home.jpg`,
-  screenshots: ['home.jpg', 'consultation.png', 'dashboard.png'],
+  src: `${BASE_PATH}/osler/home.png`,
+  screenshots: ['home.png', 'consultation.png', 'dashboard.png'],
   live: 'https://drjingo.vercel.app/',
   github: 'https://github.com/jjingofarouk/drjingo',
   skills: {
