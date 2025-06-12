@@ -1,6 +1,20 @@
 // src/data/projects.tsx
-import dynamic from 'next/dynamic';
 import { ReactNode } from 'react';
+import { CareWave } from './carewave';
+import { Ssuubi } from './ssuubi';
+import { MediQ } from './mediq';
+import { CareView } from './careview';
+import { Zano } from './zano';
+import { ClinicalCalculators } from './clinical-calculators';
+import { MatatuTracker } from './matatu';
+import { Dwaliro } from './dwaliro';
+import { FreeResume } from './free-resume';
+import { GigMap } from './gigmap';
+import { LitShelf } from './litshelf';
+import { DrJingo } from './osler';
+import { UCCR } from './uccr';
+import { BloodMatch } from './bloodmatch';
+import { TouchedHearts } from './touched-hearts';
 
 export type Skill = {
   title: string;
@@ -20,22 +34,6 @@ export type Project = {
   github?: string;
   live: string;
 };
-
-const CareWave = dynamic(() => import('./carewave').then(mod => mod.CareWave), { ssr: false });
-const Ssuubi = dynamic(() => import('./ssuubi').then(mod => mod.Ssuubi), { ssr: false });
-const MediQ = dynamic(() => import('./mediq').then(mod => mod.MediQ), { ssr: false });
-const CareView = dynamic(() => import('./careview').then(mod => mod.CareView), { ssr: false });
-const Zano = dynamic(() => import('./zano').then(mod => mod.Zano), { ssr: false });
-const ClinicalCalculators = dynamic(() => import('./clinical-calculators').then(mod => mod.ClinicalCalculators), { ssr: false });
-const MatatuTracker = dynamic(() => import('./matatu').then(mod => mod.MatatuTracker), { ssr: false });
-const Dwaliro = dynamic(() => import('./dwaliro').then(mod => mod.Dwaliro), { ssr: false });
-const FreeResume = dynamic(() => import('./free-resume').then(mod => mod.FreeResume), { ssr: false });
-const GigMap = dynamic(() => import('./gigmap').then(mod => mod.GigMap), { ssr: false });
-const LitShelf = dynamic(() => import('./litshelf').then(mod => mod.LitShelf), { ssr: false });
-const DrJingo = dynamic(() => import('./osler').then(mod => mod.DrJingo), { ssr: false });
-const UCCR = dynamic(() => import('./uccr').then(mod => mod.UCCR), { ssr: false });
-const BloodMatch = dynamic(() => import('./bloodmatch').then(mod => mod.BloodMatch), { ssr: false });
-const TouchedHearts = dynamic(() => import('./touched-hearts').then(mod => mod.TouchedHearts), { ssr: false });
 
 const projects: Project[] = [
   CareWave,
