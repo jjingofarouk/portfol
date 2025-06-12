@@ -61,8 +61,8 @@ export const TouchedHearts: Project = {
   id: 'touched-hearts',
   category: 'Social Good',
   title: 'Touched Hearts',
-  src: `${BASE_PATH}/touched-hearts/home.jpg`,
-  screenshots: ['home.jpg', 'donations.png', 'events.png'],
+  src: `${BASE_PATH}/touched-hearts/home.png`,
+  screenshots: ['home.png', 'donations.png', 'events.png'],
   live: 'https://touched-hearts.vercel.app/',
   github: 'https://github.com/jjingofarouk/touched-hearts',
   skills: {
