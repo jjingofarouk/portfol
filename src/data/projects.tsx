@@ -15,6 +15,7 @@ import { DrJingo } from './osler';
 import { UCCR } from './uccr';
 import { BloodMatch } from './bloodmatch';
 import { TouchedHearts } from './touched-hearts';
+import { ZunoBotics } from './zunobotics'; // Import the ZunoBotics project
 
 export type Skill = {
   title: string;
@@ -51,6 +52,7 @@ const projects: Project[] = [
   UCCR,
   BloodMatch,
   TouchedHearts,
+  ZunoBotics,
 ];
 
 export default projects;
