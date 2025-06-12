@@ -12,9 +12,10 @@ interface BlogPost {
   excerpt: string;
   slug: string;
   createdAt: string;
+  imageUrl: string;
 }
 
-// Static blog posts (shared with [slug].tsx)
+// Static blog posts (can be replaced with dynamic data fetching)
 const blogPosts: BlogPost[] = [
   {
     id: "1",
@@ -22,6 +23,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "Learn how to structure and optimize your Next.js apps for performance and scalability.",
     slug: "/blog/nextjs-scalability",
     createdAt: "2025-04-01",
+    imageUrl: "/images/nextjs-scalability.jpg",
   },
   {
     id: "2",
@@ -29,6 +31,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "A deep dive into my experiences as both a doctor and a web developer.",
     slug: "/blog/medicine-and-tech",
     createdAt: "2025-03-15",
+    imageUrl: "/images/medicine-and-tech.jpg",
   },
   {
     id: "3",
@@ -36,6 +39,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "Techniques and best practices to make your React apps faster and more efficient.",
     slug: "/blog/react-performance",
     createdAt: "2025-02-20",
+    imageUrl: "/images/react-performance.jpg",
   },
 ];
 
@@ -83,15 +87,22 @@ const BlogSection = () => {
                 aria-label={`Read blog post: ${post.title}`}
               >
                 <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-transform transform group-hover:scale-105 group-focus:scale-105">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="mt-2 text-neutral-600 dark:text-neutral-400 text-sm sm:text-base line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <span className="mt-4 inline-block text-blue-600 dark:text-blue-400 font-medium text-sm sm:text-base group-hover:underline">
-                    Read More →
-                  </span>
+                  <img
+                    src={post.imageUrl}
+                    alt={post.title}
+                    className="w-full h-40 object-cover rounded-t-lg"
+                  />
+                  <div className="mt-4">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 text-neutral-600 dark:text-neutral-400 text-sm sm:text-base line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    <span className="mt-4 inline-block text-blue-600 dark:text-blue-400 font-medium text-sm sm:text-base group-hover:underline">
+                      Read More →
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))
