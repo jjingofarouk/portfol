@@ -61,8 +61,8 @@ export const MediQ: Project = {
   id: 'mediq',
   category: 'Health Tech',
   title: 'MediQ',
-  src: `${BASE_PATH}/mediq/home.jpg`,
-  screenshots: ['home.jpg', 'records.png', 'appointments.png'],
+  src: `${BASE_PATH}/mediq/home.png`,
+  screenshots: ['home.png', 'records.png', 'appointments.png'],
   live: 'https://mediq.vercel.app/',
   github: 'https://github.com/jjingofarouk/mediq',
   skills: {
