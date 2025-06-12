@@ -61,8 +61,8 @@ export const CareView: Project = {
   id: 'careview',
   category: 'Health Tech',
   title: 'CareView',
-  src: `${BASE_PATH}/careview/home.jpg`,
-  screenshots: ['home.jpg', 'dashboard.png', 'reports.png'],
+  src: `${BASE_PATH}/careview/home.png`,
+  screenshots: ['home.png', 'dashboard.png', 'reports.png'],
   live: 'https://careview.vercel.app/',
   github: 'https://github.com/jjingofarouk/careview',
   skills: {
