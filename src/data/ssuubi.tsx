@@ -61,8 +61,8 @@ export const Ssuubi: Project = {
   id: 'ssuubi',
   category: 'Education Tech',
   title: 'Ssuubi',
-  src: `${BASE_PATH}/ssuubi/home.jpg`,
-  screenshots: ['home.jpg', 'courses.png', 'dashboard.png'],
+  src: `${BASE_PATH}/ssuubi/home.png`,
+  screenshots: ['home.png', 'courses.png', 'dashboard.png'],
   live: 'https://ssuubi.vercel.app/',
   github: 'https://github.com/jjingofarouk/ssuubi',
   skills: {
