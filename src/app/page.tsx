@@ -13,21 +13,19 @@ import AboutSection from "@/components/sections/about";
 
 function MainPage() {
   return (
-    <>
-      <SmoothScroll>
-        <main className={cn("bg-slate-100 dark:bg-transparent")}>
-          <div className="top-0 z-0 fixed w-full h-screen">
-            <AnimatedBackground />
-          </div>
-          <HeroSection />
-          <AboutSection />
-          <SkillsSection />
-          <ProjectsSection />
-          <BlogSection />
-          <ContactSection />
-        </main>
-      </SmoothScroll>
-    </>
+    <SmoothScroll>
+      <main className={cn("bg-slate-100 dark:bg-transparent p-2")}>
+        <div className="top-0 z-0 fixed w-full h-screen">
+          <AnimatedBackground />
+        </div>
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <BlogSection />
+        <ContactSection />
+      </main>
+    </SmoothScroll>
   );
 }
 
