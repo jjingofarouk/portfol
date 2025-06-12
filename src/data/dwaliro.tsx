@@ -61,8 +61,8 @@ export const Dwaliro: Project = {
   id: 'dwaliro',
   category: 'Health Tech',
   title: 'Dwaliro',
-  src: `${BASE_PATH}/dwaliro/home.jpg`,
-  screenshots: ['home.jpg', 'patient-portal.png', 'dashboard.png'],
+  src: `${BASE_PATH}/dwaliro/home.png`,
+  screenshots: ['home.png', 'patient-portal.png', 'dashboard.png'],
   live: 'https://dwaliro.vercel.app/',
   github: 'https://github.com/jjingofarouk/dwaliro',
   skills: {
