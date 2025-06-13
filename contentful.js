@@ -1,6 +1,6 @@
 import { createClient } from 'contentful';
 
 export const contentfulClient = createClient({
-  space: 'your_space_id', // Replace with your Space ID
-  accessToken: 'your_access_token', // Replace with your Content Delivery API Access Token
+  space: process.env.CONTENTFUL_SPACE_ID, // Use environment variable for space ID
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN, // Use environment variable for access token
 });
