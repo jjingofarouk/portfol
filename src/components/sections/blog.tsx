@@ -1,49 +1,51 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import React from "react";
-import { BoxReveal } from "../reveal-animations";
-import { cn } from "@/lib/utils";
+import { contentfulClient } from "@/contentful";
 
-// Define BlogPost type
 interface BlogPost {
   id: string;
   title: string;
-  excerpt: string;
   slug: string;
-  createdAt: string;
-  imageUrl: string;
+  excerpt: string;
+  coverImage: string;
+  publishedDate: string;
 }
 
-// Static blog posts (can be replaced with dynamic data fetching)
-const blogPosts: BlogPost[] = [
-  {
-    id: "1",
-    title: "Building Scalable Web Apps with Next.js",
-    excerpt: "Learn how to structure and optimize your Next.js apps for performance and scalability.",
-    slug: "/blog/nextjs-scalability",
-    createdAt: "2025-04-01",
-    imageUrl: "/images/nextjs-scalability.jpg",
-  },
-  {
-    id: "2",
-    title: "Balancing Medicine and Tech: My Journey",
-    excerpt: "A deep dive into my experiences as both a doctor and a web developer.",
-    slug: "/blog/medicine-and-tech",
-    createdAt: "2025-03-15",
-    imageUrl: "/images/medicine-and-tech.jpg",
-  },
-  {
-    id: "3",
-    title: "Optimizing React Apps for Performance",
-    excerpt: "Techniques and best practices to make your React apps faster and more efficient.",
-    slug: "/blog/react-performance",
-    createdAt: "2025-02-20",
-    imageUrl: "/images/react-performance.jpg",
-  },
-];
-
 const BlogSection = () => {
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch blog posts from Contentful
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await contentfulClient.getEntries({
+          content_type: "blogPost", // The ID of your "Blog Post" content type
+          order: "-fields.publishedDate", // Sort by published date in descending order
+        });
+
+        const posts = response.items.map((item: any) => ({
+          id: item.sys.id,
+          title: item.fields.title,
+          slug: item.fields.slug,
+          excerpt: item.fields.excerpt,
+          coverImage: item.fields.coverImage?.fields?.file?.url,
+          publishedDate: item.fields.publishedDate,
+        }));
+
+        setBlogPosts(posts);
+      } catch (error) {
+        console.error("Failed to fetch blog posts:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <section
       id="blog"
@@ -53,28 +55,24 @@ const BlogSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center">
-          <Link href="#blog" aria-label="Blog Section">
-            <BoxReveal width="100%">
-              <h2
-                id="blog-heading"
-                className={cn(
-                  "bg-clip-text text-3xl sm:text-4xl md:text-5xl text-transparent font-bold",
-                  "bg-gradient-to-b from-black/80 to-black/50",
-                  "dark:from-white/80 dark:to-white/20"
-                )}
-              >
-                Blog
-              </h2>
-            </BoxReveal>
-          </Link>
+          <h2
+            id="blog-heading"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white"
+          >
+            Blog
+          </h2>
           <p className="mt-4 text-neutral-600 dark:text-neutral-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Insights, tutorials, and my personal journey in tech & medicine.
+            Explore the latest insights, tutorials, and stories.
           </p>
         </div>
 
-        {/* Blog Post Cards */}
+        {/* Blog Posts */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogPosts.length === 0 ? (
+          {loading ? (
+            <p className="text-center col-span-full text-neutral-600 dark:text-neutral-300">
+              Loading blog posts...
+            </p>
+          ) : blogPosts.length === 0 ? (
             <p className="text-center col-span-full text-neutral-600 dark:text-neutral-300">
               No blog posts available. Check back soon!
             </p>
@@ -82,16 +80,18 @@ const BlogSection = () => {
             blogPosts.map((post) => (
               <Link
                 key={post.id}
-                href={post.slug}
+                href={`/blog/${post.slug}`}
                 className="group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg"
                 aria-label={`Read blog post: ${post.title}`}
               >
                 <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-transform transform group-hover:scale-105 group-focus:scale-105">
-                  <img
-                    src={post.imageUrl}
-                    alt={post.title}
-                    className="w-full h-40 object-cover rounded-t-lg"
-                  />
+                  {post.coverImage && (
+                    <img
+                      src={`https:${post.coverImage}`}
+                      alt={post.title}
+                      className="w-full h-40 object-cover rounded-t-lg"
+                    />
+                  )}
                   <div className="mt-4">
                     <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white line-clamp-2">
                       {post.title}
