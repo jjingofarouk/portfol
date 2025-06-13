@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { contentfulClient } from "@/contentful";
+import { contentfulClient } from "@/lib/contentful";
 
 interface BlogPost {
   id: string;
