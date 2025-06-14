@@ -71,7 +71,7 @@ export const UCCR: Project = {
     'inbox.png',
     'mobile-view.png',
   ],
-  live: 'https://uccrug.vercel.app',
+  live: 'https://www.ugandacasereports.org',
   github: 'https://github.com/jjingofarouk/uccr',
   skills: {
     frontend: [
