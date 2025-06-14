@@ -1,4 +1,4 @@
-import { contentfulClient } from "@/contentful";
+import { contentfulClient } from "@/lib/contentful";
 
 export const getStaticPaths = async () => {
   const response = await contentfulClient.getEntries({
