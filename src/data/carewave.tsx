@@ -62,7 +62,7 @@ const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => (
 
 export const CareWave: Project = {
   id: 'carewave',
-  category: 'Health Tech',
+  category: 'Hospital Management System',
   title: 'CareWave',
   src: `${BASE_PATH}/carewave/home.png`,
   screenshots: ['home.png', 'telemedicine.png', 'dashboard.png', 'billing.png', 'clinical.png', 'inventory.png'],
