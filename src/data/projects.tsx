@@ -13,7 +13,6 @@ import { GigMap } from './gigmap';
 import { LitShelf } from './litshelf';
 import { DrJingo } from './osler';
 import { UCCR } from './uccr';
-import { BloodMatch } from './bloodmatch';
 import { TouchedHearts } from './touched-hearts';
 import { ZunoBotics } from './zunobotics'; // Import the ZunoBotics project
 
@@ -50,7 +49,6 @@ const projects: Project[] = [
   LitShelf,
   DrJingo,
   UCCR,
-  BloodMatch,
   TouchedHearts,
   ZunoBotics,
 ];
