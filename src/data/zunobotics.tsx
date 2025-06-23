@@ -60,8 +60,8 @@ export const ZunoBotics: Project = {
   id: 'zunobotics',
   category: 'Robotics & Automation',
   title: 'ZunoBotics',
-  src: `${BASE_PATH}/zunobotics/home.png`,
-  screenshots: ['home.png', 'features.png', 'dashboard.png'],
+  src: `${BASE_PATH}/zunobotics/home.jpg`,
+  screenshots: ['home.jpg', 'features.png', 'dashboard.png'],
   live: 'https://zunobotics.com/',
   github: 'https://github.com/jjingofarouk/ZunoBotic',
   skills: {
