@@ -1,6 +1,5 @@
-// src/data/osler.tsx
 import { ReactNode } from 'react';
-import { SiJavascript, SiReact, SiFirebase, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { SiJavascript, SiJquery, SiPython, SiFlask, SiBootstrap } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 import { TypographyH3, TypographyP } from '@/components/ui/typography';
 import { ArrowUpRight } from 'lucide-react';
@@ -23,17 +22,19 @@ type Project = {
   src: string;
   screenshots: string[];
   skills: { frontend: Skill[]; backend: Skill[] };
-  content: ReactNode | any;
+  content: ReactNode;
   github?: string;
   live: string;
 };
 
 const PROJECT_SKILLS = {
   js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
-  react: { title: 'React.js', bg: 'black', fg: 'white', icon: <SiReact /> },
-  firebase: { title: 'Firebase', bg: 'black', fg: 'white', icon: <SiFirebase /> },
-  nextjs: { title: 'Next Js ', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
-  tailwind: { title: 'Tailwind', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+  jquery: { title: 'jQuery', bg: 'black', fg: 'white', icon: <SiJquery /> },
+  css: { title: 'CSS3', bg: 'black', fg: 'white', icon: <SiJavascript /> },
+  bootstrap: { title: 'Bootstrap', bg: 'black', fg: 'white', icon: <SiBootstrap /> },
+  python: { title: 'Python', bg: 'black', fg: 'white', icon: <SiPython /> },
+  flask: { title: 'Flask', bg: 'black', fg: 'white', icon: <SiFlask /> },
+  gemini: { title: 'Gemini API', bg: 'black', fg: 'white', icon: <SiPython /> },
 };
 
 const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
@@ -48,7 +49,7 @@ const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
       {repo && (
         <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={repo}>
           <Button variant="default" size="sm">
-            Github
+            GitHub
             <ArrowUpRight className="ml-3 w-5 h-5" />
           </Button>
         </Link>
@@ -59,48 +60,79 @@ const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
 
 export const DrJingo: Project = {
   id: 'osler',
-  category: 'Health Tech',
+  category: 'Health Tool',
   title: 'AskOsler',
   src: `${BASE_PATH}/osler/home.png`,
-  screenshots: ['home.png', 'consultation.png', 'dashboard.png'],
-  live: 'https://drjingo.vercel.app/',
-  github: 'https://github.com/jjingofarouk/drjingo',
+  screenshots: ['home.png', 'chat.png', 'case_study_1.png', 'case_study_2.png', 'history.png', 'navigation.png'],
+  live: 'https://oslermentor.onrender.com/',
+  github: 'https://github.com/jjingofarouk/osler',
   skills: {
     frontend: [
       PROJECT_SKILLS.js,
-      PROJECT_SKILLS.react,
-      PROJECT_SKILLS.nextjs,
-      PROJECT_SKILLS.tailwind,
+      PROJECT_SKILLS.jquery,
+      PROJECT_SKILLS.css,
+      PROJECT_SKILLS.bootstrap,
     ],
     backend: [
-      PROJECT_SKILLS.firebase,
+      PROJECT_SKILLS.python,
+      PROJECT_SKILLS.flask,
+      PROJECT_SKILLS.gemini,
     ],
   },
   content: (
     <div>
       <TypographyP className="font-mono text-2xl text-center">
-        DrJingo = Virtual Doctor Consultations
+        AskOsler: Clinical Mentorship and Modern Web Technology
       </TypographyP>
       <TypographyP className="font-mono">
-        DrJingo is a Next.js platform for virtual doctor consultations and health management.
+        AskOsler is a Flask-based Progressive Web App (PWA) designed to provide clinical mentorship through a virtual Ugandan clinician, powered by the Gemini API. It delivers real-time, evidence-based medical guidance with features including interactive case studies, chat history, and intuitive navigation, demonstrating expertise in Python, Flask, and responsive front-end development.
       </TypographyP>
-      <ProjectsLinks live="https://drjingo.vercel.app/" repo="https://github.com/jjingofarouk/drjingo" />
-      <TypographyH3 className="my-4 mt-8">Consultation Portal</TypographyH3>
+      <ProjectsLinks live="https://oslermentor.onrender.com/" repo="https://github.com/jjingofarouk/osler" />
+      <TypographyH3 className="my-4 mt-8">Home Screen</TypographyH3>
       <p className="font-mono mb-2">
-        Schedule and conduct virtual consultations with doctors.
+        The home screen features a clean, modern interface built with Bootstrap and custom CSS, ensuring a responsive and accessible design across all devices.
       </p>
-      <SlideShow images={[`${BASE_PATH}/osler/consultation.png`]} />
-      <TypographyH3 className="my-4 mt-8">Health Dashboard</TypographyH3>
+      <SlideShow images={[`${BASE_PATH}/osler/home.png`]} />
+      <TypographyH3 className="my-4 mt-8">Navigation</TypographyH3>
       <p className="font-mono mb-2">
-        Track health metrics and consultation history.
+        A streamlined hamburger menu facilitates seamless navigation between chat, case study, and history features, optimized for both mobile and desktop environments.
       </p>
-      <SlideShow images={[`${BASE_PATH}/osler/dashboard.png`]} />
+      <SlideShow images={[`${BASE_PATH}/osler/navigation.png`]} />
+      <TypographyH3 className="my-4 mt-8">Chat Interface</TypographyH3>
+      <p className="font-mono mb-2">
+        The dynamic chat interface, developed with jQuery and Flask, includes a hamburger menu and a sticky input bar, ensuring consistent usability across devices.
+      </p>
+      <SlideShow images={[`${BASE_PATH}/osler/chat.png`]} />
+      <TypographyH3 className="my-4 mt-8">Case Study Mode</TypographyH3>
+      <p className="font-mono mb-2">
+        An interactive case study feature enables users to practice clinical reasoning with tailored scenarios, powered by the Gemini API for accurate and relevant responses.
+      </p>
+      <SlideShow images={[`${BASE_PATH}/osler/case_study_1.png`, `${BASE_PATH}/osler/case_study_2.png`]} />
+      <TypographyH3 className="my-4 mt-8">Chat History</TypographyH3>
+      <p className="font-mono mb-2">
+        A dedicated history page tracks user interactions using local storage and Flask session management, ensuring data persistence and accessibility.
+      </p>
+      <SlideShow images={[`${BASE_PATH}/osler/history.png`]} />
       <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+      <p className="font-mono mb-2">
+        AskOsler integrates clinical utility with advanced web technologies, offering a fast, secure, and offline-capable platform for medical education.
+      </p>
       <ul className="font-mono list-disc list-inside mb-2">
-        <li>Virtual consultation scheduling</li>
-        <li>Secure data with Firebase</li>
-        <li>Responsive design with Tailwind CSS</li>
+        <li>Real-time medical guidance powered by the Gemini API</li>
+        <li>Interactive case studies for clinical practice</li>
+        <li>Chat history with local storage integration</li>
+        <li>Progressive Web App with offline support</li>
+        <li>Responsive UI with jQuery, Bootstrap, and hamburger menu</li>
+        <li>Secure Flask backend with environment management</li>
       </ul>
+      <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+      <p className="font-mono mb-2">
+        The application features a robust Flask backend for managing API requests, jQuery for dynamic front-end interactions, and PWA capabilities (manifest and service worker) for a native app-like experience. Streaming responses optimize performance, while HTTPS and environment variables safeguard API keys.
+      </p>
+      <SlideShow images={[`${BASE_PATH}/osler/home.png`]} />
+      <p className="font-mono mb-2 mt-5 text-center">
+        AskOsler exemplifies the fusion of Python-based backend development, AI integration, and modern front-end techniques to create an effective tool for medical education.
+      </p>
     </div>
   ),
 };
