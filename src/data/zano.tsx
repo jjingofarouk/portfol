@@ -1,6 +1,5 @@
-// src/data/zano.tsx
 import { ReactNode } from 'react';
-import { SiJavascript, SiReact, SiFirebase, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { SiTypescript, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 import { TypographyH3, TypographyP } from '@/components/ui/typography';
 import { ArrowUpRight } from 'lucide-react';
@@ -13,7 +12,7 @@ type Skill = {
   title: string;
   bg: string;
   fg: string;
-  icon: ReactNode;
+  icon: ReactNode | null;
 };
 
 type Project = {
@@ -23,84 +22,91 @@ type Project = {
   src: string;
   screenshots: string[];
   skills: { frontend: Skill[]; backend: Skill[] };
-  content: ReactNode | any;
+  content: ReactNode;
   github?: string;
   live: string;
 };
 
 const PROJECT_SKILLS = {
-  js: { title: 'JavaScript', bg: 'black', fg: 'white', icon: <SiJavascript /> },
-  react: { title: 'React.js', bg: 'black', fg: 'white', icon: <SiReact /> },
-  firebase: { title: 'Firebase', bg: 'black', fg: 'white', icon: <SiFirebase /> },
-  nextjs: { title: 'Next Js ', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
-  tailwind: { title: 'Tailwind', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+  ts: { title: 'TypeScript', bg: 'black', fg: 'white', icon: <SiTypescript /> },
+  next: { title: 'Next.js', bg: 'black', fg: 'white', icon: <SiNextdotjs /> },
+  aceternity: { title: 'Aceternity UI', bg: 'black', fg: 'white', icon: null },
+  tailwind: { title: 'Tailwind CSS', bg: 'black', fg: 'white', icon: <SiTailwindcss /> },
+  sanity: { title: 'Sanity CMS', bg: 'black', fg: 'white', icon: null },
 };
 
-const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
-  return (
-    <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
-      <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={live}>
+const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => (
+  <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
+    <Link className="font-mono underline flex gap-2" rel="noopener" target="_blank" href={live}>
+      <Button variant="default" size="sm">
+        Visit Website
+        <ArrowUpRight className="ml-3 w-5 h-5" />
+      </Button>
+    </Link>
+    {repo && (
+      <Link className="font-mono underline flex gap-2" rel="noopener" target="_blank" href={repo}>
         <Button variant="default" size="sm">
-          Visit Website
+          Github
           <ArrowUpRight className="ml-3 w-5 h-5" />
         </Button>
       </Link>
-      {repo && (
-        <Link className="font-mono underline flex gap-2" rel="noopener" target="_new" href={repo}>
-          <Button variant="default" size="sm">
-            Github
-            <ArrowUpRight className="ml-3 w-5 h-5" />
-          </Button>
-        </Link>
-      )}
-    </div>
-  );
-};
+    )}
+  </div>
+);
 
 export const Zano: Project = {
   id: 'zano',
-  category: 'Health Tech',
-  title: 'Zano',
+  category: 'E-commerce',
+  title: 'Zano!',
   src: `${BASE_PATH}/zano/home_zano.jpg`,
-  screenshots: ['home_zano.jpg', 'telemedicine.png', 'dashboard.png'],
-  live: 'https://zano.vercel.app/',
-  github: 'https://github.com/jjingofarouk/zano',
+  screenshots: ['home_zano.jpg'],
+  live: 'https://zanoug.vercel.app/',
+  github: 'https://github.com/jjingofarouk/Ecommerce-React',
   skills: {
     frontend: [
-      PROJECT_SKILLS.js,
-      PROJECT_SKILLS.react,
-      PROJECT_SKILLS.nextjs,
+      PROJECT_SKILLS.ts,
+      PROJECT_SKILLS.next,
+      PROJECT_SKILLS.aceternity,
       PROJECT_SKILLS.tailwind,
     ],
-    backend: [
-      PROJECT_SKILLS.firebase,
-    ],
+    backend: [PROJECT_SKILLS.sanity],
   },
   content: (
     <div>
       <TypographyP className="font-mono text-2xl text-center">
-        Zano = Telemedicine Simplified
+        Zano! = Step Into Style
       </TypographyP>
       <TypographyP className="font-mono">
-        Zano is a telemedicine platform built with Next.js, enabling remote consultations and patient management.
+        Zano! is an online shoe store with a modern, user-friendly design and smooth animations, making shopping for the latest kicks a breeze.
       </TypographyP>
-      <ProjectsLinks live="https://zano.vercel.app/" repo="https://github.com/jjingofarouk/zano" />
-      <TypographyH3 className="my-4 mt-8">Telemedicine Portal</TypographyH3>
-      <p className="font-mono mb-2">
-        Connect patients with doctors via secure video calls.
+      <ProjectsLinks live="https://zanoug.vercel.app/" repo="https://github.com/jjingofarouk/Ecommerce-React" />
+
+      <p className="font-mono mb-2 mt-8">
+        Discover trending styles, exclusive deals, and curated shoes on the landing page.
       </p>
-      <SlideShow images={[`${BASE_PATH}/zano/telemedicine.png`]} />
-      <TypographyH3 className="my-4 mt-8">Patient Dashboard</TypographyH3>
+      <SlideShow images={[`${BASE_PATH}/zano/home_zano.jpg`]} />
+
+      <TypographyH3 className="my-4 mt-8">Shop</TypographyH3>
       <p className="font-mono mb-2">
-        Manage appointments and medical history seamlessly.
+        Browse sneakers, boots, sandals, and more. Filter by size, style, or brand to find your perfect pair.
       </p>
-      <SlideShow images={[`${BASE_PATH}/zano/dashboard.png`]} />
-      <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-      <ul className="font-mono list-disc list-inside mb-2">
-        <li>Secure video consultations</li>
-        <li>Patient data management with Firebase</li>
-        <li>Responsive design with Tailwind CSS</li>
-      </ul>
+      <SlideShow images={[`${BASE_PATH}/zano/shop.jpg`, `${BASE_PATH}/zano/product.jpg`]} />
+
+      <TypographyH3 className="my-4 mt-8">Sanity CMS</TypographyH3>
+      <p className="font-mono mb-2">
+        Sanity CMS powers Zano! to deliver real-time updates for inventory, styles, and deals.
+      </p>
+      <SlideShow images={[`${BASE_PATH}/zano/shoe1.png`, `${BASE_PATH}/zano/shoe2.png`]} />
+
+      <TypographyH3 className="my-4 mt-8">Cart & Checkout</TypographyH3>
+      <p className="font-mono mb-2">
+        Add shoes to your cart and enjoy a fast and secure checkout process.
+      </p>
+      <SlideShow images={[`${BASE_PATH}/zano/cart.png`]} />
+
+      <p className="font-mono mb-2 my-8">
+        Zano! combines performance and style for a top-tier shopping experience. Find your next favorite pair today.
+      </p>
     </div>
   ),
 };
