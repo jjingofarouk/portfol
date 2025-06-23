@@ -44,14 +44,14 @@ const PROJECT_SKILLS = {
 const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => (
   <div className="flex flex-col md:flex-row items-center gap-3 my-3 mb-6">
     <Link className="font-mono underline flex gap-2" rel="noopener" target="_blank" href={live}>
-      <Button variant="text" size="sm">
+      <Button variant="default" size="sm">
         Visit Website
         <ArrowUpRight className="ml-2 w-3 h-3" />
       </Button>
     </Link>
     {repo && (
       <Link className="font-mono underline flex gap-2" rel="noopener" target="_blank" href={repo}>
-        <Button variant="text" size="sm">
+        <Button variant="default" size="sm">
           Github
           <ArrowUpRight className="ml-2 w-3 h-3" />
         </Button>
