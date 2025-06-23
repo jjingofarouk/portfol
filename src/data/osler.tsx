@@ -60,7 +60,7 @@ const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
 
 export const DrJingo: Project = {
   id: 'osler',
-  category: 'Health Tool',
+  category: 'ChatBot',
   title: 'AskOsler',
   src: `${BASE_PATH}/osler/home.png`,
   screenshots: ['home.png', 'chat.png', 'case_study_1.png', 'case_study_2.png', 'history.png', 'navigation.png'],
