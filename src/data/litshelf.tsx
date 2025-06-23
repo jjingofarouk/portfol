@@ -58,7 +58,7 @@ const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
 
 export const LitShelf: Project = {
   id: 'book-recommender',
-  category: 'Personalized Tech',
+  category: 'Book Recommendation System',
   title: 'LitShelf',
   src: `${BASE_PATH}/litshelf/home.png`,
   screenshots: [
