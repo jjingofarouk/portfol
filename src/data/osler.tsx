@@ -60,7 +60,7 @@ const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
 export const DrJingo: Project = {
   id: 'osler',
   category: 'Health Tech',
-  title: 'DrJingo',
+  title: 'AskOsler',
   src: `${BASE_PATH}/osler/home.png`,
   screenshots: ['home.png', 'consultation.png', 'dashboard.png'],
   live: 'https://drjingo.vercel.app/',
