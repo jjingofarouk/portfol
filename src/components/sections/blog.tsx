@@ -1,11 +1,43 @@
-// app/blog/page.tsx
 "use client";
 
 import Link from "next/link";
 import React from "react";
 import { BoxReveal } from "../reveal-animations";
 import { cn } from "@/lib/utils";
-import { BlogPost, blogPosts } from "./data/blogData";
+
+// Define BlogPost type
+interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  slug: string;
+  createdAt: string;
+}
+
+// Static blog posts (shared with [slug].tsx)
+const blogPosts: BlogPost[] = [
+  {
+    id: "1",
+    title: "Building Scalable Web Apps with Next.js",
+    excerpt: "Learn how to structure and optimize your Next.js apps for performance and scalability.",
+    slug: "/blog/nextjs-scalability",
+    createdAt: "2025-04-01",
+  },
+  {
+    id: "2",
+    title: "Balancing Medicine and Tech: My Journey",
+    excerpt: "A deep dive into my experiences as both a doctor and a web developer.",
+    slug: "/blog/medicine-and-tech",
+    createdAt: "2025-03-15",
+  },
+  {
+    id: "3",
+    title: "Optimizing React Apps for Performance",
+    excerpt: "Techniques and best practices to make your React apps faster and more efficient.",
+    slug: "/blog/react-performance",
+    createdAt: "2025-02-20",
+  },
+];
 
 const BlogSection = () => {
   return (
