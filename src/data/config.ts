@@ -28,7 +28,7 @@ const config = {
   site: "https://jjingofarouk.xyz",
 
   get ogImg() {
-    return this.site + "/assets/seo/og-image.png";
+    return this.site + "/assets/me.png";
   },
   social: {
     twitter: "https://x.com/farouq_jjingo",
