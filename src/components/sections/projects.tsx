@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
-import React, { useMemo } from "react";
+import React from "react";
+import { DeviceFrameset } from "react-device-frameset";
+import "react-device-frameset/styles/marvel-devices.min.css"; // Import the stylesheet
 import {
   Modal as AnimatedModal,
   ModalBody,
@@ -11,62 +13,28 @@ import {
 import { FloatingDock } from "../ui/floating-dock";
 import Link from "next/link";
 import SmoothScroll from "../smooth-scroll";
-import projects, { Project } from "@/data/projects";
+import { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
-// Function to shuffle an array (Fisher-Yates algorithm)
-const shuffleArray = <T,>(array: T[]): T[] => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
+interface ProjectCardProps {
+  project: Project;
+}
 
-const ProjectsSection = () => {
-  // Memoize shuffled projects to prevent re-shuffling on re-renders
-  const shuffledProjects = useMemo(() => shuffleArray(projects), []);
-
-  return (
-    <section
-      id="projects"
-      className="max-w-7xl mx-auto py-16 px-4"
-      aria-label="Projects Section"
-    >
-      <Link href="#projects">
-        <h2
-          className={cn(
-            "text-4xl md:text-7xl text-center font-bold bg-clip-text text-transparent",
-            "bg-gradient-to-b from-black/80 to-black/50 dark:from-white/80 dark:to-white/20",
-            "mb-12"
-          )}
-        >
-          Projects
-        </h2>
-      </Link>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {shuffledProjects.map((project) => (
-          <ProjectCard key={project.src} project={project} />
-        ))}
-      </div>
-    </section>
-  );
-};
-
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <AnimatedModal>
       <ModalTrigger className="group/modal-btn bg-transparent">
         <div className="relative w-full rounded-lg overflow-hidden" style={{ aspectRatio: "3/2" }}>
-          <Image
-            className="w-full h-full object-cover group-hover/modal-btn:scale-105 transition-transform duration-300"
-            src={project.src}
-            alt={project.title}
-            width={400}
-            height={267}
-            priority
-          />
+          <DeviceFrameset device="MacBook Pro" zoom={0.8}>
+            <Image
+              className="w-full h-full object-cover group-hover/modal-btn:scale-105 transition-transform duration-300"
+              src={project.src}
+              alt={project.title}
+              width={400}
+              height={267}
+              priority
+            />
+          </DeviceFrameset>
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/85 to-transparent">
             <div className="flex flex-col justify-end h-full p-6">
               <h3 className="text-lg text-white font-semibold">{project.title}</h3>
@@ -115,4 +83,4 @@ const ProjectCard = ({ project }: { project: Project }) => {
   );
 };
 
-export default ProjectsSection;
+export default ProjectCard;
