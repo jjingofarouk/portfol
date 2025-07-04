@@ -108,39 +108,38 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
 const ProjectsSection = () => {
   const shuffledProjects = useMemo(() => shuffleArray(projects), []);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
 
-  const checkScroll = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
+  // Auto-advance carousel every 3 seconds
+  useEffect(() => {
+    if (!isPlaying) return;
+    
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % shuffledProjects.length);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [shuffledProjects.length, isPlaying]);
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
   };
 
-  useEffect(() => {
-    checkScroll();
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.addEventListener('scroll', checkScroll);
-      return () => container.removeEventListener('scroll', checkScroll);
-    }
-  }, []);
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + shuffledProjects.length) % shuffledProjects.length);
+  };
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 350;
-      const newScrollLeft = direction === 'left' 
-        ? scrollContainerRef.current.scrollLeft - scrollAmount
-        : scrollContainerRef.current.scrollLeft + scrollAmount;
-      
-      scrollContainerRef.current.scrollTo({
-        left: newScrollLeft,
-        behavior: 'smooth'
-      });
-    }
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % shuffledProjects.length);
+  };
+
+  const handleMouseEnter = () => {
+    setIsPlaying(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPlaying(true);
   };
 
   return (
@@ -164,66 +163,90 @@ const ProjectsSection = () => {
       {/* Scroll hint */}
       <div className="text-center mb-8">
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          Scroll horizontally to explore projects →
+          Auto-advancing every 3 seconds • Hover to pause
         </p>
       </div>
       
-      <div className="relative">
+      <div className="relative max-w-4xl mx-auto">
         {/* Navigation buttons */}
         <button
-          onClick={() => scroll('left')}
-          disabled={!canScrollLeft}
-          className={cn(
-            "absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-3 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300",
-            canScrollLeft 
-              ? "opacity-100 hover:bg-white dark:hover:bg-gray-800 hover:scale-110" 
-              : "opacity-50 cursor-not-allowed"
-          )}
+          onClick={goToPrevious}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-3 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:bg-white dark:hover:bg-gray-800 hover:scale-110"
         >
           <ChevronLeft className="w-5 h-5 text-gray-700 dark:text-gray-300" />
         </button>
         
         <button
-          onClick={() => scroll('right')}
-          disabled={!canScrollRight}
-          className={cn(
-            "absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-3 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300",
-            canScrollRight 
-              ? "opacity-100 hover:bg-white dark:hover:bg-gray-800 hover:scale-110" 
-              : "opacity-50 cursor-not-allowed"
-          )}
+          onClick={goToNext}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-3 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:bg-white dark:hover:bg-gray-800 hover:scale-110"
         >
           <ChevronRight className="w-5 h-5 text-gray-700 dark:text-gray-300" />
         </button>
         
-        {/* Horizontal scrolling container */}
-        <div
-          ref={scrollContainerRef}
-          className="flex overflow-x-auto scrollbar-hide py-4 px-8"
-          style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            WebkitOverflowScrolling: 'touch'
-          }}
+        {/* Carousel container */}
+        <div 
+          className="relative overflow-hidden py-4"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
-          {shuffledProjects.map((project, index) => (
-            <ProjectCard key={project.src} project={project} index={index} />
-          ))}
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
+          >
+            {shuffledProjects.map((project, index) => (
+              <div key={project.src} className="w-full flex-shrink-0 flex justify-center px-8">
+                <ProjectCard project={project} index={index} />
+              </div>
+            ))}
+          </div>
         </div>
         
-        {/* Gradient overlays for visual effect */}
-        <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-white dark:from-gray-950 to-transparent pointer-events-none z-5"></div>
-        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-white dark:from-gray-950 to-transparent pointer-events-none z-5"></div>
+        {/* Play/Pause button */}
+        <button
+          onClick={() => setIsPlaying(!isPlaying)}
+          className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-300"
+          title={isPlaying ? 'Pause autoplay' : 'Resume autoplay'}
+        >
+          {isPlaying ? (
+            <div className="w-3 h-3 flex space-x-1">
+              <div className="w-1 h-full bg-white"></div>
+              <div className="w-1 h-full bg-white"></div>
+            </div>
+          ) : (
+            <div className="w-3 h-3 border-l-2 border-l-white border-y-transparent border-y-[6px] border-r-0 ml-0.5"></div>
+          )}
+        </button>
       </div>
       
       {/* Scroll indicator dots */}
-      <div className="flex justify-center mt-8 space-x-2">
+      <div className="flex justify-center mt-8 space-x-3">
         {shuffledProjects.map((_, index) => (
-          <div
+          <button
             key={index}
-            className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600"
+            onClick={() => goToSlide(index)}
+            className={cn(
+              "w-3 h-3 rounded-full transition-all duration-300 hover:scale-125",
+              index === currentIndex 
+                ? "bg-blue-500 dark:bg-blue-400 scale-110" 
+                : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
+            )}
+            aria-label={`Go to project ${index + 1}`}
           />
         ))}
+      </div>
+      
+      {/* Progress bar */}
+      <div className="flex justify-center mt-4">
+        <div className="w-64 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+          <div 
+            className="h-full bg-blue-500 dark:bg-blue-400 transition-all duration-100 ease-linear"
+            style={{
+              width: isPlaying ? `${((currentIndex + 1) / shuffledProjects.length) * 100}%` : '0%'
+            }}
+          />
+        </div>
       </div>
     </section>
   );
