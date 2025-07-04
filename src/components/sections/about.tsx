@@ -1,3 +1,4 @@
+// AboutSection.jsx
 "use client";
 import React, { useEffect, useState } from "react";
 import { DiMongodb, DiNginx, DiNpm, DiPostgresql, DiVim } from "react-icons/di";
@@ -16,11 +17,6 @@ import {
   FaReact,
   FaVuejs,
   FaYarn,
-  FaChess,
-  FaFutbol,
-  FaCode,
-  FaUser,
-  FaFilm,
   FaPython,
 } from "react-icons/fa6";
 import {
@@ -28,7 +24,6 @@ import {
   RiJavascriptFill,
   RiNextjsFill,
   RiTailwindCssFill,
-  RiBrainFill,
 } from "react-icons/ri";
 import {
   SiExpress,
@@ -45,10 +40,6 @@ import {
   SiPytorch,
   SiRedis,
 } from "react-icons/si";
-import { VscCode } from "react-icons/vsc";
-import { TbTerminal2 } from "react-icons/tb";
-
-// @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
@@ -267,44 +258,10 @@ const TOOLS = [
     color: "#0077C4",
   },
   {
-    name: "Terminal",
-    content: "Command line interface for efficient workflows",
-    icon: <TbTerminal2 size={"50px"} color="#fff" />,
-    color: "#000000",
-  },
-  {
     name: "PyTorch",
     content: "Machine learning framework for AI research",
     icon: <SiPytorch size={"50px"} color="#ee4c2c" />,
     color: "#ee4c2c",
-  },
-];
-
-const INTERESTS = [
-  {
-    name: "Medicine",
-    icon: <FaUser size={"24px"} />,
-    description: "Medical officer with extensive expertise in clinical diagnostics",
-  },
-  {
-    name: "Chess",
-    icon: <FaChess size={"24px"} />,
-    description: "Strategic thinker and chess enthusiast",
-  },
-  {
-    name: "Football",
-    icon: <FaFutbol size={"24px"} />,
-    description: "Man United and Real Madrid supporter",
-  },
-  {
-    name: "Problem Solving",
-    icon: <RiBrainFill size={"24px"} />,
-    description: "Applying analytical thinking across disciplines",
-  },
-  {
-    name: "Film",
-    icon: <FaFilm size={"24px"} />,
-    description: "Huge cinema fan with an appreciation for not-so-common",
   },
 ];
 
@@ -315,15 +272,10 @@ function AboutSection() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 md:px-[50px] xl:px-[200px] text-zinc-300 pt-20 pb-20">
+    <div className="container mx-auto px-4 text-zinc-300 pt-20 pb-20">
       <div className="flex flex-col lg:flex-row gap-5">
         <aside className="w-full md:basis-1/4">
-          <div
-            className="p-4 md:p-8 lg:p-10 rounded-2xl border-[.5px] border-zinc-600"
-            style={{
-              backdropFilter: "blur(2px)",
-            }}
-          >
+          <div className="p-4 md:p-8 lg:p-10 rounded-2xl border-[.5px] border-zinc-600" style={{ backdropFilter: "blur(2px)" }}>
             <div className="flex flex-row lg:flex-col items-center">
               <div className="flex justify-center items-center lg:w-full lg:aspect-square bg-zinc-800 rounded-xl lg:mb-5">
                 <img
@@ -333,16 +285,10 @@ function AboutSection() {
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl font-semibold">
-                  Farouk Jjingo
-                </p>
+                <p className="text-center text-xl font-semibold">Farouk Jjingo</p>
                 <div className="flex gap-2">
-                  <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
-                    Full Stack Engineer
-                  </div>
-                  <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
-                    MD
-                  </div>
+                  <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">Full Stack Engineer</div>
+                  <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">MD</div>
                 </div>
               </div>
             </div>
@@ -352,7 +298,7 @@ function AboutSection() {
                 {CONTACT_LINKS.map((link) => (
                   <li key={link.name}>
                     <a
-                      className="flex items-center px-3 gap-3 w-full h-12 border-zinc-700 bg-zinc-800 hover:border-zinc-600 border-[.5px] rounded-md transition-colors duration-300"
+                      Sicily className="flex items-center px-3 gap-3 w-full h-12 border-zinc-700 bg-zinc-800 hover:border-zinc-600 border-[.5px] rounded-md transition-colors duration-300"
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -360,9 +306,7 @@ function AboutSection() {
                       <div className="w-8">{link.icon}</div>
                       <div className="flex flex-col">
                         <div className="text-sm">{link.name}</div>
-                        <div className="text-xs text-zinc-500">
-                          {link.content}
-                        </div>
+                        <div className="text-xs text-zinc-500">{link.content}</div>
                       </div>
                     </a>
                   </li>
@@ -372,37 +316,11 @@ function AboutSection() {
           </div>
         </aside>
         <main className="basis-3/4">
-          <div
-            className="p-10 border-[.5px] rounded-md border-zinc-600"
-            style={{ backdropFilter: "blur(2px)" }}
-          >
-            <h1 className="text-3xl font-bold mb-6 lg:mb-10">About me</h1>
+          <div className="p-10 border-[.5px] rounded-md border-zinc-600" style={{ backdropFilter: "blur(2px)" }}>
+            <h1 className="text-3xl font-bold mb-6 lg:mb-10">About Me</h1>
             <p className="mb-6 text-lg leading-relaxed">
-              I’m a Full Stack Developer with a background in medicine. Currently building tech that tackles real healthcare problems and beyond. I obsess over details, learn insanely fast, and won’t stop until something works—and works brilliantly. I’ll skip sleep to solve the right problem. Coding is purpose.
+              I am a Full Stack Developer with a medical background, focused on building innovative technology solutions for healthcare and other industries. I am detail-oriented, thrive in fast-paced environments, and am committed to delivering high-quality, impactful code.
             </p>
-
-            <div className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">Beyond Code</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                {INTERESTS.map((interest) => (
-                  <div
-                    key={interest.name}
-                    className="flex items-start gap-3 p-4 bg-zinc-800 rounded-lg border-[.5px] border-zinc-700"
-                  >
-                    <div className="mt-1 text-zinc-300">{interest.icon}</div>
-                    <div>
-                      <h3 className="font-medium text-zinc-200">
-                        {interest.name}
-                      </h3>
-                      <p className="text-sm text-zinc-400">
-                        {interest.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             <h2 className="text-2xl font-semibold mb-4">Technology Stack</h2>
             <div className="mb-10">
               {!toolsLoaded ? (
@@ -423,12 +341,8 @@ function AboutSection() {
                     easing: "cubic-bezier(0.25, 1, 0.5, 1)",
                     arrows: false,
                     breakpoints: {
-                      640: {
-                        perPage: 3,
-                      },
-                      768: {
-                        perPage: 4,
-                      },
+                      640: { perPage: 3 },
+                      768: { perPage: 4 },
                     },
                   }}
                   aria-label="Technology Stack"
@@ -446,8 +360,6 @@ function AboutSection() {
                 </Splide>
               )}
             </div>
-
-
           </div>
         </main>
       </div>
