@@ -1,17 +1,17 @@
+// HeroSection.jsx
 "use client";
-
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
-import { FileText, Code, Briefcase, ChevronDown, ExternalLink } from "lucide-react";
+import { FileText, Code, Briefcase, ChevronDown } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { usePreloader } from "../preloader";
-import { BlurIn, BoxReveal, SlideUp } from "../reveal-animations";
+import { BoxReveal, SlideUp } from "../reveal-animations";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { Badge } from "../ui/badge";
 import { config } from "@/data/config";
@@ -20,6 +20,39 @@ const HeroSection = () => {
   const { isLoading } = usePreloader();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [typedText1, setTypedText1] = useState("");
+  const [typedText2, setTypedText2] = useState("");
+  const fullText1 = "I craft powerful applications with cutting-edge tech stacks";
+  const fullText2 = "My software captivates and excels. I tackle challenges with relentless precision and drive.";
+  const typingSpeed = 50;
+
+  // Typing effect for text
+  useEffect(() => {
+    let index1 = 0;
+    let index2 = 0;
+
+    const typeText1 = () => {
+      if (index1 < fullText1.length) {
+        setTypedText1(fullText1.slice(0, index1 + 1));
+        index1++;
+        setTimeout(typeText1, typingSpeed);
+      } else {
+        setTimeout(typeText2, 500); // Start typing second text after a delay
+      }
+    };
+
+    const typeText2 = () => {
+      if (index2 < fullText2.length) {
+        setTypedText2(fullText2.slice(0, index2 + 1));
+        index2++;
+        setTimeout(typeText2, typingSpeed);
+      }
+    };
+
+    if (!isLoading) {
+      typeText1();
+    }
+  }, [isLoading]);
 
   // Mouse parallax effect
   useEffect(() => {
@@ -45,7 +78,6 @@ const HeroSection = () => {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
 
-    // Create grid
     const gridSize = 30;
     const dotSize = 1;
     const lineOpacity = 0.08;
@@ -67,14 +99,12 @@ const HeroSection = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw connecting lines first (behind dots)
       ctx.strokeStyle = `rgba(148, 163, 184, ${lineOpacity})`;
       ctx.lineWidth = 0.5;
 
       for (let i = 0; i < dots.length; i++) {
         const dot = dots[i];
 
-        // Mouse influence - subtle movement
         const dx = mousePosition.x * canvas.width - dot.x;
         const dy = mousePosition.y * canvas.height - dot.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -86,17 +116,14 @@ const HeroSection = () => {
           dot.vy -= (dy / distance) * force * 0.2;
         }
 
-        // Apply velocity with damping
         dot.x += dot.vx;
         dot.y += dot.vy;
         dot.vx *= 0.92;
         dot.vy *= 0.92;
 
-        // Spring back to original position
         dot.vx += (dot.originalX - dot.x) * 0.05;
         dot.vy += (dot.originalY - dot.y) * 0.05;
 
-        // Connect to nearby dots
         for (let j = i + 1; j < dots.length; j++) {
           const otherDot = dots[j];
           const dx = dot.x - otherDot.x;
@@ -112,7 +139,6 @@ const HeroSection = () => {
         }
       }
 
-      // Draw dots on top
       for (const dot of dots) {
         ctx.fillStyle = "rgba(148, 163, 184, 0.5)";
         ctx.beginPath();
@@ -125,7 +151,6 @@ const HeroSection = () => {
 
     const animationId = requestAnimationFrame(animate);
 
-    // Handle resize
     const handleResize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
@@ -152,12 +177,8 @@ const HeroSection = () => {
     "CI/CD",
   ];
 
-  const primaryColor = "slate";
-  const accentColor = "cyan";
-
   return (
     <section id="hero" className={cn("relative w-full min-h-screen overflow-hidden")}>
-      {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
         <canvas
@@ -166,13 +187,11 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Accent elements */}
       <div className="absolute top-0 left-0 w-1/3 h-1 bg-gradient-to-r from-cyan-500 to-transparent" />
       <div className="absolute top-0 right-0 w-1/4 h-1 bg-gradient-to-l from-cyan-500 to-transparent" />
       <div className="absolute bottom-0 left-0 w-1/4 h-1 bg-gradient-to-r from-cyan-500 to-transparent" />
       <div className="absolute bottom-0 right-0 w-1/3 h-1 bg-gradient-to-l from-cyan-500 to-transparent" />
 
-      {/* Main content */}
       <div className="grid md:grid-cols-7 max-w-8xl mx-auto">
         <div
           className={cn(
@@ -185,38 +204,55 @@ const HeroSection = () => {
           {!isLoading && (
             <>
               <div className="space-y-5">
-                <BlurIn delay={0.5}>
+                <BoxReveal delay={0.5} width="100%">
                   <Badge
                     variant="outline"
                     className="px-4 py-1 text-sm font-normal bg-white/60 dark:bg-gray-800/50 backdrop-blur-sm border-cyan-200 dark:border-cyan-900 text-gray-700 dark:text-gray-200"
                   >
                     Full Stack Engineer • 3+ Years Experience
                   </Badge>
-                </BlurIn>
+                </BoxReveal>
 
-                <BlurIn delay={0.7}>
+                <BoxReveal delay={0.7} width="100%">
                   <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {config.author.split(" ")[0]}{" "}
                     <span className="text-cyan-600 dark:text-cyan-400">
                       {config.author.split(" ")[1]}
                     </span>
                   </h1>
-                </BlurIn>
+                </BoxReveal>
 
-                <BlurIn delay={0.9}>
-                  <p className="text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-200">
-                    I build <span className="text-cyan-600 dark:text-cyan-400">high-performance</span> applications with modern tech stacks
+                <BoxReveal delay={0.9} width="100%">
+                  <p className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+                    {typedText1.split(" ").map((word, index) =>
+                      word === "powerful" ? (
+                        <span key={index} className="text-cyan-600 dark:text-cyan-400">
+                          {word}{" "}
+                        </span>
+                      ) : (
+                        word + " "
+                      )
+                    )}
+                    <span className="animate-pulse">|</span>
                   </p>
-                </BlurIn>
+                </BoxReveal>
 
-                <BlurIn delay={1.1}>
+                <BoxReveal delay={1.1} width="100%">
                   <p className="text-gray-600 dark:text-gray-400 max-w-lg text-lg leading-relaxed">
-
-	I build sotware that stands out. And I keep working hard, even when no one’s watching.
+                    {typedText2.split(" ").map((word, index) =>
+                      word === "captivates" ? (
+                        <span key={index} className="text-cyan-600 dark:text-cyan-400 font-medium">
+                          {word}{" "}
+                        </span>
+                      ) : (
+                        word + " "
+                      )
+                    )}
+                    <span className="animate-pulse">|</span>
                   </p>
-                </BlurIn>
+                </BoxReveal>
 
-                <BlurIn delay={1.3}>
+                <BoxReveal delay={1.3} width="100%">
                   <div className="flex flex-wrap gap-2 mt-6">
                     {skills.map((skill) => (
                       <Badge
@@ -227,7 +263,7 @@ const HeroSection = () => {
                       </Badge>
                     ))}
                   </div>
-                </BlurIn>
+                </BoxReveal>
               </div>
 
               <div className="mt-8 flex flex-col gap-4">
@@ -321,9 +357,7 @@ const HeroSection = () => {
           {!isLoading && (
             <BoxReveal delay={1.5} width="100%">
               <div className="relative max-w-md mx-auto">
-                {/* Abstract code representation */}
                 <div className="relative aspect-square bg-gradient-to-br from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700">
-                  {/* Code editor styling */}
                   <div className="absolute top-0 left-0 right-0 h-8 bg-gray-200 dark:bg-gray-800 flex items-center px-4">
                     <div className="flex gap-2">
                       <div className="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></div>
@@ -391,10 +425,8 @@ const HeroSection = () => {
                     </div>
                   </div>
 
-                  {/* Subtle gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent to-cyan-500/5"></div>
 
-                  {/* Line numbers */}
                   <div className="absolute top-8 bottom-0 left-0 w-8 bg-gray-100 dark:bg-gray-800/50 flex flex-col items-center pt-6">
                     {[...Array(10)].map((_, i) => (
                       <div key={i} className="text-xs text-gray-400 dark:text-gray-500 h-6">{i + 1}</div>
@@ -402,7 +434,6 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                {/* Floating elements */}
                 <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg opacity-70 dark:opacity-50 blur-md"></div>
                 <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-700 dark:to-gray-800 rounded-full opacity-60 blur-sm"></div>
               </div>
