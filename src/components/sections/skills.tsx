@@ -27,7 +27,7 @@ const SkillsSection = () => {
         <BoxReveal width="100%">
           <div className="mt-8 flex justify-center">
             <GitHubCalendar
-              username="YOUR_GITHUB_USERNAME" // Replace with your GitHub username
+              username="jjingofarouk" // Replace with your GitHub username
               blockSize={15}
               blockMargin={5}
               fontSize={16}
