@@ -298,7 +298,7 @@ function AboutSection() {
                 {CONTACT_LINKS.map((link) => (
                   <li key={link.name}>
                     <a
-                      Sicily className="flex items-center px-3 gap-3 w-full h-12 border-zinc-700 bg-zinc-800 hover:border-zinc-600 border-[.5px] rounded-md transition-colors duration-300"
+                      className="flex items-center px-3 gap-3 w-full h-12 border-zinc-700 bg-zinc-800 hover:border-zinc-600 border-[.5px] rounded-md transition-colors duration-300"
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
