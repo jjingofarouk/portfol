@@ -33,21 +33,23 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <AnimatedModal>
       <ModalTrigger className="group/modal-btn bg-transparent">
-        <div className="relative w-full rounded-lg overflow-hidden" style={{ aspectRatio: "3/2" }}>
-          <DeviceFrameset device="MacBook Pro" zoom={0.8}>
-            <Image
-              className="w-full h-full object-cover group-hover/modal-btn:scale-105 transition-transform duration-300"
-              src={project.src}
-              alt={project.title}
-              width={400}
-              height={267}
-              priority
-            />
-          </DeviceFrameset>
+        <div className="relative w-full rounded-lg overflow-hidden flex items-center justify-center" style={{ aspectRatio: "3/2", minHeight: "300px" }}>
+          <div className="w-full h-full flex items-center justify-center p-4">
+            <DeviceFrameset device="MacBook Pro" zoom={0.65} className="max-w-full max-h-full">
+              <Image
+                className="w-full h-full object-cover group-hover/modal-btn:scale-105 transition-transform duration-300"
+                src={project.src}
+                alt={project.title}
+                width={400}
+                height={267}
+                priority
+              />
+            </DeviceFrameset>
+          </div>
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/85 to-transparent">
             <div className="flex flex-col justify-end h-full p-6">
               <h3 className="text-lg text-white font-semibold">{project.title}</h3>
-              <span className="text-xs bg-white text-black rounded-full px-3 py-1 mt-2">
+              <span className="text-xs bg-white text-black rounded-full px-3 py-1 mt-2 w-fit">
                 {project.category}
               </span>
             </div>
