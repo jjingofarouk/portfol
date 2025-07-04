@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useMemo } from "react";
 import { DeviceFrameset } from "react-device-frameset";
-import "react-device-frameset/styles/marvel-devices.min.css"; // Import the stylesheet
+import "react-device-frameset/styles/marvel-devices.min.css";
 import {
   Modal as AnimatedModal,
   ModalBody,
@@ -13,8 +13,17 @@ import {
 import { FloatingDock } from "../ui/floating-dock";
 import Link from "next/link";
 import SmoothScroll from "../smooth-scroll";
-import { Project } from "@/data/projects";
+import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
+
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
 
 interface ProjectCardProps {
   project: Project;
@@ -83,4 +92,33 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   );
 };
 
-export default ProjectCard;
+const ProjectsSection = () => {
+  const shuffledProjects = useMemo(() => shuffleArray(projects), []);
+
+  return (
+    <section
+      id="projects"
+      className="max-w-7xl mx-auto py-16 px-4"
+      aria-label="Projects Section"
+    >
+      <Link href="#projects">
+        <h2
+          className={cn(
+            "text-4xl md:text-7xl text-center font-bold bg-clip-text text-transparent",
+            "bg-gradient-to-b from-black/80 to-black/50 dark:from-white/80 dark:to-white/20",
+            "mb-12"
+          )}
+        >
+          Projects
+        </h2>
+      </Link>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {shuffledProjects.map((project) => (
+          <ProjectCard key={project.src} project={project} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default ProjectsSection;
