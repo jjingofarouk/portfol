@@ -23,7 +23,6 @@ function MainPage() {
           <AboutSection />
           <SkillsSection />
           <ProjectsSection />
-          <BlogSection />
           <ContactSection />
         </main>
       </SmoothScroll>
