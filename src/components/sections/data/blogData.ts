@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
       - **Server-Side Rendering (SSR)**: Improve initial page load times by rendering pages on the server.
       - **Static Site Generation (SSG)**: Pre-render pages at build time for lightning-fast performance.
       - **API Routes**: Build lightweight APIs within your Next.js app.
-      - **Optimizing Images**: Use Next.js's built-in `Image` component to serve optimized images.
+      - **Optimizing Images**: Use Next.js's built-in \\`Image\\` component to serve optimized images.
 
       By leveraging these features, you can ensure your app scales efficiently while maintaining a great user experience.
     `,
@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
 
       Performance is critical for user satisfaction. In this post, we discuss:
 
-      - **Memoization**: Using `React.memo` and `useMemo` to prevent unnecessary renders.
+      - **Memoization**: Using \\`React.memo\\` and \\`useMemo\\` to prevent unnecessary renders.
       - **Lazy Loading**: Implementing dynamic imports to reduce initial bundle size.
       - **Code Splitting**: Breaking your app into smaller chunks for faster loading.
       - **Profiling**: Using React Developer Tools to identify bottlenecks.
