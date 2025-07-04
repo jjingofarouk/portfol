@@ -1,11 +1,12 @@
 // app/data/blogData.ts
+
 export interface BlogPost {
   id: string;
   title: string;
   excerpt: string;
   slug: string;
   createdAt: string;
-  content: string; // Full content of the blog post
+  content: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -16,16 +17,16 @@ export const blogPosts: BlogPost[] = [
     slug: "/blog/nextjs-scalability",
     createdAt: "2025-04-01",
     content: `
-      # Building Scalable Web Apps with Next.js
+Building Scalable Web Apps with Next.js
 
-      Next.js is a powerful framework for building scalable web applications. In this post, we explore key strategies to optimize your Next.js apps, including:
+Next.js is a powerful framework for building scalable web applications. In this post, we explore key strategies to optimize your Next.js apps, including:
 
-      - **Server-Side Rendering (SSR)**: Improve initial page load times by rendering pages on the server.
-      - **Static Site Generation (SSG)**: Pre-render pages at build time for lightning-fast performance.
-      - **API Routes**: Build lightweight APIs within your Next.js app.
-      - **Optimizing Images**: Use Next.js's built-in \\`Image\\` component to serve optimized images.
+- Server-Side Rendering (SSR): Improve initial page load times by rendering pages on the server.
+- Static Site Generation (SSG): Pre-render pages at build time for lightning-fast performance.
+- API Routes: Build lightweight APIs within your Next.js app.
+- Optimizing Images: Use the built-in Image component to serve optimized images.
 
-      By leveraging these features, you can ensure your app scales efficiently while maintaining a great user experience.
+By leveraging these features, you can ensure your app scales efficiently while maintaining a great user experience.
     `,
   },
   {
@@ -35,15 +36,15 @@ export const blogPosts: BlogPost[] = [
     slug: "/blog/medicine-and-tech",
     createdAt: "2025-03-15",
     content: `
-      # Balancing Medicine and Tech: My Journey
+Balancing Medicine and Tech: My Journey
 
-      As a doctor and a web developer, I’ve learned to navigate two seemingly different worlds. This post covers:
+As a doctor and a web developer, I’ve learned to navigate two seemingly different worlds. This post covers:
 
-      - **Time Management**: How I juggle medical practice with coding projects.
-      - **Skill Synergies**: Applying problem-solving from medicine to software development.
-      - **Lessons Learned**: The importance of empathy and precision in both fields.
+- Time Management: How I juggle medical practice with coding projects.
+- Skill Synergies: Applying problem-solving from medicine to software development.
+- Lessons Learned: The importance of empathy and precision in both fields.
 
-      My journey highlights how diverse skill sets can complement each other and open unique opportunities.
+My journey highlights how diverse skill sets can complement each other and open unique opportunities.
     `,
   },
   {
@@ -53,16 +54,16 @@ export const blogPosts: BlogPost[] = [
     slug: "/blog/react-performance",
     createdAt: "2025-02-20",
     content: `
-      # Optimizing React Apps for Performance
+Optimizing React Apps for Performance
 
-      Performance is critical for user satisfaction. In this post, we discuss:
+Performance is critical for user satisfaction. In this post, we discuss:
 
-      - **Memoization**: Using \\`React.memo\\` and \\`useMemo\\` to prevent unnecessary renders.
-      - **Lazy Loading**: Implementing dynamic imports to reduce initial bundle size.
-      - **Code Splitting**: Breaking your app into smaller chunks for faster loading.
-      - **Profiling**: Using React Developer Tools to identify bottlenecks.
+- Memoization: Using React.memo and useMemo to prevent unnecessary renders.
+- Lazy Loading: Implementing dynamic imports to reduce initial bundle size.
+- Code Splitting: Breaking your app into smaller chunks for faster loading.
+- Profiling: Using React Developer Tools to identify bottlenecks.
 
-      These techniques can significantly improve your app’s responsiveness and scalability.
+These techniques can significantly improve your app’s responsiveness and scalability.
     `,
   },
   {
@@ -72,16 +73,16 @@ export const blogPosts: BlogPost[] = [
     slug: "/blog/typescript-intro",
     createdAt: "2025-01-10",
     content: `
-      # Introduction to TypeScript in Web Development
+Introduction to TypeScript in Web Development
 
-      TypeScript adds type safety to JavaScript, making it easier to build robust applications. This post covers:
+TypeScript adds type safety to JavaScript, making it easier to build robust applications. This post covers:
 
-      - **Why TypeScript?**: Benefits like catching errors at compile time.
-      - **Basic Types**: Setting up interfaces and types for your data.
-      - **Integration with React**: Using TypeScript with React components.
-      - **Best Practices**: Tips for writing clean TypeScript code.
+- Why TypeScript?: Benefits like catching errors at compile time.
+- Basic Types: Setting up interfaces and types for your data.
+- Integration with React: Using TypeScript with React components.
+- Best Practices: Tips for writing clean TypeScript code.
 
-      TypeScript is a game-changer for developers looking to improve code quality.
+TypeScript is a game-changer for developers looking to improve code quality.
     `,
   },
   {
@@ -91,16 +92,16 @@ export const blogPosts: BlogPost[] = [
     slug: "/blog/web-accessibility",
     createdAt: "2024-12-05",
     content: `
-      # The Future of Web Accessibility
+The Future of Web Accessibility
 
-      Accessibility ensures everyone can use your web app. In this post, we explore:
+Accessibility ensures everyone can use your web app. In this post, we explore:
 
-      - **WCAG Guidelines**: Understanding Web Content Accessibility Guidelines.
-      - **Semantic HTML**: Using proper tags to improve screen reader support.
-      - **ARIA Attributes**: Enhancing interactivity for assistive technologies.
-      - **Testing Tools**: Using tools like Lighthouse to audit accessibility.
+- WCAG Guidelines: Understanding Web Content Accessibility Guidelines.
+- Semantic HTML: Using proper tags to improve screen reader support.
+- ARIA Attributes: Enhancing interactivity for assistive technologies.
+- Testing Tools: Using tools like Lighthouse to audit accessibility.
 
-      Building accessible apps is not just ethical—it’s essential for reaching a wider audience.
+Building accessible apps is not just ethical—it’s essential for reaching a wider audience.
     `,
   },
 ];
