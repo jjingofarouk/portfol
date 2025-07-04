@@ -22,8 +22,8 @@ const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [typedText1, setTypedText1] = useState("");
   const [typedText2, setTypedText2] = useState("");
-  const fullText1 = "I craft powerful applications with cutting-edge tech stacks";
-  const fullText2 = "My software captivates and excels. I tackle challenges with relentless precision and drive.";
+  const fullText1 = "I build powerful applications with modern tech stacks";
+  const fullText2 = "My solutions deliver exceptional performance and reliability. I address complex challenges with precision and dedication.";
   const typingSpeed = 50;
 
   // Typing effect for text
