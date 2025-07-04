@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { BoxReveal } from "../reveal-animations";
 import { cn } from "@/lib/utils";
-import { BlogPost, blogPosts } from "@/data/blogData";
+import { BlogPost, blogPosts } from "./data/blogData";
 
 const BlogSection = () => {
   return (
