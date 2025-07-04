@@ -64,8 +64,8 @@ export const CareWave: Project = {
   id: 'carewave',
   category: 'Hospital Management System',
   title: 'CareWave',
-  src: `${BASE_PATH}/carewave/home.png`,
-  screenshots: ['home.png', 'telemedicine.png', 'dashboard.png', 'billing.png', 'clinical.png', 'inventory.png'],
+  src: `${BASE_PATH}/carewave/carewave.png`,
+  screenshots: ['carewave.png', 'telemedicine.png', 'dashboard.png', 'billing.png', 'clinical.png', 'inventory.png'],
   live: 'https://carewave.vercel.app/',
   github: 'https://github.com/jjingofarouk/CareWave',
   skills: {
