@@ -1,9 +1,9 @@
 const config = {
   title: "Farouk Jjingo | Full-Stack Developer",
   description: {
-    long: "Explore the portfolio of Farouk, a full-stack developer and creative technologist specializing in interactive web experiences, 3D animations, and innovative projects. Discover my latest work, including Coding Ducks, The Booking Desk, Ghostchat, and more. Let's build something amazing together!",
+    long: "Explore the portfolio of Farouk, a full-stack developer and creative technologist specializing in interactive web experiences, 3D animations, and innovative projects.",
     short:
-      "Discover the portfolio of Farouk, a full-stack developer creating interactive web experiences and innovative projects.",
+      "Learn more about Farouk's projects.",
   },
   keywords: [
     "Farouk",
