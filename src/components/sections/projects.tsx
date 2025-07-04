@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useMemo } from "react";
+import React, { useMemo, useRef, useEffect, useState } from "react";
 import {
   Modal as AnimatedModal,
   ModalBody,
@@ -9,6 +9,7 @@ import {
   ModalTrigger,
 } from "../ui/animated-modal";
 import { FloatingDock } from "../ui/floating-dock";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
@@ -25,51 +26,44 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 
 interface ProjectCardProps {
   project: Project;
+  index: number;
 }
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
     <AnimatedModal>
       <ModalTrigger className="group/modal-btn bg-transparent">
-        <div className="relative w-full">
+        <div className="relative flex-shrink-0 w-[350px] md:w-[400px] mr-6 md:mr-8">
           {/* Laptop Screen */}
-          <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
-            <div className="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800 relative">
+          <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[200px] md:h-[250px] max-w-full">
+            <div className="rounded-lg overflow-hidden h-[184px] md:h-[234px] bg-white dark:bg-gray-800 relative">
               <Image
                 src={project.src}
                 alt={project.title}
                 fill
-                className="object-cover rounded-lg group-hover/modal-btn:scale-105 transition-transform duration-300"
-                priority
+                className="object-cover rounded-lg group-hover/modal-btn:scale-105 transition-transform duration-500"
+                priority={index < 3}
               />
               
-              {/* Overlay with project info */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover/modal-btn:opacity-100 transition-opacity duration-300 rounded-lg">
+              {/* Always visible overlay with project info */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent rounded-lg">
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-white text-sm md:text-lg font-semibold mb-2">
-                    {project.title}
-                  </h3>
-                  <span className="inline-block bg-white text-black text-xs px-2 py-1 md:px-3 md:py-1 rounded-full">
-                    {project.category}
-                  </span>
+                  <div className="transform translate-y-2 group-hover/modal-btn:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-white text-lg md:text-xl font-bold mb-2 drop-shadow-lg">
+                      {project.title}
+                    </h3>
+                    <span className="inline-block bg-white/90 backdrop-blur-sm text-black text-sm px-3 py-1 rounded-full font-medium">
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           
           {/* Laptop Base */}
-          <div className="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+          <div className="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] md:h-[21px] max-w-[400px] md:max-w-[450px]">
             <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800"></div>
-          </div>
-          
-          {/* Fallback info display when not hovering */}
-          <div className="mt-4 text-center group-hover/modal-btn:opacity-0 transition-opacity duration-300">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">
-              {project.title}
-            </h3>
-            <span className="text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
-              {project.category}
-            </span>
           </div>
         </div>
       </ModalTrigger>
@@ -114,11 +108,45 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
 const ProjectsSection = () => {
   const shuffledProjects = useMemo(() => shuffleArray(projects), []);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', checkScroll);
+      return () => container.removeEventListener('scroll', checkScroll);
+    }
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 350;
+      const newScrollLeft = direction === 'left' 
+        ? scrollContainerRef.current.scrollLeft - scrollAmount
+        : scrollContainerRef.current.scrollLeft + scrollAmount;
+      
+      scrollContainerRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <section
       id="projects"
-      className="max-w-7xl mx-auto py-16 px-4"
+      className="max-w-full mx-auto py-16 px-4 overflow-hidden"
       aria-label="Projects Section"
     >
       <Link href="#projects">
@@ -132,9 +160,69 @@ const ProjectsSection = () => {
           Projects
         </h2>
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {shuffledProjects.map((project) => (
-          <ProjectCard key={project.src} project={project} />
+      
+      {/* Scroll hint */}
+      <div className="text-center mb-8">
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          Scroll horizontally to explore projects →
+        </p>
+      </div>
+      
+      <div className="relative">
+        {/* Navigation buttons */}
+        <button
+          onClick={() => scroll('left')}
+          disabled={!canScrollLeft}
+          className={cn(
+            "absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-3 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300",
+            canScrollLeft 
+              ? "opacity-100 hover:bg-white dark:hover:bg-gray-800 hover:scale-110" 
+              : "opacity-50 cursor-not-allowed"
+          )}
+        >
+          <ChevronLeft className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+        </button>
+        
+        <button
+          onClick={() => scroll('right')}
+          disabled={!canScrollRight}
+          className={cn(
+            "absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-3 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300",
+            canScrollRight 
+              ? "opacity-100 hover:bg-white dark:hover:bg-gray-800 hover:scale-110" 
+              : "opacity-50 cursor-not-allowed"
+          )}
+        >
+          <ChevronRight className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+        </button>
+        
+        {/* Horizontal scrolling container */}
+        <div
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto scrollbar-hide py-4 px-8"
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            WebkitOverflowScrolling: 'touch'
+          }}
+        >
+          {shuffledProjects.map((project, index) => (
+            <ProjectCard key={project.src} project={project} index={index} />
+          ))}
+        </div>
+        
+        {/* Gradient overlays for visual effect */}
+        <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-white dark:from-gray-950 to-transparent pointer-events-none z-5"></div>
+        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-white dark:from-gray-950 to-transparent pointer-events-none z-5"></div>
+      </div>
+      
+      {/* Scroll indicator dots */}
+      <div className="flex justify-center mt-8 space-x-2">
+        {shuffledProjects.map((_, index) => (
+          <div
+            key={index}
+            className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600"
+          />
         ))}
       </div>
     </section>
