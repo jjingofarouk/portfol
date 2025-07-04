@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
 import React, { useMemo } from "react";
-import { DeviceFrameset } from "react-device-frameset";
-import "react-device-frameset/styles/marvel-devices.min.css";
 import {
   Modal as AnimatedModal,
   ModalBody,
@@ -33,29 +31,49 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <AnimatedModal>
       <ModalTrigger className="group/modal-btn bg-transparent">
-        <div className="relative w-full rounded-lg overflow-hidden flex items-center justify-center" style={{ aspectRatio: "3/2", minHeight: "300px" }}>
-          <div className="w-full h-full flex items-center justify-center p-4">
-            <DeviceFrameset device="MacBook Pro" zoom={0.65} className="max-w-full max-h-full">
+        <div className="relative w-full">
+          {/* Laptop Screen */}
+          <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
+            <div className="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800 relative">
               <Image
-                className="w-full h-full object-cover group-hover/modal-btn:scale-105 transition-transform duration-300"
                 src={project.src}
                 alt={project.title}
-                width={400}
-                height={267}
+                fill
+                className="object-cover rounded-lg group-hover/modal-btn:scale-105 transition-transform duration-300"
                 priority
               />
-            </DeviceFrameset>
-          </div>
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/85 to-transparent">
-            <div className="flex flex-col justify-end h-full p-6">
-              <h3 className="text-lg text-white font-semibold">{project.title}</h3>
-              <span className="text-xs bg-white text-black rounded-full px-3 py-1 mt-2 w-fit">
-                {project.category}
-              </span>
+              
+              {/* Overlay with project info */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover/modal-btn:opacity-100 transition-opacity duration-300 rounded-lg">
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-white text-sm md:text-lg font-semibold mb-2">
+                    {project.title}
+                  </h3>
+                  <span className="inline-block bg-white text-black text-xs px-2 py-1 md:px-3 md:py-1 rounded-full">
+                    {project.category}
+                  </span>
+                </div>
+              </div>
             </div>
+          </div>
+          
+          {/* Laptop Base */}
+          <div className="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800"></div>
+          </div>
+          
+          {/* Fallback info display when not hovering */}
+          <div className="mt-4 text-center group-hover/modal-btn:opacity-0 transition-opacity duration-300">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">
+              {project.title}
+            </h3>
+            <span className="text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+              {project.category}
+            </span>
           </div>
         </div>
       </ModalTrigger>
+      
       <ModalBody className="md:max-w-4xl md:max-h-[80vh] overflow-auto">
         <SmoothScroll isInsideModal={true}>
           <ModalContent>
@@ -114,7 +132,7 @@ const ProjectsSection = () => {
           Projects
         </h2>
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {shuffledProjects.map((project) => (
           <ProjectCard key={project.src} project={project} />
         ))}
