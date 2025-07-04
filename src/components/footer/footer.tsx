@@ -44,7 +44,6 @@ function Footer() {
           transition={{ delay: 0.2 }}
         >
           © {year} <span className="text-purple-600 dark:text-purple-400">{config.author}</span>. 
-          Crafted with <span className="text-red-500 animate-pulse">♥</span> for code & creativity.
         </motion.p>
 
         {/* Center: Social Media with Hover Effects */}
