@@ -1,3 +1,4 @@
+// app/components/EasterEggs.tsx
 "use client";
 import React, { useEffect, useCallback } from "react";
 import { AnimatePresence } from "framer-motion";
@@ -31,10 +32,10 @@ const EasterEggs = () => {
 
     console.clear();
     const introMessage =
-      "Whoa, look at you! 🕵️‍♂️\n" +
-      "You’ve unlocked the secret console! 🔍\n" +
-      "Type my first name ('Farouk') for some magic! ✨\n" +
-      "Or press 'n' in the viewport for a surprise! 🐱";
+      "Greetings, Developer! 🔍\n" +
+      "You have accessed the developer console. Thank you for exploring my portfolio.\n" +
+      "Enter my first name ('Farouk') to unlock a special feature.\n" +
+      "Alternatively, press 'n' in the viewport to reveal a delightful animation.";
     typeConsoleMessage(
       introMessage,
       "color: #00FFCC; font-size: 16px; font-family: 'Courier New', monospace; background: linear-gradient(90deg, #1a1a1a, #2a2a2a); padding: 15px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);",
@@ -48,10 +49,10 @@ const EasterEggs = () => {
         get() {
           console.clear();
           const magicMessage =
-            "✨ Quantum Code Activated! ✨\n" +
-            "You’ve summoned Farouk’s magic! 🧙‍♂️\n" +
-            "Portfolio power level: OVER 9000! 💻⚡\n" +
-            "Check the viewport for a feline surprise... 😺";
+            "✨ Special Feature Unlocked! ✨\n" +
+            "Thank you for engaging with my portfolio, crafted by Farouk.\n" +
+            "My expertise in web development is at your service.\n" +
+            "Explore the viewport for an animated surprise.";
           typeConsoleMessage(
             magicMessage,
             "color: #FF007A; font-size: 18px; font-family: 'Courier New', monospace; background: linear-gradient(90deg, #1a1a1a, #2a2a2a); padding: 15px; border-radius: 8px; box-shadow: 0 0 15px rgba(255, 0, 122, 0.7);",
