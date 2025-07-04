@@ -272,14 +272,14 @@ function AboutSection() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 text-zinc-300 pt-20 pb-20">
+    <div className="container mx-auto px-4 text-gray-900 dark:text-gray-200 pt-20 pb-20">
       <div className="flex flex-col lg:flex-row gap-5">
         <aside className="w-full md:basis-1/4">
-          <div className="p-4 md:p-8 lg:p-10 rounded-2xl border-[.5px] border-zinc-600" style={{ backdropFilter: "blur(2px)" }}>
+          <div className="p-4 md:p-8 lg:p-10 rounded-2xl border-[.5px] border-gray-200 dark:border-gray-600 bg-white/60 dark:bg-gray-800/50 backdrop-blur-sm">
             <div className="flex flex-row lg:flex-col items-center">
-              <div className="flex justify-center items-center lg:w-full lg:aspect-square bg-zinc-800 rounded-xl lg:mb-5">
+              <div className="flex justify-center items-center lg:w-full lg:aspect-square bg-gray-100 dark:bg-gray-800 rounded-xl lg:mb-5">
                 <img
-                  className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px] lg:w-[200px] aspect-square bg-zinc-800"
+                  className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px]સ4 lg:w-[200px] aspect-square bg-gray-100 dark:bg-gray-800"
                   alt="Farouk Jjingo"
                   src="/assets/me.png"
                 />
@@ -287,26 +287,26 @@ function AboutSection() {
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
                 <p className="text-center text-xl font-semibold">Farouk Jjingo</p>
                 <div className="flex gap-2">
-                  <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">Full Stack Engineer</div>
-                  <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">MD</div>
+                  <div className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 w-fit px-3 py-1 rounded-full">Full Stack Engineer</div>
+                  <div className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 w-fit px-3 py-1 rounded-full">MD</div>
                 </div>
               </div>
             </div>
             <div className="hidden lg:block">
-              <hr className="my-10 border-zinc-600" />
+              <hr className="my-10 border-gray-200 dark:border-gray-600" />
               <ul className="flex flex-col gap-3">
                 {CONTACT_LINKS.map((link) => (
                   <li key={link.name}>
                     <a
-                      className="flex items-center px-3 gap-3 w-full h-12 border-zinc-700 bg-zinc-800 hover:border-zinc-600 border-[.5px] rounded-md transition-colors duration-300"
+                      className="flex items-center px-3 gap-3 w-full h-12 border-gray-200 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:border-cyan-400 dark:hover:border-cyan-600 transition-colors rounded-md"
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <div className="w-8">{link.icon}</div>
                       <div className="flex flex-col">
-                        <div className="text-sm">{link.name}</div>
-                        <div className="text-xs text-zinc-500">{link.content}</div>
+                        <div className="text-sm font-medium">{link.name}</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-400">{link.content}</div>
                       </div>
                     </a>
                   </li>
@@ -316,10 +316,10 @@ function AboutSection() {
           </div>
         </aside>
         <main className="basis-3/4">
-          <div className="p-10 border-[.5px] rounded-md border-zinc-600" style={{ backdropFilter: "blur(2px)" }}>
+          <div className="p-10 border-[.5px] border-gray-200 dark:border-gray-600 rounded-md bg-white/60 dark:bg-gray-800/50 backdrop-blur-sm">
             <h1 className="text-3xl font-bold mb-6 lg:mb-10">About Me</h1>
             <p className="mb-6 text-lg leading-relaxed">
-              I am a Full Stack Developer with a medical background, focused on building innovative technology solutions for healthcare and other industries. I am detail-oriented, thrive in fast-paced environments, and am committed to delivering high-quality, impactful code.
+              I am a <span className="text-cyan-600 dark:text-cyan-400 font-medium">Full Stack Developer</span> with a medical background, focused on building <span className="text-cyan-600 dark:text-cyan-400 font-medium">innovative technology solutions</span> for healthcare and other industries. I am detail-oriented, thrive in fast-paced environments, and am committed to delivering <span className="text-cyan-600 dark:text-cyan-400 font-medium">high-quality, impactful code</span>.
             </p>
             <h2 className="text-2xl font-semibold mb-4">Technology Stack</h2>
             <div className="mb-10">
@@ -350,7 +350,7 @@ function AboutSection() {
                   {TOOLS.map((tool) => (
                     <SplideSlide key={tool.name}>
                       <div
-                        className="w-fit p-3 border-[.5px] border-zinc-600 rounded-md hover:border-zinc-400 transition-colors duration-300 mx-auto"
+                        className="w-fit p-3 border-[.5px] border-gray-200 dark:border-gray-600 rounded-md hover:border-cyan-400 dark:hover:border-cyan-600 transition-colors mx-auto"
                         title={`${tool.name} - ${tool.content}`}
                       >
                         {tool.icon}
