@@ -66,7 +66,7 @@ export const CareWave: Project = {
   title: 'CareWave',
   src: `${BASE_PATH}/carewave/carewave.png`,
   screenshots: ['carewave.png', 'telemedicine.png', 'dashboard.png', 'billing.png', 'clinical.png', 'inventory.png'],
-  live: 'https://carewave.vercel.app/',
+  live: 'https://carewavee.vercel.app/',
   github: 'https://github.com/jjingofarouk/CareWave',
   skills: {
     frontend: [
