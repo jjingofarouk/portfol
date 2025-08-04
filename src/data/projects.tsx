@@ -11,7 +11,6 @@ import { Dwaliro } from './dwaliro';
 import { FreeResume } from './free-resume';
 import { GigMap } from './gigmap';
 import { LitShelf } from './litshelf';
-import { DrJingo } from './osler';
 import { UCCR } from './uccr';
 import { TouchedHearts } from './touched-hearts';
 import { ZunoBotics } from './zunobotics'; // Import the ZunoBotics project
@@ -47,7 +46,6 @@ const projects: Project[] = [
   FreeResume,
   GigMap,
   LitShelf,
-  DrJingo,
   UCCR,
   TouchedHearts,
   ZunoBotics,
