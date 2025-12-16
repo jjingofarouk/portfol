@@ -30,7 +30,7 @@ const ContactSection = () => {
           <div className="h-1 w-0 bg-gradient-to-r from-blue-500 to-purple-500 mt-2 mx-auto group-hover:w-48 transition-all duration-300"></div>
         </Link>
         <p className="text-gray-600 dark:text-gray-300 mt-6 max-w-xl text-center text-lg">
-          Have a project in mind? I'm always open to discussing new opportunities and ideas.
+          Have a project in mind? Let's discuss.
         </p>
       </div>
 
@@ -42,7 +42,7 @@ const ContactSection = () => {
                 Send a Message
               </CardTitle>
               <CardDescription className="text-gray-600 dark:text-gray-300">
-                I'll get back to you as soon as possible
+                I'll get back to you very fast
               </CardDescription>
             </CardHeader>
             <CardContent>

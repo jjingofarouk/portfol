@@ -9,7 +9,6 @@ import { ClinicalCalculators } from './clinical-calculators';
 import { MatatuTracker } from './matatu';
 import { Dwaliro } from './dwaliro';
 import { FreeResume } from './free-resume';
-import { GigMap } from './gigmap';
 import { LitShelf } from './litshelf';
 import { UCCR } from './uccr';
 import { TouchedHearts } from './touched-hearts';
@@ -44,7 +43,6 @@ const projects: Project[] = [
   MatatuTracker,
   Dwaliro,
   FreeResume,
-  GigMap,
   LitShelf,
   UCCR,
   TouchedHearts,
