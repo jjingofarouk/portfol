@@ -27,7 +27,7 @@ const ContactSection = () => {
           >
             LET'S WORK TOGETHER
           </h2>
-          <div className="h-1 w-0 bg-gradient-to-r from-blue-500 to-purple-500 mt-2 mx-auto group-hover:w-48 transition-all duration-300"></div>
+          <div className="h-1 w-0 bg-gradient-to-r from-blue-500 to-teal-500 mt-2 mx-auto group-hover:w-48 transition-all duration-300"></div>
         </Link>
         <p className="text-gray-600 dark:text-gray-300 mt-6 max-w-xl text-center text-lg">
           Have a project in mind? Let's discuss.
@@ -38,7 +38,7 @@ const ContactSection = () => {
         <div className="order-2 lg:order-1">
           <Card className="bg-white/80 dark:bg-gray-900/90 backdrop-blur-md border-0 shadow-lg rounded-2xl overflow-hidden">
             <CardHeader className="pb-2">
-              <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+              <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-teal-500 bg-clip-text text-transparent">
                 Send a Message
               </CardTitle>
               <CardDescription className="text-gray-600 dark:text-gray-300">
@@ -118,7 +118,7 @@ const ContactSection = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-lg font-medium hover:from-blue-600 hover:to-purple-600 transition-colors"
+                  className="w-full bg-gradient-to-r from-blue-500 to-teal-500 text-white px-4 py-2 rounded-lg font-medium hover:from-blue-600 hover:to-teal-600 transition-colors"
                 >
                   Send Email
                 </button>
@@ -129,7 +129,7 @@ const ContactSection = () => {
 
         <div className="order-1 lg:order-2">
           <div className="bg-white/80 dark:bg-gray-900/90 backdrop-blur-md p-8 rounded-2xl shadow-lg">
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-teal-500 bg-clip-text text-transparent">
               Ready to Start Your Project?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">

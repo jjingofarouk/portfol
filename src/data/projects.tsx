@@ -13,6 +13,7 @@ import { LitShelf } from './litshelf';
 import { UCCR } from './uccr';
 import { TouchedHearts } from './touched-hearts';
 import { ZunoBotics } from './zunobotics'; // Import the ZunoBotics project
+import { FrahaPharmacy } from './fraha-pharmacy';
 
 export type Skill = {
   title: string;
@@ -34,6 +35,7 @@ export type Project = {
 };
 
 const projects: Project[] = [
+  FrahaPharmacy,
   CareWave,
   Ssuubi,
   MediQ,

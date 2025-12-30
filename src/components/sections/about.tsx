@@ -292,7 +292,6 @@ function AboutSection() {
                 <p className="text-center text-xl font-semibold">Farouk Jjingo</p>
                 <div className="flex gap-2">
                   <div className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 w-fit px-3 py-1 rounded-full">Full Stack Engineer</div>
-                  <div className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 w-fit px-3 py-1 rounded-full">MD</div>
                 </div>
               </div>
             </div>
@@ -323,7 +322,7 @@ function AboutSection() {
           <div className="p-10 border-[.5px] border-gray-200 dark:border-gray-600 rounded-md bg-white/60 dark:bg-gray-800/50 backdrop-blur-sm">
             <h1 className="text-3xl font-bold mb-6 lg:mb-10">About Me</h1>
             <p className="mb-6 text-lg leading-relaxed">
-              I am a <span className="text-cyan-600 dark:text-cyan-400 font-medium">Full Stack Developer</span> with a medical background, focused on building <span className="text-cyan-600 dark:text-cyan-400 font-medium">innovative technology solutions</span> for healthcare and other industries. I am detail-oriented, thrive in fast-paced environments, and am committed to delivering <span className="text-cyan-600 dark:text-cyan-400 font-medium">high-quality, impactful code</span>.
+              I am a <span className="text-cyan-600 dark:text-cyan-400 font-medium">Full Stack Developer</span> dedicated to building <span className="text-cyan-600 dark:text-cyan-400 font-medium">high-performance, scalable, and innovative software solutions</span>. I thrive in solving complex technical challenges, from optimizing backend architectures to crafting intuitive user experiences. My focus is on delivering <span className="text-cyan-600 dark:text-cyan-400 font-medium">clean, impactful code</span> that drives real-world value.
             </p>
             <h2 className="text-2xl font-semibold mb-4">Technology Stack</h2>
             <div className="mb-10">

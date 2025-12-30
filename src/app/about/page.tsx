@@ -41,11 +41,13 @@ import {
   SiTypescript,
   SiVercel,
   SiVisualstudiocode,
+  SiPytorch,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 import { TbTerminal2 } from "react-icons/tb";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import { config } from "@/data/config";
 
 interface ContactLink {
   name: string;
@@ -290,11 +292,11 @@ const TOOLS: Tool[] = [
 
 const INTERESTS: Interest[] = [
   {
-    name: "Medicine",
-    icon: <FaUser size={24} />,
-    description: "Medical Doctor with expertise in clinical diagnostics",
-    colorClass: "from-blue-600 to-blue-900",
-    bgColor: "bg-blue-900/30",
+    name: "AI Research",
+    icon: <SiPytorch size={24} />,
+    description: "Exploring machine learning and neural networks",
+    colorClass: "from-teal-600 to-teal-900",
+    bgColor: "bg-teal-900/30",
     level: "Professional",
   },
   {
@@ -316,9 +318,9 @@ const INTERESTS: Interest[] = [
   {
     name: "Problem Solving",
     icon: <RiBrainFill size={24} />,
-    description: "Applying analytical thinking across disciplines",
-    colorClass: "from-purple-600 to-purple-900",
-    bgColor: "bg-purple-900/30",
+    description: "Applying analytical thinking to complex software problems",
+    colorClass: "from-teal-600 to-teal-900",
+    bgColor: "bg-teal-900/30",
     level: "Expert",
   },
   {
@@ -403,7 +405,7 @@ export default function Page() {
                 <p className="text-center text-xl font-semibold">Farouk Jjingo</p>
                 <div className="flex gap-2">
                   <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
-                
+
                     Full Stack Developer
                   </div>
                 </div>
@@ -439,10 +441,10 @@ export default function Page() {
           >
             <h1 className="text-3xl font-bold mb-6 lg:mb-10">About me</h1>
             <p className="mb-6 text-lg leading-relaxed">
-              I'm a Full-Stack Developer using my medical background to solve healthcare challenges around the globe. I love what I do, and have the ability to quickly get things done.
+              I'm a Full-Stack Developer focused on building high-performance, scalable software solutions. I love what I do, and have the ability to quickly translate complex requirements into working code.
             </p>
             <p className="mb-10 text-lg leading-relaxed">
-              Working in the medical field as a medical doctor has exposed me to complex systems and enabled me to think analytically. I excel in creating clean maintainable, performant.
+              My approach combines technical precision with analytical thinking. I excel in creating clean, maintainable, and performant architectures that solve real-world problems.
             </p>
             <div className="mb-10">
               <div className="flex items-center justify-between mb-6">
@@ -471,31 +473,20 @@ export default function Page() {
               )}
               {activeTab === 'timeline' && (
                 <div className="relative">
-                  <div className="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 via-purple-600 to-red-600 rounded-full"></div>
-                  <div className="space-y-6 pl-12">
-                    <div className="relative">
-                      <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-blue-600 border-2 border-zinc-800 z-10"></div>
-                      <div className="p-4 rounded-lg bg-zinc-800/50 border border-zinc-700">
-                        <div className="text-sm text-blue-400 mb-1">2018 - Present</div>
-                        <h3 className="font-semibold mb-1">Medical Practice</h3>
-                        <p className="text-sm text-zinc-400">Using my medical background to understand healthcare challenges and create tech solutions that bridge the gap.</p>
-                      </div>
+                  <div className="relative">
+                    <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-teal-600 border-2 border-zinc-800 z-10"></div>
+                    <div className="p-4 rounded-lg bg-zinc-800/50 border border-zinc-700">
+                      <div className="text-sm text-teal-400 mb-1">2020 - Present</div>
+                      <h3 className="font-semibold mb-1">Full Stack Development</h3>
+                      <p className="text-sm text-zinc-400">Mastering the art of building web applications from frontend to backend with a focus on enterprise-grade solutions.</p>
                     </div>
-                    <div className="relative">
-                      <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-purple-600 border-2 border-zinc-800 z-10"></div>
-                      <div className="p-4 rounded-lg bg-zinc-800/50 border border-zinc-700">
-                        <div className="text-sm text-purple-400 mb-1">2020 - Present</div>
-                        <h3 className="font-semibold mb-1">Full Stack Development</h3>
-                        <p className="text-sm text-zinc-400">Mastering the art of building web applications from frontend to backend with a focus on healthcare solutions.</p>
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-red-600 border-2 border-zinc-800 z-10"></div>
-                      <div className="p-4 rounded-lg bg-zinc-800/50 border border-zinc-700">
-                        <div className="text-sm text-red-400 mb-1">Lifelong</div>
-                        <h3 className="font-semibold mb-1">Continuous Learning</h3>
-                        <p className="text-sm text-zinc-400">Always exploring new technologies, methodologies, and frameworks to stay ahead of the curve.</p>
-                      </div>
+                  </div>
+                  <div className="relative mt-6">
+                    <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-red-600 border-2 border-zinc-800 z-10"></div>
+                    <div className="p-4 rounded-lg bg-zinc-800/50 border border-zinc-700">
+                      <div className="text-sm text-red-400 mb-1">Lifelong</div>
+                      <h3 className="font-semibold mb-1">Continuous Learning</h3>
+                      <p className="text-sm text-zinc-400">Always exploring new technologies, methodologies, and frameworks to stay ahead of the curve.</p>
                     </div>
                   </div>
                 </div>
@@ -546,7 +537,7 @@ export default function Page() {
                 I'm always open to discussing new projects, innovative ideas, or opportunities to be part of your team. Most importantly, I value creating connections with people that last beyond the lifespan of any project.
               </p>
               <a
-                href="mailto:farouk@zunobotics.com"
+                href={`mailto:${config.email}`}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-700 hover:bg-zinc-600 rounded-md transition-colors duration-300"
               >
                 <FaEnvelope />

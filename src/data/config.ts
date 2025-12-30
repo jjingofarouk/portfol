@@ -26,6 +26,7 @@ const config = {
   author: "Farouk Jjingo",
   email: "jjingofaroukk@gmail.com",
   site: "https://jjingofarouk.xyz",
+  resume: "https://drive.google.com/file/d/1aRRXh7Ni9iLc6IOSASJjCRf-AqJ3t2LB/view?usp=sharing",
 
   get ogImg() {
     return this.site + "/assets/me.png";
@@ -33,7 +34,6 @@ const config = {
   social: {
     twitter: "https://x.com/farouq_jjingo",
     linkedin: "https://www.linkedin.com/in/farouq_jjingo/",
-    instagram: "https://www.instagram.com/farouqjjingo",
     facebook: "https://www.facebook.com/farouqjjingo/",
     github: "https://github.com/jjingofarouk",
   },

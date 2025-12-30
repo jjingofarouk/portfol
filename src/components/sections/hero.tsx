@@ -166,14 +166,14 @@ const HeroSection = () => {
                   </Link>
 
                   <Link
-                    href="https://drive.google.com/file/d/1aRRXh7Ni9iLc6IOSASJjCRf-AqJ3t2LB/view?usp=drivesdk"
+                    href={config.resume}
                     target="_blank"
                     className="flex-1"
                   >
                     <BoxReveal delay={1.7} width="100%">
                       <Button
                         variant="outline"
-                        className="w-full flex items-center gap-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 shadow-sm"
+                        className="w-full flex items-center gap-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:border-cyan-400 dark:hover:border-cyan-600 transition-colors shadow-sm"
                       >
                         <FileText size={18} />
                         <span>Download Resume</span>
@@ -285,7 +285,7 @@ const HeroSection = () => {
                     <div className="mt-4 pl-6">
                       <div className="flex items-start">
                         <span className="text-gray-500 mr-2">{"<"}</span>
-                        <span className="text-purple-600 dark:text-purple-400">Projects</span>
+                        <span className="text-cyan-600 dark:text-cyan-400">Projects</span>
                         <span className="text-gray-500 ml-2">{">"}</span>
                       </div>
 
@@ -299,7 +299,7 @@ const HeroSection = () => {
 
                       <div className="flex items-start mt-2">
                         <span className="text-gray-500 mr-2">{"</"}</span>
-                        <span className="text-purple-600 dark:text-purple-400">Projects</span>
+                        <span className="text-cyan-600 dark:text-cyan-400">Projects</span>
                         <span className="text-gray-500 ml-2">{">"}</span>
                       </div>
                     </div>

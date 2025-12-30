@@ -105,12 +105,12 @@ export const FreeResume: Project = {
         FreeResume: Helping Ugandans Land Their Dream Jobs
       </TypographyP>
       <TypographyP className="font-mono">
-        FreeResume is a powerful Next.js 13.4.4 Progressive Web App (PWA) designed to empower Ugandan job seekers by enabling them to create professional, ATS-friendly resumes effortlessly and at no cost. Built with TypeScript 5.0.4 for robust typing, Tailwind CSS 3.3.2 for a vibrant purple-blue gradient UI (#6b46c1 to #3b82f6), and Framer Motion 10.12.16 for seamless animations, the application prioritizes intuitiveness, mobile-first design, and accessibility. Redux Toolkit 1.9.5 manages complex state, while @react-pdf/renderer 3.1.10 ensures high-quality PDF outputs, delivering a reliable tool to enhance job application success.
+        FreeResume is a powerful Next.js 13.4.4 Progressive Web App (PWA) designed to empower Ugandan job seekers by enabling them to create professional, ATS-friendly resumes effortlessly and at no cost. Built with TypeScript 5.0.4 for robust typing, Tailwind CSS 3.3.2 for a vibrant teal-blue gradient UI (#0d9488 to #3b82f6), and Framer Motion 10.12.16 for seamless animations, the application prioritizes intuitiveness, mobile-first design, and accessibility. Redux Toolkit 1.9.5 manages complex state, while @react-pdf/renderer 3.1.10 ensures high-quality PDF outputs, delivering a reliable tool to enhance job application success.
       </TypographyP>
       <ProjectsLinks live="http://free-resume-indol.vercel.app" repo="https://github.com/jjingofarouk/free-resume" />
       <TypographyH3 className="my-4 mt-8">Welcoming Home Page</TypographyH3>
       <p className="font-mono mb-2">
-        The homepage features a clean, gradient design (#6b46c1 to #3b82f6) with a live resume preview powered by AutoTypingResume. Leveraging Next.js 13.4.4 and React 18.2.0, it employs Framer Motion for smooth transitions and @heroicons/react 2.0.18 icons (e.g., DocumentPlusIcon) to guide users, ensuring an engaging and accessible entry point across devices.
+        The homepage features a clean, gradient design (#0d9488 to #3b82f6) with a live resume preview powered by AutoTypingResume. Leveraging Next.js 13.4.4 and React 18.2.0, it employs Framer Motion for smooth transitions and @heroicons/react 2.0.18 icons (e.g., DocumentPlusIcon) to guide users, ensuring an engaging and accessible entry point across devices.
       </p>
       <SlideShow images={[`${BASE_PATH}/free-resume/home.png`]} />
       <TypographyH3 className="my-4 mt-8">Effortless Resume Builder</TypographyH3>
@@ -120,7 +120,7 @@ export const FreeResume: Project = {
       <SlideShow images={[`${BASE_PATH}/free-resume/resume-builder.png`, `${BASE_PATH}/free-resume/resume-preview.png`]} />
       <TypographyH3 className="my-4 mt-8">Smart Resume Import & ATS Checker</TypographyH3>
       <p className="font-mono mb-2">
-        The Import and Parser pages allow users to upload existing resumes and verify ATS compatibility. Utilizing react-contenteditable 3.3.7 for seamless editing and Tailwind CSS for a refined interface, these pages feature gradient buttons (#6b46c1) and @heroicons/react icons (e.g., UploadIcon) to enhance usability and accessibility.
+        The Import and Parser pages allow users to upload existing resumes and verify ATS compatibility. Utilizing react-contenteditable 3.3.7 for seamless editing and Tailwind CSS for a refined interface, these pages feature gradient buttons (#0d9488) and @heroicons/react icons (e.g., UploadIcon) to enhance usability and accessibility.
       </p>
       <SlideShow images={[`${BASE_PATH}/free-resume/resume-import.png`, `${BASE_PATH}/free-resume/resume-parser.png`]} />
       <TypographyH3 className="my-4 mt-8">Feature Spotlight</TypographyH3>
@@ -135,12 +135,12 @@ export const FreeResume: Project = {
       <SlideShow images={[`${BASE_PATH}/free-resume/testimonials.png`]} />
       <TypographyH3 className="my-4 mt-8">Helpful FAQ</TypographyH3>
       <p className="font-mono mb-2">
-        The FAQ page addresses user queries in an accordion-style format, styled with Tailwind CSS and @heroicons/react icons (e.g., QuestionMarkCircleIcon). Gradient highlights (#6b46c1) and TypeScript-driven rendering ensure clarity and ease of navigation.
+        The FAQ page addresses user queries in an accordion-style format, styled with Tailwind CSS and @heroicons/react icons (e.g., QuestionMarkCircleIcon). Gradient highlights (#0d9488) and TypeScript-driven rendering ensure clarity and ease of navigation.
       </p>
       <SlideShow images={[`${BASE_PATH}/free-resume/faq.png`]} />
       <TypographyH3 className="my-4 mt-8">Our Mission</TypographyH3>
       <p className="font-mono mb-2">
-        The About page articulates FreeResume’s mission to empower Ugandan job seekers. Featuring Tailwind CSS styling, Framer Motion animations, and @heroicons/react icons (e.g., UsersIcon), it combines gradient headers (#6b46c1 to #3b82f6) with an approachable narrative to inspire users.
+        The About page articulates FreeResume’s mission to empower Ugandan job seekers. Featuring Tailwind CSS styling, Framer Motion animations, and @heroicons/react icons (e.g., UsersIcon), it combines gradient headers (#0d9488 to #3b82f6) with an approachable narrative to inspire users.
       </p>
       <SlideShow images={[`${BASE_PATH}/free-resume/about.png`]} />
       <TypographyH3 className="my-4 mt-8">Get in Touch</TypographyH3>
@@ -150,7 +150,7 @@ export const FreeResume: Project = {
       <SlideShow images={[`${BASE_PATH}/free-resume/contact.png`]} />
       <TypographyH3 className="my-4 mt-8">Graceful Error Handling</TypographyH3>
       <p className="font-mono mb-2">
-        A custom 404 page ensures a user-friendly experience with a gradient button (#6b46c1 to #3b82f6) and a “Back to Home” link. Powered by Next.js routing and Tailwind CSS, it maintains navigational continuity.
+        A custom 404 page ensures a user-friendly experience with a gradient button (#0d9488 to #3b82f6) and a “Back to Home” link. Powered by Next.js routing and Tailwind CSS, it maintains navigational continuity.
       </p>
       <SlideShow images={[`${BASE_PATH}/free-resume/not-found.png`]} />
       <TypographyH3 className="my-4 mt-8">What Makes It Special</TypographyH3>
@@ -164,7 +164,7 @@ export const FreeResume: Project = {
         <li>Seamless state management using Redux Toolkit 1.9.5</li>
         <li>Engaging animations with Framer Motion 10.12.16</li>
         <li>Accessible UI with @heroicons/react 2.0.18 icons</li>
-        <li>Purple-blue gradient design (#6b46c1 to #3b82f6) with Inter font</li>
+        <li>Teal-blue gradient design (#0d9488 to #3b82f6) with Inter font</li>
         <li>Usage insights via Vercel Analytics 1.0.1</li>
         <li>Reliable testing with Jest 29.5.0</li>
       </ul>

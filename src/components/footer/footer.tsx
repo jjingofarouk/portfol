@@ -29,7 +29,7 @@ function Footer() {
     <footer className="relative w-full shrink-0 px-4 py-8 md:px-6 bg-gradient-to-t from-gray-100 to-white dark:from-gray-900 dark:to-black border-t border-border overflow-hidden">
       {/* Background Glow Effect */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-transparent pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-r from-teal-500/20 via-blue-500/20 to-transparent pointer-events-none"
         variants={glowVariants}
         initial="initial"
         animate="animate"
@@ -43,7 +43,7 @@ function Footer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          © {year} <span className="text-purple-600 dark:text-purple-400">{config.author}</span>. 
+          © {year} <span className="text-teal-600 dark:text-teal-400">{config.author}</span>.
         </motion.p>
 
         {/* Center: Social Media with Hover Effects */}
@@ -68,8 +68,8 @@ function Footer() {
                   <Button
                     variant="ghost"
                     className={cn(
-                      "relative px-0 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400",
-                      hoveredLink === title && "text-purple-600 dark:text-purple-400"
+                      "relative px-0 text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400",
+                      hoveredLink === title && "text-teal-600 dark:text-teal-400"
                     )}
                   >
                     {title}
