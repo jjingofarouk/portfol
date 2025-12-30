@@ -41,7 +41,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 alt={project.title}
                 fill
                 className="object-cover rounded-lg group-hover/modal-btn:scale-105 transition-transform duration-300"
-                priority
               />
               
               {/* Overlay with project info */}

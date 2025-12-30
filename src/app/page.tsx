@@ -1,14 +1,24 @@
 "use client";
 
 import React from "react";
-import SmoothScroll from "@/components/smooth-scroll";
+import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
+import SmoothScroll from "@/components/smooth-scroll";
 import AnimatedBackground from "@/components/animated-background";
-import SkillsSection from "@/components/sections/skills";
-import ProjectsSection from "@/components/sections/projects";
-import ContactSection from "@/components/sections/contact";
 import HeroSection from "@/components/sections/hero";
-import AboutSection from "@/components/sections/about";
+
+const AboutSection = dynamic(() => import("@/components/sections/about"), {
+  ssr: false,
+});
+const SkillsSection = dynamic(() => import("@/components/sections/skills"), {
+  ssr: false,
+});
+const ProjectsSection = dynamic(() => import("@/components/sections/projects"), {
+  ssr: false,
+});
+const ContactSection = dynamic(() => import("@/components/sections/contact"), {
+  ssr: false,
+});
 
 function MainPage() {
   return (

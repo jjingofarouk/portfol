@@ -20,7 +20,7 @@ type PreloaderContextType = {
 const INITIAL: PreloaderContextType = {
   isLoading: true,
   loadingPercent: 0,
-  bypassLoading: () => {},
+  bypassLoading: () => { },
 };
 export const preloaderContext = createContext<PreloaderContextType>(INITIAL);
 
@@ -36,7 +36,7 @@ export const usePreloader = () => {
   }
   return context;
 };
-const LOADING_TIME = 2.5;
+const LOADING_TIME = 1.2;
 function Preloader({ children, disabled = false }: PreloaderProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingPercent, setLoadingPercent] = useState(0);

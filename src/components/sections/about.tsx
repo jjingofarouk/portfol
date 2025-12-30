@@ -1,5 +1,6 @@
 // AboutSection.jsx
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { DiMongodb, DiNginx, DiNpm, DiPostgresql, DiVim } from "react-icons/di";
 import {
@@ -46,8 +47,8 @@ import "@splidejs/react-splide/css";
 const CONTACT_LINKS = [
   {
     name: "Email",
-    content: "jjingofarouq@gmail.com",
-    href: "mailto:jjingofolauq@gmail.com",
+    content: "farouk@zunobotics.com",
+    href: "mailto:farouk@zunobotics.com",
     icon: <FaEnvelope />,
   },
   {
@@ -277,11 +278,14 @@ function AboutSection() {
         <aside className="w-full md:basis-1/4">
           <div className="p-4 md:p-8 lg:p-10 rounded-2xl border-[.5px] border-gray-200 dark:border-gray-600 bg-white/60 dark:bg-gray-800/50 backdrop-blur-sm">
             <div className="flex flex-row lg:flex-col items-center">
-              <div className="flex justify-center items-center lg:w-full lg:aspect-square bg-gray-100 dark:bg-gray-800 rounded-xl lg:mb-5">
-                <img
-                  className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px]સ4 lg:w-[200px] aspect-square bg-gray-100 dark:bg-gray-800"
+              <div className="flex justify-center items-center lg:w-full lg:aspect-square bg-gray-100 dark:bg-gray-800 rounded-xl lg:mb-5 relative overflow-hidden">
+                <Image
+                  className="rounded-full p-4 lg:p-10 object-cover"
                   alt="Farouk Jjingo"
                   src="/assets/me.png"
+                  width={200}
+                  height={200}
+                  quality={80}
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">

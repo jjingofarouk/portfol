@@ -18,8 +18,6 @@ import { config } from "@/data/config";
 
 const HeroSection = () => {
   const { isLoading } = usePreloader();
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [typedText1, setTypedText1] = useState("");
   const [typedText2, setTypedText2] = useState("");
   const fullText1 = "I build powerful applications with modern tech stacks";
@@ -54,115 +52,7 @@ const HeroSection = () => {
     }
   }, [isLoading]);
 
-  // Mouse parallax effect
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX / window.innerWidth,
-        y: e.clientY / window.innerHeight,
-      });
-    };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  // Subtle grid animation
-  useEffect(() => {
-    if (isLoading || !canvasRef.current) return;
-
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-
-    const gridSize = 30;
-    const dotSize = 1;
-    const lineOpacity = 0.08;
-
-    const dots: { x: number; y: number; originalX: number; originalY: number; vx: number; vy: number }[] = [];
-    for (let x = 0; x < Math.ceil(canvas.width / gridSize); x++) {
-      for (let y = 0; y < Math.ceil(canvas.height / gridSize); y++) {
-        dots.push({
-          x: x * gridSize,
-          y: y * gridSize,
-          originalX: x * gridSize,
-          originalY: y * gridSize,
-          vx: 0,
-          vy: 0,
-        });
-      }
-    }
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      ctx.strokeStyle = `rgba(148, 163, 184, ${lineOpacity})`;
-      ctx.lineWidth = 0.5;
-
-      for (let i = 0; i < dots.length; i++) {
-        const dot = dots[i];
-
-        const dx = mousePosition.x * canvas.width - dot.x;
-        const dy = mousePosition.y * canvas.height - dot.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const maxDistance = 150;
-
-        if (distance < maxDistance) {
-          const force = (maxDistance - distance) / maxDistance;
-          dot.vx -= (dx / distance) * force * 0.2;
-          dot.vy -= (dy / distance) * force * 0.2;
-        }
-
-        dot.x += dot.vx;
-        dot.y += dot.vy;
-        dot.vx *= 0.92;
-        dot.vy *= 0.92;
-
-        dot.vx += (dot.originalX - dot.x) * 0.05;
-        dot.vy += (dot.originalY - dot.y) * 0.05;
-
-        for (let j = i + 1; j < dots.length; j++) {
-          const otherDot = dots[j];
-          const dx = dot.x - otherDot.x;
-          const dy = dot.y - otherDot.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < gridSize * 1.5) {
-            ctx.beginPath();
-            ctx.moveTo(dot.x, dot.y);
-            ctx.lineTo(otherDot.x, otherDot.y);
-            ctx.stroke();
-          }
-        }
-      }
-
-      for (const dot of dots) {
-        ctx.fillStyle = "rgba(148, 163, 184, 0.5)";
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y, dotSize, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      requestAnimationFrame(animate);
-    };
-
-    const animationId = requestAnimationFrame(animate);
-
-    const handleResize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isLoading, mousePosition]);
 
   const skills = [
     "React",
@@ -181,10 +71,6 @@ const HeroSection = () => {
     <section id="hero" className={cn("relative w-full min-h-screen overflow-hidden")}>
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full opacity-30 dark:opacity-15"
-        />
       </div>
 
       <div className="absolute top-0 left-0 w-1/3 h-1 bg-gradient-to-r from-cyan-500 to-transparent" />

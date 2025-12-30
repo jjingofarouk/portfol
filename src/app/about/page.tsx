@@ -78,8 +78,8 @@ interface Interest {
 const CONTACT_LINKS: ContactLink[] = [
   {
     name: "Email",
-    content: "jjingofarouq@gmail.com",
-    href: "mailto:jjingofarouq@gmail.com",
+    content: "farouk@zunobotics.com",
+    href: "mailto:farouk@zunobotics.com",
     icon: <FaEnvelope />,
   },
   {
@@ -546,7 +546,7 @@ export default function Page() {
                 I'm always open to discussing new projects, innovative ideas, or opportunities to be part of your team. Most importantly, I value creating connections with people that last beyond the lifespan of any project.
               </p>
               <a
-                href="mailto:jjingofarouq@gmail.com"
+                href="mailto:farouk@zunobotics.com"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-700 hover:bg-zinc-600 rounded-md transition-colors duration-300"
               >
                 <FaEnvelope />

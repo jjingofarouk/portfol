@@ -116,6 +116,11 @@ const AnimatedBackground = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const splineContainer = useRef<HTMLDivElement>(null);
   const [splineApp, setSplineApp] = useState<Application>();
+  useEffect(() => {
+    if (isMobile) {
+      bypassLoading();
+    }
+  }, [isMobile]);
 
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
   const [activeSection, setActiveSection] = useState<Section>("hero");
@@ -491,7 +496,7 @@ const AnimatedBackground = () => {
     const frame1 = splineApp?.findObjectByName("frame-1");
     const frame2 = splineApp?.findObjectByName("frame-2");
     if (!frame1 || !frame2 || !framesParent)
-      return { start: () => {}, stop: () => {} };
+      return { start: () => { }, stop: () => { } };
 
     let interval: NodeJS.Timeout;
     const start = () => {
@@ -517,7 +522,7 @@ const AnimatedBackground = () => {
     return { start, stop };
   };
   const getKeycapsAnimation = () => {
-    if (!splineApp) return { start: () => {}, stop: () => {} };
+    if (!splineApp) return { start: () => { }, stop: () => { } };
 
     let tweens: gsap.core.Tween[] = [];
     const start = () => {
@@ -559,19 +564,26 @@ const AnimatedBackground = () => {
     };
     return { start, stop };
   };
+  if (!isMobile) {
+    return (
+      <>
+        <Suspense fallback={<div className="w-full h-full bg-slate-100 dark:bg-transparent" />}>
+          <Spline
+            ref={splineContainer}
+            onLoad={(app: Application) => {
+              setSplineApp(app);
+              bypassLoading();
+            }}
+            scene="/assets/skills-keyboard.spline"
+          />
+        </Suspense>
+      </>
+    );
+  }
+
+  // Fallback for mobile or while loading
   return (
-    <>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Spline
-          ref={splineContainer}
-          onLoad={(app: Application) => {
-            setSplineApp(app);
-            bypassLoading();
-          }}
-          scene="/assets/skills-keyboard.spline"
-        />
-      </Suspense>
-    </>
+    <div className="w-full h-full bg-slate-100 dark:bg-transparent" />
   );
 };
 
